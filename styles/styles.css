@@ -4,7 +4,10 @@
 }
 
 body {
-  background-color: #385740;
+  background-image: url("/images/shapes_bg.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-color: #304c37;
 }
 
 .wholePage {
@@ -13,7 +16,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #304c37;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -61,12 +63,14 @@ body {
     margin: 0;
   }
   body {
+    background-image: none;
+    background-size: cover;
+    background-repeat: repeat;
     background-color: lightblue;
   }
   .wholePage {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-    background-color: lightblue;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

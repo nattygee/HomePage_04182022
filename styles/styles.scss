@@ -4,14 +4,16 @@
 }
 
 body {
-    background-color: #385740;
+    background-image: url("/images/shapes_bg.svg");
+    background-size: cover;
+    background-repeat: repeat;
+    background-color: #304c37;
 }
 
 .wholePage {
     width: 100vw;
     height: 100vh;
     display: flex;
-    background-color: #304c37;
     align-items: center;
     justify-content: center;
 }
@@ -51,12 +53,15 @@ p {
     margin: 0;
 }
     body {
+        //background-image: url("/images/shapes_bg_mobile.svg");
+        background-image: none;
+        background-size: cover;
+        background-repeat: repeat;
         background-color: lightblue;
     }
 
     .wholePage {
         flex-basis: 100%;
-        background-color: lightblue;
         display: flex;
         align-items:center;
         justify-content: center;
