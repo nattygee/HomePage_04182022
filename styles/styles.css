@@ -63,10 +63,10 @@ body {
     margin: 0;
   }
   body {
-    background-image: none;
+    background-image: url("/images/shapes_bg_mobile_yellow.svg");
     background-size: cover;
     background-repeat: repeat;
-    background-color: lightblue;
+    background-color: #ADD8E6;
   }
   .wholePage {
     -ms-flex-preferred-size: 100%;
