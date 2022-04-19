@@ -27,11 +27,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   text-align: left;
-}
-
-.tempNote {
-  color: #FFEF9D;
-  margin-bottom: 1rem;
+  width: auto;
+  max-width: 60vw;
 }
 
 .whisper {
@@ -39,5 +36,66 @@ body {
   margin-bottom: 1rem;
   font-family: 'BioRhyme', serif;
   font-weight: 800;
+}
+
+.tempNote {
+  color: #FFEF9D;
+  margin-bottom: 1rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.signature {
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+  text-align: left;
+  color: #F8714A;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 600px) {
+  p {
+    margin: 0;
+  }
+  body {
+    background-color: lightblue;
+  }
+  .wholePage {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    background-color: lightblue;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .tempContent {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 2rem;
+    text-align: left;
+    width: auto;
+    max-width: 80%;
+  }
+  .whisper {
+    color: #FFEF9D;
+    width: auto;
+    background-color: #304c37;
+  }
+  .tempNote {
+    color: #304c37;
+  }
+  .signature {
+    color: #304c37;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
