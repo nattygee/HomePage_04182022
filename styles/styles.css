@@ -94,6 +94,8 @@ body {
     color: #FFEF9D;
     width: auto;
     background-color: #304c37;
+    padding-left: .5rem;
+    padding-bottom: .15rem;
   }
   .tempNote {
     color: #304c37;
