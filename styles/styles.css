@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #385740;
+}
+
+.wholePage {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #304c37;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tempContent {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+}
+
+.tempNote {
+  color: #FFEF9D;
+  margin-bottom: 1rem;
+}
+
+.whisper {
+  color: #65836d;
+  margin-bottom: 1rem;
+  font-family: 'BioRhyme', serif;
+  font-weight: 800;
+}
+/*# sourceMappingURL=styles.css.map */

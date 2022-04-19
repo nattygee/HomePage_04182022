@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #385740;
+}
+
+.wholePage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #304c37;
+    align-items: center;
+    justify-content: center;
+}
+
+.tempContent {
+    align-items: center;
+    text-align: left;
+    //background-color: #385740;
+}
+
+.whisper {
+    color: #65836d;
+    margin-bottom: 1rem;
+    font-family: 'BioRhyme', serif;
+    font-weight: 800;
+}
+.tempNote {
+    color: #FFEF9D;
+    margin-bottom: 1rem;
+}
+
