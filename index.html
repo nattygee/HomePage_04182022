@@ -13,6 +13,28 @@
 </head>
 <body>
     <div class="wholePage">
+        <div class="headerBar">
+            <div class="logo">
+                <img src="images/FDLogo_2022.svg" alt="">
+            </div>
+            <!-- Desktop Menu -->
+            <nav class="navItems">
+                <ul class="navItemList">
+                    <li>Home</li>
+                    <li>Blog</li>
+                </ul>
+            </nav>
+            <!-- Mobile Menu -->
+            <div class="mobileMenu">
+                <a href="#" id="mobileMenuBtn"><img src="images/mobileMenuIcon.svg" id="mobileMenuIcon" alt=""></a>
+            </div>
+            <div id="mobileMenuContainer" style="opacity: 0;">
+                <ul class="navItemListMobile">
+                    <li>Home</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </div>
         <div class="tempContent">
             <h4 class="whisper">I wrote you something:</h4>
             <p class="tempNote">Website refresh in progress! Be back in a few days.</p>
@@ -21,4 +43,6 @@
         </div>
     </div>
 </body>
+
 </html>
+<script src="scripts.js"></script>
