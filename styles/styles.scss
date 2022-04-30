@@ -6,8 +6,10 @@
 //global colors!!! :)
 :root {
     --main-orange: #F8714A;
+    --main-yellow: #FFEF9D;
     --darker-green: #233627;
-    --darker-green-trans: rgba(35, 54, 39, .5);
+    --darker-green-trans: rgba(35, 54, 39, .9);
+    --light-green: #65836d;
 }
 
 body {
@@ -38,7 +40,7 @@ li {
     display: flex;
     padding: 1rem 2rem 1rem 2rem;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 .logo {
@@ -46,7 +48,7 @@ li {
 }
 
 .navItems {
-    display: flex;
+    display: none;
     margin-left: auto;
     align-items: center;
     justify-content: center;
@@ -93,35 +95,63 @@ li {
 
 // 🛑 nav content end
 
-.tempContent {
-    align-items: center;
-    text-align: left;
-    width: auto;
-    max-width: 60vw;
-    //background-color: #385740;
+.heroSection {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    flex-basis: 2;
+    //flex-wrap: wrap;
+}
+
+.heroContent {
+    width: 50vw;
+    min-width: 300px;
+    margin-top: -3rem;
+    //background-color: rgba($color: #c44949, $alpha: 0.4);
+    //flex: 50%;
+}
+
+.heroImg {
+    width: 50vw;
+    min-width: 300px;
+    flex: 50%;
+    //background-color: rgba($color: #f1f147, $alpha: 0.2);
+    img {
+        width: 100%;
+        max-width: 740px;
+    }
 }
 
 .whisper {
-    color: #65836d;
+    text-align: center;
+    padding: 0rem 0rem .5   rem 0rem;
+    right: 0;
+    color: var(--light-green);
     margin-bottom: 1rem;
     font-family: 'BioRhyme', serif;
     font-weight: 800;
 }
-.tempNote {
-    color: #FFEF9D;
-    margin-bottom: 1rem;
+
+.pageLede {
     font-family: 'Work Sans', sans-serif;
-    font-size: 4rem;
-    font-weight: 600;
+    padding: 0rem 0rem 2rem 0rem;
+    margin-left: -3rem;
+    font-weight: 900;
+    font-size: 16vw;
+    line-height: 12vw;
+    color: white;
 }
 
 .signature {
     align-items: right;
-    text-align: left;
-    color: #F8714A;
+    text-align: center;
+    width: 70%;
+    color: var(--main-yellow);
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
 }
+
+// 🛑🛑🛑 header section end 🛑🛑🛑
 
 @media only screen and (max-width: 600px) {
 p {
@@ -144,7 +174,7 @@ p {
 
     .mobileMenu {
       margin-left: auto;
-      display: flex;
+      display: none;
     }
 
     .mobileNavContainer {
@@ -159,28 +189,50 @@ p {
         display: none;
     }
 
-    .tempContent {
-        align-items: center;
-        margin-top: 2rem;
-        text-align: left;
-        width: auto;
-        max-width: 80%;
+    .heroSection {
+        display: flex;
+        flex-direction: row;
+        padding: 2rem;
+        flex-basis: 1;
+        flex-wrap: wrap;
+    }
+
+    .heroContent {
+        width: 100vw;
+        margin-bottom: 2rem;
+        //min-width: 300px;
+        //background-color: rgba($color: #c44949, $alpha: 0.4);
+        //flex: 50%;
+    }
+    
+    .heroImg {
+        width: 50vw;
+        //min-width: 300px;
+        flex: 50%;
+        //background-color: rgba($color: #f1f147, $alpha: 0.2);
+        img {
+            width: 100%;
+            max-width: 740px;
+        }
     }
 
     .whisper {
-        color: #FFEF9D;
+        color: var(--light-green);
         width: auto;
-        background-color: #304c37;
-        padding-left: .5rem;
-        padding-bottom: .15rem;
     }
 
-    .tempNote {
-        color: #304c37;
-        font-size: 3rem;
+    .pageLede {
+        font-family: 'Work Sans', sans-serif;
+        padding: 0rem 0rem 2rem 0rem;
+        margin-left: -3rem;
+        font-weight: 900;
+        font-size: 30vw;
+        line-height: 22vw;
+        color: white;
     }
 
     .signature {
-        color: #304c37;
+        color: var(--main-yellow);
+        width: 80%;
     }
   }
