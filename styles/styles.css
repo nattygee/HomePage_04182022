@@ -162,7 +162,7 @@ h2 {
 
 .whisper {
   text-align: center;
-  padding: 0rem 0rem .5   rem 0rem;
+  padding: 0rem 0rem .5rem 0rem;
   right: 0;
   color: var(--light-green);
   margin-bottom: 1rem;
@@ -254,6 +254,7 @@ h2 {
   font-size: 2rem;
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
+  max-width: 500px;
   padding: 0rem 0rem .5rem 0rem;
 }
 
@@ -262,6 +263,8 @@ h2 {
   font-size: 1rem;
   font-family: 'work sans', sans-serif;
   font-weight: 300;
+  width: auto;
+  max-width: 600px;
   padding: 0rem 0rem 1rem 0rem;
 }
 
@@ -279,6 +282,26 @@ h2 {
   font-family: 'work sans', sans-serif;
   font-size: 1rem;
   font-weight: 600;
+}
+
+.highlight {
+  border-radius: .5rem;
+  height: auto;
+  padding: 2rem;
+  max-width: 240px;
+  z-index: 1000;
+  background-color: var(--darker-green-trans);
+  margin-left: auto;
+  margin-top: 2rem;
+}
+
+.highlightDescription {
+  font-family: 'work sans', sans-serif;
+  color: var(--main-yellow);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: -1rem;
 }
 
 .projectVisuals {
@@ -412,6 +435,49 @@ h2 {
     color: white;
     margin-left: -1rem;
     font-size: 18vw;
+  }
+  .aboutTheProject {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 1rem 0rem 2rem 0rem;
+  }
+  .drawAttention {
+    width: .5rem;
+    height: auto;
+    background-color: var(--darker-green-trans);
+    margin: 0rem 1rem 0rem 0rem;
+    border-radius: 1rem;
+  }
+  .projectTitle {
+    color: white;
+    font-size: 2rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    max-width: 500px;
+    padding: 0rem 0rem .5rem 0rem;
+  }
+  .projectDescription {
+    color: var(--main-yellow);
+    font-size: 1rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 300;
+    width: auto;
+    max-width: 500px;
+    padding: 0rem 0rem 1rem 0rem;
+  }
+  .highlight {
+    -ms-flex-preferred-size: 1;
+        flex-basis: 1;
+    border-radius: .5rem;
+    height: 90px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--darker-green-trans);
+    margin: 2rem 0rem 0rem 0rem;
   }
   .projectVisuals {
     display: -webkit-box;
