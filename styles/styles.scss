@@ -10,6 +10,7 @@
     --darker-green: #233627;
     --darker-green-trans: rgba(35, 54, 39, .9);
     --light-green: #65836d;
+    --black: #111410;
 }
 
 body {
@@ -23,6 +24,12 @@ body {
 
 li {
     list-style-type: none;
+}
+
+h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+    //font-size: 10vw;
 }
 
 .wholePage {
@@ -93,7 +100,7 @@ li {
         }
 }
 
-// 🛑 nav content end
+// 🛑🛑🛑 nav content end ☝️ 🛑🛑🛑
 
 .heroSection {
     display: flex;
@@ -151,7 +158,118 @@ li {
     font-weight: 300;
 }
 
-// 🛑🛑🛑 header section end 🛑🛑🛑
+// 🛑🛑🛑 header section end ☝️ 🛑🛑🛑
+
+.sectionImage {
+    display: flex;
+    margin-top: -12vw;
+    img {
+        width: 50vw;
+        min-width: 300px;
+    }
+}
+
+.sectionTitle {
+    color: white;
+    margin-left: -1rem;
+    font-size: 10vw;
+}
+
+.sectionProject {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--main-orange);
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.aboutTheProject {
+    display: flex;
+    padding: 1rem 0rem 2rem 0rem;
+}
+
+.projectInfo {
+    align-items: flex-start;
+}
+
+.drawAttention {
+    width: .5rem;
+    height: auto;
+    background-color: var(--darker-green-trans);
+    margin: 0rem 1rem 0rem 0rem;
+    border-radius: 1rem;
+}
+
+.companyLogo {
+    padding: 0rem 0rem 1rem 0rem;
+}
+
+.projectTitle {
+    color: white;
+    font-size: 2rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    padding: 0rem 0rem .5rem 0rem;
+}
+
+.projectDescription {
+    color: var(--main-yellow);
+    font-size: 1rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 300;
+    padding: 0rem 0rem 1rem 0rem;
+}
+
+.ctaBtn {
+    cursor:default;
+    padding: 1rem;
+    width: 160px;
+    background-color: var(--black);
+    color: white;
+    border-radius: 2rem;
+    justify-content: center;
+    text-align: center;
+    font-family: 'work sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+//images
+.projectVisuals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,  minmax(10px, max-content)); 
+}
+
+.projectImgMain {
+    width: auto;
+    height: auto;
+    img {
+        width: 70vw;
+    }
+}
+.projectImgSec {
+    width: auto;
+    height: auto;
+    margin-left: 8rem;
+    margin-top: -4rem;
+    img {
+        width: 40vw;
+    }
+}
+.projectImgThird {
+    width: auto;
+    height: auto;
+    margin-top: 14rem;
+    margin-left: -10rem;
+    img {
+        width: 40vw;
+    }
+}
+
+// 🛑🛑🛑 desktop styling ☝️ 🛑🛑🛑
+
+// 🟩🟩🟩 mobile styling start 👇 🟩🟩🟩
 
 @media only screen and (max-width: 600px) {
 p {
@@ -235,4 +353,53 @@ p {
         color: var(--main-yellow);
         width: 80%;
     }
-  }
+
+    .sectionImage {
+        display: flex;
+        margin-top: -2rem;
+        img {
+            width: 100vw;
+            min-width: 300px;
+        }
+    }
+
+    .sectionTitle {
+        color: white;
+        margin-left: -1rem;
+        font-size: 18vw;
+    }
+
+    //images
+.projectVisuals {
+    display: flex;
+}
+
+.projectImgMain {
+    width: auto;
+    height: auto;
+    img {
+        width: 100%;
+    }
+}
+.projectImgSec {
+    display: none;
+    width: auto;
+    height: auto;
+    margin-left: 0rem;
+    margin-top: 0rem;
+    img {
+        width: 40vw;
+    }
+}
+.projectImgThird {
+    display: none;
+    width: auto;
+    height: auto;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    img {
+        width: 40vw;
+    }
+}
+
+  } // 🛑🛑🛑 media query end ☝️ 🛑🛑🛑
