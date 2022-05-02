@@ -201,6 +201,7 @@ h2 {
 .sectionImage img {
   width: 50vw;
   min-width: 300px;
+  max-width: 800px;
 }
 
 .sectionTitle {
@@ -295,6 +296,7 @@ h2 {
 
 .projectImgMain img {
   width: 70vw;
+  max-width: 1200px;
 }
 
 .projectImgSec {
@@ -306,6 +308,7 @@ h2 {
 
 .projectImgSec img {
   width: 40vw;
+  max-width: 800px;
 }
 
 .projectImgThird {
@@ -317,6 +320,7 @@ h2 {
 
 .projectImgThird img {
   width: 40vw;
+  max-width: 800px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -440,6 +444,34 @@ h2 {
   }
   .projectImgThird img {
     width: 40vw;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .pageLede {
+    font-family: 'Work Sans', sans-serif;
+    padding: 0rem 0rem 2rem 0rem;
+    margin-left: -3rem;
+    font-weight: 900;
+    font-size: 20rem;
+    line-height: 14rem;
+    color: white;
+  }
+  .sectionImage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: -12rem;
+  }
+  .sectionImage img {
+    width: 50vw;
+    min-width: 300px;
+    max-width: 1200px;
+  }
+  .sectionTitle {
+    color: white;
+    margin-left: -1rem;
+    font-size: 8vw;
   }
 }
 /*# sourceMappingURL=styles.css.map */
