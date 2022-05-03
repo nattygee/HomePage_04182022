@@ -258,7 +258,7 @@ h2 {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
-    margin-top: -1rem;
+    //margin-top: -1rem;
 }
 
 //images
@@ -394,7 +394,7 @@ p {
 
     .sectionTitle {
         color: white;
-        margin-left: -1rem;
+        margin-left: 0rem;
         font-size: 18vw;
     }
 
@@ -434,7 +434,7 @@ p {
     .highlight {
         flex-basis: 1;
         border-radius: .5rem;
-        height: 90px;
+        height: auto;
         padding: 2rem;
         width: 100%;
         max-width: 100%;
