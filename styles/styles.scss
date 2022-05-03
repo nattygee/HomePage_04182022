@@ -267,6 +267,10 @@ h2 {
     grid-template-columns: repeat(auto-fit,  minmax(10px, max-content)); 
 }
 
+#jackHealthImg1 {
+    display: none;
+}
+
 .projectImgMain {
     width: auto;
     height: auto;
@@ -294,6 +298,10 @@ h2 {
         width: 40vw;
         max-width: 800px;
     }
+}
+
+#gladlySlideshow {
+    display: none;
 }
 
 // 🛑🛑🛑 desktop styling ☝️ 🛑🛑🛑
@@ -449,7 +457,17 @@ p {
     display: flex;
 }
 
+#jackHealthImg1 {
+    display: flex;
+    width: auto;
+    height: auto;
+    img {
+        width: 100%;
+    }
+}
+
 .projectImgMain {
+    display: none;
     width: auto;
     height: auto;
     img {
@@ -474,6 +492,14 @@ p {
     margin-left: 0rem;
     img {
         width: 40vw;
+    }
+}
+
+#gladlySlideshow {
+    display: flex;
+    width: auto;
+    img {
+        width: 100%;
     }
 }
 

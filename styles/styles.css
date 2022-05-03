@@ -311,6 +311,10 @@ h2 {
       grid-template-columns: repeat(auto-fit, minmax(10px, max-content));
 }
 
+#jackHealthImg1 {
+  display: none;
+}
+
 .projectImgMain {
   width: auto;
   height: auto;
@@ -343,6 +347,10 @@ h2 {
 .projectImgThird img {
   width: 40vw;
   max-width: 800px;
+}
+
+#gladlySlideshow {
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -483,7 +491,18 @@ h2 {
     display: -ms-flexbox;
     display: flex;
   }
+  #jackHealthImg1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+    height: auto;
+  }
+  #jackHealthImg1 img {
+    width: 100%;
+  }
   .projectImgMain {
+    display: none;
     width: auto;
     height: auto;
   }
@@ -509,6 +528,15 @@ h2 {
   }
   .projectImgThird img {
     width: 40vw;
+  }
+  #gladlySlideshow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+  }
+  #gladlySlideshow img {
+    width: 100%;
   }
 }
 
