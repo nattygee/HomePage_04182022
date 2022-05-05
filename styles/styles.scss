@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: var(--darker-green);
+}
+
 //global colors!!! :)
 :root {
     --main-orange: #F8714A;
@@ -11,6 +16,7 @@
     --darker-green-trans: rgba(35, 54, 39, .9);
     --light-green: #65836d;
     --black: #111410;
+    --ctaBlue: #A3D9FF;
 }
 
 body {
@@ -179,7 +185,8 @@ h2 {
 .sectionProject {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--main-orange);
+    border: 1px solid var(--light-green);
+    border-bottom: .5rem solid var(--light-green);
     border-radius: .5rem;
     padding: 1rem;
     margin: 1rem 1rem 2rem 1rem;
@@ -226,12 +233,56 @@ h2 {
     padding: 0rem 0rem 1rem 0rem;
 }
 
+.ctas {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.ctaBtnMain {
+    cursor:pointer;
+    padding: 1rem;
+    width: auto;
+    margin-right: 1rem;
+    background-color: var(--ctaBlue);
+    color: var(--darker-green);
+    border-radius: 2rem;
+    justify-content: center;
+    text-align: center;
+    font-family: 'work sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    a {
+        text-decoration: none;
+        color: var(--darker-green);
+    }
+}
+
+.ctaBtnSec {
+    cursor:pointer;
+    padding: 1rem;
+    width: auto;
+    //background-color: var(--ctaBlue);
+    color: var(--ctaBlue);
+    border: 2px solid var(--ctaBlue);
+    border-radius: 2rem;
+    justify-content: center;
+    text-align: center;
+    font-family: 'work sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    a {
+        text-decoration: none;
+        color: var(--ctaBlue);
+    }
+}
+
 .ctaBtn {
     cursor:default;
     padding: 1rem;
-    width: 160px;
-    background-color: var(--black);
-    color: white;
+    width: 200px;
+    background-color: var(--light-green);
+    color: var(--darker-green);
     border-radius: 2rem;
     justify-content: center;
     text-align: center;
@@ -437,6 +488,60 @@ p {
         width: auto;
         max-width: 500px;
         padding: 0rem 0rem 1rem 0rem;
+    }
+
+    .ctaBtnMain {
+        cursor: pointer;
+        flex-basis: 100%;
+        padding: 1rem;
+        width: auto;
+        margin-right: 1rem;
+        background-color: var(--ctaBlue);
+        color: var(--darker-green);
+        border-radius: 2rem;
+        justify-content: center;
+        text-align: center;
+        font-family: 'work sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        a {
+            text-decoration: none;
+            color: var(--darker-green);
+        }
+    }
+    
+    .ctaBtnSec {
+        cursor:pointer;
+        flex-basis: 100%;
+        padding: 1rem;
+        width: auto;
+        //background-color: var(--ctaBlue);
+        color: var(--ctaBlue);
+        border: 2px solid var(--ctaBlue);
+        border-radius: 2rem;
+        justify-content: center;
+        text-align: center;
+        font-family: 'work sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        a {
+            text-decoration: none;
+            color: var(--ctaBlue);
+        }
+    }
+
+    .ctaBtn {
+        cursor:default;
+        padding: 1rem;
+        width: 200px;
+        background-color: var(--light-green);
+        color: var(--darker-green);
+        border-radius: 2rem;
+        justify-content: center;
+        text-align: center;
+        font-family: 'work sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
     }
 
     .highlight {
