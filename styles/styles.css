@@ -16,6 +16,7 @@ a {
   --light-green: #65836d;
   --black: #111410;
   --ctaBlue: #A3D9FF;
+  --ctaBlue-hover: #82bfea;
 }
 
 body {
@@ -308,6 +309,30 @@ h2 {
   color: var(--darker-green);
 }
 
+.ctaBtnMain:hover {
+  cursor: pointer;
+  padding: 1rem;
+  width: auto;
+  margin-right: 1rem;
+  background-color: var(--ctaBlue-hover);
+  color: var(--darker-green);
+  border-radius: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-family: 'work sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.ctaBtnMain:hover a {
+  text-decoration: none;
+  color: var(--darker-green);
+}
+
 .ctaBtnSec {
   cursor: pointer;
   padding: 1rem;
@@ -327,6 +352,28 @@ h2 {
 .ctaBtnSec a {
   text-decoration: none;
   color: var(--ctaBlue);
+}
+
+.ctaBtnSec:hover {
+  cursor: pointer;
+  padding: 1rem;
+  width: auto;
+  background-color: var(--darker-green);
+  color: var(--light-green);
+  border: 2px solid var(--ctaBlue-hover);
+  border-radius: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-family: 'work sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ctaBtnSec:hover a {
+  text-decoration: none;
+  color: var(--ctaBlue-hover);
 }
 
 .ctaBtn {
@@ -558,6 +605,30 @@ h2 {
     text-decoration: none;
     color: var(--darker-green);
   }
+  .ctaBtnMain:hover {
+    cursor: pointer;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    padding: 1rem;
+    width: auto;
+    margin-right: 1rem;
+    background-color: var(--ctaBlue-hover);
+    color: var(--darker-green);
+    border-radius: 2rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    font-family: 'work sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+  }
+  .ctaBtnMain:hover a {
+    text-decoration: none;
+    color: var(--darker-green);
+  }
   .ctaBtnSec {
     cursor: pointer;
     -ms-flex-preferred-size: 100%;
@@ -578,6 +649,28 @@ h2 {
   .ctaBtnSec a {
     text-decoration: none;
     color: var(--ctaBlue);
+  }
+  .ctaBtnSec:hover {
+    cursor: pointer;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    padding: 1rem;
+    width: auto;
+    background-color: var(--darker-green);
+    color: var(--ctaBlue);
+    border: 2px solid var(--ctaBlue-hover);
+    border-radius: 2rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    font-family: 'work sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .ctaBtnSec:hover a {
+    text-decoration: none;
+    color: var(--ctaBlue-hover);
   }
   .ctaBtn {
     cursor: default;
