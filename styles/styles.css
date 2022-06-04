@@ -41,6 +41,11 @@ h2 {
   font-weight: 900;
 }
 
+h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+}
+
 .wholePage {
   width: 100vw;
   height: 100vh;
@@ -471,6 +476,30 @@ h2 {
 
 #gladlySlideshow {
   display: none;
+}
+
+.subPageLede {
+  color: white;
+  font-size: 4vw;
+  text-transform: uppercase;
+}
+
+.relevantDate {
+  color: var(--main-orange);
+  font-size: 2rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  max-width: 500px;
+  padding: 0rem 1rem .5rem 1rem;
+}
+
+.weatherDateRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media only screen and (max-width: 600px) {
