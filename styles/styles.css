@@ -74,7 +74,9 @@ h2 {
 }
 
 .navItems {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-left: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -110,6 +112,16 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.navItemOther {
+  color: var(--main-orange);
+}
+
+.navItemCurrent {
+  color: var(--main-yellow);
+  font-weight: 600;
+  border-bottom: 1px solid var(--main-yellow);
 }
 
 .mobileMenu {
@@ -480,10 +492,14 @@ h2 {
   }
   .mobileMenu {
     margin-left: auto;
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .mobileNavContainer {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .logo {
     left: 0;

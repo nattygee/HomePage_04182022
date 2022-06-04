@@ -62,7 +62,7 @@ h2 {
 }
 
 .navItems {
-    display: none;
+    display: flex;
     margin-left: auto;
     align-items: center;
     justify-content: center;
@@ -81,6 +81,16 @@ h2 {
         align-items: center;
     justify-content: center;
     }
+}
+
+.navItemOther {
+    color: var(--main-orange);
+}
+
+.navItemCurrent {
+    color: var(--main-yellow);
+    font-weight: 600;
+    border-bottom: 1px solid var(--main-yellow);
 }
 
 .mobileMenu {
@@ -418,11 +428,11 @@ p {
 
     .mobileMenu {
       margin-left: auto;
-      display: none;
+      display: flex;
     }
 
     .mobileNavContainer {
-        display: none;
+        display: flex;
     }
 
     .logo {
