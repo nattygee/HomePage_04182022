@@ -39,6 +39,11 @@ h2 {
     //font-size: 10vw;
 }
 
+h4 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+}
+
 .wholePage {
     width: 100vw;
     height: 100vh;
@@ -402,6 +407,32 @@ h2 {
 #gladlySlideshow {
     display: none;
 }
+
+//sub-page 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 
+
+.subPageLede {
+    color: white;
+    //margin-left: -1rem;
+    font-size: 4vw;
+    text-transform: uppercase;
+}
+
+//weather page 🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️
+
+.relevantDate {
+    color: var(--main-orange);
+    font-size: 2rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    max-width: 500px;
+    padding: 0rem 1rem .5rem 1rem;
+}
+
+.weatherDateRow {
+    display: flex;
+    align-items: center;
+}
+
 
 // 🛑🛑🛑 desktop styling ☝️ 🛑🛑🛑
 
