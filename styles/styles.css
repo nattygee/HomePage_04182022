@@ -13,6 +13,7 @@ a {
   --main-yellow: #FFEF9D;
   --darker-green: #233627;
   --darker-green-trans: rgba(35, 54, 39, .9);
+  --even-darker-green: #1d2e21;
   --light-green: #65836d;
   --black: #111410;
   --ctaBlue: #A3D9FF;
@@ -41,9 +42,53 @@ h2 {
   font-weight: 900;
 }
 
+h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
 h4 {
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
+  font-size: 2rem;
+}
+
+h5 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+input[type="text"] {
+  font-size: 1rem;
+  color: var(--main-yellow);
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: .5rem 1rem .5rem 1rem;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  color: #65836d;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  color: #65836d;
+}
+
+input[type="text"]::-ms-input-placeholder {
+  color: #65836d;
+}
+
+input[type="text"]::placeholder {
+  color: #65836d;
+}
+
+input[type="text"]:focus {
+  outline: none;
 }
 
 .wholePage {
@@ -480,17 +525,100 @@ h4 {
 
 .subPageLede {
   color: white;
-  font-size: 4vw;
   text-transform: uppercase;
 }
 
-.relevantDate {
-  color: var(--main-orange);
-  font-size: 2rem;
-  font-family: 'Work Sans', sans-serif;
+.weatherInputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
+  background-color: #83bb92;
+}
+
+.weatherInputs2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+}
+
+.ctaBtnMain1Col {
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem 0rem 1rem 0rem;
+  margin-right: 1rem;
+  background-color: var(--ctaBlue);
+  color: var(--darker-green);
+  border-radius: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-family: 'work sans', sans-serif;
+  font-size: 1rem;
   font-weight: 600;
+}
+
+.ctaBtnMain1Col a {
+  text-decoration: none;
+  color: var(--darker-green);
+}
+
+.ctaBtnMain1Col:hover {
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem 0rem 1rem 0rem;
+  margin-right: 1rem;
+  background-color: var(--ctaBlue-hover);
+  color: var(--darker-green);
+  border-radius: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-family: 'work sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.ctaBtnMain1Col:hover a {
+  text-decoration: none;
+  color: var(--darker-green);
+}
+
+.locationInputs {
+  margin: 4rem 0rem 1rem 0rem;
+}
+
+.inputIconDiv {
+  padding: .5rem;
+  border-radius: 0rem .5rem .5rem 0rem;
+}
+
+.inputIconDiv:hover {
+  background-color: var(--even-darker-green);
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.relevantDateLine {
+  color: black;
+}
+
+.relevantDateLine2 {
+  color: var(--main-orange);
   max-width: 500px;
-  padding: 0rem 1rem .5rem 1rem;
+  padding: 0rem 0rem 1rem 0rem;
 }
 
 .weatherDateRow {
@@ -500,6 +628,41 @@ h4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.showTime {
+  color: var(--main-yellow);
+  font-family: 'work sans', sans-serif;
+  color: var(--main-yellow);
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.whereYouTitle {
+  color: white;
+}
+
+.textInputWithIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
+  height: auto;
+  background-color: var(--darker-green);
+  border-radius: .5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0rem 1rem 0rem;
+}
+
+.textInputWithIcon input {
+  width: 100%;
+}
+
+.inputIcon {
+  margin-left: auto;
 }
 
 @media only screen and (max-width: 600px) {

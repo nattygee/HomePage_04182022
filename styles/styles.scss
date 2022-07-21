@@ -14,6 +14,7 @@ a {
     --main-yellow: #FFEF9D;
     --darker-green: #233627;
     --darker-green-trans: rgba(35, 54, 39, .9);
+    --even-darker-green: #1d2e21;
     --light-green: #65836d;
     --black: #111410;
     --ctaBlue: #A3D9FF;
@@ -39,9 +40,38 @@ h2 {
     //font-size: 10vw;
 }
 
+h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
 h4 {
     font-family: 'Work Sans', sans-serif;
     font-weight: 600;
+    font-size: 2rem;
+}
+
+h5 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+input[type="text"] {
+    font-size: 1rem;
+    color: var(--main-yellow);
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    box-shadow: none;
+    padding: .5rem 1rem .5rem 1rem;
+    &::placeholder {
+        color: #65836d;
+    }
+    &:focus {
+        outline: none;
+    }
 }
 
 .wholePage {
@@ -413,24 +443,117 @@ h4 {
 .subPageLede {
     color: white;
     //margin-left: -1rem;
-    font-size: 4vw;
     text-transform: uppercase;
 }
 
-//weather page 🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️
+//weather page 
 
-.relevantDate {
-    color: var(--main-orange);
-    font-size: 2rem;
-    font-family: 'Work Sans', sans-serif;
+.weatherInputs {
+    display: flex;
+    flex-basis: 1;
+    background-color: #83bb92;
+}
+.weatherInputs2 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 35%;
+    //background-color: #83bb92;
+}
+.ctaBtnMain1Col {
+    cursor: pointer;
+    //flex-basis: 100%;
+    width: 100%;
+    padding: 1rem 0rem 1rem 0rem;
+    margin-right: 1rem;
+    background-color: var(--ctaBlue);
+    color: var(--darker-green);
+    border-radius: 2rem;
+    justify-content: center;
+    text-align: center;
+    font-family: 'work sans', sans-serif;
+    font-size: 1rem;
     font-weight: 600;
+    a {
+        text-decoration: none;
+        color: var(--darker-green);
+    }
+}
+.ctaBtnMain1Col:hover {
+    cursor: pointer;
+    width: 100%;
+    padding: 1rem 0rem 1rem 0rem;
+    margin-right: 1rem;
+    background-color: var(--ctaBlue-hover);
+    color: var(--darker-green);
+    border-radius: 2rem;
+    justify-content: center;
+    text-align: center;
+    font-family: 'work sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 200ms;
+    a {
+        text-decoration: none;
+        color: var(--darker-green);
+    }
+}
+
+.locationInputs {
+    margin: 4rem 0rem 1rem 0rem;
+}
+.inputIconDiv {
+    padding: .5rem;
+    border-radius: 0rem .5rem .5rem 0rem;
+    &:hover {
+        background-color: var(--even-darker-green);
+        cursor: pointer;
+        transition: 200ms;
+    }
+}
+
+.relevantDateLine {
+    //this line is bugged...
+    color: black;
+}
+.relevantDateLine2 {
+    color: var(--main-orange);
     max-width: 500px;
-    padding: 0rem 1rem .5rem 1rem;
+    padding: 0rem 0rem 1rem 0rem;
 }
 
 .weatherDateRow {
     display: flex;
     align-items: center;
+}
+
+.showTime {
+    color: var(--main-yellow);
+    font-family: 'work sans', sans-serif;
+    color: var(--main-yellow);
+    font-size: 1.5rem;
+    font-weight: 300;
+
+}
+
+.whereYouTitle {
+    color: white;
+}
+
+.textInputWithIcon {
+    display: flex;
+    flex-basis: 1;
+    height: auto;
+    background-color: var(--darker-green);
+    border-radius: .5rem;
+    align-items: center;
+    margin: 1rem 0rem 1rem 0rem;
+    input {
+        width: 100%;
+    }
+}
+
+.inputIcon {
+    margin-left: auto;
 }
 
 
