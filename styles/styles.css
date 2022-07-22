@@ -547,6 +547,7 @@ input[type="text"]:focus {
           flex-direction: column;
   -ms-flex-preferred-size: 35%;
       flex-basis: 35%;
+  min-width: 320px;
 }
 
 .ctaBtnMain1Col {
