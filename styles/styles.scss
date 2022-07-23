@@ -674,6 +674,39 @@ input[type="text"] {
     color: var(--main-yellow);
 }
 
+.pac-container {
+    background-color: var(--darker-green);
+    border-radius: 0rem 0rem 1rem 1rem;
+    padding: 1rem;
+    border: none;
+    hr {
+        color: black;
+        background-color: black;
+        border: 1px solid black;
+    }
+}
+
+.pac-container:after{
+    content:none !important;
+}
+
+.pac-item-query {
+    color: var(--main-yellow);
+    font-size: 1rem;
+}
+
+.pac-item {
+    color: var(--light-green);
+    border-top: 1px solid var(--even-darker-green);
+    font-size: 1rem;
+}
+
+.pac-item:hover {
+    background-color: var(--even-darker-green);
+    border: none;
+    cursor: pointer;
+}
+
 .textInputWithIcon {
     display: flex;
     flex-basis: 1;

@@ -39,3 +39,10 @@ function carousel() {
   x[slideIndex-1].style.display = "block";
   setTimeout(carousel, 4000); // Change image every 2 seconds
 }
+
+// creating small function for city search autocomplete :)
+
+function citySearchAutoComp() {
+  var citySearchInput = document.getElementById('cityInput');
+  var autoCompleteVar = new google.maps.places.Autocomplete(citySearchInput);
+}
