@@ -550,6 +550,98 @@ input[type="text"]:focus {
   min-width: 320px;
 }
 
+.outfitSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 50vw;
+  height: 60vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.outfitSection h4 {
+  text-align: center;
+  color: var(--main-orange);
+}
+
+.outfitSection h5 {
+  font-weight: 100;
+  text-align: center;
+  color: var(--main-yellow);
+}
+
+.outfitSection h6 {
+  text-align: center;
+  color: var(--main-yellow);
+}
+
+#outfit1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0rem 1vw 0rem 1vw;
+}
+
+#outfit2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0rem 1vw 0rem 1vw;
+}
+
+#outfit3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0rem 1vw 0rem 1vw;
+}
+
+.outfitImg {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.outfitImg img {
+  width: 10vw;
+  max-width: 160px;
+  min-width: 100px;
+  min-height: 300px;
+}
+
 .ctaBtnMain1Col {
   cursor: pointer;
   width: 100%;
@@ -958,6 +1050,102 @@ input[type="text"]:focus {
   }
   #gladlySlideshow img {
     width: 100%;
+  }
+  .weatherInputs2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    min-width: 320px;
+  }
+  .outfitSection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 80vw;
+    height: 60vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 4rem;
+  }
+  .outfitSection h4 {
+    text-align: center;
+    color: var(--main-orange);
+  }
+  .outfitSection h5 {
+    font-weight: 100;
+    text-align: center;
+    color: var(--main-yellow);
+  }
+  .outfitSection h6 {
+    text-align: center;
+    color: var(--main-yellow);
+  }
+  #outfit1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding: 0rem 1vw 0rem 1vw;
+  }
+  #outfit2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding: 0rem 1vw 0rem 1vw;
+  }
+  #outfit3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding: 0rem 1vw 0rem 1vw;
+  }
+  .outfitImg {
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .outfitImg img {
+    width: 10vw;
+    max-width: 160px;
+    min-width: 100px;
+    min-height: 300px;
   }
 }
 
