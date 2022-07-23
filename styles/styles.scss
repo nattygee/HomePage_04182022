@@ -58,6 +58,12 @@ h5 {
     font-size: 1.5rem;
 }
 
+h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
 input[type="text"] {
     font-size: 1rem;
     color: var(--main-yellow);
@@ -520,6 +526,14 @@ input[type="text"] {
         }
     }
 
+    .timePeriod {
+       // margin-top: 1rem;    
+    }
+
+    .temperature {
+        margin-top: .5rem;
+    }
+
 
     .buttonControls {
         display: flex;
@@ -559,6 +573,25 @@ input[type="text"] {
     img {
         opacity: .8;
     }
+}
+
+.footerSection {
+    display: flex;
+    margin-top: 4rem;
+    padding: 4rem 2rem;
+    background-color: var(--darker-green);
+    align-items: center;
+}
+
+.weatherStatementFtr {
+    h5 {
+        font-weight: 100;
+        color: var(--main-yellow);
+    }
+}
+
+.footerImg {
+    margin-left: auto;
 }
 
 .ctaBtnMain1Col {
@@ -638,7 +671,7 @@ input[type="text"] {
 }
 
 .whereYouTitle {
-    color: white;
+    color: var(--main-yellow);
 }
 
 .textInputWithIcon {

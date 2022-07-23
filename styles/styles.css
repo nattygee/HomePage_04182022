@@ -60,6 +60,12 @@ h5 {
   font-size: 1.5rem;
 }
 
+h6 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
 input[type="text"] {
   font-size: 1rem;
   color: var(--main-yellow);
@@ -642,6 +648,10 @@ input[type="text"]:focus {
   min-height: 300px;
 }
 
+.temperature {
+  margin-top: .5rem;
+}
+
 .buttonControls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -692,6 +702,27 @@ input[type="text"]:focus {
 
 .saveBtn:hover img {
   opacity: .8;
+}
+
+.footerSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 4rem;
+  padding: 4rem 2rem;
+  background-color: var(--darker-green);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weatherStatementFtr h5 {
+  font-weight: 100;
+  color: var(--main-yellow);
+}
+
+.footerImg {
+  margin-left: auto;
 }
 
 .ctaBtnMain1Col {
@@ -784,7 +815,7 @@ input[type="text"]:focus {
 }
 
 .whereYouTitle {
-  color: white;
+  color: var(--main-yellow);
 }
 
 .textInputWithIcon {
