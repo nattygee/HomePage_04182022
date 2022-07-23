@@ -642,6 +642,58 @@ input[type="text"]:focus {
   min-height: 300px;
 }
 
+.buttonControls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: auto;
+  margin-left: auto;
+  padding: 1rem;
+}
+
+.shuffleBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 4rem;
+  background-color: var(--ctaBlue);
+  margin: .5rem;
+}
+
+.saveBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 3rem;
+  margin: .5rem;
+}
+
+.shuffleBtn:hover {
+  cursor: pointer;
+  -webkit-transition: 80ms;
+  transition: 80ms;
+  background-color: var(--ctaBlue-hover);
+}
+
+.shuffleBtnIcon :hover {
+  cursor: pointer;
+}
+
+.saveBtn:hover {
+  cursor: pointer;
+  background-color: var(--darker-green);
+  -webkit-transition: 80ms;
+  transition: 80ms;
+}
+
+.saveBtn:hover img {
+  opacity: .8;
+}
+
 .ctaBtnMain1Col {
   cursor: pointer;
   width: 100%;
@@ -1072,7 +1124,8 @@ input[type="text"]:focus {
         -ms-flex-direction: row;
             flex-direction: row;
     width: 80vw;
-    height: 60vh;
+    height: 45vh;
+    min-height: 400px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1146,6 +1199,20 @@ input[type="text"]:focus {
     max-width: 160px;
     min-width: 100px;
     min-height: 300px;
+  }
+  .buttonControls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    padding: 1rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 

@@ -519,6 +519,48 @@ input[type="text"] {
             min-height: 300px;
         }
     }
+
+
+    .buttonControls {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin-left: auto;
+        padding: 1rem;
+    }
+
+    .shuffleBtn {
+        display: flex;
+        border-radius: 4rem;
+        background-color: var(--ctaBlue);
+        margin: .5rem;
+    }
+    .saveBtn {
+        display: flex;
+        border-radius: 3rem;
+        //border: 3px solid var(--ctaBlue);
+        margin: .5rem;
+    }
+
+.shuffleBtn:hover {
+    cursor: pointer;    
+    transition: 80ms;
+    background-color: var(--ctaBlue-hover);
+}
+.shuffleBtnIcon :hover {
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    cursor: pointer;
+    background-color: var(--darker-green);
+    //border: 3px solid var(--ctaBlue-hover);
+    transition: 80ms;
+    img {
+        opacity: .8;
+    }
+}
+
 .ctaBtnMain1Col {
     cursor: pointer;
     //flex-basis: 100%;
@@ -923,7 +965,8 @@ p {
     display: flex;
     flex-direction: row;
     width: 80vw;
-    height: 60vh;
+    height: 45vh;
+    min-height: 400px;
     justify-content: center;
     margin-top: 4rem;
     //min-width: 320px;
@@ -978,6 +1021,15 @@ p {
             min-width: 100px;         
             min-height: 300px;
         }
+    }
+
+    .buttonControls {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        //margin-left: auto;
+        padding: 1rem;
+        justify-content: center;
     }
 
   } // 🛑🛑🛑 mobile media query end ☝️ 🛑🛑🛑  
