@@ -460,6 +460,65 @@ input[type="text"] {
     min-width: 320px;
     //background-color: #83bb92;
 }
+.outfitSection {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    height: 60vh;
+    justify-content: center;
+    //min-width: 320px;
+    //background-color: #83bb92;
+        h4 {
+            //font-weight: 100;
+            text-align: center;
+            color: var(--main-orange);
+        }
+        h5 {
+            font-weight: 100;
+            text-align: center;
+            color: var(--main-yellow);
+        }
+        h6 {
+            text-align: center;
+            color: var(--main-yellow);
+        }
+}
+
+    #outfit1 {
+        display: flex;
+        flex-direction: column;
+        //flex-basis: 0;
+        height: 100%;
+        flex-grow: 1;
+        padding: 0rem 1vw 0rem 1vw;
+    }
+    #outfit2 {
+        display: flex;
+        flex-direction: column;
+        //flex-basis: 0;
+        flex-grow: 1;
+        padding: 0rem 1vw 0rem 1vw;
+    }
+    #outfit3 {
+        display: flex;
+        flex-direction: column;
+        //flex-basis: 0;
+        flex-grow: 1;
+        padding: 0rem 1vw 0rem 1vw;
+    }
+
+    .outfitImg {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        img {
+            width: 10vw;
+            max-width: 160px;
+            min-width: 100px;         
+            min-height: 300px;
+        }
+    }
 .ctaBtnMain1Col {
     cursor: pointer;
     //flex-basis: 100%;
@@ -849,6 +908,77 @@ p {
         width: 100%;
     }
 }
+
+// MOBILE WEATHER STARTS HERE // MOBILE WEATHER STARTS HERE // MOBILE WEATHER STARTS HERE
+
+.weatherInputs2 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    min-width: 320px;
+    //background-color: #83bb92;
+}
+
+.outfitSection {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    height: 60vh;
+    justify-content: center;
+    margin-top: 4rem;
+    //min-width: 320px;
+    //background-color: #83bb92;
+        h4 {
+            //font-weight: 100;
+            text-align: center;
+            color: var(--main-orange);
+        }
+        h5 {
+            font-weight: 100;
+            text-align: center;
+            color: var(--main-yellow);
+        }
+        h6 {
+            text-align: center;
+            color: var(--main-yellow);
+        }
+}
+
+    #outfit1 {
+        display: flex;
+        flex-direction: column;
+        //flex-basis: 0;
+        height: 100%;
+        flex-grow: 1;
+        padding: 0rem 1vw 0rem 1vw;
+    }
+    #outfit2 {
+        display: flex;
+        flex-direction: column;
+        //flex-basis: 0;
+        flex-grow: 1;
+        padding: 0rem 1vw 0rem 1vw;
+    }
+    #outfit3 {
+        display: flex;
+        flex-direction: column;
+        //flex-basis: 0;
+        flex-grow: 1;
+        padding: 0rem 1vw 0rem 1vw;
+    }
+
+    .outfitImg {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        img {
+            width: 10vw;
+            max-width: 160px;
+            min-width: 100px;         
+            min-height: 300px;
+        }
+    }
 
   } // 🛑🛑🛑 mobile media query end ☝️ 🛑🛑🛑  
     
