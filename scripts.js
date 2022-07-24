@@ -24,6 +24,37 @@ function openMobileMenu() {
     }
 }
 
+// getting date and time
+
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const hours = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+
+var dayReading = new Date();
+
+var hoursNumber = dayReading.getHours();
+var dayOfWeek = days[dayReading.getDay()];
+var monthOfYear = months[dayReading.getMonth()];
+var dayOfMonth = dayReading.getDate();
+
+document.getElementById("dateReading").innerHTML = dayOfWeek + " " + monthOfYear + ", " + dayOfMonth;
+
+var hourReading = hours[dayReading.getHours()];
+var minuteOfHour = dayReading.getMinutes();
+var ampmReading = "AM";
+var ampm = dayOrNight();
+
+function dayOrNight() {
+  if (hoursNumber < 12) { 
+    ampmReading = "AM";
+  } else if (hoursNumber >= 12) {
+    ampmReading = "PM";
+  }
+}
+
+document.getElementById('timeReading').innerHTML = hourReading + ":" + minuteOfHour + " " + ampmReading;
+console.log(ampmReading);
+
 //image slides
 var slideIndex = 0;
 carousel();
@@ -46,3 +77,4 @@ function citySearchAutoComp() {
   var citySearchInput = document.getElementById('cityInput');
   var autoCompleteVar = new google.maps.places.Autocomplete(citySearchInput);
 }
+

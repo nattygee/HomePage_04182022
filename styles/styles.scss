@@ -454,6 +454,13 @@ input[type="text"] {
 
 //weather page 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 
 
+#dateReading {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--main-orange);
+}
+
 .weatherInputs {
     display: flex;
     flex-basis: 1;
