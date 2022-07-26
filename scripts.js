@@ -62,6 +62,23 @@ function updateClock () {
 
 updateClock();
 
+// searching for users location after they hit the little location button
+
+if ('geolocation' in navigator) {
+  // run function to get position, translate coords into city, place in input innerHTML
+  navigator.geolocation.getCurrentPosition( function getLocation(usersLocation) {
+      const lat = usersLocation.coords.latitude;
+      document.getElementById('cityInput').value = lat;
+      console.log(lat);
+  });
+
+  } else {
+  // show message asking to allow location (if location is desired)
+
+};
+
+console.log(navigator.geolocation.getCurrentPosition(console.log, console.log));
+
 //image slides
 var slideIndex = 0;
 carousel();
