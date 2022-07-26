@@ -32,28 +32,35 @@ const hours = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "1
 
 var dayReading = new Date();
 
-var hoursNumber = dayReading.getHours();
 var dayOfWeek = days[dayReading.getDay()];
 var monthOfYear = months[dayReading.getMonth()];
 var dayOfMonth = dayReading.getDate();
 
 document.getElementById("dateReading").innerHTML = dayOfWeek + " " + monthOfYear + ", " + dayOfMonth;
 
-var hourReading = hours[dayReading.getHours()];
-var minuteOfHour = dayReading.getMinutes();
-var ampmReading = "AM";
-var ampm = dayOrNight();
+function updateClock () {
+  var hoursNumber = dayReading.getHours();
+  var hourReading = hours[dayReading.getHours()];
+  var minuteOfHour = dayReading.getMinutes();
+  var ampmReading = "AM";
+  var ampm = dayOrNight();
 
-function dayOrNight() {
-  if (hoursNumber < 12) { 
-    ampmReading = "AM";
-  } else if (hoursNumber >= 12) {
-    ampmReading = "PM";
-  }
+    function dayOrNight() {
+      if (hoursNumber < 12) { 
+        ampmReading = "AM";
+      } else if (hoursNumber >= 12) {
+        ampmReading = "PM";
+      }
+    }
+  dayOrNight();
+  
+  document.getElementById('timeReading').innerHTML = hourReading + ":" + minuteOfHour + " " + ampmReading;
+
+  setTimeout(updateClock, 1000);
+  console.log("clock worked");
 }
 
-document.getElementById('timeReading').innerHTML = hourReading + ":" + minuteOfHour + " " + ampmReading;
-console.log(ampmReading);
+updateClock();
 
 //image slides
 var slideIndex = 0;
