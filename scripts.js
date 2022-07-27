@@ -54,6 +54,15 @@ function updateClock () {
     }
   dayOrNight();
   
+    function addMinute0() {
+      if (minuteOfHour < 10) {
+        minuteOfHour = '0' + minuteOfHour;
+      } else if (minuteOfHour >= 10) {
+        minuteOfHour = minuteOfHour;
+      };
+    }
+    addMinute0();
+
   document.getElementById('timeReading').innerHTML = hourReading + ":" + minuteOfHour + " " + ampmReading;
 
   setTimeout(updateClock, 1000);
@@ -63,6 +72,7 @@ function updateClock () {
 updateClock();
 
 // searching for users location after they hit the little location button
+
 
 if ('geolocation' in navigator) {
   // run function to get position, translate coords into city, place in input innerHTML
