@@ -37,6 +37,13 @@ li {
   list-style-type: none;
 }
 
+h1 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 900;
+  font-size: 5rem;
+  line-height: 5rem;
+}
+
 h2 {
   font-family: 'Work Sans', sans-serif;
   font-weight: 900;
