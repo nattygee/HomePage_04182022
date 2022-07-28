@@ -72,20 +72,32 @@ function updateClock () {
 updateClock();
 
 // searching for users location after they hit the little location button
+document.getElementById('locationBtn').addEventListener('click', testForLocation);
 
+function testForLocation() {
+  console.log('hey')
+  if ('geolocation' in navigator) {
+    // run function to get position, translate coords into city, place in input innerHTML
+    navigator.geolocation.getCurrentPosition( function getLocation(usersLocation) {
+        const lat = usersLocation.coords.latitude;
+        const long = usersLocation.coords.longitude;
 
-if ('geolocation' in navigator) {
-  // run function to get position, translate coords into city, place in input innerHTML
-  navigator.geolocation.getCurrentPosition( function getLocation(usersLocation) {
-      const lat = usersLocation.coords.latitude;
-      document.getElementById('cityInput').value = lat;
-      console.log(lat);
-  });
+        const revGeoCode = `https://api.bigdatacloud.net/data/reverse-geocode?latitude=${lat}&longitude=${long}&localityLanguage=en&key=bdc_5e1833e9cd144f95898a52842573289d`
 
-  } else {
-  // show message asking to allow location (if location is desired)
-
-};
+        fetch(revGeoCode)
+          .then(res => res.json())
+          .then(data => {
+            document.getElementById('cityInput').value = data.city;
+          })
+        
+        console.log(lat + ' ' + long);
+    });
+  
+    } else {
+    // show message asking to allow location (if location is desired)
+  
+  };
+}
 
 console.log(navigator.geolocation.getCurrentPosition(console.log, console.log));
 
