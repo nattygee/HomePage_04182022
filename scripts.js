@@ -71,6 +71,28 @@ function updateClock () {
 
 updateClock();
 
+// adding times to relevant outfit sections
+
+function outfitTimes() {
+  var hourReading = hours[dayReading.getHours()];
+  var hoursNumber = dayReading.getHours();
+
+  var ampmReading = "AM";
+
+    function dayOrNight() {
+      if (hoursNumber < 12) { 
+        ampmReading = "AM";
+      } else if (hoursNumber >= 12) {
+        ampmReading = "PM";
+      }
+    }
+  dayOrNight();
+
+  document.getElementById('currentTimeEstimate').innerHTML = Number(hourReading) + 1 + ':00 ' + ampmReading;
+  document.getElementById('plus6HourEst').innerHTML = Number(hourReading) + 6 + ':00 ' + ampmReading;
+  document.getElementById('plus12HourEst').innerHTML = Number(hourReading) + 12 + ':00 ' + ampmReading;
+}
+
 // searching for users location after they hit the little location button
 document.getElementById('locationBtn').addEventListener('click', getWeatherData);
 
@@ -146,6 +168,7 @@ function findTemps() {
 function getWeatherData() {
   testForLocation();
   findTemps();
+  outfitTimes();
 };
 
 /* let getWeatherData = () => {
