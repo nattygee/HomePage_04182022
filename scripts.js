@@ -36,7 +36,7 @@ var dayOfWeek = days[dayReading.getDay()];
 var monthOfYear = months[dayReading.getMonth()];
 var dayOfMonth = dayReading.getDate();
 
-document.getElementById("dateReading").innerHTML = dayOfWeek + " " + monthOfYear + ", " + dayOfMonth;
+document.getElementById("dateReading").innerHTML = dayOfWeek + ", " + monthOfYear + " " + dayOfMonth;
 
 function updateClock () {
   var hoursNumber = dayReading.getHours();
@@ -72,7 +72,7 @@ function updateClock () {
 updateClock();
 
 // searching for users location after they hit the little location button
-document.getElementById('locationBtn').addEventListener('click', testForLocation);
+document.getElementById('locationBtn').addEventListener('click', getWeatherData);
 
 function testForLocation() {
   console.log('hey')
@@ -99,6 +99,60 @@ function testForLocation() {
   };
 }
 
+function findTemps() {
+  if('geolocation' in navigator) {
+    console.log("we tempeen");
+    navigator.geolocation.getCurrentPosition( function getLocation(location) {
+      const latti = location.coords.latitude;
+      const longo = location.coords.longitude;
+
+      
+      /* const weatherData = `https://api.openweathermap.org/data/2.5/weather?lat=${latti}lon=${longo}&appid=c3c439bb6b1cdf0cddfbc45865181dc6&units=metric`; */
+      
+      // current weather call
+      const currentWeatherData = `https://api.openweathermap.org/data/2.5/weather?lat=${latti}&lon=${longo}&appid=c3c439bb6b1cdf0cddfbc45865181dc6&units=metric`;
+      
+      fetch(currentWeatherData)
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById('morningTempNum').innerHTML = Math.round(data['main']['temp']) + '°';
+          document.getElementById('currentWeatherDesc').innerHTML = data['weather'][0]['description'];
+        })
+    
+
+      // multiday call url
+      const futureWeatherData = `https://api.openweathermap.org/data/2.5/forecast?lat=${latti}&lon=${longo}&cnt=5&appid=c3c439bb6b1cdf0cddfbc45865181dc6&units=metric`;
+      
+      fetch(futureWeatherData)
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById('dayTempNum').innerHTML = Math.round(data['list'][1]['main']['temp']) + '°';
+          document.getElementById('nightTempNum').innerHTML = Math.round(data['list'][3]['main']['temp']) + '°';
+          document.getElementById('plus3HourDesc').innerHTML = data['list'][1]['weather'][0]['description'];
+          document.getElementById('plus6HourDesc').innerHTML = data['list'][3]['weather'][0]['description'];
+        });
+    console.log("data");
+    var secTest = new Date().getTime() / 1000;
+    console.log(secTest);
+  });
+  } else {
+
+  };
+  
+}
+
+function getWeatherData() {
+  testForLocation();
+  findTemps();
+};
+
+/* let getWeatherData = () => {
+  testForLocation();
+  findTemps();
+}; */
+
 console.log(navigator.geolocation.getCurrentPosition(console.log, console.log));
 
 //image slides
@@ -123,4 +177,5 @@ function citySearchAutoComp() {
   var citySearchInput = document.getElementById('cityInput');
   var autoCompleteVar = new google.maps.places.Autocomplete(citySearchInput);
 }
+
 

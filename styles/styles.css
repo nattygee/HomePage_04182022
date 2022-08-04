@@ -541,6 +541,12 @@ input[type="text"]:focus {
   text-transform: uppercase;
 }
 
+#tempReading {
+  background-color: #65836d;
+  color: var(--main-orange);
+  height: 24px;
+}
+
 #dateReading {
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
