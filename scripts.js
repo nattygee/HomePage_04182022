@@ -74,23 +74,53 @@ updateClock();
 // adding times to relevant outfit sections
 
 function outfitTimes() {
+  
   var hourReading = hours[dayReading.getHours()];
   var hoursNumber = dayReading.getHours();
+  
+  // calculating 6 hours ahead
+  var hoursPlus6ampm = Number(hoursNumber) + 6;
+  var hoursPlus6 = Number(hourReading) + 6;
+  var time6HoursAhead = hours[hoursPlus6];
+  
+  // calculating 12 hours ahead
+  var hoursPlus12ampm = Number(hoursNumber) + 12;
+  var hoursPlus12 = Number(hourReading) + 12;
+  var time12HoursAhead = hours[hoursPlus12];
 
-  var ampmReading = "AM";
+  console.log(time6HoursAhead);
+  var ampmCurrent;
+  var ampmPlus6;
+  var ampmPlus12;
 
     function dayOrNight() {
-      if (hoursNumber < 12) { 
-        ampmReading = "AM";
-      } else if (hoursNumber >= 12) {
-        ampmReading = "PM";
+      if (hoursNumber + 1 < 12) { 
+        ampmCurrent = "AM";
+      } else if (hoursNumber + 1 >= 12) {
+        ampmCurrent = "PM";
+      }
+    }
+    function dayOrNight6() {
+      if (hoursPlus6ampm < 12 || hoursPlus6ampm > 24) { 
+        ampmPlus6 = "AM";
+      } else if (hoursPlus6ampm >= 12 || hoursPlus6ampm <= 24) {
+        ampmPlus6 = "PM";
+      }
+    }
+    function dayOrNight12() {
+      if (hoursPlus12ampm < 12 || hoursPlus12ampm > 24) { 
+        ampmPlus12 = "AM";
+      } else if (hoursPlus12ampm >= 12 || hoursPlus12ampm <= 24) {
+        ampmPlus12 = "PM";
       }
     }
   dayOrNight();
+  dayOrNight6();
+  dayOrNight12();
 
-  document.getElementById('currentTimeEstimate').innerHTML = Number(hourReading) + 1 + ':00 ' + ampmReading;
-  document.getElementById('plus6HourEst').innerHTML = Number(hourReading) + 6 + ':00 ' + ampmReading;
-  document.getElementById('plus12HourEst').innerHTML = Number(hourReading) + 12 + ':00 ' + ampmReading;
+  document.getElementById('currentTimeEstimate').innerHTML = Number(hourReading) + 1 + ':00 ' + ampmCurrent;
+  document.getElementById('plus6HourEst').innerHTML = time6HoursAhead + ':00 ' + ampmPlus6;
+  document.getElementById('plus12HourEst').innerHTML = time12HoursAhead + ':00 ' + ampmPlus12;
 }
 
 // searching for users location after they hit the little location button
