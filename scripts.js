@@ -151,6 +151,13 @@ function testForLocation() {
   };
 }
 
+// adding event listener to autoComplete results
+/* google.maps.event.addEventListener(Autocomplete, 'place_changed', function() {
+  window.alert("you selected an item from suggestion list");
+}); */
+
+
+
 function findTemps() {
   if('geolocation' in navigator) {
     console.log("we tempeen");
@@ -227,8 +234,50 @@ function carousel() {
 // creating small function for city search autocomplete :)
 
 function citySearchAutoComp() {
+
+  // get times dawg
+  outfitTimes();
+  
+  // pull place details from selected autocomplete suggestion
   var citySearchInput = document.getElementById('cityInput');
   var autoCompleteVar = new google.maps.places.Autocomplete(citySearchInput);
+
+  // add event listener to the autocomplete results
+  /* autoCompleteVar.addListener('place_changed', searchTemps()); */
+
+    autoCompleteVar.addListener('place_changed', function searchTemps() {
+
+    // assign resulting object of selected autocomplete result to a variable
+    var acPlace = autoCompleteVar.getPlace();
+
+    // pull lat and long from said object
+    var searchLat = acPlace.geometry.location.lat();
+    var searchLong = acPlace.geometry.location.lng();
+    // make api call with the lat and long from selected autocomplete result
+    const currentWeatherData = `https://api.openweathermap.org/data/2.5/weather?lat=${searchLat}&lon=${searchLong}&appid=c3c439bb6b1cdf0cddfbc45865181dc6&units=metric`;
+      
+    fetch(currentWeatherData)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        document.getElementById('morningTempNum').innerHTML = Math.round(data['main']['temp']) + '°';
+        document.getElementById('currentWeatherDesc').innerHTML = data['weather'][0]['description'];
+      })
+  
+
+    // multiday call url
+    const futureWeatherData = `https://api.openweathermap.org/data/2.5/forecast?lat=${searchLat}&lon=${searchLong}&cnt=5&appid=c3c439bb6b1cdf0cddfbc45865181dc6&units=metric`;
+    
+    fetch(futureWeatherData)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        document.getElementById('dayTempNum').innerHTML = Math.round(data['list'][1]['main']['temp']) + '°';
+        document.getElementById('nightTempNum').innerHTML = Math.round(data['list'][3]['main']['temp']) + '°';
+        document.getElementById('plus3HourDesc').innerHTML = data['list'][1]['weather'][0]['description'];
+        document.getElementById('plus6HourDesc').innerHTML = data['list'][3]['weather'][0]['description'];
+      })
+  });
 }
 
 
