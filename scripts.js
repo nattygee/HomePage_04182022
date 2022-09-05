@@ -12,8 +12,7 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
   //image arrays
   var rainSpringFall = [];
-    rainSpringFall.push('images/nightSummer1.png');
-    rainSpringFall.push('images/morningSummer1.png');
+    rainSpringFall.push('images/outfit_RT_summer1_1.png', 'images/outfit_RT_summer1_2.png', 'images/outfit_RT_summer1_3.png');
 
     function randomArrayValue(arr) {
       //get random number below array length
@@ -36,6 +35,7 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
     rainDeath.push('images/outfit_RT_death.png')
 
   var drizzleSpringFall = [];
+    drizzleSpringFall.push('images/outfit_drz_summer1_1.png', 'images/outfit_drz_summer1_2.png', 'images/outfit_drz_summer1_3.png');
   var drizzleSummer1 = [];
     drizzleSummer1.push('images/outfit_drz_summer1_1.png', 'images/outfit_drz_summer1_2.png', 'images/outfit_drz_summer1_3.png');
   var drizzleSummer2 = [];
@@ -44,6 +44,7 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
     drizzleDeath.push('images/outfit_drz_death.png');
 
   var clearSpringFall = [];
+    clearSpringFall.push('images/morningSummer1.png', 'images/outfit_clear_summer1_1.png', 'images/outfit_clear_summer1_2.png', 'images/outfit_clear_summer1_3.png');
   var clearSummer1 = [];
     clearSummer1.push('images/morningSummer1.png', 'images/outfit_clear_summer1_1.png', 'images/outfit_clear_summer1_2.png', 'images/outfit_clear_summer1_3.png');
   var clearSummer2 = [];
@@ -52,6 +53,7 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
     clearDeath.push('outfit_clear_death.png');
 
   var overcastSpringFall = [];
+    overcastSpringFall.push('images/nightSummer1.png', 'images/outfit_OC_summer1_1.png', 'images/outfit_OC_summer1_2.png', 'images/outfit_OC_summer1_3.png');
 
   var overcastSummer1 = [];
     overcastSummer1.push('images/nightSummer1.png', 'images/outfit_OC_summer1_1.png', 'images/outfit_OC_summer1_2.png', 'images/outfit_OC_summer1_3.png');
