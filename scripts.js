@@ -44,7 +44,7 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
     drizzleDeath.push('images/outfit_drz_death.png');
 
   var clearSpringFall = [];
-    clearSpringFall.push('images/morningSummer1.png', 'images/outfit_clear_summer1_1.png', 'images/outfit_clear_summer1_2.png', 'images/outfit_clear_summer1_3.png');
+    clearSpringFall.push('images/nightSummer1.png', 'images/outfit_OC_summer1_1.png', 'images/outfit_OC_summer1_2.png', 'images/outfit_OC_summer1_3.png');
   var clearSummer1 = [];
     clearSummer1.push('images/morningSummer1.png', 'images/outfit_clear_summer1_1.png', 'images/outfit_clear_summer1_2.png', 'images/outfit_clear_summer1_3.png');
   var clearSummer2 = [];
