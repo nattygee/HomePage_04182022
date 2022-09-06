@@ -352,6 +352,7 @@ function findTemps() {
           loadOutfitsCurrent();
           });
     
+// making note for no reason          
 
       // multiday call url
       const futureWeatherData = `https://api.openweathermap.org/data/2.5/forecast?lat=${latti}&lon=${longo}&cnt=5&appid=c3c439bb6b1cdf0cddfbc45865181dc6&units=metric`;
