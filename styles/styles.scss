@@ -546,10 +546,6 @@ input[type="text"] {
         }
     }
 
-    .timePeriod {
-       // margin-top: 1rem;    
-    }
-
     .temperature {
         margin-top: .5rem;
     }
@@ -569,6 +565,14 @@ input[type="text"] {
         background-color: var(--ctaBlue);
         margin: .5rem;
     }
+    
+    .shuffleBtnDisabled {
+        display: flex;
+        border-radius: 4rem;
+        background-color: rgba($color: #1d2e21, $alpha: 0.25);
+        margin: .5rem;
+    }
+
     .saveBtn {
         display: flex;
         border-radius: 3rem;

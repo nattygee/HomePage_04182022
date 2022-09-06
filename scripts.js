@@ -62,21 +62,7 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
   var overcastDeath = [];
     overcastDeath.push('images/outfit_OC_death.png');
 
-  /* //function to place image from array INTO image containers somehow...
-  function loadOutfits() {
-    // slot 1
-    
-    if () {
-      outfitImgNow.src = randomArrayValue(rainSpringFall);
-    } else if () {
-
-    }
-    outfitImg6.src = randomArrayValue(rainSpringFall);
-    outfitImg12.src = randomArrayValue(rainSpringFall);
-  } */
-
-
-
+// seemingly random placement of the mobile menu js
 
 mobileMenuBtn.addEventListener('click', openMobileMenu);
 
@@ -225,10 +211,30 @@ function testForLocation() {
   };
 }
 
-// adding event listener to autoComplete results
-/* google.maps.event.addEventListener(Autocomplete, 'place_changed', function() {
-  window.alert("you selected an item from suggestion list");
-}); */
+// rigging the shuffle button up
+
+  // add id + event listener to shuffle button  
+var shuffleBtn = document.getElementById('shuffBtn');
+shuffleBtn.addEventListener('click', shuffleImgs);
+
+  // set empty variables to identify the weather condition
+var imgArrayCurrent;
+var imgArray6;
+var imgArray12;
+
+  // run random number selection for relevant img array
+function shuffleImgs() {
+  outfitImgNow.src = randomArrayValue(imgArrayCurrent);
+  outfitImg6.src = randomArrayValue(imgArray6);
+  outfitImg12.src = randomArrayValue(imgArray12);
+};
+
+  // enable shuffle button once you hit the button or search
+
+function enableShuffleBtn() {
+  shuffleBtn.classList.remove('shuffleBtnDisabled');
+  shuffleBtn.classList.add('shuffleBtn');
+};
 
 
 
@@ -262,61 +268,85 @@ function findTemps() {
               //spring/Fall 10º - 16º
               if (tempCurrent >= 10 && tempCurrent < 17 && conditionCurrent === 800) {
                 outfitImgNow.src = randomArrayValue(clearSpringFall);
+                imgArrayCurrent = clearSpringFall;
               } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent >= 300 && conditionCurrent <= 321)) {
                 outfitImgNow.src = randomArrayValue(drizzleSpringFall);
+                imgArrayCurrent = drizzleSpringFall;
               } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent >= 200 && conditionCurrent <= 232)) {
-              outfitImgNow.src = randomArrayValue(rainSpringFall);
+                outfitImgNow.src = randomArrayValue(rainSpringFall);
+                imgArrayCurrent = rainSpringFall;
               } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent >= 500 && conditionCurrent <= 531)) {
                 outfitImgNow.src = randomArrayValue(rainSpringFall);
+                imgArrayCurrent = rainSpringFall;
               } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent === 701 || conditionCurrent === 741)) {
                 outfitImgNow.src = randomArrayValue(drizzleSpringFall);
+                imgArrayCurrent = drizzleSpringFall;
               } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent >= 801 && conditionCurrent <= 804)) {
                 outfitImgNow.src = randomArrayValue(overcastSpringFall);
+                imgArrayCurrent = overcastSpringFall;
               }
               
               //summer1 17º - 27º
               else if (tempCurrent >= 17 && tempCurrent < 28 && conditionCurrent === 800) {
-              outfitImgNow.src = randomArrayValue(clearSummer1);
+                outfitImgNow.src = randomArrayValue(clearSummer1);
+                imgArrayCurrent = clearSummer1;
               } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent >= 300 && conditionCurrent <= 321)) {
                 outfitImgNow.src = randomArrayValue(drizzleSummer1);
+                imgArrayCurrent = drizzleSummer1;
               } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent >= 200 && conditionCurrent <= 232)) {
                 outfitImgNow.src = randomArrayValue(rainSummer1);
+                imgArrayCurrent = rainSummer1;
               } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent >= 500 && conditionCurrent <= 531)) {
                 outfitImgNow.src = randomArrayValue(rainSummer1);
+                imgArrayCurrent = rainSummer1;
               } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent === 701 || conditionCurrent === 741)) {
                 outfitImgNow.src = randomArrayValue(drizzleSummer1);
+                imgArrayCurrent = drizzleSummer1;
               } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent >= 801 && conditionCurrent <= 804)) {
                 outfitImgNow.src = randomArrayValue(overcastSummer1);
+                imgArrayCurrent = overcastSummer1;
               }
 
               //summer2 28º - 34º
               else if (tempCurrent >= 28 && tempCurrent < 35 && conditionCurrent === 800) {
-              outfitImgNow.src = randomArrayValue(clearSummer2);
+                outfitImgNow.src = randomArrayValue(clearSummer2);
+                imgArrayCurrent = clearSummer2;
               } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent >= 300 && conditionCurrent <= 321)) {
                 outfitImgNow.src = randomArrayValue(drizzleSummer2);
+                imgArrayCurrent = drizzleSummer2;
               } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent >= 200 && conditionCurrent <= 232)) {
                 outfitImgNow.src = randomArrayValue(rainSummer2);
+                imgArrayCurrent = rainSummer2;
               } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent >= 500 && conditionCurrent <= 531)) {
                 outfitImgNow.src = randomArrayValue(rainSummer2);
+                imgArrayCurrent = rainSummer2;
               } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent === 701 || conditionCurrent === 741)) {
                 outfitImgNow.src = randomArrayValue(drizzleSummer2);
+                imgArrayCurrent = drizzleSummer2;
               } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent >= 801 && conditionCurrent <= 804)) {
                 outfitImgNow.src = randomArrayValue(overcastSummer2);
+                imgArrayCurrent = overcastSummer2;
               }
 
               //death 35º+
               else if (tempCurrent >= 35 && conditionCurrent === 800) {
-              outfitImgNow.src = randomArrayValue(clearDeath);
+                outfitImgNow.src = randomArrayValue(clearDeath);
+                imgArrayCurrent = clearDeath;
               } else if (tempCurrent >= 35 && (conditionCurrent >= 300 && conditionCurrent <= 321)) {
                 outfitImgNow.src = randomArrayValue(drizzleDeath);
+                imgArrayCurrent = drizzleDeath;
               } else if (tempCurrent >= 35 && (conditionCurrent >= 200 && conditionCurrent <= 232)) {
                 outfitImgNow.src = randomArrayValue(rainDeath);
+                imgArrayCurrent = rainDeath;
               } else if (tempCurrent >= 35 && (conditionCurrent >= 500 && conditionCurrent <= 531)) {
                 outfitImgNow.src = randomArrayValue(rainDeath);
+                imgArrayCurrent = rainDeath;
               } else if (tempCurrent >= 35 && (conditionCurrent === 701 || conditionCurrent === 741)) {
                 outfitImgNow.src = randomArrayValue(drizzleDeath);
+                imgArrayCurrent = drizzleDeath;
               } else if (tempCurrent >= 35 && (conditionCurrent >= 801 && conditionCurrent <= 804)) {
                 outfitImgNow.src = randomArrayValue(overcastDeath);
+                imgArrayCurrent = overcastDeath;
               }
             }
           loadOutfitsCurrent();
@@ -347,61 +377,85 @@ function findTemps() {
               //spring/Fall 10º - 16º
               if (temp6hr >= 10 && temp6hr < 17 && conditionID6 === 800) {
                 outfitImg6.src = randomArrayValue(clearSpringFall);
+                imgArray6 = clearSpringFall;
               } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 >= 300 && conditionID6 <= 321)) {
                 outfitImg6.src = randomArrayValue(drizzleSpringFall);
+                imgArray6 = drizzleSpringFall;
               } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 >= 200 && conditionID6 <= 232)) {
-              outfitImg6.src = randomArrayValue(rainSpringFall);
+                outfitImg6.src = randomArrayValue(rainSpringFall);
+                imgArray6 = rainSpringFall;
               } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 >= 500 && conditionID6 <= 531)) {
                 outfitImg6.src = randomArrayValue(rainSpringFall);
+                imgArray6 = rainSpringFall;
               } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 === 701 || conditionID6 === 741)) {
                 outfitImg6.src = randomArrayValue(drizzleSpringFall);
+                imgArray6 = drizzleSpringFall;
               } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 >= 801 && conditionID6 <= 804)) {
                 outfitImg6.src = randomArrayValue(overcastSpringFall);
+                imgArray6 = overcastSpringFall;
               } 
               
               //summer1 17º - 27º
               else if (temp6hr >= 17 && temp6hr < 28 && conditionID6 === 800) {
-              outfitImg6.src = randomArrayValue(clearSummer1);
+                outfitImg6.src = randomArrayValue(clearSummer1);
+                imgArray6 = clearSummer1;
               } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 >= 300 && conditionID6 <= 321)) {
                 outfitImg6.src = randomArrayValue(drizzleSummer1);
+                imgArray6 = drizzleSummer1;
               } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 >= 200 && conditionID6 <= 232)) {
                 outfitImg6.src = randomArrayValue(rainSummer1);
+                imgArray6 = rainSummer1;
               } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 >= 500 && conditionID6 <= 531)) {
                 outfitImg6.src = randomArrayValue(rainSummer1);
+                imgArray6 = rainSummer1;
               } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 === 701 || conditionID6 === 741)) {
                 outfitImg6.src = randomArrayValue(drizzleSummer1);
+                imgArray6 = drizzleSummer1;
               } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 >= 801 && conditionID6 <= 804)) {
                 outfitImg6.src = randomArrayValue(overcastSummer1);
+                imgArray6 = overcastSummer1;
               }
 
               //summer2 28º - 34º
               else if (temp6hr >= 28 && temp6hr < 35 && conditionID6 === 800) {
-              outfitImg6.src = randomArrayValue(clearSummer2);
+                outfitImg6.src = randomArrayValue(clearSummer2);
+                imgArray6 = clearSummer2;
               } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 >= 300 && conditionID6 <= 321)) {
                 outfitImg6.src = randomArrayValue(drizzleSummer2);
+                imgArray6 = drizzleSummer2;
               } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 >= 200 && conditionID6 <= 232)) {
                 outfitImg6.src = randomArrayValue(rainSummer2);
+                imgArray6 = rainSummer2;
               } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 >= 500 && conditionID6 <= 531)) {
                 outfitImg6.src = randomArrayValue(rainSummer2);
+                imgArray6 = rainSummer2;
               } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 === 701 || conditionID6 === 741)) {
                 outfitImg6.src = randomArrayValue(drizzleSummer2);
+                imgArray6 = drizzleSummer2;
               } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 >= 801 && conditionID6 <= 804)) {
                 outfitImg6.src = randomArrayValue(overcastSummer2);
+                imgArray6 = overcastSummer2;
               }
 
               //death 35º+
               else if (temp6hr >= 35 && conditionID6 === 800) {
-              outfitImg6.src = randomArrayValue(clearDeath);
+                outfitImg6.src = randomArrayValue(clearDeath);
+                imgArray6 = clearDeath;
               } else if (temp6hr >= 35 && (conditionID6 >= 300 && conditionID6 <= 321)) {
                 outfitImg6.src = randomArrayValue(drizzleDeath);
+                imgArray6 = drizzleDeath;
               } else if (temp6hr >= 35 && (conditionID6 >= 200 && conditionID6 <= 232)) {
                 outfitImg6.src = randomArrayValue(rainDeath);
+                imgArray6 = rainDeath;
               } else if (temp6hr >= 35 && (conditionID6 >= 500 && conditionID6 <= 531)) {
                 outfitImg6.src = randomArrayValue(rainDeath);
+                imgArray6 = rainDeath;
               } else if (temp6hr >= 35 && (conditionID6 === 701 || conditionID6 === 741)) {
                 outfitImg6.src = randomArrayValue(drizzleDeath);
+                imgArray6 = drizzleDeath;
               } else if (temp6hr >= 35 && (conditionID6 >= 801 && conditionID6 <= 804)) {
                 outfitImg6.src = randomArrayValue(overcastDeath);
+                imgArray6 = overcastDeath;
               }
           }
           loadOutfits6();
@@ -410,61 +464,85 @@ function findTemps() {
             //spring/Fall 10º - 16º
             if (temp12hr >= 10 && temp12hr < 17 && conditionID12 === 800) {
               outfitImg12.src = randomArrayValue(clearSpringFall);
+              imgArray12 = clearSpringFall;
             } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 >= 300 && conditionID12 <= 321)) {
               outfitImg12.src = randomArrayValue(drizzleSpringFall);
+              imgArray12 = drizzleSpringFall;
             } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 >= 200 && conditionID12 <= 232)) {
-            outfitImg12.src = randomArrayValue(rainSpringFall);
+              outfitImg12.src = randomArrayValue(rainSpringFall);
+              imgArray12 = rainSpringFall;
             } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 >= 500 && conditionID12 <= 531)) {
               outfitImg12.src = randomArrayValue(rainSpringFall);
+              imgArray12 = rainSpringFall;
             } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 === 701 || conditionID12 === 741)) {
               outfitImg12.src = randomArrayValue(drizzleSpringFall);
+              imgArray12 = drizzleSpringFall;
             } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 >= 801 && conditionID12 <= 804)) {
               outfitImg12.src = randomArrayValue(overcastSpringFall);
+              imgArray12 = overcastSpringFall;
             } 
             
             //summer1 17º - 27º
             else if (temp12hr >= 17 && temp12hr < 28 && conditionID12 === 800) {
-            outfitImg12.src = randomArrayValue(clearSummer1);
+              outfitImg12.src = randomArrayValue(clearSummer1);
+              imgArray12 = clearSummer1;
             } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 >= 300 && conditionID12 <= 321)) {
               outfitImg12.src = randomArrayValue(drizzleSummer1);
+              imgArray12 = drizzleSummer1;
             } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 >= 200 && conditionID12 <= 232)) {
               outfitImg12.src = randomArrayValue(rainSummer1);
+              imgArray12 = rainSummer1;
             } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 >= 500 && conditionID12 <= 531)) {
               outfitImg12.src = randomArrayValue(rainSummer1);
+              imgArray12 = rainSummer1;
             } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 === 701 || conditionID12 === 741)) {
               outfitImg12.src = randomArrayValue(drizzleSummer1);
+              imgArray12 = drizzleSummer1;
             } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 >= 801 && conditionID12 <= 804)) {
               outfitImg12.src = randomArrayValue(overcastSummer1);
+              imgArray12 = overcastSummer1;
             }
 
             //summer2 28º - 34º
             else if (temp12hr >= 28 && temp12hr < 35 && conditionID12 === 800) {
-            outfitImg12.src = randomArrayValue(clearSummer2);
+              outfitImg12.src = randomArrayValue(clearSummer2);
+              imgArray12 = clearSummer2;
             } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 >= 300 && conditionID12 <= 321)) {
               outfitImg12.src = randomArrayValue(drizzleSummer2);
+              imgArray12 = drizzleSummer2;
             } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 >= 200 && conditionID12 <= 232)) {
               outfitImg12.src = randomArrayValue(rainSummer2);
+              imgArray12 = rainSummer2;
             } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 >= 500 && conditionID12 <= 531)) {
               outfitImg12.src = randomArrayValue(rainSummer2);
+              imgArray12 = rainSummer2;
             } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 === 701 || conditionID12 === 741)) {
               outfitImg12.src = randomArrayValue(drizzleSummer2);
+              imgArray12 = drizzleSummer2;
             } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 >= 801 && conditionID12 <= 804)) {
               outfitImg12.src = randomArrayValue(overcastSummer2);
+              imgArray12 = overcastSummer2;
             }
 
             //death 35º+
             else if (temp12hr >= 35 && conditionID12 === 800) {
-            outfitImg12.src = randomArrayValue(clearDeath);
+              outfitImg12.src = randomArrayValue(clearDeath);
+              imgArray12 = clearDeath;
             } else if (temp12hr >= 35 && (conditionID12 >= 300 && conditionID12 <= 321)) {
               outfitImg12.src = randomArrayValue(drizzleDeath);
+              imgArray12 = drizzleDeath;
             } else if (temp12hr >= 35 && (conditionID12 >= 200 && conditionID12 <= 232)) {
               outfitImg12.src = randomArrayValue(rainDeath);
+              imgArray12 = rainDeath;
             } else if (temp12hr >= 35 && (conditionID12 >= 500 && conditionID12 <= 531)) {
               outfitImg12.src = randomArrayValue(rainDeath);
+              imgArray12 = rainDeath;
             } else if (temp12hr >= 35 && (conditionID12 === 701 || conditionID12 === 741)) {
               outfitImg12.src = randomArrayValue(drizzleDeath);
+              imgArray12 = drizzleDeath;
             } else if (temp12hr >= 35 && (conditionID12 >= 801 && conditionID12 <= 804)) {
               outfitImg12.src = randomArrayValue(overcastDeath);
+              imgArray12 = overcastDeath;
             }
         }
         loadOutfits12();
@@ -474,10 +552,11 @@ function findTemps() {
           //function to place image from array INTO image containers somehow...
         
   });
+  
   } else {
 
   };
-  
+  enableShuffleBtn();
 }
 
 function getWeatherData() {
@@ -551,61 +630,85 @@ function citySearchAutoComp() {
           //spring/Fall 10º - 16º
           if (tempCurrent >= 10 && tempCurrent < 17 && conditionCurrent === 800) {
             outfitImgNow.src = randomArrayValue(clearSpringFall);
+            imgArrayCurrent = clearSpringFall;
           } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent >= 300 && conditionCurrent <= 321)) {
             outfitImgNow.src = randomArrayValue(drizzleSpringFall);
+            imgArrayCurrent = drizzleSpringFall;
           } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent >= 200 && conditionCurrent <= 232)) {
-          outfitImgNow.src = randomArrayValue(rainSpringFall);
+            outfitImgNow.src = randomArrayValue(rainSpringFall);
+            imgArrayCurrent = rainSpringFall;
           } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent >= 500 && conditionCurrent <= 531)) {
             outfitImgNow.src = randomArrayValue(rainSpringFall);
+            imgArrayCurrent = rainSpringFall;
           } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent === 701 || conditionCurrent === 741)) {
             outfitImgNow.src = randomArrayValue(drizzleSpringFall);
+            imgArrayCurrent = drizzleSpringFall;
           } else if ((tempCurrent >= 10 && tempCurrent < 17) && (conditionCurrent >= 801 && conditionCurrent <= 804)) {
             outfitImgNow.src = randomArrayValue(overcastSpringFall);
+            imgArrayCurrent = overcastSpringFall;
           }
           
           //summer1 17º - 27º
           else if (tempCurrent >= 17 && tempCurrent < 28 && conditionCurrent === 800) {
-          outfitImgNow.src = randomArrayValue(clearSummer1);
+            outfitImgNow.src = randomArrayValue(clearSummer1);
+            imgArrayCurrent = clearSummer1;
           } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent >= 300 && conditionCurrent <= 321)) {
             outfitImgNow.src = randomArrayValue(drizzleSummer1);
+            imgArrayCurrent = drizzleSummer1;
           } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent >= 200 && conditionCurrent <= 232)) {
             outfitImgNow.src = randomArrayValue(rainSummer1);
+            imgArrayCurrent = rainSummer1;
           } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent >= 500 && conditionCurrent <= 531)) {
             outfitImgNow.src = randomArrayValue(rainSummer1);
+            imgArrayCurrent = rainSummer1;
           } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent === 701 || conditionCurrent === 741)) {
             outfitImgNow.src = randomArrayValue(drizzleSummer1);
+            imgArrayCurrent = drizzleSummer1;
           } else if ((tempCurrent >= 17 && tempCurrent < 28) && (conditionCurrent >= 801 && conditionCurrent <= 804)) {
             outfitImgNow.src = randomArrayValue(overcastSummer1);
+            imgArrayCurrent = overcastSummer1;
           }
 
           //summer2 28º - 34º
           else if (tempCurrent >= 28 && tempCurrent < 35 && conditionCurrent === 800) {
-          outfitImgNow.src = randomArrayValue(clearSummer2);
+            outfitImgNow.src = randomArrayValue(clearSummer2);
+            imgArrayCurrent = clearSummer2;
           } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent >= 300 && conditionCurrent <= 321)) {
             outfitImgNow.src = randomArrayValue(drizzleSummer2);
+            imgArrayCurrent = drizzleSummer2;
           } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent >= 200 && conditionCurrent <= 232)) {
             outfitImgNow.src = randomArrayValue(rainSummer2);
+            imgArrayCurrent = rainSummer2;
           } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent >= 500 && conditionCurrent <= 531)) {
             outfitImgNow.src = randomArrayValue(rainSummer2);
+            imgArrayCurrent = rainSummer2;
           } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent === 701 || conditionCurrent === 741)) {
             outfitImgNow.src = randomArrayValue(drizzleSummer2);
+            imgArrayCurrent = drizzleSummer2;
           } else if ((tempCurrent >= 28 && tempCurrent < 35) && (conditionCurrent >= 801 && conditionCurrent <= 804)) {
             outfitImgNow.src = randomArrayValue(overcastSummer2);
+            imgArrayCurrent = overcastSummer2;
           }
 
           //death 35º+
           else if (tempCurrent >= 35 && conditionCurrent === 800) {
-          outfitImgNow.src = randomArrayValue(clearDeath);
+            outfitImgNow.src = randomArrayValue(clearDeath);
+            imgArrayCurrent = clearDeath;
           } else if (tempCurrent >= 35 && (conditionCurrent >= 300 && conditionCurrent <= 321)) {
             outfitImgNow.src = randomArrayValue(drizzleDeath);
+            imgArrayCurrent = drizzleDeath;
           } else if (tempCurrent >= 35 && (conditionCurrent >= 200 && conditionCurrent <= 232)) {
             outfitImgNow.src = randomArrayValue(rainDeath);
+            imgArrayCurrent = rainDeath;
           } else if (tempCurrent >= 35 && (conditionCurrent >= 500 && conditionCurrent <= 531)) {
             outfitImgNow.src = randomArrayValue(rainDeath);
+            imgArrayCurrent = rainDeath;
           } else if (tempCurrent >= 35 && (conditionCurrent === 701 || conditionCurrent === 741)) {
             outfitImgNow.src = randomArrayValue(drizzleDeath);
+            imgArrayCurrent = drizzleDeath;
           } else if (tempCurrent >= 35 && (conditionCurrent >= 801 && conditionCurrent <= 804)) {
             outfitImgNow.src = randomArrayValue(overcastDeath);
+            imgArrayCurrent = overcastDeath;
           }
         }
         loadOutfitsCurrent();
@@ -641,61 +744,85 @@ function citySearchAutoComp() {
           //spring/Fall 10º - 16º
           if (temp6hr >= 10 && temp6hr < 17 && conditionID6 === 800) {
             outfitImg6.src = randomArrayValue(clearSpringFall);
+            imgArray6 = clearSpringFall;
           } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 >= 300 && conditionID6 <= 321)) {
             outfitImg6.src = randomArrayValue(drizzleSpringFall);
+            imgArray6 = drizzleSpringFall;
           } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 >= 200 && conditionID6 <= 232)) {
-          outfitImg6.src = randomArrayValue(rainSpringFall);
+            outfitImg6.src = randomArrayValue(rainSpringFall);
+            imgArray6 = rainSpringFall;
           } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 >= 500 && conditionID6 <= 531)) {
             outfitImg6.src = randomArrayValue(rainSpringFall);
+            imgArray6 = rainSpringFall;
           } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 === 701 || conditionID6 === 741)) {
             outfitImg6.src = randomArrayValue(drizzleSpringFall);
+            imgArray6 = drizzleSpringFall;
           } else if ((temp6hr >= 10 && temp6hr < 17) && (conditionID6 >= 801 && conditionID6 <= 804)) {
             outfitImg6.src = randomArrayValue(overcastSpringFall);
+            imgArray6 = overcastSpringFall;
           } 
           
           //summer1 17º - 27º
           else if (temp6hr >= 17 && temp6hr < 28 && conditionID6 === 800) {
-          outfitImg6.src = randomArrayValue(clearSummer1);
+            outfitImg6.src = randomArrayValue(clearSummer1);
+            imgArray6 = clearSummer1;
           } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 >= 300 && conditionID6 <= 321)) {
             outfitImg6.src = randomArrayValue(drizzleSummer1);
+            imgArray6 = drizzleSummer1;
           } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 >= 200 && conditionID6 <= 232)) {
             outfitImg6.src = randomArrayValue(rainSummer1);
+            imgArray6 = rainSummer1;
           } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 >= 500 && conditionID6 <= 531)) {
             outfitImg6.src = randomArrayValue(rainSummer1);
+            imgArray6 = rainSummer1;
           } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 === 701 || conditionID6 === 741)) {
             outfitImg6.src = randomArrayValue(drizzleSummer1);
+            imgArray6 = drizzleSummer1;
           } else if ((temp6hr >= 17 && temp6hr < 28) && (conditionID6 >= 801 && conditionID6 <= 804)) {
             outfitImg6.src = randomArrayValue(overcastSummer1);
+            imgArray6 = overcastSummer1;
           }
 
           //summer2 28º - 34º
           else if (temp6hr >= 28 && temp6hr < 35 && conditionID6 === 800) {
-          outfitImg6.src = randomArrayValue(clearSummer2);
+            outfitImg6.src = randomArrayValue(clearSummer2);
+            imgArray6 = clearSummer2;
           } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 >= 300 && conditionID6 <= 321)) {
             outfitImg6.src = randomArrayValue(drizzleSummer2);
+            imgArray6 = drizzleSummer2;
           } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 >= 200 && conditionID6 <= 232)) {
             outfitImg6.src = randomArrayValue(rainSummer2);
+            imgArray6 = drizzleSummer2;
           } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 >= 500 && conditionID6 <= 531)) {
             outfitImg6.src = randomArrayValue(rainSummer2);
+            imgArray6 = rainSummer2;
           } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 === 701 || conditionID6 === 741)) {
             outfitImg6.src = randomArrayValue(drizzleSummer2);
+            imgArray6 = drizzleSummer2;
           } else if ((temp6hr >= 28 && temp6hr < 35) && (conditionID6 >= 801 && conditionID6 <= 804)) {
             outfitImg6.src = randomArrayValue(overcastSummer2);
+            imgArray6 = overcastSummer2;
           }
 
           //death 35º+
           else if (temp6hr >= 35 && conditionID6 === 800) {
-          outfitImg6.src = randomArrayValue(clearDeath);
+            outfitImg6.src = randomArrayValue(clearDeath);
+            imgArray6 = clearDeath;
           } else if (temp6hr >= 35 && (conditionID6 >= 300 && conditionID6 <= 321)) {
             outfitImg6.src = randomArrayValue(drizzleDeath);
+            imgArray6 = drizzleDeath;
           } else if (temp6hr >= 35 && (conditionID6 >= 200 && conditionID6 <= 232)) {
             outfitImg6.src = randomArrayValue(rainDeath);
+            imgArray6 = rainDeath;
           } else if (temp6hr >= 35 && (conditionID6 >= 500 && conditionID6 <= 531)) {
             outfitImg6.src = randomArrayValue(rainDeath);
+            imgArray6 = rainDeath;
           } else if (temp6hr >= 35 && (conditionID6 === 701 || conditionID6 === 741)) {
             outfitImg6.src = randomArrayValue(drizzleDeath);
+            imgArray6 = drizzleDeath;
           } else if (temp6hr >= 35 && (conditionID6 >= 801 && conditionID6 <= 804)) {
             outfitImg6.src = randomArrayValue(overcastDeath);
+            imgArray6 = overcastDeath;
           }
       }
       loadOutfits6();
@@ -704,68 +831,93 @@ function citySearchAutoComp() {
         //spring/Fall 10º - 16º
         if (temp12hr >= 10 && temp12hr < 17 && conditionID12 === 800) {
           outfitImg12.src = randomArrayValue(clearSpringFall);
+          imgArray12 = clearSpringFall;
         } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 >= 300 && conditionID12 <= 321)) {
           outfitImg12.src = randomArrayValue(drizzleSpringFall);
+          imgArray12 = drizzleSpringFall;
         } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 >= 200 && conditionID12 <= 232)) {
-        outfitImg12.src = randomArrayValue(rainSpringFall);
+          outfitImg12.src = randomArrayValue(rainSpringFall);
+          imgArray12 = rainSpringFall;
         } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 >= 500 && conditionID12 <= 531)) {
           outfitImg12.src = randomArrayValue(rainSpringFall);
+          imgArray12 = rainSpringFall;
         } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 === 701 || conditionID12 === 741)) {
           outfitImg12.src = randomArrayValue(drizzleSpringFall);
+          imgArray12 = drizzleSpringFall;
         } else if ((temp12hr >= 10 && temp12hr < 17) && (conditionID12 >= 801 && conditionID12 <= 804)) {
           outfitImg12.src = randomArrayValue(overcastSpringFall);
+          imgArray12 = overcastSpringFall;
         } 
         
         //summer1 17º - 27º
         else if (temp12hr >= 17 && temp12hr < 28 && conditionID12 === 800) {
-        outfitImg12.src = randomArrayValue(clearSummer1);
+          outfitImg12.src = randomArrayValue(clearSummer1);
+          imgArray12 = clearSummer1;
         } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 >= 300 && conditionID12 <= 321)) {
           outfitImg12.src = randomArrayValue(drizzleSummer1);
+          imgArray12 = drizzleSummer1;
         } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 >= 200 && conditionID12 <= 232)) {
           outfitImg12.src = randomArrayValue(rainSummer1);
+          imgArray12 = rainSummer1;
         } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 >= 500 && conditionID12 <= 531)) {
           outfitImg12.src = randomArrayValue(rainSummer1);
+          imgArray12 = rainSummer1;
         } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 === 701 || conditionID12 === 741)) {
           outfitImg12.src = randomArrayValue(drizzleSummer1);
+          imgArray12 = drizzleSummer1;
         } else if ((temp12hr >= 17 && temp12hr < 28) && (conditionID12 >= 801 && conditionID12 <= 804)) {
           outfitImg12.src = randomArrayValue(overcastSummer1);
+          imgArray12 = overcastSummer1;
         }
 
         //summer2 28º - 34º
         else if (temp12hr >= 28 && temp12hr < 35 && conditionID12 === 800) {
-        outfitImg12.src = randomArrayValue(clearSummer2);
+          outfitImg12.src = randomArrayValue(clearSummer2);
+          imgArray12 = clearSummer2;
         } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 >= 300 && conditionID12 <= 321)) {
           outfitImg12.src = randomArrayValue(drizzleSummer2);
+          imgArray12 = drizzleSummer2;
         } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 >= 200 && conditionID12 <= 232)) {
           outfitImg12.src = randomArrayValue(rainSummer2);
+          imgArray12 = rainSummer2;
         } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 >= 500 && conditionID12 <= 531)) {
           outfitImg12.src = randomArrayValue(rainSummer2);
+          imgArray12 = rainSummer2;
         } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 === 701 || conditionID12 === 741)) {
           outfitImg12.src = randomArrayValue(drizzleSummer2);
+          imgArray12 = drizzleSummer2;
         } else if ((temp12hr >= 28 && temp12hr < 35) && (conditionID12 >= 801 && conditionID12 <= 804)) {
           outfitImg12.src = randomArrayValue(overcastSummer2);
+          imgArray12 = overcastSummer2;
         }
 
         //death 35º+
         else if (temp12hr >= 35 && conditionID12 === 800) {
-        outfitImg12.src = randomArrayValue(clearDeath);
+          outfitImg12.src = randomArrayValue(clearDeath);
+          imgArray12 = clearDeath;
         } else if (temp12hr >= 35 && (conditionID12 >= 300 && conditionID12 <= 321)) {
           outfitImg12.src = randomArrayValue(drizzleDeath);
+          imgArray12 = drizzleDeath;
         } else if (temp12hr >= 35 && (conditionID12 >= 200 && conditionID12 <= 232)) {
           outfitImg12.src = randomArrayValue(rainDeath);
+          imgArray12 = rainDeath;
         } else if (temp12hr >= 35 && (conditionID12 >= 500 && conditionID12 <= 531)) {
           outfitImg12.src = randomArrayValue(rainDeath);
+          imgArray12 = rainDeath;
         } else if (temp12hr >= 35 && (conditionID12 === 701 || conditionID12 === 741)) {
           outfitImg12.src = randomArrayValue(drizzleDeath);
+          imgArray12 = drizzleDeath;
         } else if (temp12hr >= 35 && (conditionID12 >= 801 && conditionID12 <= 804)) {
           outfitImg12.src = randomArrayValue(overcastDeath);
+          imgArray12 = overcastDeath;
         }
       }
       loadOutfits12();
     })
+    enableShuffleBtn();
   });
 
- 
+    
 }
 
 
