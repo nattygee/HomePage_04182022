@@ -694,6 +694,15 @@ input[type="text"]:focus {
   margin: .5rem;
 }
 
+.shuffleBtnDisabled {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 4rem;
+  background-color: rgba(29, 46, 33, 0.25);
+  margin: .5rem;
+}
+
 .saveBtn {
   display: -webkit-box;
   display: -ms-flexbox;
