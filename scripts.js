@@ -715,7 +715,7 @@ function citySearchAutoComp() {
         loadOutfitsCurrent();
       });
 
-      loadOutfits();
+      /* loadOutfits(); */
   
 
     // multiday call url
