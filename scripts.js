@@ -921,4 +921,23 @@ function citySearchAutoComp() {
     
 }
 
+// product hunt startoooOOOOO PH PH PH PH PH PH PH!!!!!!!!!!!🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
+// product hunt startoooOOOOO PH PH PH PH PH PH PH!!!!!!!!!!!🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
+// product hunt startoooOOOOO PH PH PH PH PH PH PH!!!!!!!!!!!🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
+// product hunt startoooOOOOO PH PH PH PH PH PH PH!!!!!!!!!!!🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
+
+const phFetch = 'https://api.producthunt.com/v1/posts/all?sort_by=votes_count&order=desc&search[featured]=true&per_page=20';
+var phTestText = document.getElementById('phTestText');
+
+function displayPHTest() {
+  console.log('hey');
+  fetch(phFetch)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+  })
+}
+
+displayPHTest();
+
 
