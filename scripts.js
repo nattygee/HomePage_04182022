@@ -3,6 +3,8 @@ var mobileMenu = document.getElementById('mobileMenuContainer');
 var targetMMDisplay = mobileMenu.style.display;
 var mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
+console.log('startPage');
+
 // images for outfits
 
   //image containers
