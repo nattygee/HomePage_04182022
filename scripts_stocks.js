@@ -5,6 +5,8 @@
 
 
 const searchField = document.getElementById('stockSearchBar');
+const searchBtn = document.getElementById('submitSearchBtn');
+searchBtn.addEventListener('click', stockSearch);
 
 var phTestText = document.getElementById('phTestText');
 
@@ -13,7 +15,7 @@ const phFetch = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&sy
 
 
 
-searchField.addEventListener('keyup', stockSearch);
+/* autocomplete 👉 searchField.addEventListener('keyup', stockSearch); */
 
 function stockSearch() {
   
@@ -25,8 +27,11 @@ function stockSearch() {
   fetch(tickerSearch)
   .then(res => res.json())
   .then(searchData => {
+    let matchesLength = searchData['bestMatches'].length;
     console.log(searchData);
-    phTestText.innerHTML = searchData['bestMatches'][0]['2. name'];
+    for (let i = 0; i < matchesLength; i++) {
+      phTestText.innerHTML += searchData['bestMatches'][i]['1. symbol'] + ", " + searchData['bestMatches'][i]['2. name'] + ", " + searchData['bestMatches'][i]['4. region'] + ", " + searchData['bestMatches'][i]['8. currency'] + "<br>"; /* 👈 figure out how to make this dynamic*/
+    };
   })
   
 /*   phTestText = searchData */
