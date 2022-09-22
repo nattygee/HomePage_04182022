@@ -39,23 +39,34 @@
         <!-- 🛑🛑🛑 CLOSE HEADER BAR ☝️ 🛑🛑🛑 -->
         
         <div class="wholePage">
-            <template id="searchResult">
-                <div id="compTicker"></div>
-                <div class="searchResultCont">
-                    <span id="compName"></span>
-                    <span id="compRegion"></span>
-                    <span id="compCurrency"></span>
+            <div class="stocksPageClass">
+                <template id="searchResult" class="searchResultStyle">
+                    
+                    <div class="searchResultCont">
+                        <div class="resultLeftText">
+                            <div id="compTicker" class="tickerStyle"></div>
+                            <span id="compName" class="compNameStyle"></span>
+                            <div class="priceRightCol">
+                                <span id="compPrice" class="compPriceStyle"></span>
+                            </div>
+                        </div>
+                        <div class="regionAndCurrency">
+                            <span id="compCurrency" class="compCurrencyStyle"></span>
+                            <span id="compRegion" class="compRegionStyle"></span>
+                        </div>
+                    </div>
+                </template>
+                <div class="heroSectionCentered">
+                    <h1 class="subPageLedeCentered">Search for Stocks</h1>
                 </div>
-            </template>
-            <div class="heroSection">
-                <h1 class="subPageLede">Search for Stocks</h1>
-            </div>
-            <div class="searchAndResults">
-                <p id="phTestText">hello</p>
-                <input type="text" id="stockSearchBar">
-                <button id="submitSearchBtn" class="ctaBtnMain">Search for Stocks</button>
-                <div id="testResults"></div>
-            </div>
+                <div class="searchAndResults">
+                    <div class="searchInputs">
+                        <input type="text" id="stockSearchBar" placeholder="Try AAPL, Apple, SHOP etc.">
+                        <button id="submitSearchBtn" class="ctaBtnMain">Search for Stocks</button>
+                    </div>
+                    <div id="testResults"></div>
+                </div>
+            </div> <!-- stocksPageClass close -->
         </div>
     </div>
 </body>
