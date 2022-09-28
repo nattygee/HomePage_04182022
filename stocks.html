@@ -42,7 +42,7 @@
             <div class="stocksPageClass">
                 <template id="searchResult" class="searchResultStyle">
                     
-                    <div class="searchResultCont">
+                    <div id="resultContainer0" class="searchResultCont" onclick="clickResults(this.firstElementChild.firstElementChild.innerHTML)">
                         <div class="resultLeftText">
                             <div id="compTicker" class="tickerStyle"></div>
                             <span id="compName" class="compNameStyle"></span>
@@ -56,6 +56,11 @@
                         </div>
                     </div>
                 </template>
+
+                <template id="clickedResultTemplate" class="clickedResultStyle">
+                    <div id="clickedTickerDiv"></div>
+                </template>
+
                 <div class="heroSectionCentered">
                     <h1 class="subPageLedeCentered">Search for Stocks</h1>
                 </div>

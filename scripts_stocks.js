@@ -1,13 +1,9 @@
-// product hunt startoooOOOOO PH PH PH PH PH PH PH!!!!!!!!!!!🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
-// product hunt startoooOOOOO PH PH PH PH PH PH PH!!!!!!!!!!!🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
-// product hunt startoooOOOOO PH PH PH PH PH PH PH!!!!!!!!!!!🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
-// product hunt startoooOOOOO PH PH PH PH PH PH PH!!!!!!!!!!!🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
-
-
 const searchField = document.getElementById('stockSearchBar');
 const searchBtn = document.getElementById('submitSearchBtn');
 const resultTemplate = document.getElementById('searchResult');
 const resultsDiv = document.getElementById('testResults');
+var resultContainerActual = document.getElementById('resultContainer0');
+const clickedTemplate = document.getElementById('clickedResultTemplate');
 
 //date for stock price
 const date = new Date();
@@ -40,6 +36,14 @@ searchField.addEventListener('keypress', function(event) {
     searchBtn.click();
   }
 });
+
+// do action on click for search results
+function clickResults(ticker) {
+  removeAllChildNodes(resultsDiv);
+  resultsDiv.appendChild(clickedTemplate.content);
+  let tickerValue = document.getElementById('clickedTickerDiv');
+  tickerValue.innerHTML = ticker;
+};
 
 /* autocomplete 👉 searchField.addEventListener('keyup', stockSearch); */
 
