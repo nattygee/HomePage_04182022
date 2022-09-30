@@ -773,7 +773,7 @@ button {
     /* border-bottom: 1px solid var(--darker-green); */
     background-color: #2a4330;
     cursor: pointer;
-    border-radius: 1rem;
+    border-radius: .5rem;
 }
 
 .searchAndResults {
@@ -869,12 +869,39 @@ button {
 .searchInputs {
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .stocksPageClass {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.backArrowDisabled {
+    padding: 0rem .5rem 0rem .5rem;
+    margin-right: 1rem;
+    display: flex;
+    opacity: .2;
+    border-radius: .5rem;
+}
+.backArrowEnabled {
+    padding: 0rem .5rem 0rem .5rem;
+    margin-right: 1rem;
+    display: flex;
+    opacity: .9;
+    border-radius: .5rem;
+        &:hover {
+            opacity: 1;
+            transition: 120ms;
+            cursor: pointer;
+            background-color: #2a4330;
+        }
+}
+
+.backArrowImg {
+    align-items: center;
+    width: 2rem;
 }
 
 
