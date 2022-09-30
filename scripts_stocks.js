@@ -4,6 +4,7 @@ const resultTemplate = document.getElementById('searchResult');
 const resultsDiv = document.getElementById('testResults');
 var resultContainerActual = document.getElementById('resultContainer0');
 const clickedTemplate = document.getElementById('clickedResultTemplate');
+const backArrow = document.getElementById('backArrowID');
 
 //date for stock price
 const date = new Date();
@@ -45,6 +46,16 @@ function clickResults(ticker) {
   tickerValue.innerHTML = ticker;
 };
 
+// add evemt listener to back button
+backArrow.addEventListener('click', clearStockData);
+
+// click to reset stock page and input
+function clearStockData() {
+  searchField.value = '';
+  removeAllChildNodes(resultsDiv);
+  backArrow.className = 'backArrowDisabled';
+}
+
 /* autocomplete 👉 searchField.addEventListener('keyup', stockSearch); */
 
 function stockSearch() {
@@ -52,6 +63,7 @@ function stockSearch() {
   searchValue = searchField.value;
   let tickerSearch = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchValue}&apikey=90Y463NPNKFRMA0H`;
   removeAllChildNodes(resultsDiv);
+  backArrow.className = 'backArrowEnabled';
 
   fetch(tickerSearch)
   .then(res => res.json())
