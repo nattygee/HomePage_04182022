@@ -58,7 +58,18 @@
                 </template>
 
                 <template id="clickedResultTemplate" class="clickedResultStyle">
-                    <div id="clickedTickerDiv"></div>
+                    <!-- add clicked ticker template here -->
+                    <div id="clickedResults">
+                        <div class="tickerSpecifics">
+                            <div id="clickedTicker"></div>
+                            <div id="clickedTickerPriceTitle">Last Close Price</div>
+                            <div id="clickedTickerPrice"></div>
+                            <div id="clickedTickerCurrency" class="tickerSubSpecs">USD</div>
+                            <div id="clickedTickerName" class="tickerSubSpecs"></div>
+                            <div id="clickedTickerCountry" class="tickerSubSpecs">United States</div>
+                        </div>
+                        <div class="tickerCharts"></div>
+                    </div>
                 </template>
 
                 <div class="heroSectionCentered">
@@ -74,6 +85,7 @@
                     </div>
                     <div id="testResults"></div>
                 </div>
+                
             </div> <!-- stocksPageClass close -->
         </div>
     </div>

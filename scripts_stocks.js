@@ -11,6 +11,7 @@ const date = new Date();
 var stockYear = date.getFullYear();
 var stockMonth = date.getMonth() + 1;
 var stockDay = date.getDate() - 1;
+
 //zero for month and days below 10
 function addZero(x) {
    if (x < 10) {
@@ -41,9 +42,42 @@ searchField.addEventListener('keypress', function(event) {
 // do action on click for search results
 function clickResults(ticker) {
   removeAllChildNodes(resultsDiv);
-  resultsDiv.appendChild(clickedTemplate.content);
-  let tickerValue = document.getElementById('clickedTickerDiv');
-  tickerValue.innerHTML = ticker;
+  resultsDiv.appendChild(clickedTemplate.content.cloneNode(true));
+  let clickedTicker = document.getElementById('clickedTicker');
+  clickedTicker.innerHTML = ticker;
+
+  //re-retrieving ticker data for clicked result
+    let tickerSearch = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${ticker}&apikey=90Y463NPNKFRMA0H`;
+
+    fetch(tickerSearch)
+    .then(res => res.json())
+    .then(searchData => {
+          // ticker
+          console.log(searchData);
+          //company name
+          let clickedTickerName = document.getElementById('clickedTickerName');
+          let clickedTickerCurrency = document.getElementById('clickedTickerCurrency');
+          let clickedTickerCountry = document.getElementById('clickedTickerCountry');
+          
+          clickedTickerName.innerHTML = searchData['bestMatches'][0]['2. name'];
+          clickedTickerCurrency.innerHTML = searchData['bestMatches'][0]['8. currency']
+          clickedTickerCountry.innerHTML = searchData['bestMatches'][0]['4. region'];
+    })
+
+    //re-retrieve ticker price
+      let priceSearch = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=90Y463NPNKFRMA0H`;
+
+      fetch(priceSearch)
+      .then(res => res.json())
+      .then(tickerData => {
+          let stockMonth0 = addZero(stockMonth);
+          let stockDay0 = addZero(stockDay);
+          let tickerDate = stockYear + "-" + stockMonth0 + "-" + stockDay0;
+          let lastCloseDate = String(tickerDate);
+          let firstPrice = tickerData['Time Series (Daily)'][lastCloseDate]['4. close'];
+          let clickedTickerPrice = document.getElementById('clickedTickerPrice');
+          clickedTickerPrice.innerHTML = '$' + firstPrice;
+      })
 };
 
 // add evemt listener to back button

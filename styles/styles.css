@@ -1121,6 +1121,47 @@ button {
   width: 2rem;
 }
 
+#clickedResults {
+  margin: 3rem;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#clickedTicker {
+  font-size: 4rem;
+  color: white;
+  font-family: 'work sans', sans-serif;
+  font-weight: 800;
+}
+
+#clickedTickerPriceTitle {
+  font-size: 1rem;
+  color: var(--main-orange);
+  font-family: 'work sans', sans-serif;
+  font-weight: 400;
+}
+
+#clickedTickerPrice {
+  font-size: 2rem;
+  color: var(--main-orange);
+  font-family: 'work sans', sans-serif;
+  font-weight: 600;
+}
+
+.tickerSubSpecs {
+  font-size: 1rem;
+  color: white;
+  font-family: 'work sans', sans-serif;
+  font-weight: 400;
+  margin: .5rem 0 0 0;
+}
+
 @media only screen and (max-width: 600px) {
   p {
     margin: 0;
