@@ -6,6 +6,30 @@ var resultContainerActual = document.getElementById('resultContainer0');
 const clickedTemplate = document.getElementById('clickedResultTemplate');
 const backArrow = document.getElementById('backArrowID');
 
+//charts js
+let chartArea = document.getElementById('chartTest').getContext('2d');
+
+let testChart = new Chart(chartArea, {
+  type: 'line',
+  data:{
+    labels:['today', 'yesterday', 'previous day'/* day/ week/ time labels (ex. Mon OCT 17, or 5:00PM) depending on chart timeline */],
+    datasets:[{
+      label: 'Price per Share',
+      data:['130', '140', '120'
+        /* share values - these should match the quantity of labels in the array above */
+      ]
+    }]
+  },
+  options:{
+    scales: {
+      y: {
+        beginAtZero: false,
+        grace: '5%'
+      }
+    }
+  }
+});
+
 //date for stock price
 const date = new Date();
 var stockYear = date.getFullYear();

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Work+Sans:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/images/fd_favicon.svg" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>FD: Search for Stocks</title>
 </head>
 <body>
@@ -83,7 +84,10 @@
                         <input type="text" id="stockSearchBar" placeholder="Try AAPL, Apple, SHOP etc.">
                         <button id="submitSearchBtn" class="ctaBtnMain">Search for Stocks</button>
                     </div>
-                    <div id="testResults"></div>
+                    <div id="testResults">
+                        <!-- charts -->
+                        <canvas id="chartTest"></canvas>
+                    </div>
                 </div>
                 
             </div> <!-- stocksPageClass close -->
