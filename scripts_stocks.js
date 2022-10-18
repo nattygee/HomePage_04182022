@@ -7,17 +7,15 @@ const clickedTemplate = document.getElementById('clickedResultTemplate');
 const backArrow = document.getElementById('backArrowID');
 
 //charts js
-let chartArea = document.getElementById('chartTest').getContext('2d');
+let chartArea = document.getElementById('chartTest')  ;
 
 let testChart = new Chart(chartArea, {
   type: 'line',
   data:{
-    labels:['today', 'yesterday', 'previous day'/* day/ week/ time labels (ex. Mon OCT 17, or 5:00PM) depending on chart timeline */],
+    labels:['today', 'yesterday', 'previous day'],
     datasets:[{
       label: 'Price per Share',
-      data:['130', '140', '120'
-        /* share values - these should match the quantity of labels in the array above */
-      ]
+      data:['130', '140', '120']
     }]
   },
   options:{
@@ -35,6 +33,8 @@ const date = new Date();
 var stockYear = date.getFullYear();
 var stockMonth = date.getMonth() + 1;
 var stockDay = date.getDate() - 1;
+
+// how do we get daily values for last 7 days?
 
 //zero for month and days below 10
 function addZero(x) {
@@ -94,6 +94,7 @@ function clickResults(ticker) {
       fetch(priceSearch)
       .then(res => res.json())
       .then(tickerData => {
+          console.log(tickerData);
           let stockMonth0 = addZero(stockMonth);
           let stockDay0 = addZero(stockDay);
           let tickerDate = stockYear + "-" + stockMonth0 + "-" + stockDay0;
@@ -101,6 +102,36 @@ function clickResults(ticker) {
           let firstPrice = tickerData['Time Series (Daily)'][lastCloseDate]['4. close'];
           let clickedTickerPrice = document.getElementById('clickedTickerPrice');
           clickedTickerPrice.innerHTML = '$' + firstPrice;
+          // make new values and push to array  
+            // a week ago
+            let stockDay1 = stockDay - 7;
+            let stockDay1Actual = addZero(stockDay1);
+            let stockDate = stockYear + "-" + stockMonth0 + "-" + stockDay1Actual;
+            testChart.data.labels.push(stockDate);
+              //close price a week ago
+              let priceDay1 = tickerData['Time Series (Daily)'][stockDate]['4. close'];
+              testChart.data.datasets[0].data.push(priceDay1);
+            //6 days ago
+            let stockDay2 = stockDay - 6;
+            let stockDay2Actual = addZero(stockDay2);
+            stockDate = stockYear + "-" + stockMonth0 + "-" + stockDay2Actual;
+            testChart.data.labels.push(stockDate);
+              //close price a week ago
+              let priceDay2 = tickerData['Time Series (Daily)'][stockDate]['4. close'];
+              testChart.data.datasets[0].data.push(priceDay2);
+            //5 days ago
+            let stockDay3 = stockDay - 5;
+            let stockDay3Actual = addZero(stockDay3);
+            stockDate = stockYear + "-" + stockMonth0 + "-" + stockDay3Actual;
+            testChart.data.labels.push(stockDate);
+              //close price a week ago
+              let priceDay3 = tickerData['Time Series (Daily)'][stockDate]['4. close'];
+              testChart.data.datasets[0].data.push(priceDay3);
+            
+            console.log(testChart.data.labels);
+
+            testChart.update();
+            
       })
 };
 
