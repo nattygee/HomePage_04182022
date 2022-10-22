@@ -6,33 +6,31 @@ var resultContainerActual = document.getElementById('resultContainer0');
 const clickedTemplate = document.getElementById('clickedResultTemplate');
 const backArrow = document.getElementById('backArrowID');
 
-//charts js
-/* let chartArea = document.getElementById('chartTest')  ;
+// seemingly random placement of the mobile menu js
+var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+var mobileMenu = document.getElementById('mobileMenuContainer');
+var targetMMDisplay = mobileMenu.style.display;
+var mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
-let testChart = new Chart(chartArea, {
-  type: 'line',
-  data:{
-    labels:[],
-    datasets:[{
-      label: 'Price per Share',
-      data:[],
-      showLine: true,
-      spanGaps: true,
-      fill: true,
-      borderColor: "#F8714A",
-      borderWidth: 1,
-      pointBackgroundColor: "#F8714A"
-    }]
-  },
-  options:{
-    scales: {
-      y: {
-        beginAtZero: false,
-        grace: '5%'
-      }
+mobileMenuBtn.addEventListener('click', openMobileMenu);
+
+function openMobileMenu() {
+    if (mobileMenu.style.opacity === '0') {
+        //mobileMenu.style.display = 'flex';
+        mobileMenu.style.opacity = '1';
+        mobileMenuIcon.src = 'images/mobileCloseIcon.svg';
+        mobileMenu.style.transition = "200ms";
+        mobileMenu.style.transform = "translateY(8px)";
+
+    } else if (mobileMenu.style.opacity === '1')
+    {
+        //mobileMenu.style.display = 'none';
+        mobileMenu.style.opacity = '0';
+        mobileMenu.style.transition = '80ms';
+        mobileMenu.style.transform = 'translateY(-8px)'
+        mobileMenuIcon.src = 'images/mobileMenuIcon.svg';
     }
-  }
-}); */
+}
 
 //date for stock price
 const date = new Date();
