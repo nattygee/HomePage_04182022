@@ -7,7 +7,7 @@ const clickedTemplate = document.getElementById('clickedResultTemplate');
 const backArrow = document.getElementById('backArrowID');
 
 //charts js
-let chartArea = document.getElementById('chartTest')  ;
+/* let chartArea = document.getElementById('chartTest')  ;
 
 let testChart = new Chart(chartArea, {
   type: 'line',
@@ -17,7 +17,11 @@ let testChart = new Chart(chartArea, {
       label: 'Price per Share',
       data:[],
       showLine: true,
-      spanGaps: true
+      spanGaps: true,
+      fill: true,
+      borderColor: "#F8714A",
+      borderWidth: 1,
+      pointBackgroundColor: "#F8714A"
     }]
   },
   options:{
@@ -28,7 +32,7 @@ let testChart = new Chart(chartArea, {
       }
     }
   }
-});
+}); */
 
 //date for stock price
 const date = new Date();
@@ -93,10 +97,6 @@ function clickResults(ticker) {
     //re-retrieve ticker price
       let priceSearch = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=90Y463NPNKFRMA0H`;
 
-      //clear chart arrays for labels and prices
-      testChart.data.datasets[0].data = [];
-      testChart.data.labels = [];
-
       fetch(priceSearch)
       .then(res => res.json())
       .then(tickerData => {
@@ -109,6 +109,41 @@ function clickResults(ticker) {
           let clickedTickerPrice = document.getElementById('clickedTickerPrice');
           clickedTickerPrice.innerHTML = '$' + firstPrice;
           // make new values and push to array  
+            //charts js
+              let chartArea = document.getElementById('chartTest');
+
+              let testChart = new Chart(chartArea, {
+                type: 'line',
+                data:{
+                  labels:[{
+                    fontColor: '#ffffff'
+                  }],
+                  datasets:[{
+                    label: 'Price per Share',
+                    data:[],
+                    showLine: true,
+                    spanGaps: true,
+                    fill: true,
+                    /* backgroundColor: "#65836d", */
+                    borderColor: "#F8714A",
+                    borderWidth: 1,
+                    pointBackgroundColor: "#F8714A"
+                  }]
+                },
+                options:{
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: false,
+                      grace: '5%',
+                    }
+                  }
+                }
+              });
+              
+              //clear chart arrays for labels and prices
+              testChart.data.datasets[0].data = [];
+              testChart.data.labels = [];
 
             // 8 days ago?
             let stockDay1 = stockDay - 7;
@@ -117,7 +152,7 @@ function clickResults(ticker) {
             let dayOfWeek = date.getDay();
             
             if((dayOfWeek - 8) === 0 || (dayOfWeek - 8) === 6 || (dayOfWeek - 8) === -1) {
-              testChart.data.datasets[0].data.push(' ');
+              testChart.data.datasets[0].data.push('N/A');
               testChart.data.labels.push(stockDate);
             } else {
               let priceDay1 = tickerData['Time Series (Daily)'][stockDate]['4. close'];
@@ -131,7 +166,7 @@ function clickResults(ticker) {
             stockDate = stockYear + "-" + stockMonth0 + "-" + stockDay2Actual;
             
               if((dayOfWeek - 7) === 0 || (dayOfWeek - 7) === 6 || (dayOfWeek - 7) === -1) {
-                testChart.data.datasets[0].data.push('');
+                testChart.data.datasets[0].data.push('N/A');
                 testChart.data.labels.push(stockDate);
               } else {
                 let priceDay2 = tickerData['Time Series (Daily)'][stockDate]['4. close'];
@@ -145,7 +180,7 @@ function clickResults(ticker) {
             stockDate = stockYear + "-" + stockMonth0 + "-" + stockDay3Actual;
             
               if((dayOfWeek - 6) === 0 || (dayOfWeek - 6) === 6 || (dayOfWeek - 6) === -1) {
-                testChart.data.datasets[0].data.push('');
+                testChart.data.datasets[0].data.push('N/A');
                 testChart.data.labels.push(stockDate);
               } else {
                 let priceDay3 = tickerData['Time Series (Daily)'][stockDate]['4. close'];
@@ -159,7 +194,7 @@ function clickResults(ticker) {
             stockDate = stockYear + "-" + stockMonth0 + "-" + stockDay4Actual;
 
               if((dayOfWeek - 5) === 0 || (dayOfWeek - 5) === 6 || (dayOfWeek - 5) === -1) {
-                testChart.data.datasets[0].data.push(' ');
+                testChart.data.datasets[0].data.push('N/A');
                 testChart.data.labels.push(stockDate);
               } else {
                 let priceDay4 = tickerData['Time Series (Daily)'][stockDate]['4. close'];
@@ -173,7 +208,7 @@ function clickResults(ticker) {
             stockDate = stockYear + "-" + stockMonth0 + "-" + stockDay5Actual;
             
               if((dayOfWeek - 4) === 0 || (dayOfWeek - 4) === 6 || (dayOfWeek - 4) === -1) {
-                testChart.data.datasets[0].data.push(' ');
+                testChart.data.datasets[0].data.push('N/A');
                 testChart.data.labels.push(stockDate);
               } else {
                 let priceDay5 = tickerData['Time Series (Daily)'][stockDate]['4. close'];
@@ -187,7 +222,7 @@ function clickResults(ticker) {
             stockDate = stockYear + "-" + stockMonth0 + "-" + stockDay6Actual;
 
               if((dayOfWeek - 3) === 0 || (dayOfWeek - 3) === 6 || (dayOfWeek - 3) === -1) {
-                testChart.data.datasets[0].data.push('');
+                testChart.data.datasets[0].data.push('N/A');
                 testChart.data.labels.push(stockDate);
               } else {
                 let priceDay6 = tickerData['Time Series (Daily)'][stockDate]['4. close'];
@@ -201,7 +236,7 @@ function clickResults(ticker) {
             stockDate = stockYear + "-" + stockMonth0 + "-" + stockDay7Actual;
 
               if((dayOfWeek - 2) === 0 || (dayOfWeek - 2) === 6 || (dayOfWeek - 2) === -1) {
-                testChart.data.datasets[0].data.push('');
+                testChart.data.datasets[0].data.push('N/A');
                 testChart.data.labels.push(stockDate);
               } else {
                 let priceDay7 = tickerData['Time Series (Daily)'][stockDate]['4. close'];

@@ -855,6 +855,8 @@ button {
 
 #testResults {
     align-items: center;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .searchResultStyle {
@@ -904,11 +906,27 @@ button {
     width: 2rem;
 }
 
+.clickedResultStyle {
+    display: flex;
+    flex-direction: row;
+}
+
+.tickerSpecifics {
+    padding: 1rem;
+    flex: 1;
+    max-width: 280px;
+}
+
+.tickerCharts {
+    padding: 1rem;
+    flex: 1;
+}
+
 #clickedResults {
     margin: 3rem;
     padding: 2rem;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
 }
 
 #clickedTicker {
@@ -943,8 +961,9 @@ button {
 //JS Chart
 .chartMedium
 {
-    max-width: 30vw;
-    max-height: 30vh;
+    display: flex;
+    /* max-width: 30vw;
+    max-height: 30vh; */
 }
 
 
