@@ -84,11 +84,15 @@
                 </div>
                 <div class="searchAndResults">
                     <div class="searchInputs">
-                        <div id="backArrowID" class="backArrowDisabled">
-                            <img class="backArrowImg" src="images/backArrow.svg" alt="back button">
+                        <div class="inputPlusClear">
+                            <div id="backArrowID" class="backArrowDisabled">
+                                <img class="backArrowImg" src="images/backArrow.svg" alt="back button">
+                            </div>
+                            <input type="text" id="stockSearchBar" placeholder="Try AAPL, Apple, SHOP etc.">
                         </div>
-                        <input type="text" id="stockSearchBar" placeholder="Try AAPL, Apple, SHOP etc.">
-                        <button id="submitSearchBtn" class="ctaBtnMain">Search for Stocks</button>
+                        <div class="stockBtnDiv">
+                            <button id="submitSearchBtn" class="ctaBtnMainStocks">Search for Stocks</button>
+                        </div>
                     </div>
                     <div id="testResults">
                     </div>

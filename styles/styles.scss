@@ -760,6 +760,42 @@ button {
 
 // stocks page 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 
 
+.ctaBtnMainStocks {
+    cursor:pointer;
+    padding: 1rem;
+    width: auto;
+    background-color: var(--ctaBlue);
+    color: var(--darker-green);
+    border-radius: 2rem;
+    justify-content: center;
+    text-align: center;
+    font-family: 'work sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    a {
+        text-decoration: none;
+        color: var(--darker-green);
+    }
+}
+.ctaBtnMainStocks:hover {
+    cursor:pointer;
+    padding: 1rem;
+    width: auto;
+    background-color: var(--ctaBlue-hover);
+    color: var(--darker-green);
+    border-radius: 2rem;
+    justify-content: center;
+    text-align: center;
+    font-family: 'work sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 200ms;
+    a {
+        text-decoration: none;
+        color: var(--darker-green);
+    }
+}
+
 .searchResultCont {
     padding: .5rem 1rem .75rem 1rem;
     display: flex;
@@ -868,10 +904,20 @@ button {
     align-items: left;
 }
 
+.inputPlusClear {
+    display: flex;
+    flex-direction: row;
+}
+
+/* .stockBtnDiv {
+    padding: 1rem;
+} */
+
 .searchInputs {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
 .stocksPageClass {
@@ -1353,6 +1399,65 @@ p {
         justify-content: center;
         margin-top: 2rem;
     }
+
+    .searchInputs 
+    {
+        
+    }
+
+    #stockSearchBar {
+        width: 100%;
+        height: auto;
+        background-color: #65836d;
+        border-radius: .5rem;
+        background-color: var(--darker-green);
+        border-radius: .5rem;
+        align-items: center;
+        margin: 0rem 1rem 0rem 0rem;
+    }
+    
+    .inputPlusClear {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+    }
+
+    .stockBtnDiv {
+        padding: 1rem;
+        flex-grow: 1;
+    }
+
+    .ctaBtnMainStocks {
+        cursor:pointer;
+        width: 100%;
+        padding: 1rem 0rem 1rem 0rem;
+        background-color: var(--ctaBlue);
+        color: var(--darker-green);
+        border-radius: 2rem;
+        justify-content: center;
+        text-align: center;
+        font-family: 'work sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        a {
+            text-decoration: none;
+            color: var(--darker-green);
+        }
+    }
+
+    #clickedResults {
+        margin: 0 0 1rem 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tickerCharts {
+        margin-top: 1rem;
+        padding: 0;
+        flex: 1;
+    }
+
 
   } // 🛑🛑🛑 mobile media query end ☝️ 🛑🛑🛑  
     
