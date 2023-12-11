@@ -25,12 +25,8 @@ body {
   background-size: cover;
   background-repeat: repeat;
   background-color: #304c37;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 li {
@@ -38,69 +34,57 @@ li {
 }
 
 h1 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 900;
   font-size: 5rem;
   line-height: 5rem;
 }
 
 h2 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 900;
 }
 
 h3 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 4rem;
   font-weight: 600;
 }
 
 h4 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 600;
   font-size: 2rem;
 }
 
 h5 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
 }
 
 h6 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 300;
   font-size: 1rem;
 }
 
-input[type="text"] {
+input[type=text] {
   font-size: 1rem;
   color: var(--main-yellow);
   border: none;
   background-image: none;
   background-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  padding: .5rem 1rem .5rem 1rem;
+  box-shadow: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
 }
-
-input[type="text"]::-webkit-input-placeholder {
+input[type=text]::-moz-placeholder {
   color: #65836d;
 }
-
-input[type="text"]:-ms-input-placeholder {
+input[type=text]::placeholder {
   color: #65836d;
 }
-
-input[type="text"]::-ms-input-placeholder {
-  color: #65836d;
-}
-
-input[type="text"]::placeholder {
-  color: #65836d;
-}
-
-input[type="text"]:focus {
+input[type=text]:focus {
   outline: none;
 }
 
@@ -112,73 +96,41 @@ button {
   width: 100vw;
   height: 100vh;
   max-width: 1960px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .headerBar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 1rem 2rem 1rem 2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
+  align-items: center;
+  justify-content: left;
 }
 
 .logo {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .navItems {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-left: auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .navItemList {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 600;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   color: var(--main-orange);
 }
-
 .navItemList li {
   padding: 0rem 0rem 0rem 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .navItemOther {
@@ -202,29 +154,22 @@ button {
   top: 4rem;
   background-color: var(--darker-green-trans);
   color: var(--main-orange);
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 600;
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   min-width: 200px;
   width: auto;
 }
-
 #mobileMenuContainer li {
-  padding: 0rem 0rem .5rem 0rem;
+  padding: 0rem 0rem 0.5rem 0rem;
 }
 
 .heroSection {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   padding: 2rem;
-  -ms-flex-preferred-size: 2;
-      flex-basis: 2;
+  flex-basis: 2;
 }
 
 .heroContent {
@@ -236,11 +181,8 @@ button {
 .heroImg {
   width: 50vw;
   min-width: 300px;
-  -webkit-box-flex: 50%;
-      -ms-flex: 50%;
-          flex: 50%;
+  flex: 50%;
 }
-
 .heroImg img {
   width: 100%;
   max-width: 740px;
@@ -248,16 +190,16 @@ button {
 
 .whisper {
   text-align: center;
-  padding: 0rem 0rem .5rem 0rem;
+  padding: 0rem 0rem 0.5rem 0rem;
   right: 0;
   color: var(--light-green);
   margin-bottom: 1rem;
-  font-family: 'BioRhyme', serif;
+  font-family: "BioRhyme", serif;
   font-weight: 800;
 }
 
 .pageLede {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   padding: 0rem 0rem 2rem 0rem;
   margin-left: -3rem;
   font-weight: 900;
@@ -267,23 +209,18 @@ button {
 }
 
 .signature {
-  -webkit-box-align: right;
-      -ms-flex-align: right;
-          align-items: right;
+  align-items: right;
   text-align: center;
   width: 70%;
   color: var(--main-yellow);
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 300;
 }
 
 .sectionImage {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: -12vw;
 }
-
 .sectionImage img {
   width: 50vw;
   min-width: 300px;
@@ -297,35 +234,26 @@ button {
 }
 
 .sectionProject {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   border: 1px solid var(--light-green);
   border-bottom: 0.5rem solid var(--light-green);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 1rem;
   margin: 1rem 1rem 2rem 1rem;
 }
 
 .aboutTheProject {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 1rem 0rem 2rem 0rem;
 }
 
 .projectInfo {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
 
 .drawAttention {
-  width: .5rem;
+  width: 0.5rem;
   height: auto;
   background-color: var(--darker-green-trans);
   margin: 0rem 1rem 0rem 0rem;
@@ -339,16 +267,16 @@ button {
 .projectTitle {
   color: white;
   font-size: 2rem;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 600;
   max-width: 500px;
-  padding: 0rem 0rem .5rem 0rem;
+  padding: 0rem 0rem 0.5rem 0rem;
 }
 
 .projectDescription {
   color: var(--main-yellow);
   font-size: 1rem;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-weight: 300;
   width: auto;
   max-width: 600px;
@@ -357,13 +285,8 @@ button {
 
 .ctas {
   margin-top: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .ctaBtnMain {
@@ -374,15 +297,12 @@ button {
   background-color: var(--ctaBlue);
   color: var(--darker-green);
   border-radius: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
 }
-
 .ctaBtnMain a {
   text-decoration: none;
   color: var(--darker-green);
@@ -396,17 +316,13 @@ button {
   background-color: var(--ctaBlue-hover);
   color: var(--darker-green);
   border-radius: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  -webkit-transition: 200ms;
   transition: 200ms;
 }
-
 .ctaBtnMain:hover a {
   text-decoration: none;
   color: var(--darker-green);
@@ -419,15 +335,12 @@ button {
   color: var(--ctaBlue);
   border: 2px solid var(--ctaBlue);
   border-radius: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
 }
-
 .ctaBtnSec a {
   text-decoration: none;
   color: var(--ctaBlue);
@@ -441,15 +354,12 @@ button {
   color: var(--light-green);
   border: 2px solid var(--ctaBlue-hover);
   border-radius: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
 }
-
 .ctaBtnSec:hover a {
   text-decoration: none;
   color: var(--ctaBlue-hover);
@@ -462,17 +372,15 @@ button {
   background-color: var(--light-green);
   color: var(--darker-green);
   border-radius: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
 }
 
 .highlight {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: auto;
   padding: 2rem;
   max-width: 240px;
@@ -483,7 +391,7 @@ button {
 }
 
 .highlightDescription {
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   color: var(--main-yellow);
   font-size: 1.5rem;
   font-weight: 600;
@@ -491,11 +399,8 @@ button {
 }
 
 .projectVisuals {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(10px, max-content))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(10px, -webkit-max-content));
-      grid-template-columns: repeat(auto-fit, minmax(10px, max-content));
+  grid-template-columns: repeat(auto-fit, minmax(10px, max-content));
 }
 
 #jackHealthImg1 {
@@ -506,7 +411,6 @@ button {
   width: auto;
   height: auto;
 }
-
 .projectImgMain img {
   width: 70vw;
   max-width: 1200px;
@@ -518,7 +422,6 @@ button {
   margin-left: 8rem;
   margin-top: -4rem;
 }
-
 .projectImgSec img {
   width: 40vw;
   max-width: 800px;
@@ -530,7 +433,6 @@ button {
   margin-top: 14rem;
   margin-left: -10rem;
 }
-
 .projectImgThird img {
   width: 40vw;
   max-width: 800px;
@@ -558,119 +460,74 @@ button {
 }
 
 #dateReading {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 600;
   font-size: 2rem;
   color: var(--main-orange);
 }
 
 .weatherInputs {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 1;
-      flex-basis: 1;
+  flex-basis: 1;
   background-color: #83bb92;
 }
 
 .weatherInputs2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-preferred-size: 35%;
-      flex-basis: 35%;
+  flex-direction: column;
+  flex-basis: 35%;
   min-width: 320px;
 }
 
 .outfitSection {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   width: 50vw;
   height: 60vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .outfitSection h4 {
   text-align: center;
   color: var(--main-orange);
 }
-
 .outfitSection h5 {
   font-weight: 100;
   text-align: center;
   color: var(--main-yellow);
 }
-
 .outfitSection h6 {
   text-align: center;
   color: var(--main-yellow);
 }
 
 #outfit1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 100%;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   padding: 0rem 1vw 0rem 1vw;
 }
 
 #outfit2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-direction: column;
+  flex-grow: 1;
   padding: 0rem 1vw 0rem 1vw;
 }
 
 #outfit3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-direction: column;
+  flex-grow: 1;
   padding: 0rem 1vw 0rem 1vw;
 }
 
 .outfitImg {
   height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-bottom: 1rem;
 }
-
 .outfitImg img {
   width: 10vw;
   max-width: 160px;
@@ -679,51 +536,39 @@ button {
 }
 
 .temperature {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .buttonControls {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: auto;
   margin-left: auto;
   padding: 1rem;
 }
 
 .shuffleBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 4rem;
   background-color: var(--ctaBlue);
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .shuffleBtnDisabled {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 4rem;
   background-color: rgba(29, 46, 33, 0.25);
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .saveBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 3rem;
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .shuffleBtn:hover {
   cursor: pointer;
-  -webkit-transition: 80ms;
   transition: 80ms;
   background-color: var(--ctaBlue-hover);
 }
@@ -735,24 +580,18 @@ button {
 .saveBtn:hover {
   cursor: pointer;
   background-color: var(--darker-green);
-  -webkit-transition: 80ms;
   transition: 80ms;
 }
-
 .saveBtn:hover img {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .footerSection {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 4rem;
   padding: 4rem 2rem;
   background-color: var(--darker-green);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .weatherStatementFtr h5 {
@@ -772,15 +611,12 @@ button {
   background-color: var(--ctaBlue);
   color: var(--darker-green);
   border-radius: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
 }
-
 .ctaBtnMain1Col a {
   text-decoration: none;
   color: var(--darker-green);
@@ -794,17 +630,13 @@ button {
   background-color: var(--ctaBlue-hover);
   color: var(--darker-green);
   border-radius: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  -webkit-transition: 200ms;
   transition: 200ms;
 }
-
 .ctaBtnMain1Col:hover a {
   text-decoration: none;
   color: var(--darker-green);
@@ -815,14 +647,12 @@ button {
 }
 
 .inputIconDiv {
-  padding: .5rem;
-  border-radius: 0rem .5rem .5rem 0rem;
+  padding: 0.5rem;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
 }
-
 .inputIconDiv:hover {
   background-color: var(--even-darker-green);
   cursor: pointer;
-  -webkit-transition: 200ms;
   transition: 200ms;
 }
 
@@ -837,17 +667,13 @@ button {
 }
 
 .weatherDateRow {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .showTime {
   color: var(--main-yellow);
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   color: var(--main-yellow);
   font-size: 1.5rem;
   font-weight: 300;
@@ -863,7 +689,6 @@ button {
   padding: 1rem;
   border: none;
 }
-
 .pac-container hr {
   color: black;
   background-color: black;
@@ -892,20 +717,14 @@ button {
 }
 
 .textInputWithIcon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 1;
-      flex-basis: 1;
+  flex-basis: 1;
   height: auto;
   background-color: var(--darker-green);
-  border-radius: .5rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  border-radius: 0.5rem;
+  align-items: center;
   margin: 1rem 0rem 1rem 0rem;
 }
-
 .textInputWithIcon input {
   width: 100%;
 }
@@ -921,15 +740,12 @@ button {
   background-color: var(--ctaBlue);
   color: var(--darker-green);
   border-radius: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
 }
-
 .ctaBtnMainStocks a {
   text-decoration: none;
   color: var(--darker-green);
@@ -942,118 +758,83 @@ button {
   background-color: var(--ctaBlue-hover);
   color: var(--darker-green);
   border-radius: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  -webkit-transition: 200ms;
   transition: 200ms;
 }
-
 .ctaBtnMainStocks:hover a {
   text-decoration: none;
   color: var(--darker-green);
 }
 
 .searchResultCont {
-  padding: .5rem 1rem .75rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 0.5rem 1rem 0.75rem 1rem;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   /* border-bottom: 1px solid var(--darker-green); */
 }
 
 .searchResultCont:hover {
-  padding: .5rem 1rem .75rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 0.5rem 1rem 0.75rem 1rem;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   /* border-bottom: 1px solid var(--darker-green); */
   background-color: #2a4330;
   cursor: pointer;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .searchAndResults {
   padding: 1rem 2rem 1rem 2rem;
   margin: 2rem 0rem 0rem 0rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   /* width: 80vw; */
 }
 
 .regionAndCurrency {
   margin-left: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: right;
-      -ms-flex-align: right;
-          align-items: right;
+  flex-direction: column;
+  align-items: right;
 }
 
 .resultLeftText {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  flex-direction: column;
+  align-items: left;
 }
 
 .tickerStyle {
   font-size: 1rem;
   font-weight: 600;
   color: var(--main-yellow);
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   text-align: left;
 }
 
 .compNameStyle {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--main-yellow);
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
 }
 
 .compPriceStyle {
   font-size: 1rem;
   font-weight: 600;
   color: var(--main-orange);
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   text-align: left;
 }
 
 .compRegionStyle {
   font-size: 1rem;
   color: var(--main-yellow);
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   margin-left: auto;
   padding-left: 2rem;
   text-align: right;
@@ -1062,7 +843,7 @@ button {
 .compCurrencyStyle {
   font-size: 1rem;
   color: var(--main-yellow);
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   padding-left: 2rem;
   text-align: right;
 }
@@ -1071,12 +852,10 @@ button {
   width: 30vw;
   height: auto;
   background-color: #65836d;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-color: var(--darker-green);
-  border-radius: .5rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  border-radius: 0.5rem;
+  align-items: center;
   margin: 0rem 1rem 0rem 0rem;
 }
 
@@ -1086,132 +865,87 @@ button {
 }
 
 #testResults {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   /* display: flex;
-    flex-direction: column; */
+  flex-direction: column; */
 }
 
 .searchResultStyle {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .priceRightCol {
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  align-items: left;
 }
 
 .inputPlusClear {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 /* .stockBtnDiv {
     padding: 1rem;
 } */
 .searchInputs {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-bottom: 1rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .stocksPageClass {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .backArrowDisabled {
-  padding: 0rem .5rem 0rem .5rem;
+  padding: 0rem 0.5rem 0rem 0.5rem;
   margin-right: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  opacity: .2;
-  border-radius: .5rem;
+  opacity: 0.2;
+  border-radius: 0.5rem;
 }
 
 .backArrowEnabled {
-  padding: 0rem .5rem 0rem .5rem;
+  padding: 0rem 0.5rem 0rem 0.5rem;
   margin-right: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  opacity: .9;
-  border-radius: .5rem;
+  opacity: 0.9;
+  border-radius: 0.5rem;
 }
-
 .backArrowEnabled:hover {
   opacity: 1;
-  -webkit-transition: 120ms;
   transition: 120ms;
   cursor: pointer;
   background-color: #2a4330;
 }
 
 .backArrowImg {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   width: 2rem;
 }
 
 .clickedResultStyle {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .tickerSpecifics {
   padding: 1rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   max-width: 280px;
 }
 
 .tickerCharts {
   padding: 1rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 
 #clickedResults {
   margin: 3rem;
   padding: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   /* flex-direction: row; */
 }
@@ -1219,7 +953,7 @@ button {
 #clickedTicker {
   font-size: 4rem;
   color: white;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-weight: 800;
   margin-bottom: 1rem;
 }
@@ -1228,14 +962,14 @@ button {
   /* margin-top: 1rem; */
   font-size: 1rem;
   color: var(--main-orange);
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-weight: 400;
 }
 
 #clickedTickerPrice {
   font-size: 2rem;
   color: var(--main-orange);
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -1243,17 +977,15 @@ button {
 .tickerSubSpecs {
   font-size: 1rem;
   color: white;
-  font-family: 'work sans', sans-serif;
+  font-family: "work sans", sans-serif;
   font-weight: 400;
-  margin: .5rem 0 0 0;
+  margin: 0.5rem 0 0 0;
 }
 
 .chartMedium {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   /* max-width: 30vw;
-    max-height: 30vh; */
+  max-height: 30vh; */
 }
 
 @media only screen and (max-width: 600px) {
@@ -1261,27 +993,18 @@ button {
     margin: 0;
   }
   .wholePage {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    flex-basis: 100%;
     display: flex;
   }
   .headerBar {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     padding: 1rem 2rem 1rem 2rem;
   }
   .mobileMenu {
     margin-left: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .mobileNavContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .logo {
@@ -1291,35 +1014,19 @@ button {
     display: none;
   }
   .heroSection {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     padding: 2rem;
-    -ms-flex-preferred-size: 1;
-        flex-basis: 1;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-basis: 1;
+    flex-wrap: wrap;
   }
   .heroSectionCentered {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    justify-content: center;
+    flex-direction: row;
     padding: 2rem;
-    -ms-flex-preferred-size: 1;
-        flex-basis: 1;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-basis: 1;
+    flex-wrap: wrap;
   }
   .heroContent {
     width: 100vw;
@@ -1327,9 +1034,7 @@ button {
   }
   .heroImg {
     width: 50vw;
-    -webkit-box-flex: 50%;
-        -ms-flex: 50%;
-            flex: 50%;
+    flex: 50%;
   }
   .heroImg img {
     width: 100%;
@@ -1340,7 +1045,7 @@ button {
     width: auto;
   }
   .pageLede {
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Work Sans", sans-serif;
     padding: 0rem 0rem 2rem 0rem;
     margin-left: -3rem;
     font-weight: 900;
@@ -1353,8 +1058,6 @@ button {
     width: 80%;
   }
   .sectionImage {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-top: -2rem;
   }
@@ -1368,15 +1071,12 @@ button {
     font-size: 18vw;
   }
   .aboutTheProject {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     padding: 1rem 0rem 2rem 0rem;
   }
   .drawAttention {
-    width: .5rem;
+    width: 0.5rem;
     height: auto;
     background-color: var(--darker-green-trans);
     margin: 0rem 1rem 0rem 0rem;
@@ -1385,15 +1085,15 @@ button {
   .projectTitle {
     color: white;
     font-size: 2rem;
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Work Sans", sans-serif;
     font-weight: 600;
     max-width: 500px;
-    padding: 0rem 0rem .5rem 0rem;
+    padding: 0rem 0rem 0.5rem 0rem;
   }
   .projectDescription {
     color: var(--main-yellow);
     font-size: 1rem;
-    font-family: 'work sans', sans-serif;
+    font-family: "work sans", sans-serif;
     font-weight: 300;
     width: auto;
     max-width: 500px;
@@ -1401,19 +1101,16 @@ button {
   }
   .ctaBtnMain {
     cursor: pointer;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
     padding: 1rem;
     width: auto;
     margin-right: 1rem;
     background-color: var(--ctaBlue);
     color: var(--darker-green);
     border-radius: 2rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     text-align: center;
-    font-family: 'work sans', sans-serif;
+    font-family: "work sans", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     border: none;
@@ -1424,22 +1121,18 @@ button {
   }
   .ctaBtnMain:hover {
     cursor: pointer;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
     padding: 1rem;
     width: auto;
     margin-right: 1rem;
     background-color: var(--ctaBlue-hover);
     color: var(--darker-green);
     border-radius: 2rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     text-align: center;
-    font-family: 'work sans', sans-serif;
+    font-family: "work sans", sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    -webkit-transition: 200ms;
     transition: 200ms;
   }
   .ctaBtnMain:hover a {
@@ -1448,18 +1141,15 @@ button {
   }
   .ctaBtnSec {
     cursor: pointer;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
     padding: 1rem;
     width: auto;
     color: var(--ctaBlue);
     border: 2px solid var(--ctaBlue);
     border-radius: 2rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     text-align: center;
-    font-family: 'work sans', sans-serif;
+    font-family: "work sans", sans-serif;
     font-size: 1rem;
     font-weight: 600;
   }
@@ -1469,19 +1159,16 @@ button {
   }
   .ctaBtnSec:hover {
     cursor: pointer;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
     padding: 1rem;
     width: auto;
     background-color: var(--darker-green);
     color: var(--ctaBlue);
     border: 2px solid var(--ctaBlue-hover);
     border-radius: 2rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     text-align: center;
-    font-family: 'work sans', sans-serif;
+    font-family: "work sans", sans-serif;
     font-size: 1rem;
     font-weight: 600;
   }
@@ -1496,18 +1183,15 @@ button {
     background-color: var(--light-green);
     color: var(--darker-green);
     border-radius: 2rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     text-align: center;
-    font-family: 'work sans', sans-serif;
+    font-family: "work sans", sans-serif;
     font-size: 1rem;
     font-weight: 600;
   }
   .highlight {
-    -ms-flex-preferred-size: 1;
-        flex-basis: 1;
-    border-radius: .5rem;
+    flex-basis: 1;
+    border-radius: 0.5rem;
     height: auto;
     padding: 2rem;
     width: 100%;
@@ -1516,13 +1200,9 @@ button {
     margin: 2rem 0rem 0rem 0rem;
   }
   .projectVisuals {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   #jackHealthImg1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: auto;
     height: auto;
@@ -1559,8 +1239,6 @@ button {
     width: 40vw;
   }
   #gladlySlideshow {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: auto;
   }
@@ -1568,31 +1246,18 @@ button {
     width: 100%;
   }
   .weatherInputs2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-direction: column;
+    flex-basis: 100%;
     min-width: 320px;
   }
   .outfitSection {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     width: 80vw;
     height: 45vh;
     min-height: 400px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-top: 4rem;
   }
   .outfitSection h4 {
@@ -1609,53 +1274,28 @@ button {
     color: var(--main-yellow);
   }
   #outfit1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     height: 100%;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
     padding: 0rem 1vw 0rem 1vw;
   }
   #outfit2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-direction: column;
+    flex-grow: 1;
     padding: 0rem 1vw 0rem 1vw;
   }
   #outfit3 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-direction: column;
+    flex-grow: 1;
     padding: 0rem 1vw 0rem 1vw;
   }
   .outfitImg {
     height: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-bottom: 1rem;
   }
   .outfitImg img {
@@ -1665,49 +1305,31 @@ button {
     min-height: 300px;
   }
   .buttonControls {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     width: 100%;
     padding: 1rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-top: 2rem;
   }
   #stockSearchBar {
     width: 100%;
     height: auto;
     background-color: #65836d;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: var(--darker-green);
-    border-radius: .5rem;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    border-radius: 0.5rem;
+    align-items: center;
     margin: 0rem 1rem 0rem 0rem;
   }
   .inputPlusClear {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-direction: row;
+    flex-grow: 1;
   }
   .stockBtnDiv {
     padding: 1rem;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
   }
   .ctaBtnMainStocks {
     cursor: pointer;
@@ -1716,11 +1338,9 @@ button {
     background-color: var(--ctaBlue);
     color: var(--darker-green);
     border-radius: 2rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     text-align: center;
-    font-family: 'work sans', sans-serif;
+    font-family: "work sans", sans-serif;
     font-size: 1rem;
     font-weight: 600;
   }
@@ -1731,26 +1351,18 @@ button {
   #clickedResults {
     margin: 0 0 1rem 0;
     padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .tickerCharts {
     margin-top: 1rem;
     padding: 0;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
   }
 }
-
 @media only screen and (min-width: 1920px) {
   .pageLede {
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Work Sans", sans-serif;
     padding: 0rem 0rem 2rem 0rem;
     margin-left: -3rem;
     font-weight: 900;
@@ -1759,8 +1371,6 @@ button {
     color: white;
   }
   .sectionImage {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-top: -12rem;
   }
@@ -1774,5 +1384,4 @@ button {
     margin-left: -1rem;
     font-size: 8vw;
   }
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
