@@ -180,17 +180,24 @@ button {
 }
 
 .heroContent {
-    width: 50vw;
+    flex: 40%;
     min-width: 300px;
-    margin-top: -3rem;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--light-green);
     //background-color: rgba($color: #c44949, $alpha: 0.4);
     //flex: 50%;
 }
 
 .heroImg {
-    width: 50vw;
+    //width: 30vw;
     min-width: 300px;
-    flex: 50%;
+    flex: 30%;
+    border: 1px solid var(--light-green);
+    border-radius: 1rem;
+    background-image: url("../images/myNameisNat.svg");
+    background-size: cover;
     //background-color: rgba($color: #f1f147, $alpha: 0.2);
     img {
         width: 100%;
@@ -210,18 +217,45 @@ button {
 
 .pageLede {
     font-family: 'Work Sans', sans-serif;
-    padding: 0rem 0rem 2rem 0rem;
-    margin-left: -3rem;
+    padding: 0rem;
+    margin-left: 0rem;
+    margin-bottom: 1rem;
     font-weight: 900;
-    font-size: 16vw;
-    line-height: 12vw;
+    font-size: 10vw;
+    line-height: 8vw;
     color: white;
 }
 
+.homeBlogHero {
+    flex: 30%;
+    height: auto;
+    background-color: var(--darker-green-trans);
+    margin: 0rem 1rem 0rem 0rem;
+    border-radius: 1rem;
+}
+
+.blogHeroImg {
+    border-radius: 1rem 1rem 0rem 0rem;
+    margin-bottom: 1rem;
+    background-image: url("../images/sheet_img.png");
+    background-size: cover;
+    height: 30vh;
+}
+
+.blogHeroContent {
+    padding: 0rem 1rem 2rem 1rem;
+}
+
 .signature {
-    align-items: right;
-    text-align: center;
-    width: 70%;
+    margin-left: 0rem;
+    align-items: left;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    line-height: 1.5rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    width: 100%;
     color: var(--main-yellow);
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
@@ -231,9 +265,12 @@ button {
 
 .sectionImage {
     display: flex;
-    margin-top: -12vw;
+    margin-left: 0rem;
+    margin-top: 2rem;
     img {
-        width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30vw;
         min-width: 300px;
         max-width: 800px;
     }
@@ -279,7 +316,7 @@ button {
 
 .projectTitle {
     color: white;
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     max-width: 500px;
@@ -289,6 +326,8 @@ button {
 .projectDescription {
     color: var(--main-yellow);
     font-size: 1rem;
+    letter-spacing: .1rem;
+    line-height: 1.5rem;
     font-family: 'work sans', sans-serif;
     font-weight: 300;
     width: auto;
@@ -1059,7 +1098,7 @@ p {
     .heroSection {
         display: flex;
         flex-direction: row;
-        padding: 2rem;
+        padding: 0rem 2rem;
         flex-basis: 1;
         flex-wrap: wrap;
     }
@@ -1074,24 +1113,46 @@ p {
     }
 
     .heroContent {
-        width: 100vw;
-        margin-bottom: 2rem;
+        width: 50vw;
+        flex: 50%;
+        margin: 0rem;
         //min-width: 300px;
         //background-color: rgba($color: #c44949, $alpha: 0.4);
         //flex: 50%;
     }
-    
+
     .heroImg {
+        display: none;
         width: 50vw;
-        //min-width: 300px;
+        min-width: 200px;
         flex: 50%;
+        justify-content: center;
         //background-color: rgba($color: #f1f147, $alpha: 0.2);
         img {
-            width: 100%;
+            width: 60%;
             max-width: 740px;
         }
     }
 
+    .homeBlogHero {
+        width: 100vw;
+        height: auto;
+        background-color: var(--darker-green-trans);
+        margin: 1rem 0rem 4rem 0rem;
+        border-radius: 1rem;
+    }
+    
+    .blogHeroImg {
+        border-radius: 1rem 1rem 0rem 0rem;
+        margin-bottom: 1rem;
+        background-image: url("../images/sheet_img.png");
+        background-size: cover;
+        height: 240px;
+    }
+    
+    .blogHeroContent {
+        padding: 0rem 1rem 2rem 1rem;
+    }
     .whisper {
         color: var(--light-green);
         width: auto;
@@ -1099,22 +1160,34 @@ p {
 
     .pageLede {
         font-family: 'Work Sans', sans-serif;
-        padding: 0rem 0rem 2rem 0rem;
-        margin-left: -3rem;
+        padding: 0rem;
+        margin-left: 0rem;
+        margin-bottom: 0.5rem;
         font-weight: 900;
-        font-size: 30vw;
-        line-height: 22vw;
+        font-size: 10vw;
+        line-height: 8vw;
         color: white;
     }
 
     .signature {
-        color: var(--main-yellow);
-        width: 80%;
+    margin-left: 0rem;
+    align-items: left;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    line-height: 1.5rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    width: 100%;
+    color: var(--main-yellow);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
     }
 
     .sectionImage {
         display: flex;
-        margin-top: -2rem;
+        margin-left: 0rem;
+        margin-top: 1rem;
         img {
             width: 100vw;
             min-width: 300px;
@@ -1143,7 +1216,7 @@ p {
     
     .projectTitle {
         color: white;
-        font-size: 2rem;
+        font-size: 1.25rem;
         font-family: 'Work Sans', sans-serif;
         font-weight: 600;
         max-width: 500px;
@@ -1463,16 +1536,27 @@ p {
     .pageLede {
         font-family: 'Work Sans', sans-serif;
         padding: 0rem 0rem 2rem 0rem;
-        margin-left: -3rem;
+        margin-left: 0rem;
         font-weight: 900;
-        font-size: 20rem;
-        line-height: 14rem;
+        font-size: 10rem;
+        line-height: 8rem;
         color: white;
+    }
+
+    .heroContent {
+        flex: 40%;
+        min-width: 300px;
+        margin: 0rem 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 1px solid var(--light-green);
+        //background-color: rgba($color: #c44949, $alpha: 0.4);
+        //flex: 50%;
     }
 
     .sectionImage {
         display: flex;
-        margin-top: -12rem;
+        margin-left: 0rem;
         img {
             width: 50vw;
             min-width: 300px;
