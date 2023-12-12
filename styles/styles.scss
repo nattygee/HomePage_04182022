@@ -171,10 +171,46 @@ button {
 
 // 🛑🛑🛑 nav content end ☝️ 🛑🛑🛑
 
+.sideNote {
+    color: var(--light-green);
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    line-height: 1.5rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 600;
+    width: auto;
+    max-width: 600px;
+    padding: 0rem 0rem 1rem 0rem;
+}
+
+.grid {
+    display: none;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    margin: 0rem 2rem;
+}
+
+.gridCard {
+    width: 100%;
+    background-color: var(--darker-green);
+    background-image: url("..images/presto_load1.PNG");
+    background-size: cover;
+    height: auto;
+    border-radius: 1rem;
+    //padding: .5rem;
+    border: 1px solid var(--light-green);
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: .9rem;
+    }
+}
+
 .heroSection {
     display: flex;
     flex-direction: row;
-    padding: 2rem;
+    //padding: 2rem;
+    margin: 1rem 2rem;
     flex-basis: 2;
     //flex-wrap: wrap;
 }
@@ -230,7 +266,7 @@ button {
     flex: 30%;
     height: auto;
     background-color: var(--darker-green-trans);
-    margin: 0rem 1rem 0rem 0rem;
+    margin: 0rem 0rem 0rem 0rem;
     border-radius: 1rem;
 }
 
@@ -1098,7 +1134,7 @@ p {
     .heroSection {
         display: flex;
         flex-direction: row;
-        padding: 0rem 2rem;
+        margin: 0rem 2rem;
         flex-basis: 1;
         flex-wrap: wrap;
     }
@@ -1138,7 +1174,7 @@ p {
         width: 100vw;
         height: auto;
         background-color: var(--darker-green-trans);
-        margin: 1rem 0rem 4rem 0rem;
+        margin: 1rem 0rem 1rem 0rem;
         border-radius: 1rem;
     }
     
