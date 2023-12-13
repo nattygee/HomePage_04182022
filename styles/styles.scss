@@ -39,6 +39,8 @@ h1 {
     font-weight: 900;
     font-size: 5rem;
     line-height: 5rem;
+    color: white;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -212,32 +214,52 @@ button {
     //padding: 2rem;
     margin: 1rem 2rem;
     flex-basis: 2;
+    max-height: 70vh;
     //flex-wrap: wrap;
 }
 
 .heroContent {
     flex: 40%;
-    min-width: 300px;
     margin: 0rem 1rem;
     padding: 1rem;
     border-radius: 1rem;
     border: 1px solid var(--light-green);
-    //background-color: rgba($color: #c44949, $alpha: 0.4);
-    //flex: 50%;
+    overflow: hidden;
+}
+.heroContentBlog {
+    flex: 40%;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--light-green);
+    //background-color: var(--darker-green);
+    overflow: hidden;
 }
 
 .heroImg {
-    //width: 30vw;
-    min-width: 300px;
     flex: 30%;
     border: 1px solid var(--light-green);
     border-radius: 1rem;
     background-image: url("../images/myNameisNat.svg");
     background-size: cover;
-    //background-color: rgba($color: #f1f147, $alpha: 0.2);
     img {
         width: 100%;
         max-width: 740px;
+    }
+}
+
+.heroImgBlog {
+    display: flex;
+    flex: 30%;
+    //border: 1px solid var(--light-green);
+    background-color: var(--darker-green);
+    border-radius: 1rem;
+    overflow: hidden;
+    max-height: 100%;
+    img {
+        flex-shrink: 0;
+        max-height: 100%;
+        min-width: 100%;
     }
 }
 
@@ -261,6 +283,16 @@ button {
     line-height: 8vw;
     color: white;
 }
+.blogLede {
+    font-family: 'Work Sans', sans-serif;
+    padding: 0rem;
+    margin-left: 0rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    font-size: 5vw;
+    line-height: 5vw;
+    color: white;
+}
 
 .homeBlogHero {
     flex: 30%;
@@ -268,6 +300,19 @@ button {
     background-color: var(--darker-green-trans);
     margin: 0rem 0rem 0rem 0rem;
     border-radius: 1rem;
+}
+.blogHeroPreview {
+    flex: 30%;
+    height: auto;
+    background-color: var(--darker-green);
+    margin: 0rem 0rem 0rem 0rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.blogPreviewListItem {
+    display: flex;
+    flex-direction: row;
 }
 
 .blogHeroImg {
@@ -1093,6 +1138,65 @@ button {
 
 // 🛑🛑🛑 desktop styling ☝️ 🛑🛑🛑
 
+@media only screen and (max-width: 1020px) {
+    .heroImg {
+        display: none;
+        //width: 50vw;
+        min-width: 200px;
+        flex: 60%;
+        justify-content: center;
+        //background-color: rgba($color: #f1f147, $alpha: 0.2);
+        img {
+            width: 60%;
+            max-width: 740px;
+        }
+    }
+    
+    .heroContent {
+        flex: 40%;
+        min-width: 300px;
+        margin: 0rem 1rem 0rem 0rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 1px solid var(--light-green);
+        //background-color: rgba($color: #c44949, $alpha: 0.4);
+        //flex: 50%;
+    }
+
+    .heroImgBlog {
+        display: none;
+        flex: 30%;
+        border: 1px solid var(--light-green);
+        border-radius: 1rem;
+        overflow: hidden;
+        max-height: 100%;
+        img {
+            flex-shrink: 0;
+            max-height: 100%;
+            min-width: 100%;
+        }
+    }
+
+    .heroContentBlog {
+        flex: 20%;
+        margin: 0rem 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 1px solid var(--light-green);
+        //background-color: var(--darker-green);
+        overflow: hidden;
+    }
+
+    .blogHeroPreview {
+        flex: 40%;
+        height: auto;
+        background-color: var(--darker-green);
+        margin: 0rem 0rem 0rem 0rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+}
+
 // 🟩🟩🟩 mobile styling start 👇 🟩🟩🟩
 
 @media only screen and (max-width: 600px) {
@@ -1131,8 +1235,59 @@ p {
         display: none;
     }
 
+    .heroImgBlog {
+        display: none;
+        flex: 30%;
+        border: 1px solid var(--light-green);
+        border-radius: 1rem;
+        overflow: hidden;
+        max-height: 100%;
+        img {
+            flex-shrink: 0;
+            max-height: 100%;
+            min-width: 100%;
+        }
+    }
+
+    .heroContentBlog {
+        flex: 50%;
+        width: 100vw;
+        height: auto;
+        margin: 1rem 0rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 1px solid var(--light-green);
+        //background-color: var(--darker-green);
+        overflow: hidden;
+        min-width: 200px;
+    }
+
+    .blogHeroPreview {
+        flex: 40%;
+        height: auto;
+        background-color: var(--darker-green);
+        margin: 0rem 0rem 0rem 0rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        min-width: 200px;
+        width: 100vw;
+    }
+
+    .blogLede {
+        font-family: 'Work Sans', sans-serif;
+        padding: 0rem;
+        margin-left: 0rem;
+        margin-bottom: 1rem;
+        font-weight: 900;
+        font-size: 10vw;
+        line-height: 10vw;
+        color: white;
+    }
+
     .heroSection {
         display: flex;
+        height: auto;
+        max-height: none;
         flex-direction: row;
         margin: 0rem 2rem;
         flex-basis: 1;
@@ -1149,10 +1304,12 @@ p {
     }
 
     .heroContent {
-        width: 50vw;
+        //width: 50vw;
         flex: 50%;
-        margin: 0rem;
-        //min-width: 300px;
+        margin: 1rem 0rem;
+        width: 100vw;
+        height: auto;
+        min-width: 200px;
         //background-color: rgba($color: #c44949, $alpha: 0.4);
         //flex: 50%;
     }
@@ -1160,7 +1317,6 @@ p {
     .heroImg {
         display: none;
         width: 50vw;
-        min-width: 200px;
         flex: 50%;
         justify-content: center;
         //background-color: rgba($color: #f1f147, $alpha: 0.2);
@@ -1173,8 +1329,9 @@ p {
     .homeBlogHero {
         width: 100vw;
         height: auto;
+        min-width: 240px;
         background-color: var(--darker-green-trans);
-        margin: 1rem 0rem 1rem 0rem;
+        margin: 0rem 0rem 0rem 0rem;
         border-radius: 1rem;
     }
     
@@ -1226,7 +1383,7 @@ p {
         margin-top: 1rem;
         img {
             width: 100vw;
-            min-width: 300px;
+            min-width: 100px;
         }
     }
 
@@ -1571,7 +1728,7 @@ p {
   @media only screen and (min-width: 1920px) {
     .pageLede {
         font-family: 'Work Sans', sans-serif;
-        padding: 0rem 0rem 2rem 0rem;
+        padding: 0rem 0rem 0rem 0rem;
         margin-left: 0rem;
         font-weight: 900;
         font-size: 10rem;
