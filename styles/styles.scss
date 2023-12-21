@@ -185,6 +185,11 @@ button {
     padding: 0rem 0rem 1rem 0rem;
 }
 
+.backgroundText {
+    position: absolute;
+    z-index: 10;
+}
+
 .grid {
     display: none;
     gap: 1rem;
@@ -210,6 +215,7 @@ button {
 
 .heroSection {
     display: flex;
+    z-index: 12;
     flex-direction: row;
     //padding: 2rem;
     margin: 1rem 2rem;
