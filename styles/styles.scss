@@ -8,9 +8,17 @@ a {
     color: var(--darker-green);
 }
 
+p {
+    margin: 0;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 //global colors!!! :)
 :root {
     --main-orange: #F8714A;
+    --darker-orange: #E05434;
+    --darkest-orange: #C34225;
     --main-yellow: #FFEF9D;
     --darker-green: #233627;
     --darker-green-trans: rgba(35, 54, 39, .9);
@@ -28,6 +36,23 @@ body {
     background-color: #304c37;
     display: flex;
     justify-content: center;
+}
+
+.bodyOrange {
+    background-image: none;
+    background-size: cover;
+    background-repeat: repeat;
+    background-color: var(--darker-orange);
+    display: flex;
+    justify-content: center;
+}
+
+.orangeFooter {
+    display: flex;
+    margin-top: 4rem;
+    padding: 4rem 2rem;
+    align-items: center;
+    background-color: var(--darkest-orange);
 }
 
 li {
@@ -252,6 +277,74 @@ button {
         width: 100%;
         max-width: 740px;
     }
+}
+
+.heroOneAbout {
+    flex-direction: column;
+    flex: 20%;
+    width: auto;
+    padding: 1rem;
+    img {
+        width: 20vw;
+    }
+}
+
+.heroTwoAbout {
+    flex: 20%;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: visible;
+    img {
+        width: 30vw;
+        margin-left: -10vw;
+    }
+}
+
+.heroThreeAbout {
+    flex: 40%;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: none;
+    overflow: visible;
+}
+
+.imgFillCont {
+    display: flex;
+    width: auto;
+    max-width: 700px;
+}
+
+.lightParagraph {
+    color: white;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 300;
+    width: auto;
+    max-width: 600px;
+    padding: 0rem 0rem 1rem 0rem;
+    z-index: 101;
+}
+
+.dividerVertical {
+    display: flex;
+    margin: 0rem 1rem;
+}
+
+#fdAboutHero1Img {
+    margin-bottom: 1.5rem;
+    z-index: 100;
+}
+
+#fdAboutHero11Img {
+    position: absolute;
+    margin: 10rem -10rem;
+    z-index: 10;
+}
+
+#fdAboutHero2Img {
+    margin-left: -10vw;
 }
 
 .heroImgBlog {
@@ -1759,7 +1852,7 @@ p {
         img {
             width: 50vw;
             min-width: 300px;
-            max-width: 1200px;
+            max-width: 800px;
         }
     }
 
