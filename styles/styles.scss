@@ -39,9 +39,11 @@ body {
 }
 
 .bodyOrange {
-    background-image: none;
-    background-size: cover;
-    background-repeat: repeat;
+    background-image: url("/images/fdabout_bgshape.svg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position: 0px 400px;
+    background-size: 70vw;
     background-color: var(--darker-orange);
     display: flex;
     justify-content: center;
@@ -245,7 +247,7 @@ button {
     //padding: 2rem;
     margin: 1rem 2rem;
     flex-basis: 2;
-    max-height: 70vh;
+    //max-height: 70vh;
     //flex-wrap: wrap;
 }
 
@@ -287,9 +289,13 @@ button {
     img {
         width: 20vw;
     }
+    p {
+        top: 24vw;
+    }
 }
 
 .heroTwoAbout {
+    display: flex;
     flex: 20%;
     margin: 0rem 1rem;
     padding: 1rem;
@@ -303,6 +309,7 @@ button {
 
 .heroThreeAbout {
     flex: 40%;
+    height: auto;
     margin: 0rem 1rem;
     padding: 1rem;
     border-radius: none;
@@ -1296,6 +1303,59 @@ button {
     }
 }
 
+
+.heroOneAbout {
+    flex-direction: column;
+    flex: 20%;
+    width: auto;
+    padding: 1rem;
+    img {
+        width: 20vw;
+    }
+    p {
+        top: 24vw;
+    }
+}
+
+.heroTwoAbout {
+    display: block;
+    flex: 20%;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: visible;
+    img {
+        width: 30vw;
+        margin-left: -10vw;
+    }
+}
+
+.heroThreeAbout {
+    flex: 40%;
+    height: auto;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: none;
+    overflow: visible;
+}
+
+.lightParagraph {
+    color: white;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 300;
+    width: auto;
+    max-width: 600px;
+    padding: 0rem 0rem 1rem 0rem;
+    z-index: 101;
+}
+
+.dividerVertical {
+    display: block;
+    margin: 0rem 1rem;
+}
+
 // 🟩🟩🟩 mobile styling start 👇 🟩🟩🟩
 
 @media only screen and (max-width: 600px) {
@@ -1460,6 +1520,65 @@ p {
         line-height: 8vw;
         color: white;
     }
+
+
+.heroOneAbout {
+    flex-direction: column;
+    flex: 20%;
+    width: auto;
+    padding: 1rem;
+    img {
+        width: 20vw;
+    }
+    p {
+        top: 24vw;
+    }
+}
+
+.heroTwoAbout {
+    display: none;
+    flex: 20%;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: visible;
+    img {
+        width: 30vw;
+        margin-left: -10vw;
+    }
+}
+
+.heroThreeAbout {
+    flex: 40%;
+    height: auto;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: none;
+    overflow: visible;
+}
+
+.imgFillCont {
+    display: flex;
+    width: auto;
+    max-width: 700px;
+}
+
+.lightParagraph {
+    color: white;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 300;
+    width: auto;
+    max-width: 600px;
+    padding: 0rem 0rem 1rem 0rem;
+    z-index: 101;
+}
+
+.dividerVertical {
+    display: none;
+    margin: 0rem 1rem;
+}
 
     .signature {
     margin-left: 0rem;
