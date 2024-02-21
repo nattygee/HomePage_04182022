@@ -189,6 +189,7 @@ button {
   border-radius: 0.5rem;
   min-width: 200px;
   width: auto;
+  z-index: 1003;
 }
 #mobileMenuContainer li {
   padding: 0rem 0rem 0.5rem 0rem;
@@ -285,7 +286,7 @@ button {
 }
 
 .heroTwoAbout {
-  display: flex;
+  display: block;
   flex: 20%;
   margin: 0rem 1rem;
   padding: 1rem;
@@ -325,8 +326,12 @@ button {
 }
 
 .dividerVertical {
-  display: flex;
+  display: block;
   margin: 0rem 1rem;
+}
+
+.dividerHorizontal {
+  display: none;
 }
 
 #fdAboutHero1Img {
@@ -1263,59 +1268,57 @@ button {
     padding: 1rem;
     border-radius: 1rem;
   }
+  .heroOneAbout {
+    flex-direction: column;
+    flex: 20%;
+    width: auto;
+    padding: 1rem;
+  }
+  .heroOneAbout img {
+    width: 20vw;
+  }
+  .heroOneAbout p {
+    top: 24vw;
+  }
+  .heroTwoAbout {
+    display: none;
+    flex: 20%;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: visible;
+  }
+  .heroTwoAbout img {
+    width: 30vw;
+    margin-left: -10vw;
+  }
+  .heroThreeAbout {
+    flex: 40%;
+    height: auto;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    border-radius: none;
+    overflow: visible;
+  }
+  .lightParagraph {
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-family: "work sans", sans-serif;
+    font-weight: 300;
+    width: auto;
+    max-width: 600px;
+    padding: 0rem 0rem 1rem 0rem;
+    z-index: 101;
+  }
+  .dividerVertical {
+    display: block;
+    margin: 0rem 1rem;
+  }
+  #aboutDivider1 {
+    display: none;
+  }
 }
-.heroOneAbout {
-  flex-direction: column;
-  flex: 20%;
-  width: auto;
-  padding: 1rem;
-}
-.heroOneAbout img {
-  width: 20vw;
-}
-.heroOneAbout p {
-  top: 24vw;
-}
-
-.heroTwoAbout {
-  display: block;
-  flex: 20%;
-  margin: 0rem 1rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  overflow: visible;
-}
-.heroTwoAbout img {
-  width: 30vw;
-  margin-left: -10vw;
-}
-
-.heroThreeAbout {
-  flex: 40%;
-  height: auto;
-  margin: 0rem 1rem;
-  padding: 1rem;
-  border-radius: none;
-  overflow: visible;
-}
-
-.lightParagraph {
-  color: white;
-  font-size: 1rem;
-  letter-spacing: 0.1rem;
-  font-family: "work sans", sans-serif;
-  font-weight: 300;
-  width: auto;
-  max-width: 600px;
-  padding: 0rem 0rem 1rem 0rem;
-  z-index: 101;
-}
-
-.dividerVertical {
-  display: block;
-  margin: 0rem 1rem;
-}
-
 @media only screen and (max-width: 600px) {
   p {
     margin: 0;
@@ -1331,9 +1334,11 @@ button {
   .mobileMenu {
     margin-left: auto;
     display: flex;
+    z-index: 1001;
   }
   .mobileNavContainer {
     display: flex;
+    z-index: 1002;
   }
   .logo {
     left: 0;
@@ -1451,17 +1456,32 @@ button {
     line-height: 8vw;
     color: white;
   }
+  .bodyOrange {
+    background-image: url("/images/fdabout_bgshape.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0px 700px;
+    background-size: 70vw;
+    background-color: var(--darker-orange);
+    display: flex;
+    justify-content: center;
+  }
   .heroOneAbout {
+    display: flex;
     flex-direction: column;
-    flex: 20%;
+    flex: 100%;
+    align-items: center;
+    justify-content: center;
     width: auto;
     padding: 1rem;
   }
   .heroOneAbout img {
-    width: 20vw;
+    width: 80%;
   }
   .heroOneAbout p {
+    margin-top: 0rem;
     top: 24vw;
+    text-align: center;
   }
   .heroTwoAbout {
     display: none;
@@ -1476,7 +1496,7 @@ button {
     margin-left: -10vw;
   }
   .heroThreeAbout {
-    flex: 40%;
+    flex-basis: 100%;
     height: auto;
     margin: 0rem 1rem;
     padding: 1rem;
@@ -1497,11 +1517,19 @@ button {
     width: auto;
     max-width: 600px;
     padding: 0rem 0rem 1rem 0rem;
+    margin-bottom: 1.5rem;
     z-index: 101;
   }
   .dividerVertical {
     display: none;
     margin: 0rem 1rem;
+  }
+  .dividerHorizontal {
+    display: flex;
+    flex: 100%;
+    margin: 1rem 1rem 2rem 1rem;
+    align-items: center;
+    justify-content: center;
   }
   .signature {
     margin-left: 0rem;
