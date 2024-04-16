@@ -334,6 +334,84 @@ button {
   display: none;
 }
 
+.screenshotGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 400px));
+  grid-gap: 0.5rem;
+  padding: 1rem;
+  margin: 0rem 1rem;
+}
+
+.inspoHeader {
+  grid-column: span 2;
+  border-radius: 1rem;
+  border: 1px solid var(--light-green);
+  background-image: url("../images/inpiration_ledeimg.svg");
+  background-size: contain;
+  display: flex;
+  justify-content: right;
+}
+.inspoHeader img {
+  padding: 3rem;
+  margin-top: -14rem;
+  margin-right: -2rem;
+  width: 240px;
+}
+
+.screenshotPortrait {
+  border-radius: 1rem;
+  overflow: hidden;
+  grid-column: span 1;
+  min-width: 180px;
+  max-height: 400px;
+}
+.screenshotPortrait img {
+  width: 100%;
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+.screenshotLandscape {
+  border-radius: 1rem;
+  overflow: hidden;
+  grid-column: span 2;
+}
+
+.screenshotDiv {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.screenshotDivLandscape {
+  align-items: center;
+  max-height: 400px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.screenshotDivLandscape img {
+  height: 400px;
+}
+
+.screenshotContent {
+  padding: 1rem 0rem;
+}
+
+.screenshotDescription {
+  color: var(--main-yellow);
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  font-family: "work sans", sans-serif;
+  font-weight: 300;
+}
+
 #fdAboutHero1Img {
   margin-bottom: 1.5rem;
   z-index: 100;
@@ -1530,6 +1608,76 @@ button {
     margin: 1rem 1rem 2rem 1rem;
     align-items: center;
     justify-content: center;
+  }
+  .screenshotGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(140px, 500px));
+    grid-gap: 0.5rem;
+    padding: 1rem;
+    margin: 0rem 1rem;
+  }
+  .inspoHeader {
+    grid-column: span 2;
+    border-radius: 1rem;
+    border: 1px solid var(--light-green);
+    background-image: url("../images/inpiration_ledeimg.svg");
+    background-size: contain;
+    display: flex;
+    justify-content: right;
+  }
+  .inspoHeader img {
+    padding: 3rem;
+    margin-top: -8rem;
+    margin-right: 0rem;
+    width: 240px;
+  }
+  .screenshotPortrait {
+    border-radius: 1rem;
+    overflow: hidden;
+    grid-column: span 2;
+    min-width: 120px;
+    max-height: 500px;
+  }
+  .screenshotPortrait img {
+    width: 100%;
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+  }
+  .screenshotLandscape {
+    border-radius: 1rem;
+    overflow: hidden;
+    grid-column: span 2;
+  }
+  .screenshotDiv {
+    align-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+  .screenshotDivLandscape {
+    align-items: center;
+    max-height: 400px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .screenshotDivLandscape img {
+    height: 400px;
+  }
+  .screenshotContent {
+    padding: 1rem 0rem;
+  }
+  .screenshotDescription {
+    color: var(--main-yellow);
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    font-family: "work sans", sans-serif;
+    font-weight: 300;
   }
   .signature {
     margin-left: 0rem;
