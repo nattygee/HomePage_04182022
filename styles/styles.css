@@ -54,6 +54,7 @@ body {
   padding: 4rem 2rem;
   align-items: center;
   background-color: var(--darkest-orange);
+  width: 100vw;
 }
 
 li {
@@ -500,10 +501,10 @@ button {
 }
 
 .blogLedeCont {
-  padding: 1rem 0rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   margin-bottom: 1rem;
   position: fixed;
-  width: 46%;
+  width: 43%;
   max-width: 660px;
   border: 1px solid var(--light-green);
   border-radius: 1rem;
@@ -515,7 +516,7 @@ button {
   font-size: 3vw;
   line-height: 3.5vw;
   letter-spacing: 0.15vw;
-  color: #FAFB71;
+  color: white;
 }
 
 .homeBlogHero {
@@ -946,6 +947,8 @@ button {
   padding: 4rem 2rem;
   background-color: var(--darker-green);
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .weatherStatementFtr h5 {
@@ -1375,21 +1378,42 @@ button {
     min-width: 100%;
   }
   .heroContentBlog {
-    flex: 20%;
-    margin: 0rem 1rem;
-    padding: 1rem;
+    width: 50%;
+    max-width: 720px;
+    margin: 3rem 0rem 0rem 2rem;
     border-radius: 1rem;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .blogLedeCont {
+    padding: 1rem 0rem 1rem 1rem;
+    margin-bottom: 1rem;
+    position: fixed;
+    width: 42%;
+    max-width: 660px;
     border: 1px solid var(--light-green);
-    position: static;
+    border-radius: 1rem;
+  }
+  .blogImageLede {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 240px;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
     overflow: hidden;
   }
+  .blogImageLede img {
+    height: 100%;
+  }
   .blogHeroPreview {
-    flex: 40%;
     height: auto;
-    background-color: var(--darker-green);
-    margin: 0rem 0rem 0rem 0rem;
-    padding: 1rem;
+    margin: 3rem 0rem 0rem 50%;
+    padding: 0rem 1rem;
     border-radius: 1rem;
+    width: 49%;
+    box-sizing: border-box;
   }
   .heroOneAbout {
     flex-direction: column;
@@ -1483,25 +1507,37 @@ button {
     min-width: 100%;
   }
   .heroContentBlog {
-    flex: 50%;
+    position: relative;
     width: 100vw;
     height: auto;
-    margin: 1rem 0rem;
+    margin: 5rem 0rem 1rem 0rem;
     padding: 1rem;
-    border-radius: 1rem;
-    border: 1px solid var(--light-green);
     overflow: hidden;
     min-width: 200px;
+    box-sizing: border-box;
+    /* 
+            width: 50%;
+            max-width: 720px;
+            margin: 4rem 0rem 0rem 2rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            position: absolute;
+            box-sizing: border-box; */
   }
   .blogHeroPreview {
-    flex: 40%;
+    flex: 100%;
     height: auto;
-    background-color: var(--darker-green);
     margin: 0rem 0rem 0rem 0rem;
     padding: 1rem;
     border-radius: 1rem;
     min-width: 200px;
     width: 100vw;
+    /* height: auto;
+    margin: 4rem 0rem 0rem 50%;
+    padding: 0rem 1rem;
+    border-radius: 1rem;
+    width: 49%;
+    box-sizing: border-box; */
   }
   .blogLede {
     font-family: "Work Sans", sans-serif;
@@ -1509,9 +1545,19 @@ button {
     margin-left: 0rem;
     margin-bottom: 1rem;
     font-weight: 900;
-    font-size: 10vw;
-    line-height: 10vw;
+    font-size: 6vw;
+    line-height: 7vw;
     color: white;
+  }
+  .blogLedeCont {
+    padding: 1rem 1rem 1rem 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+    max-width: 660px;
+    border: 1px solid var(--light-green);
+    border-radius: 1rem;
+    box-sizing: border-box;
   }
   .heroSection {
     display: flex;
