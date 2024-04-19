@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Work+Sans:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/images/fd_favicon.svg" type="image/x-icon">
-    <title>Drop a modal, take a sheet.</title>
+    <title>How can we justify implementing custom interactions in a rigid financial environment?</title>
 </head>
 <body>
     <div class="wholePage">
@@ -21,6 +21,9 @@
             <nav class="navItems">
                 <ul class="navItemList">
                     <li><a class="navItemList" href="index.html">Home</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
+                    <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
+                    <li><a class="navItemList" href="#">Blog</a></li>
                     <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
                     <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
                 </ul>
@@ -31,7 +34,10 @@
             </div>
             <div id="mobileMenuContainer" style="opacity: 0;">
                 <ul class="navItemListMobile">
-                    <li><a class="navItemCurrent" href="#">Home</a></li>
+                    <li><a class="navItemList" href="index.html">Home</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
+                    <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
+                    <li><a class="navItemList" href="#.html">Blog</a></li>
                     <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
                     <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
                 </ul>
@@ -39,20 +45,53 @@
         </div>
         <!-- 🛑🛑🛑 CLOSE HEADER BAR ☝️ 🛑🛑🛑 -->
         <div class="heroSection">
-            <div class="heroImgBlog">
+            <!-- <div class="heroImgBlog">
                 <img src="images/sheet_img_header.svg" alt="">
-            </div>
+            </div> -->
             <div class="heroContentBlog">
                 <!--<h4 class="whisper">You're in the right place</h4>-->
 
-                <h1 class="blogLede">Drop a modal, take a sheet.</h1>
-                <p class="sideNote">Dec 10, 2023</p>
+                <h1 class="blogLede">How can we justify implementing custom interactions in a rigid financial environment?</h1>
+                <p class="sideNote">[Date]</p>
                 <!-- <p class="signature">Teams are tending to lean toward sheets these days as opposed to modals. Is that for the better or worse? Is it directed by ui guidelines like HIG or Material Design? Or is it directed by what users want?</p> -->
             </div>
 
             <div class="blogHeroPreview">
                 <div class="blogPreviewContent">
-                    <p class="projectTitle">Content preview</p>
+                    <div class="blogImage">
+                        <img src="images/justifyInteractions_header_image.png" alt="">
+                    </div>
+                    <p class="projectDescription">
+                        The IOS’ default is to tap and move to a new view by sliding the new page in overtop, or laterally on the same level. 
+                            <br><br>
+                        Typically I wouldn’t push for anything *but* the defaults for navigation, because typically we’re dealing with simple navigation from a link to the page that link directs to. Think standard button rows and list items that preview the content of the linked page.
+                    </p>
+                    <div class="blogImage">
+                        <img src="images/animationUI_weather.png" alt="">
+                    </div>
+                    <p class="projectDescription">
+                        It could be something like a “Settings” button directing to the settings page, or a card previewing the weather directing to a page with a more complete weather report. In the former, basic defaults will almost always work… but what about the latter? What if there were some value in transitioning more seamlessly from the card state to the expanded full page view? *Is* there value? I’m not exactly convinced, but I want to explore that thought. Gun to your head, how might you justify implementing the navigation in that way, knowing that it will cost the team more money to build?
+                    </p>
+                    <div class="blogImage">
+                        <img src="images/animationgif.gif" alt="">
+                    </div>
+                    <p class="projectDescription">
+                        1. **There’s something about keeping visual context of where things were, that have now moved out of view.** 
+                            
+                            You could liken the “move in” or instant interaction to an elevator, or a slide show. Like disparate, separate panes of information sliding in and out… or worse; instantly appearing and disappearing. In the card example, there is a snapshot of the subsequent page in the card so that you have an idea of what will appear when you tap on it. It may even be an exact component used on the expanded page,   so it might make more sense to transition that component to its new position on the subsequent page instead of making it disappear, and then reappear within the new context.
+                            
+                        2. **No re-orientation required from the user.**
+                            
+                            When done correctly, users can follow the movement of the data that they’ve already consumed and quickly move on to additional information that may be provided in the subsequent view - making scanning for information that much quicker.
+                    </p>
+                    <div class="blogImage">
+                        <img src="images/swipeanimation3.gif" alt="">
+                    </div>
+                    <p class="projectDescription">
+                        3. **Create opportunity for specific piggy back interaction (scroll up and down to close for ex)**
+                            
+                        In the same way a slide interaction for navigation might provide the option to swipe right to navigate back, we can provide the option to swipe up or down (at the top or bottom of the page) to close the new view. Fun fact is that the swipe back (left) gesture is provided by the OS and so by creating the vertical swipe back we now enable a 3rd and possibly 4th way for users to return to the previous screen.
+                    </p>
                     <li class="blogPreviewList">
                         <ul class="blogPreviewListItem">
                             <img src="images/arrow_lightgreen.svg" alt="">
