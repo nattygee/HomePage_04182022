@@ -73,7 +73,8 @@ h1 {
 
 h2 {
     font-family: 'Work Sans', sans-serif;
-    font-weight: 900;
+    font-weight: 600;
+    margin-bottom: 1rem;
     //font-size: 10vw;
 }
 
@@ -495,7 +496,8 @@ button {
     width: 100%;
     height: 320px;
     border-radius: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
     background-color: var(--darker-green);
     overflow: hidden;
     img {
@@ -656,6 +658,26 @@ button {
     width: auto;
     //max-width: 600px;
     padding: 0rem 0rem 1rem 0rem;
+}
+
+mark {
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    //background-color: #FFFF5496;
+}
+
+.blogCallout {
+    color: var(--darker-green);
+    //background-color: var(--main-yellow);
+    text-align: left;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    line-height: 1.85rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 600;
+    width: auto;
+    //max-width: 600px;
+    padding: 1rem 0rem;
 }
 
 .ctas {
@@ -1583,7 +1605,7 @@ p {
         position: relative;
         width: 100vw;
         height: auto;
-        margin: 5rem 0rem 1rem 0rem;
+        margin: 5rem 0rem 0rem 0rem;
         padding: 1rem;
         //background-color: var(--darker-green);
         overflow: hidden;
@@ -1637,6 +1659,21 @@ p {
         border: 1px solid var(--light-green);
         border-radius: 1rem;
         box-sizing: border-box;
+    }
+
+    .blogImage {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 320px;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+        background-color: var(--darker-green);
+        overflow: hidden;
+        img {
+            height: 100%;
+        }
     }
 
     .heroSection {

@@ -54,7 +54,7 @@
                     <div class="blogImageLede">
                         <img src="images/justifyInteractions_header_image.png" alt="">
                     </div>
-                    <h1 class="blogLede">How might we justify implementing custom interactions in a rigid financial environment?</h1>
+                    <h1 class="blogLede">How might we justify implementing custom interactions?</h1>
                     <p class="sideNote">APRIL 19, 2024</p>
                 </div>
                 
@@ -63,6 +63,9 @@
 
             <div class="blogHeroPreview">
                 <div class="blogPreviewContent">
+                    <h2 style="color: var(--main-yellow);">
+                        Platform presets or library-based components and interactions are a great way to build efficiently, but often these defaults don't meet industry standards.
+                    </h2>
                     <p class="projectDescription">
                         The IOS’ default is to tap and move to a new view by sliding the new page in overtop, or laterally on the same level. 
                             <br><br>
@@ -72,26 +75,38 @@
                         <img src="images/animationUI_weather.png" alt="">
                     </div>
                     <p class="projectDescription">
-                        It could be something like a “Settings” button directing to the settings page, or a card previewing the weather directing to a page with a more complete weather report. In the former, basic defaults will almost always work… but what about the latter? What if there were some value in transitioning more seamlessly from the card state to the expanded full page view? *Is* there value? I’m not exactly convinced, but I want to explore that thought. Gun to your head, how might you justify implementing the navigation in that way, knowing that it will cost the team more money to build?
+                        It could be something like a “Settings” button directing to the settings page, or a card previewing the weather directing to a page with a more complete weather report. In the former, basic defaults will almost always work… but what about the latter? 
+                    </p>
+                        
+                        <p class="blogCallout"><mark>What if there were some value in transitioning more seamlessly from the card state to the expanded full page view?</mark></p>
+                        <p class="blogCallout"><mark>Is there value?</mark></p> 
+<br>
+                    <p class="projectDescription">    
+                        I’m not exactly convinced, but I want to explore that thought. Gun to your head, how might you justify implementing the navigation in that way, knowing that it will cost the team more money to build?
                     </p>
                     <div class="blogImage">
                         <img src="images/animationgif.gif" alt="">
                     </div>
-                    <p class="projectDescription">
-                        1. **There’s something about keeping visual context of where things were, that have now moved out of view.** 
-                            
-                            You could liken the “move in” or instant interaction to an elevator, or a slide show. Like disparate, separate panes of information sliding in and out… or worse; instantly appearing and disappearing. In the card example, there is a snapshot of the subsequent page in the card so that you have an idea of what will appear when you tap on it. It may even be an exact component used on the expanded page,   so it might make more sense to transition that component to its new position on the subsequent page instead of making it disappear, and then reappear within the new context.
-                            
-                        2. **No re-orientation required from the user.**
-                            
-                            When done correctly, users can follow the movement of the data that they’ve already consumed and quickly move on to additional information that may be provided in the subsequent view - making scanning for information that much quicker.
+                    <h2 style="color: var(--main-yellow);">
+                        1. There’s something about keeping visual context of where things were, that have now moved out of view.
+                    </h2>
+                    <p class="projectDescription" style="padding-left: 2rem;">
+                        You could liken the “move in” or instant interaction to an elevator, or a slide show. Like disparate, separate panes of information sliding in and out… or worse; instantly appearing and disappearing. In the card example, there is a snapshot of the subsequent page in the card so that you have an idea of what will appear when you tap on it. It may even be an exact component used on the expanded page,   so it might make more sense to transition that component to its new position on the subsequent page instead of making it disappear, and then reappear within the new context.
+                    </p>
+                            <br><br>
+                    <h2 style="color: var(--main-yellow);">
+                        2. No re-orientation required from the user.
+                    </h2>
+                    <p class="projectDescription" style="padding-left: 2rem;">
+                        When done correctly, users can follow the movement of the data that they’ve already consumed and quickly move on to additional information that may be provided in the subsequent view - making scanning for information that much quicker.
                     </p>
                     <div class="blogImage">
                         <img src="images/swipeanimation3.gif" alt="">
                     </div>
-                    <p class="projectDescription">
-                        3. **Create opportunity for specific piggy back interaction (scroll up and down to close for ex)**
-                            
+                    <h2 style="color: var(--main-yellow);">
+                        3. Create opportunity for specific piggy back interaction (scroll up and down to close for ex)
+                    </h2>
+                    <p class="projectDescription" style="padding-left: 2rem;">
                         In the same way a slide interaction for navigation might provide the option to swipe right to navigate back, we can provide the option to swipe up or down (at the top or bottom of the page) to close the new view. Fun fact is that the swipe back (left) gesture is provided by the OS and so by creating the vertical swipe back we now enable a 3rd and possibly 4th way for users to return to the previous screen.
                     </p>
                 </div>
