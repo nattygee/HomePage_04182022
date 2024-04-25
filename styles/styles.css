@@ -392,7 +392,7 @@ button {
   grid-template-rows: repeat(4, minmax(200px, 400px));
   grid-gap: 0.5rem;
   padding: 0rem 2rem;
-  margin: 0rem 1rem;
+  margin: 4rem 1rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -1943,7 +1943,7 @@ mark {
     grid-template-rows: repeat(auto-fit, minmax(140px, 500px));
     grid-gap: 0.5rem;
     padding: 1rem;
-    margin: 0rem 1rem;
+    margin: 4rem 1rem;
   }
   .inspoHeader {
     grid-column: span 2;
