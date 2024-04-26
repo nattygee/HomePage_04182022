@@ -23,7 +23,7 @@
                     <li><a class="navItemList" href="index.html">Home</a></li>
                     <li><a class="navItemList" href="about_fd.html">About FD</a></li>
                     <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
-                    <li><a class="navItemList" href="#">Blog</a></li>
+                    <!-- <li><a class="navItemList" href="#">Blog</a></li> -->
                     <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
                     <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
                 </ul>
@@ -37,7 +37,7 @@
                     <li><a class="navItemList" href="index.html">Home</a></li>
                     <li><a class="navItemList" href="about_fd.html">About FD</a></li>
                     <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
-                    <li><a class="navItemList" href="#.html">Blog</a></li>
+                    <!-- <li><a class="navItemList" href="#.html">Blog</a></li> -->
                     <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
                     <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
                 </ul>
@@ -55,7 +55,7 @@
                         <img src="images/justifyInteractions_header_image.png" alt="">
                     </div>
                     <h1 class="blogLede">How might we justify implementing custom interactions?</h1>
-                    <p class="sideNote">APRIL 19, 2024</p>
+                    <p class="sideNote">APRIL 24, 2024</p>
                 </div>
                 
                 <!-- <p class="signature">Teams are tending to lean toward sheets these days as opposed to modals. Is that for the better or worse? Is it directed by ui guidelines like HIG or Material Design? Or is it directed by what users want?</p> -->
@@ -64,12 +64,12 @@
             <div class="blogHeroPreview">
                 <div class="blogPreviewContent">
                     <h2 style="color: var(--main-yellow);">
-                        Platform presets or library-based components and interactions are a great way to build efficiently, but often these defaults don't meet industry standards.
+                        Platform presets or library-based components and interactions are a great way to build for efficiency, but what about quality, continuity and intuition?
                     </h2>
                     <p class="projectDescription">
-                        The IOS’ default is to tap and move to a new view by sliding the new page in overtop, or laterally on the same level. 
+                        One IOS default interaction is to tap and move to a new view by sliding the new page in overtop, or laterally on the same level.
                             <br><br>
-                        Typically I wouldn’t push for anything *but* the defaults for navigation, because typically we’re dealing with simple navigation from a link to the page that link directs to. Think standard button rows and list items that preview the content of the linked page.
+                        Typically I wouldn’t push for anything *but* the defaults for navigation, because typically we’re dealing with simple navigation from a link to the page that the link directs to. Think standard button rows and list items that preview the content of the linked page.
                     </p>
                     <div class="blogImage">
                         <img src="images/animationUI_weather.png" alt="">
@@ -91,7 +91,11 @@
                         1. There’s something about keeping visual context of where things were, that have now moved out of view.
                     </h2>
                     <p class="projectDescription" style="padding-left: 2rem;">
-                        You could liken the “move in” or instant interaction to an elevator, or a slide show. Like disparate, separate panes of information sliding in and out… or worse; instantly appearing and disappearing. In the card example, there is a snapshot of the subsequent page in the card so that you have an idea of what will appear when you tap on it. It may even be an exact component used on the expanded page,   so it might make more sense to transition that component to its new position on the subsequent page instead of making it disappear, and then reappear within the new context.
+                        Where possible, sliding elements out of view to be replaced by other new elements can create a more natural familiarity with a page. It’s like you have this single page - almost like your phone screen - where the data you’re interacting with is changing, rather than having many separate, layered pages that you are flipping thru to access what you need.
+                                <br><br>
+                        There is a line where this becomes overkill I imagine, but up to that point it can be helpful in knowing what to expect when navigating between page states.
+                        <br><br>
+                        If we take the card example (see image above), there is a preview of the weather for Toronto in the card so that you have an idea of what will appear on the next page once you tap on it. It may even be an exact copy of the component used on the subsequent page. In that case, it might make more sense to transition that component to its new position (using custom interactions) on the subsequent page instead of making it disappear and then reappear within the new context (using the default ‘slide-in’ page navigation)
                     </p>
                             <br><br>
                     <h2 style="color: var(--main-yellow);">
@@ -107,7 +111,32 @@
                         3. Create opportunity for specific piggy back interaction (scroll up and down to close for ex)
                     </h2>
                     <p class="projectDescription" style="padding-left: 2rem;">
-                        In the same way a slide interaction for navigation might provide the option to swipe right to navigate back, we can provide the option to swipe up or down (at the top or bottom of the page) to close the new view. Fun fact is that the swipe back (left) gesture is provided by the OS and so by creating the vertical swipe back we now enable a 3rd and possibly 4th way for users to return to the previous screen.
+                        In the same way a slide-in interaction for navigation might provide the option to swipe right to navigate back, we can provide the option to swipe up or down (at the top or bottom of the page) to close the new view. Usually that the swipe back (direction: left-to-right) gesture is provided by the OS and so by creating the vertical swipe back we now enable a 3rd, and possibly 4th, way for users to return to the previous screen. I’m a fan of providing multiple ways for users to access the same thing, so this kind of thing is a win for me.
+                    </p>
+                    <h2 style="color: var(--main-yellow);">
+                        To wrap up
+                    </h2>
+                    <p class="projectDescription">
+                        Despite this being somewhat of a luxury item to me, I think these types of interactions make a positive difference when applied tastefully. Your basic usability and value-add should probably be nailed down first. But in a world where you have those boxes checked, or maybe you’re building a fresh new product, I think there is space for these details to matter.
+                            <br><br>
+                        And for any developers out there shaking their fist at me, just know that this is simply a mental exercise and I would never dare 🙃
+                    </p>
+                    <h2 style="color: var(--main-yellow);">
+                        Some examples
+                    </h2>
+                    <p class="projectDescription">
+                        Honestly, it was difficult to find examples, but I’ve provided a few along the lines of what I’m getting at. (See below) In the Google case they’re kind of faking it, but what really matters is the illusion anyway. The idea is for things to dynamically move in and out rather than simply flying in on a completely new sheet. I think Airbnb, Apple and Google demo this idea effectively.
+                    </p>
+
+                        <div class="vertStack">
+                            <a href="https://www.figma.com/proto/wSYqVB1o4vmClRB2gpHti3/Dynamic-interaction-examples?page-id=0%3A1&type=design&node-id=1-2&viewport=454%2C328%2C0.85&t=BaPwugRuEnNp7ENQ-1&scaling=min-zoom&mode=design" target="_blank" class="textCTAbtn">Google example</a>
+                            <a href="https://www.figma.com/proto/wSYqVB1o4vmClRB2gpHti3/Dynamic-interaction-examples?page-id=0%3A1&type=design&node-id=1-4&viewport=454%2C328%2C0.85&t=BaPwugRuEnNp7ENQ-1&scaling=min-zoom&starting-point-node-id=1%3A4&show-proto-sidebar=1&mode=design" target="_blank" class="textCTAbtn">Apple example</a>
+                            <a href="https://www.figma.com/proto/wSYqVB1o4vmClRB2gpHti3/Dynamic-interaction-examples?page-id=0%3A1&type=design&node-id=1-7&viewport=454%2C328%2C0.85&t=BaPwugRuEnNp7ENQ-1&scaling=min-zoom&starting-point-node-id=1%3A7&show-proto-sidebar=1&mode=design" target="_blank" class="textCTAbtn">Airbnb example</a>
+                        </div>  
+                    <p class="projectDescription">
+                        Until next time,
+                        <br><br>
+                        Nat.
                     </p>
                 </div>
             </div>
@@ -126,3 +155,4 @@
     </div>
 </body>
 </html>
+<script src="scripts.js"></script>
