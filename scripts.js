@@ -3,6 +3,21 @@ var mobileMenu = document.getElementById('mobileMenuContainer');
 var targetMMDisplay = mobileMenu.style.display;
 var mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
+const scrollers = document.querySelectorAll(".scroller");
+
+// banner scroller
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+  }
+
+  function addAnimation() {
+    scrollers.forEach(scroller => {
+      scroller.setAttribute("data-animated", true);
+    });
+  }
+
+
 
 // images for outfits
 

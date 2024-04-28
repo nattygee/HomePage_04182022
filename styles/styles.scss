@@ -828,6 +828,57 @@ button {
     margin: 1rem 0rem;
 }
 
+.horStack {
+    display: flex;
+    flex-direction: row;
+}
+
+.scroller {
+    max-width: 100vw;
+    outline: 1px solid var(--light-green);
+    white-space: nowrap;
+    min-height: 64px;
+    background-color: yellow;
+    margin-block: 1rem;
+}
+
+.scroller[data-animated="true"] {
+    overflow: hidden;
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(-50%);
+    }
+}
+
+/* .scrollerBanner {
+    //padding-block: 1rem;
+} */
+
+.scroller[data-animated="true"] .scrollerBanner {
+    width: max-content;
+    animation: scroll 60s linear infinite;
+}
+
+.bannerText {
+    font-family: "Share Tech Mono", monospace;
+    //font-style: italic;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+}
+
+.tagChip {
+    font-size: 1rem;
+    font-family: "Share Tech Mono", monospace;
+    border: 1px solid var(--main-yellow);
+    border-radius: .5rem;
+    color: var(--main-yellow);
+    padding: .5rem;
+}
+
 mark {
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
@@ -845,7 +896,7 @@ mark {
     font-weight: 600;
     width: auto;
     //max-width: 600px;
-    padding: 1rem 0rem;
+    //padding: 1rem 0rem;
 }
 
 .ctas {
