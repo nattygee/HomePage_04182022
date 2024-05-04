@@ -412,6 +412,30 @@ button {
     //align-items: center;
 }
 
+.designExerciseGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: repeat(4, minmax(300px, 500px));
+    grid-gap: .5rem;
+    padding: 0rem 2rem;
+    margin: 1rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    //place-items: center;
+    //justify-items: center;
+    //align-items: center;
+}
+
+.pageLedeCont2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 1rem 1rem 1rem;
+    padding: 0rem 2rem;
+    box-sizing: border-box;
+    //gap: .5rem;
+}
+
 .horizontalFlexCont {
     display: flex;
     flex-direction: row;
@@ -2012,6 +2036,31 @@ p {
         width: 100%;
         max-width: 1440px;
     }
+
+    .designExerciseGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(240px, 400px));
+        //grid-auto-rows: min-content;
+        grid-gap: 2rem;
+        padding: 0rem 1rem;
+        margin: 1rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        //place-items: center;
+        //justify-items: center;
+        //align-items: center;
+    }
+
+    .pageLedeCont2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 6rem 1rem 1rem 1rem;
+        padding: 0rem 1rem;
+        box-sizing: border-box;
+        //gap: .5rem;
+    }
     
     .blogHeroContent {
         padding: 0rem 1rem 2rem 1rem;
@@ -2115,18 +2164,16 @@ p {
         justify-content: center;
     }
 
-    /* .screenshotGrid {
+    .screenshotGrid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: repeat(40, minmax(140px, 500px));
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-rows: repeat(22, minmax(200px, 400px));
         grid-gap: .5rem;
-        padding: 1rem;
-        margin: 4rem 1rem;
-        overflow: hidden;
-        //place-items: center;
-        //justify-items: center;
-        //align-items: center;
-    } */
+        padding: 0rem 1rem;
+        margin: 6rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
     
     .inspoHeader {
         grid-column: span 2;
