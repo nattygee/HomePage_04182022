@@ -631,7 +631,7 @@ button {
   justify-content: center;
   width: 100%;
   height: 320px;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   margin-bottom: 2rem;
   overflow: hidden;
 }
@@ -698,9 +698,27 @@ button {
   justify-content: center;
   width: 100%;
   max-height: 200px;
+  min-width: 320px;
 }
 .cardPreviewImg img {
   width: 100%;
+}
+
+.cardPreviewImgSm {
+  display: flex;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  min-height: 200px;
+  overflow: hidden;
+  background-color: var(--darker-green);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 200px;
+  min-width: 320px;
+}
+.cardPreviewImgSm img {
+  max-width: 180%;
 }
 
 .blogHeroImg {
