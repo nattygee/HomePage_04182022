@@ -41,6 +41,14 @@ body {
   justify-content: center;
 }
 
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .bodyOrange {
   background-image: url("/images/fdabout_bgshape.svg");
   background-repeat: no-repeat;

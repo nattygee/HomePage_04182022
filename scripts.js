@@ -5,6 +5,20 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
 const scrollers = document.querySelectorAll(".scroller");
 
+/* let foos = document.querySelectorAll(".UIdesign")
+
+// show hide button
+document.getElementById("mobileUIBtn").addEventListener("click", function() {
+  foos.forEach(function(el){
+    el.classList.toggle("hidden");
+  });
+});
+
+function filterInspo(c) {
+  var x, i;
+  x = document.getElementsByClassName("")
+}
+ */
 // banner scroller
 
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
