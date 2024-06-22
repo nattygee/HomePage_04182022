@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS12X22RCN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-FS12X22RCN');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Work+Sans:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/fd_favicon.svg" type="image/x-icon">
+    <title>Blog</title>
+</head>
+<body>
+    <div class="wholePage">
+        <div class="headerBar">
+            <div class="logo">
+                <img src="images/FDLogo_2022.svg" alt="">
+            </div>
+            <!-- Desktop Menu -->
+            <nav class="navItems">
+                <ul class="navItemList">
+                    <li><a class="navItemList" href="index.html">Home</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
+                    <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
+                    <li><a class="navItemCurrent" href="#">Design exercises</a></li>
+                    <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
+                    <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
+                </ul>
+            </nav>
+            <!-- Mobile Menu -->
+            <div class="mobileMenu">
+                <a href="#" id="mobileMenuBtn"><img src="images/mobileMenuIcon.svg" id="mobileMenuIcon" alt=""></a>
+            </div>
+            <div id="mobileMenuContainer" style="opacity: 0;">
+                <ul class="navItemListMobile">
+                    <li><a class="navItemList" href="index.html">Home</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
+                    <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
+                    <li><a class="navItemCurrent" href="#">Design exercises</a></li>
+                    <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
+                    <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- 🛑🛑🛑 CLOSE HEADER BAR ☝️ 🛑🛑🛑 -->
+        <div class="pageLedeCont2">
+            <h1 class="blogLede">Blog</h1>
+            <p class="projectDescription" style="padding: 0rem;">Here's a preview of things I've put together for fun. The design work has been done entirely in Figma. The programming work has been done with either vsCode or XCode.</p>
+        </div>
+
+        <div class="designExerciseGrid">
+            <div class="flexChild1">
+                <div class="cardPreviewImgSm">
+                    <img src="images/cardHeights_header_image.jpg" alt="">
+                </div>
+                <p class="projectTitle">Discussing the challenges with carousels, and ways to overcome them.</p>
+                <p class="datePosted">June 22 | 2024</p>
+                <p class="projectDescription">The carousel is the (im)perfect option to utilize when space is limited on a mobile device.</p>
+                <div class="spacer"></div>
+                <a href="blog_varyingcardheights.html" class="textCTAbtn">Read more</a>
+            </div>
+            <div class="hFlexChild1">
+                <div class="cardPreviewImgSm">
+                    <img src="images/shieldandspear_header_image.jpg" alt="">
+                </div>
+                <p class="projectTitle">The shield and the spear</p>
+                <p class="datePosted">May 5 | 2024</p>
+                <p class="projectDescription">Your manager should be your shield and your spear, but you are the body - the controller - that needs to know where to point them.</p>
+                <div class="spacer"></div>
+                <a href="blog_shieldandspear.html" class="textCTAbtn">Read more</a>
+            </div>
+            <div class="hFlexChild1">
+                <div class="cardPreviewImg">
+                    <img src="images/homeblogtest.png" alt="">
+                </div>
+                <p class="projectTitle">How might we justify custom interactions?</p>
+                <p class="datePosted">April 24 | 2024</p>
+                <p class="projectDescription">Platform presets or library-based components and interactions are a great way to build for efficiency, but what about quality, continuity and intuition?</p>
+                <div class="spacer"></div>
+                <a href="blog_sheets1.html" class="textCTAbtn">Read more</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="scripts.js"></script>

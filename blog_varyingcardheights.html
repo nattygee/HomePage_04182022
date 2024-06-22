@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FS12X22RCN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FS12X22RCN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Work+Sans:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/fd_favicon.svg" type="image/x-icon">
+
+    <title>Discussing the challenges with carousels, and ways to overcome them.</title>
+</head>
+<body>
+    <div class="wholePage">
+        <div class="headerBar">
+            <div class="logo">
+                <img src="images/FDLogo_2022.svg" alt="">
+            </div>
+            <!-- Desktop Menu -->
+            <nav class="navItems">
+                <ul class="navItemList">
+                    <li><a class="navItemList" href="index.html">Home</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
+                    <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
+                    <li><a class="navItemList" href="design_exercises.html">Design exercises</a></li>
+                    <!-- <li><a class="navItemList" href="#">Blog</a></li> -->
+                    <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
+                    <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
+                </ul>
+            </nav>
+            <!-- Mobile Menu -->
+            <div class="mobileMenu">
+                <a href="#" id="mobileMenuBtn"><img src="images/mobileMenuIcon.svg" id="mobileMenuIcon" alt=""></a>
+            </div>
+            <div id="mobileMenuContainer" style="opacity: 0;">
+                <ul class="navItemListMobile">
+                    <li><a class="navItemList" href="index.html">Home</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
+                    <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
+                    <li><a class="navItemList" href="design_exercises.html">Design exercises</a></li>
+                    <!-- <li><a class="navItemList" href="#.html">Blog</a></li> -->
+                    <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
+                    <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- 🛑🛑🛑 CLOSE HEADER BAR ☝️ 🛑🛑🛑 -->
+        
+        <div class="heroSectionBlog">
+            <div class="heroContentBlog">
+                <div class="blogLedeCont">
+                    <div class="blogImageLede">
+                        <img src="images/cardHeights_header_image.jpg" alt="">
+                    </div>
+                    <h1 class="blogLede">Discussing the challenges with carousels, and ways to overcome them.</h1>
+                    <p class="sideNote">June 12, 2024</p>
+                </div>
+            </div>
+            <div class="blogHeroPreview">
+                <div class="blogPreviewContent">
+                    <p class="blogCallout"><mark>What kind of carousels are we talking about?</mark></p> 
+                        <h2 style="color: var(--main-yellow);">
+                            Horizontal (traditional) carousels
+                        </h2>
+                            <p class="projectDescription">
+                                Let’s start with horizontal<br>
+                                <img class="blogImage2" src="images/img_carouselAM.jpg" alt="" style=" max-height: 600px; border-radius: 1rem;">
+                                <br>
+                                The carousel is the (im)perfect option to utilize when space is limited on a mobile device. It’s also super useful on desktop if you want to display multiple larger blocks of content or many different smaller sized options in one view without compromising on vertical space.<br><br>
+                                They are pretty straightforward: A bunch of cards, typically within the same category, are stacked side-by-side and continue off-screen horizontally. If a user wants to explore additional options within the category then they simply need to swipe or scroll left. The main benefit to this imo is that you can quickly scan many options within a section without taking up valuable vertical space on-screen.
+                            </p>
+                    <!-- <div class="blogImage">
+                        <img src="images/img_carouselAM.jpg" alt="">
+                    </div> -->
+
+                    <h2 style="color: var(--main-yellow);">
+                        Vertical carousels
+                    </h2>
+                    <img class="blogImage2" src="images/datepicker.jpg" alt="" style="width: 100%; border-radius: 1rem;">        
+                    <p class="projectDescription">
+                                We do technically see these "vertical carousels" every day in any default page where you need to scroll up or down to view additional content that is off-screen. I think something like a standard iOS date picker fits more closely to what I'm curious about though. It has multiple sets of values, stacked side-by-side, for you to explore vertically. In a similar way to the traditional carousel, you can see that each swipable/ scrollable component contains it's own distinct category of values.
+                            </p>
+
+                            <img class="blogImage2" src="images/img_datepicker.jpg" alt="" style="width: 100%; border-radius: 1rem;">
+                            <p class="projectDescription">
+                                If we progress this idea we can imagine utilizing both the vertical and horizontal axes for additional values. You can scroll up and down to find more options for each of the columns, or, if you want other types of content, you could swipe further to the side to find even more. In the example above, the additional off-screen items would be attendee/ author, and event type.
+                            </p>
+
+                        <img class="blogImage2" src="images/img_blogslots.jpg" alt="" style="width: 100%; border-radius: 1rem;">
+
+                            <p class="projectDescription">
+                                Now consider something like a digital slot machine. This somewhat resembles a social media platform like Tinder, Pinterest or Snap where you can slide left or right to view additional content that exists off-screen, but if there's something more you want to explore (related to what's on screen), you can also swipe up for additional info or related content.
+                            </p>
+                        
+
+                    <h2 style="color: var(--main-yellow);">
+                        Diagonal carousels
+                    </h2>
+                    <img class="blogImage2" src="images/img_gif_appletop100.gif" alt="" style=" max-height: 600px; border-radius: 1rem;">
+                        <p class="projectDescription">
+                            Generally I favour mobile native over web because of the constraints the iOS/ Android provide, but also how intuitive some of the interactions are.<br><br>
+                            That said, I do appreciate web-based work for how fun and weird it can be sometimes. I haven’t seen this kind of thing very often.
+                        </p>
+
+
+                    <p class="blogCallout"><mark>The thing(s) about carousels</mark></p> 
+                        <h2 style="color: var(--main-yellow);">
+                            Things to keep in mind
+                        </h2>
+                            <p class="projectDescription">
+                                • Set limit to the amount of horizontal options that are included in the carousel. At the end of said limit consider providing a link to ALL options<br><br>
+                                • Provide a hint that there is more content either with a slider, arrows, pagination/ progress dots or a peeking card - some might argue for almost ALL said affordances<br><br>
+                                • Typically you want those cards to be the same width and height, but it’s not a hard rule. When you have inconsistent empty space on the same plane it can create visual misalignment and varied weights of the cards (more on this below)
+                                <p class="projectDescription" style="padding-left: 2rem;">• Alternatively, if we think about a collage, mosaic or gallery view, those are typically pretty well balanced and have varying sizes of cards or other elements.</p>
+                            </p>
+                        <h2 style="color: var(--main-yellow);">
+                            Pros of the carousel/ swim lane
+                        </h2>
+                            <p class="projectDescription">
+                                • Quickly scan categories AND sub options at the same time. It gives people a peek into various TYPES of content within the page (usually these carousels or swim lanes include the same type of content…)<br><br>
+                                • More content can be displayed within a viewport than otherwise would be
+                            </p>
+                        <h2 style="color: var(--main-yellow);">
+                            Cons of the carousel/ swim lane
+                        </h2>
+                            <p class="projectDescription">
+                                • Sometimes people are less likely to venture too far into the extra options that are provided. There's also the argument that people are unlikely to scroll DOWN too far, so you have to decide on the lesser of two evil's. It's an imperfect solution, but the pros outweigh the cons with carousels imo - especially if your page has various groupings of content to consume.<br><br>
+                                • Carousels are typically limited to the same kind of content, and this can work against them.
+                            </p>
+                    <!-- <p class="blogCallout"><mark>Or are they?</mark></p> 
+                        <h2 style="color: var(--main-yellow);">
+                            That last point is one I found myself wondering about recently.
+                        </h2>
+                            <p class="projectDescription">
+                                On one hand, it’s preferable to keep content layout the same from card to card to ease scanning and consumption of content. On the other hand, i wonder if varying up the content and types of cards within a swim lane could potentially increase engagement. 
+                            </p>
+                            
+
+                        <img class="blogImage2" src="images/img_lemmetellyousomething.png" alt="" style="width: 100%; border-radius: 1rem;">
+                        <h2 style="color: var(--main-yellow);">
+                            Let me explain;
+                        </h2>
+                            <p class="projectDescription">
+                                There’s that idea of anticipation and variable prizes that’s explained in Nir Eyal’s book, Hooked. In a carousel you DO kind of get that anticipation of what’s further inside, off-screen, but within each you probably still have an idea of what to expect - especially if it’s a clearly labelled category. But what if we took that a bit deeper in this example? Imagine a carousel or swim lane with varying style of layout/ cards and data. You don’t know if the next piece of content is an image, a text string, a video etc. The varying content (the reward) COULD get people interacting with it more.<br><br> I think you would still need other, more traditionally organized components within the page, but this could be a fun, useful addition. Sort of like the old “I’m feeling lucky” button from Google… a potential risk in not landing exactly where you need to be, but a fun reward if you do land on your desired destination or somewhere else that becomes unexpectedly useful. <br><br>-->
+
+                            <h2 style="color: var(--main-yellow);">
+                                A little more on that last point...
+                            </h2>    
+                            <p class="projectDescription">Imagine you have a carousel made up of the same types of cards (say an image stacked with a title and description), but some cards have more text than others. As an example, maybe some of the titles or descriptions are longer than others... In practice we usually try to write content that fits within a certain range, but even if they all contain the exact same character count, depending on the words used you will always end up with varying numbers of lines. Knowing this, how might we approach designing these in a more thoughtful way? And how do these look with the common practices used today? Let's take a gander...
+                            </p>
+                            
+                    <p class="blogCallout"><mark>How this looks in context</mark></p> 
+                        <p class="projectDescription">
+                        When creating the cards and their content for carousels it often requires you to cherry pick certain words and phrases in order to make everything as visually cohesive as possible. I don't think that's exactly sustainable or promoting of the best outcome for the design of these cards.<br><br>
+                            Some specific undesirables that arrise in today's implementation include cutting off strings of text, creating awkward gaps of white space and poor alignment of elements throughout the carousels.
+                        </p>
+                        <img class="blogImage2" src="images/img_truncate.jpg" alt="" style="width: 100%; border-radius: 1rem;">
+                        <h2 style="color: var(--main-yellow);">
+                            Set text to truncate
+                        </h2>
+                            <p class="projectDescription">
+                                Truncating helps to keep text components consistent, but it's not ideal because you don't get the entire message. Even when you set a max number of lines, unless you set all the content to max 1 line then you may still end up with gaps in your cards.
+                            </p>
+                        <img class="blogImage2" src="images/img_tallsameheight.jpg" alt="" style="width: 100%; border-radius: 1rem;">
+                        <h2 style="color: var(--main-yellow);">
+                            Use tallest card to set every card height
+                        </h2>
+                            <p class="projectDescription">
+                                Similar to above, this can create unpleasant gaps of white space in cards with less content. It isn't the worst option, but the dead space created inside some cards can feel imprecise and a little distracting. Additionally, if we don't leverage max line numbers, and truncating then we create the potential for extra variance in text component size and alignment.
+                            </p>
+                        <img class="blogImage2" src="images/img_varycardheights.jpg" alt="" style="width: 100%; border-radius: 1rem;">
+                        <h2 style="color: var(--main-yellow);">
+                            Use varied card heights
+                        </h2>
+                            <p class="projectDescription">
+                                Having variable card heights just feels janky. It looks broken in the best case and unconsidered in the worst case.(IMO)
+                            </p>
+                    <p class="blogCallout"><mark>What are some alternative ways we can address undesirables?</mark></p> 
+                        <img class="blogImage2" src="images/img_solutionFill.jpg" alt="" style="width: 100%; border-radius: 1rem;">
+                        <h2 style="color: var(--main-yellow);">
+                            Fill negative space underneath cards that don’t reach the bottom
+                        </h2>
+                                <p class="projectDescription">
+                                    We could add a pattern of sorts into the container background in an effort to separate the white space behind the cards from the background of the rest of the page. I feel that this is a little more distracting than we'd want and almost accentuates the misalignment of the cards.
+                                </p>
+                        <img class="blogImage2" src="images/img_solutionHeight.jpg" alt="" style="width: 100%; border-radius: 1rem;">
+                        <h2 style="color: var(--main-yellow);">
+                            Create size variants of the same card style
+                        </h2>
+                                <p class="projectDescription">
+                                    Adding various card sizes that display the same content might solve the negative space issue. 
+                                    This could work if we made the card heights to hug content vertically and added a rule for something like [if card is less than a specified height, then wrap]. It would be nice if you could shuffle content to fit gaps automatically, but I’m not sure if that’s possible technically. Worst case you could cherry pick cards that fit together when stacked on top of eachother and place them together manually.
+                                </p>
+                        <img class="blogImage2" src="images/img_solutionVaryContent.jpg" alt="" style="width: 100%; border-radius: 1rem;">
+                        <h2 style="color: var(--main-yellow);">
+                            Stack cards and add additional elements to fill empty vertical space
+                        </h2>
+                                <p class="projectDescription">
+                                    Create filler elements that require less content to fill empty gaps in the carousel. It might be a bit like adding widgets to your carousel, but it could be anything really; small images, fun icons, book recommendations, the time or date. The list goes on. This would require more thinking and planning than your average carousel maybe deserves. Not sure it’s worth the hassle, but I’d try it just for fun. 
+                                </p>
+                    <p class="blogCallout"><mark>Wrapping up</mark></p> 
+                        <p class="projectDescription">
+                            In thinking about this more, I realized that the carousel options we typically deal with today are not THAT bad. In most cases I would opt to set a max number of lines and then truncate the text because it gives us a nice middle ground. That said, I don’t hate these new explorations.<br><br> 
+                            • Adding various types of content is a useful option but potentially not worth the overhead in design and implementation.<br><br> 
+
+                            • Stacking shorter cards together works as well, but you’d need a collection of full sized cards combined with cards less than half the height of the largest.<br><br> 
+
+                            • Keeping cards with varied height and filling the gaps underneath the shorter cards calls more attention than I’d want, but it probably depends on the pattern/ graphics.<br><br> 
+                            When we look at these kinds of things, often there is a straight forward approach to dealing with them. For me I want to play around with those straight forward approaches - mess around with the boundaries a bit. These questions come up in professional design exercises anyway so why not try to get ahead of them.<br><br> 
+
+                            Until next time,<br><br> 
+
+                            Nat
+                        </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 🛑🛑🛑 CLOSE Body ☝️ 🛑🛑🛑 -->
+        <section class="footerSection">
+            <div class="weatherStatementFtr">
+                <h5 id="weatherStatementFtr">It's always sunny.</h5>
+            </div>
+            <div class="footerImg">
+                <img src="" alt="">
+            </div>
+        </section>
+    </div>
+    
+</body>
+</html>
+<script src="scripts.js"></script>
