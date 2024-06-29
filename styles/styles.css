@@ -421,6 +421,17 @@ button {
   box-sizing: border-box;
 }
 
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: repeat(4, minmax(300px, 500px));
+  grid-gap: 0.5rem;
+  padding: 0rem 2rem;
+  margin: 1rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .pageLedeCont2 {
   width: 100%;
   display: flex;
@@ -1961,6 +1972,16 @@ mark {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(240px, 400px));
+    grid-gap: 2rem;
+    padding: 0rem 1rem;
+    margin: 1rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .blogGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(240px, 540px));
     grid-gap: 2rem;
     padding: 0rem 1rem;
     margin: 1rem 1rem;
