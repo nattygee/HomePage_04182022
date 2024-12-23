@@ -5,6 +5,163 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
 const scrollers = document.querySelectorAll(".scroller");
 
+const lightboxInspo = document.createElement('div')
+const lightboxNext = document.createElement('div')
+const lightboxPrev = document.createElement('div')
+
+lightboxInspo.id = 'lightboxInspo'
+lightboxNext.id = 'lightboxNext'
+lightboxPrev.id = 'lightboxPrev'
+
+document.body.appendChild(lightboxInspo)
+document.body.appendChild(lightboxNext)
+document.body.appendChild(lightboxPrev)
+
+const imagesInspo = document.querySelectorAll('.screenshotPortrait')
+  
+  /* based on the above (assigning div previous to imagesInspo and after imagesInspo to consts) */ 
+    const nextImg = imagesInspo.nextSibling
+    const prevImg = imagesInspo.previousSibling
+
+imagesInspo.forEach(image => {
+  image.addEventListener('click', e => {
+    lightboxInspo.classList.add('active')
+    lightboxNext.classList.add('active')
+    lightboxPrev.classList.add('active')
+
+    const prevImgContainer = document.createElement('img')
+    prevImgContainer.classList.add('lightboxImgNot')
+
+    const imgView = document.createElement('img')
+    let currentImg = image
+
+    const nextImgContainer = document.createElement('img')
+    nextImgContainer.classList.add('lightboxImgNot')
+
+
+    //const nextOne = image.nextElementSibling
+    //const prevOne = image.previousElementSibling
+
+    const targetImgSrc = image.querySelector('div > img')
+    imgView.src = targetImgSrc.src    
+    
+    const prevImgSrc1 = currentImg.previousElementSibling
+    const prevImg1 = prevImgSrc1.querySelector('div > img')
+    prevImgContainer.src = prevImg1.src
+
+    const nextImgSrc1 = currentImg.nextElementSibling
+    const nextImg1 = nextImgSrc1.querySelector('div > img')
+    nextImgContainer.src = nextImg1.src
+
+
+
+    while (lightboxInspo.firstChild) {
+      lightboxInspo.removeChild(lightboxInspo.firstChild)
+    }
+    
+    lightboxInspo.appendChild(prevImgContainer)
+    lightboxInspo.appendChild(imgView)
+    lightboxInspo.appendChild(nextImgContainer)
+
+// should probably spend some time to make these separate functions to apply to the 4 event listeners
+    // next button to switch images?
+    lightboxNext.addEventListener('click', e => {
+      const nextOne = currentImg.nextElementSibling
+        const nextImg = nextOne.querySelector('div > img')
+        
+        // switch previous image to clicked image before switching middle image container to the next sibling of the clicked image
+        prevImgContainer.src = imgView.src
+
+      imgView.src = nextImg.src
+
+      // next element sibling for upcoming image
+      const nextImgContainerSibling = nextOne.nextElementSibling
+      const upcomingImg = nextImgContainerSibling.querySelector('div > img')
+      nextImgContainer.src = upcomingImg.src
+
+      currentImg = nextOne
+
+    })
+
+    // prev button to switch images?
+    lightboxPrev.addEventListener('click', e => {
+      const prevOne = currentImg.previousElementSibling
+        const prevImg = prevOne.querySelector('div > img')
+
+        nextImgContainer.src = imgView.src
+
+        // left arrow key switches upcoming image
+        const prevImgContainerSibling = prevOne.previousElementSibling
+        const lastImg = prevImgContainerSibling.querySelector('div > img')
+        prevImgContainer.src = lastImg.src  
+
+      imgView.src = prevImg.src
+      currentImg = prevOne
+    })
+
+    // right arrow key to switch images?
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        const nextOne = currentImg.nextElementSibling
+        const nextImg = nextOne.querySelector('div > img')
+
+        // right arrow key switches upcoming image
+        const nextImgContainerSibling = nextOne.nextElementSibling
+        const upcomingImg = nextImgContainerSibling.querySelector('div > img')
+        nextImgContainer.src = upcomingImg.src
+        prevImgContainer.src = imgView.src
+
+        // right arrow key hover state for keypress affordance (flashes orange)
+        lightboxNext.classList.add('hover')
+        document.addEventListener('keyup', (e) => {
+          lightboxNext.classList.remove('hover')
+        })
+
+      imgView.src = nextImg.src
+      currentImg = nextOne
+      }
+
+      if (e.key === 'Escape') {
+        lightboxInspo.classList.remove('active')
+        lightboxNext.classList.remove('active')
+        lightboxPrev.classList.remove('active')
+      }
+    })
+
+     // left arrow key to switch images?
+     document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        const prevOne = currentImg.previousElementSibling
+        const prevImg = prevOne.querySelector('div > img')
+
+        // left arrow key switches upcoming image
+        const prevImgContainerSibling = prevOne.previousElementSibling
+        const lastImg = prevImgContainerSibling.querySelector('div > img')
+        prevImgContainer.src = lastImg.src
+        nextImgContainer.src = imgView.src
+
+        // right arrow key hover state for keypress affordance (flashes orange)
+        lightboxPrev.classList.add('hover')
+        document.addEventListener('keyup', (e) => {
+          lightboxPrev.classList.remove('hover')
+        })
+
+      imgView.src = prevImg.src
+      currentImg = prevOne
+      }
+    })
+
+  })
+})
+
+lightboxInspo.addEventListener('click', e => {
+  if(e.target !== e.currentTarget) return
+lightboxInspo.classList.remove('active')
+lightboxNext.classList.remove('active')
+lightboxPrev.classList.remove('active')
+})
+
+
 /* let foos = document.querySelectorAll(".UIdesign")
 
 // show hide button

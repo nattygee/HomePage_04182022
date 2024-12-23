@@ -520,6 +520,7 @@ button {
 }
 .screenshotPortrait img {
   width: 100%;
+  cursor: pointer;
   /* display: block;
   margin-left: auto;
   margin-right: auto; */
@@ -1649,6 +1650,91 @@ mark {
   max-height: 30vh; */
 }
 
+#lightboxInspo {
+  position: fixed;
+  z-index: 1100;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  display: none;
+}
+
+#lightboxInspo.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightboxInspo img {
+  max-height: 90%;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+#lightboxInspo img.lightboxImgNot {
+  opacity: 0.95;
+  max-height: 30%;
+}
+
+#lightboxNext {
+  position: fixed;
+  z-index: 1101;
+  top: 50%;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(29, 46, 33, 0.4);
+  background-image: url(../images/rightarrow.svg);
+  border-radius: 1rem;
+  cursor: pointer;
+  display: none;
+  transition: 0.1s;
+}
+
+#lightboxNext:hover {
+  background-color: rgba(29, 46, 33, 0.9);
+}
+
+#lightboxNext.hover {
+  background-color: #f8714a;
+}
+
+#lightboxNext.active {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+#lightboxPrev {
+  position: fixed;
+  z-index: 1101;
+  top: 50%;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(29, 46, 33, 0.4);
+  background-image: url(../images/leftarrow.svg);
+  border-radius: 1rem;
+  cursor: pointer;
+  display: none;
+  transition: 0.1s;
+}
+
+#lightboxPrev:hover {
+  background-color: rgba(29, 46, 33, 0.9);
+}
+
+#lightboxPrev.hover {
+  background-color: #f8714a;
+}
+
+#lightboxPrev.active {
+  display: flex;
+}
+
 @media only screen and (max-width: 1020px) {
   .heroImg {
     min-width: 200px;
@@ -2493,12 +2579,12 @@ mark {
     font-size: 2.5rem;
     line-height: 3rem;
     letter-spacing: 0.15rem;
-    color: #FAFB71;
+    color: #FFFFFF;
   }
   .heroContent {
     flex: 40%;
     min-width: 300px;
-    margin: 0rem 1rem;
+    margin: 0rem 0rem;
     padding: 8rem;
     border-radius: 1rem;
     border: 1px solid var(--light-green);
