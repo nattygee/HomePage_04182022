@@ -402,7 +402,7 @@ button {
 .screenshotGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-template-rows: repeat(7, minmax(200px, 400px));
+  grid-template-rows: repeat(10, minmax(200px, 400px));
   grid-gap: 0.5rem;
   padding: 0rem 2rem;
   margin: 4rem 1rem;
