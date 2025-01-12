@@ -26,8 +26,11 @@ const imagesInspo = document.querySelectorAll('.screenshotPortrait')
 // gallery filter buttons
 
 
-const galImgs = document.querySelectorAll('.screenshotPortrait.screenshotLandscape');
+const galImgs = document.querySelectorAll('.screenshotPortrait, .screenshotLandscape');
 const galBtns = document.querySelectorAll('.filterBtn');
+
+console.log(galImgs, galBtns);
+
 const galBtnAll = document.getElementById('galBtnAll');
 
 for (let i = 0; i < galBtns.length; i++) {
@@ -71,6 +74,15 @@ function filterActive(e) {
     if (filterAllFlag.includes(1) == false) {
       galBtnAll.classList.add('filter-active')
     }
+
+    // image actions
+
+    galImgs.forEach(card => {
+      card.classList.add("hide")
+      if(card.dataset.name == e.target.dataset.name) {
+        card.classList.remove("hide");
+      }
+    })
     
   }
 
