@@ -23,6 +23,80 @@ const imagesInspo = document.querySelectorAll('.screenshotPortrait')
     const nextImg = imagesInspo.nextSibling
     const prevImg = imagesInspo.previousSibling
 
+// gallery filter buttons
+
+
+const galImgs = document.querySelectorAll('.screenshotPortrait.screenshotLandscape');
+const galBtns = document.querySelectorAll('.filterBtn');
+const galBtnAll = document.getElementById('galBtnAll');
+
+for (let i = 0; i < galBtns.length; i++) {
+  galBtns[i].addEventListener('click', filterActive);
+}
+
+function filterActive(e) {
+
+  // if you tap on active, make it inactive
+  if(e.target.classList.contains('filter-active')) {
+    e.target.classList.remove('filter-active')
+ 
+  // if you tap on All, make all filters inactive
+  } else if(e.target.classList.contains('filter-all')) {
+    galBtns.forEach(btn => {
+      btn.classList.remove('filter-active');
+    });
+    e.target.classList.add('filter-active');
+  } else {
+    // if you tap on inactive filter, make active
+      e.target.classList.add('filter-active')
+    // if you tap on inactive filter, make All filter inactive
+      galBtns.forEach(btn => {
+        if(btn.classList.contains('filter-all')) {
+          btn.classList.remove('filter-active')
+        }
+      });
+    }
+    
+    // if you tap the last active item
+    var filterAllFlag = []
+    galBtns.forEach(btn => {
+      if (btn.classList.contains('filter-active') == false) {
+        filterAllFlag.push(0)
+      } else {
+        filterAllFlag.push(1)
+      }
+    })
+    console.log(filterAllFlag)
+
+    if (filterAllFlag.includes(1) == false) {
+      galBtnAll.classList.add('filter-active')
+    }
+    
+  }
+
+
+/* function setActiveBtn(e) {
+  galBtns.forEach(btn => {
+    btn.classList.remove('filter-active');
+  });
+
+  e.target.classList.add('filter-active')
+} */
+
+function filterImage(e) {
+  setActiveBtn(e);
+  galImgs.forEach(img => {
+    img.classList.remove('hide');
+
+    const imgType = parseInt(img.dataset.img);
+    const btnType = parseInt(e.target.dataset.btn);
+
+    if(imgType !== btnType) {
+      img.classList.add('hide');
+    }
+  });
+}
+
 imagesInspo.forEach(image => {
   image.addEventListener('click', e => {
     lightboxInspo.classList.add('active')

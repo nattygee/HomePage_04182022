@@ -239,6 +239,35 @@ button {
   padding: 0rem 0rem 0.5rem 0rem;
 }
 
+.galleryFilters {
+  height: 100px;
+  margin-top: 4rem;
+  display: flex;
+}
+
+.filter-active {
+  background-color: #FFEF9D;
+  color: #000000;
+}
+
+.filterBtn {
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid #1d2e21;
+  color: #1d2e21;
+  border-radius: 1rem;
+  margin: 0.25rem;
+  transition: 0.24s;
+}
+
+.filter-all {
+  padding: 0.5rem;
+}
+
+.hide {
+  display: none;
+}
+
 .sideNote {
   color: var(--light-green);
   font-size: 1rem;
