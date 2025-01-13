@@ -59,6 +59,15 @@ function filterActive(e) {
         }
       });
     }
+
+     // image actions
+
+     galImgs.forEach(card => {
+      card.classList.add("hide")
+      if(card.dataset.name == e.target.dataset.name || e.target.dataset.name == "filterBtn-all") {
+        card.classList.remove("hide");
+      }
+    })
     
     // if you tap the last active item
     var filterAllFlag = []
@@ -73,27 +82,16 @@ function filterActive(e) {
 
     if (filterAllFlag.includes(1) == false) {
       galBtnAll.classList.add('filter-active')
+      // removing 'hide' class from all cards if the last active filter is tapped
+      galImgs.forEach(card => {
+        card.classList.remove("hide");
+      })
     }
 
-    // image actions
-
-    galImgs.forEach(card => {
-      card.classList.add("hide")
-      if(card.dataset.name == e.target.dataset.name) {
-        card.classList.remove("hide");
-      }
-    })
+   
     
   }
 
-
-/* function setActiveBtn(e) {
-  galBtns.forEach(btn => {
-    btn.classList.remove('filter-active');
-  });
-
-  e.target.classList.add('filter-active')
-} */
 
 function filterImage(e) {
   setActiveBtn(e);
