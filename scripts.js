@@ -28,6 +28,7 @@ const imagesInspo = document.querySelectorAll('.screenshotPortrait')
 
 const galImgs = document.querySelectorAll('.screenshotPortrait, .screenshotLandscape');
 const galBtns = document.querySelectorAll('.filterBtn');
+var galActiveFilters = [];
 
 console.log(galImgs, galBtns);
 
@@ -41,33 +42,83 @@ function filterActive(e) {
 
   // if you tap on active, make it inactive
   if(e.target.classList.contains('filter-active')) {
+    
+    // if it's active, remove active filter
     e.target.classList.remove('filter-active')
+    
+    // find target dataset name in array and remove
+    var filterDSIndex = galActiveFilters.indexOf(e.target.dataset.name)
+    galActiveFilters.splice(filterDSIndex, 1)
+
+    // apply changes to cards
+    galImgs.forEach(card => {
+
+      // if card matches the clicked filter, hide card
+      if(e.target.dataset.name == card.dataset.name) {
+        card.classList.add("hide");
+        console.log("hide this")
+
+        // if you click on any active filter, check for other active filters - if they are active and match the card dataset name, then keep revealed
+      } else if(galActiveFilters.some(fltr => fltr.includes(card.dataset.name))) {
+        card.classList.remove("hide");
+        console.log("reveal that")
+      }
+    });
+    
+    console.log("filter removed: " + e.target.dataset.name)
+    console.log("new active filters: " + galActiveFilters)
  
   // if you tap on All, make all filters inactive
   } else if(e.target.classList.contains('filter-all')) {
+
+    // reset filter buttons
     galBtns.forEach(btn => {
       btn.classList.remove('filter-active');
     });
+
+    // make All filter active
     e.target.classList.add('filter-active');
+
+    // empty active filters array
+    galActiveFilters = [];
+
+    // reveal all cards
+    galImgs.forEach(card => {
+      card.classList.remove("hide");
+    });
+
+    // note
+    console.log("All filter tapped - deactivate other filters");
+
   } else {
+    
     // if you tap on inactive filter, make active
-      e.target.classList.add('filter-active')
+    e.target.classList.add('filter-active');
+        
+    // push filter dataset name to array (galActiveFilters)
+    galActiveFilters.push(e.target.dataset.name);
+    console.log("Single inactive filter selected: " + galActiveFilters);
+
     // if you tap on inactive filter, make All filter inactive
-      galBtns.forEach(btn => {
-        if(btn.classList.contains('filter-all')) {
-          btn.classList.remove('filter-active')
+    galBtns.forEach(btn => {
+      if(btn.classList.contains('filter-all')) {
+        btn.classList.remove('filter-active')
         }
       });
-    }
 
-     // image actions
+    // for each gallery card
+      galImgs.forEach(card => {
 
-     galImgs.forEach(card => {
-      card.classList.add("hide")
-      if(card.dataset.name == e.target.dataset.name || e.target.dataset.name == "filterBtn-all") {
-        card.classList.remove("hide");
-      }
-    })
+        // hide card
+        card.classList.add("hide")
+
+        // if the card's dataset name matches one of the active filters, reveal the card
+        if(galActiveFilters.some(fltr => fltr.includes(card.dataset.name))) {
+          card.classList.remove("hide");
+        }
+      });
+
+  }
     
     // if you tap the last active item
     var filterAllFlag = []
@@ -78,7 +129,6 @@ function filterActive(e) {
         filterAllFlag.push(1)
       }
     })
-    console.log(filterAllFlag)
 
     if (filterAllFlag.includes(1) == false) {
       galBtnAll.classList.add('filter-active')
@@ -86,6 +136,7 @@ function filterActive(e) {
       galImgs.forEach(card => {
         card.classList.remove("hide");
       })
+      console.log("last filter deselected: " + e.target.dataset.name)
     }
 
    
