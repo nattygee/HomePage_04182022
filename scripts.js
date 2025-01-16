@@ -30,7 +30,7 @@ const galImgs = document.querySelectorAll('.screenshotPortrait, .screenshotLands
 const galBtns = document.querySelectorAll('.filterBtn');
 var galActiveFilters = [];
 
-console.log(galImgs, galBtns);
+//console.log(galImgs, galBtns);
 
 const galBtnAll = document.getElementById('galBtnAll');
 
@@ -97,7 +97,6 @@ function filterActive(e) {
         
     // push filter dataset name to array (galActiveFilters)
     galActiveFilters.push(e.target.dataset.name);
-    console.log("Single inactive filter selected: " + galActiveFilters);
 
     // if you tap on inactive filter, make All filter inactive
     galBtns.forEach(btn => {
@@ -106,16 +105,41 @@ function filterActive(e) {
         }
       });
 
+
     // for each gallery card
       galImgs.forEach(card => {
 
         // hide card
-        card.classList.add("hide")
+        card.classList.add("hide");
+
+        // test image tag/ array:
+        let dupCardCategory = card.dataset.name;
+        if(dupCardCategory.includes(" ")) {
+            console.log("🟨🟨🟨🟨🟨")
+            let catArray = dupCardCategory.split(' ');
+
+            catArray.forEach(filterItem => {
+              if(galActiveFilters.some(fltr => fltr.includes(filterItem))) {
+                card.classList.remove("hide");
+                console.log(catArray)
+                console.log(galActiveFilters);
+                console.log("active filters: 🟥🟥🟥🟥🟥🟥👆")
+              } else {
+                //card.classList.add("hide")
+                console.log("🟦")
+              }
+            });
+        }
+
+
+        
 
         // if the card's dataset name matches one of the active filters, reveal the card
-        if(galActiveFilters.some(fltr => fltr.includes(card.dataset.name))) {
+        /* if(galActiveFilters.some(fltr => fltr.includes(card.dataset.name))) {
+          
           card.classList.remove("hide");
-        }
+
+        } */ 
       });
 
   }
