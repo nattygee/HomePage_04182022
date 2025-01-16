@@ -53,20 +53,37 @@ function filterActive(e) {
     // apply changes to cards
     galImgs.forEach(card => {
 
-      // if card matches the clicked filter, hide card
-      if(e.target.dataset.name == card.dataset.name) {
+      let dupCardCategory = card.dataset.name;
+        if(dupCardCategory.includes(" ")) {
+          let catArray = dupCardCategory.split(' ');
+          let arrayFlag = [];
+
+          catArray.forEach(filterItem => {
+            if(!galActiveFilters.some(fltr => fltr.includes(filterItem))) {
+              //card.classList.add("hide");
+              arrayFlag.push(1);
+            } else if(galActiveFilters.some(fltr => fltr.includes(filterItem))) {
+              //card.classList.remove("hide");
+              arrayFlag.push(0);
+            }
+
+            if(arrayFlag.includes(0)) {
+              card.classList.remove("hide");
+            } else {
+              card.classList.add("hide");
+            }
+          });
+
+          /* if card matches the clicked filter, hide card */
+        } else if(e.target.dataset.name == card.dataset.name) {
         card.classList.add("hide");
-        console.log("hide this")
 
         // if you click on any active filter, check for other active filters - if they are active and match the card dataset name, then keep revealed
-      } else if(galActiveFilters.some(fltr => fltr.includes(card.dataset.name))) {
-        card.classList.remove("hide");
-        console.log("reveal that")
-      }
+        // looks like i need some correction below here 🚨 because it's saying if card includes a matching filter, remove... but i need to separate the ones with multiple filters
+      }/*  else if(!galActiveFilters.some(fltr => fltr.includes(card.dataset.name))) {
+        card.classList.add("hide");
+      }  */
     });
-    
-    console.log("filter removed: " + e.target.dataset.name)
-    console.log("new active filters: " + galActiveFilters)
  
   // if you tap on All, make all filters inactive
   } else if(e.target.classList.contains('filter-all')) {
@@ -115,20 +132,22 @@ function filterActive(e) {
         // test image tag/ array:
         let dupCardCategory = card.dataset.name;
         if(dupCardCategory.includes(" ")) {
-            console.log("🟨🟨🟨🟨🟨")
             let catArray = dupCardCategory.split(' ');
 
             catArray.forEach(filterItem => {
               if(galActiveFilters.some(fltr => fltr.includes(filterItem))) {
                 card.classList.remove("hide");
-                console.log(catArray)
-                console.log(galActiveFilters);
-                console.log("active filters: 🟥🟥🟥🟥🟥🟥👆")
               } else {
                 //card.classList.add("hide")
                 console.log("🟦")
               }
             });
+        } else if(galActiveFilters.some(fltr => fltr.includes(dupCardCategory))) {
+          card.classList.remove("hide");
+        } else {
+          if(card.dataset.name == e.target.dataset.name) {
+            card.classList.remove("hide");
+          }
         }
 
 
