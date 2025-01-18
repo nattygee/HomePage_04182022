@@ -137,16 +137,19 @@ function filterActive(e) {
             catArray.forEach(filterItem => {
               if(galActiveFilters.some(fltr => fltr.includes(filterItem))) {
                 card.classList.remove("hide");
+                console.log("🟩")
               } else {
-                //card.classList.add("hide")
+                //  card.classList.add("hide")
                 console.log("🟦")
               }
             });
         } else if(galActiveFilters.some(fltr => fltr.includes(dupCardCategory))) {
           card.classList.remove("hide");
+          console.log("🟥")
         } else {
           if(card.dataset.name == e.target.dataset.name) {
             card.classList.remove("hide");
+            console.log("🟧")
           }
         }
 
