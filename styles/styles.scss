@@ -153,7 +153,7 @@ button {
     justify-content: left;
     position: fixed;
     width: 100%;
-    max-width: 1440px;
+    //max-width: 1440px;
     //background-color: #304C3790;
     background-image: linear-gradient(#304C3799, #304C3700);
     //background-image: linear-gradient(#C3422599, #C3422500);
@@ -223,7 +223,7 @@ button {
 
 #mobileMenuContainer {
     //display: none;
-    opacity: 0;
+    //opacity: 0;
     
     position: absolute;
     right: 2rem;
@@ -247,24 +247,31 @@ button {
 // 🛑 gallery filters 
 
 .galleryFilters {
-    height: 100px;
     margin-top: 4rem;
-    display: flex;
-}
-
-.filter-active {
-background-color: #FFEF9D;
-color: #000000;
+    padding: 0rem 2rem;
+    width: 100%;
+    height: 100px;
+    display: block;
 }
 
 .filterBtn {
     cursor: pointer;
     padding: .5rem;
-    border: 1px solid #1d2e21;
-    color: #1d2e21;
-    border-radius: 1rem;
-    margin: 0.25rem;
+    font-family: 'work sans', sans-serif;
+    font-weight: 600;
+    border: 1px solid var(--light-green);
+    color: #FFEF9D;
+    border-radius: .75rem;
+    margin-right: 4px;
+    margin-bottom: 0rem;
     transition: 0.24s;
+}
+
+.filter-active {
+    background-color:rgba($color: #FFEF9D, $alpha: 0.3);
+    border: 1px solid var(--main-yellow);
+    color: var(--main-yellow);
+    font-weight: 600;
 }
 
 .filter-all {
@@ -465,7 +472,7 @@ color: #000000;
     grid-template-rows: repeat(18, minmax(200px, 400px));
     grid-gap: .5rem;
     padding: 0rem 2rem;
-    margin: 4rem 1rem;
+    margin: 1rem 1rem;
     width: 100%;
     box-sizing: border-box;
     //place-items: center;
@@ -2001,7 +2008,7 @@ p {
 
     .headerBar {
         display: flex;
-        padding: 1rem 2rem 1rem 2rem;
+        padding: 1rem 1rem 1rem 1rem;
         //align-items: center;
         //justify-content: center;
     }
@@ -2023,6 +2030,28 @@ p {
 
     .navItems {
         display: none;
+    }
+
+    .galleryFilters {
+        margin-top: 6rem;
+        margin-bottom: 2rem;
+        padding: 0rem 1rem;
+        width: 100%;
+        height: 100px;
+        display: block;
+    }
+
+    .filterBtn {
+        cursor: pointer;
+        padding: .5rem;
+        font-family: 'work sans', sans-serif;
+        font-weight: 600;
+        border: 1px solid var(--light-green);
+        color: #FFEF9D;
+        border-radius: .75rem;
+        margin-right: 4px;
+        margin-bottom: .5rem;
+        transition: 0.24s;
     }
 
     .heroImgBlog {
@@ -2367,7 +2396,7 @@ p {
         grid-template-rows: repeat(25, minmax(200px, 400px));
         grid-gap: .5rem;
         padding: 0rem 1rem;
-        margin: 6rem 1rem;
+        margin: 1rem 1rem;
         width: 100%;
         box-sizing: border-box;
     }
@@ -2378,7 +2407,7 @@ p {
         border: 1px solid var(--light-green);
         background-image: url("../images/inpiration_ledeimg.svg");
         background-size: contain;
-        display: flex;
+        display: none;
         justify-content: right;
         img {
             padding: 3rem;
