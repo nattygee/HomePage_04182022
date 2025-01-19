@@ -2054,6 +2054,14 @@ p {
         transition: 0.24s;
     }
 
+    #lightboxInspo img {
+        //width: 440px;
+        max-height: 70%;
+        border-radius: 2rem;
+        padding: 1rem;
+        //border: 4px solid #ffffff;
+    }
+
     .heroImgBlog {
         display: none;
         flex: 30%;
@@ -2394,6 +2402,7 @@ p {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         grid-template-rows: repeat(25, minmax(200px, 400px));
+        //grid-template-rows: repeat(25, minmax(auto, auto));
         grid-gap: .5rem;
         padding: 0rem 1rem;
         margin: 1rem 1rem;
@@ -2423,6 +2432,7 @@ p {
         overflow: hidden;
         grid-column: span 2;
         min-width: 120px;
+        //height: 500px;
         
         img {
             width: 100%;

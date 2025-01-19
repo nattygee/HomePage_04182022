@@ -1952,6 +1952,11 @@ mark {
     margin-bottom: 0.5rem;
     transition: 0.24s;
   }
+  #lightboxInspo img {
+    max-height: 70%;
+    border-radius: 2rem;
+    padding: 1rem;
+  }
   .heroImgBlog {
     display: none;
     flex: 30%;
