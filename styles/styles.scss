@@ -138,7 +138,7 @@ button {
 .wholePage {
     width: 100vw;
     height: 100vh;
-    display: flex;
+    display: inline-block;
     align-items: center;
     //justify-content: center;
     flex-direction: column;
@@ -251,7 +251,7 @@ button {
     padding: 0rem 2rem;
     width: 100%;
     height: 100px;
-    display: block;
+    display: none;
 }
 
 .filterBtn {
@@ -262,7 +262,7 @@ button {
     border: 1px solid var(--light-green);
     color: #FFEF9D;
     border-radius: .75rem;
-    margin-right: 4px;
+    margin-right: 8px;
     margin-bottom: 0rem;
     transition: 0.24s;
 }
@@ -280,6 +280,72 @@ button {
 
 .hide {
     display: none;
+}
+
+.xScroll {
+    margin-top: 6rem;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0);
+    height: 40px;
+    padding: 0rem 1rem;
+    display: flex;
+    overflow-x: auto;
+
+    .spacer {
+        height: 100%;
+        flex: 0 0 16px;
+        // or:
+        /* flex-basis: 48px;
+        flex-grow: 0;
+        flex-shrink: 0; */
+    }
+}
+
+.xScroll::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+.xScrollItem {
+    color: white;
+    min-width: 100px;
+    height: 64px;
+    text-align: center;
+}
+
+.moreSuggestion {
+    width: 48px;
+    height: 40px;
+    padding: 1rem;
+    background-image: linear-gradient(90deg, rgba($color: #304c37, $alpha: 0), rgba($color: #324f3a, $alpha: 1));
+    position: absolute;
+    backdrop-filter: blur(1px);
+    right: 0;
+    mask: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 12.5%,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 37.5%
+  );
+}
+.moreSuggestion2 {
+    width: 32px;
+    height: 64px;
+    padding: 1rem;
+    //background-image: linear-gradient(90deg, rgba($color: #304c37, $alpha: 0), rgba($color: #304c37, $alpha: 1));
+    position: absolute;
+    backdrop-filter: blur(0.5px);
+    right: 0;
+}
+.moreSuggestion3 {
+    width: 24px;
+    height: 64px;
+    padding: 1rem;
+    //background-image: linear-gradient(90deg, rgba($color: #304c37, $alpha: 0), rgba($color: #304c37, $alpha: 1));
+    position: absolute;
+    backdrop-filter: blur(0.75px);
+    right: 0;
 }
 
 .inspoDescription {
@@ -471,8 +537,8 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-template-rows: repeat(18, minmax(200px, 400px));
     grid-gap: .5rem;
-    padding: 0rem 2rem;
-    margin: 1rem 1rem;
+    padding: 0rem 1rem;
+    margin: 1rem 0rem;
     width: 100%;
     box-sizing: border-box;
     //place-items: center;
@@ -2001,7 +2067,7 @@ p {
 
     .wholePage {
         flex-basis: 100%;
-        display: flex;
+        display: inline-block;
         //align-items:center;
         //justify-content: center;
     }
@@ -2032,26 +2098,62 @@ p {
         display: none;
     }
 
+    .xScroll {
+        margin-top: 6rem;
+        width: 100%;
+        background-color: rgba($color: #000000, $alpha: 0);
+        height: 64px;
+        padding: 0rem 1rem;
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .xScroll::-webkit-scrollbar {
+        width: 0;
+        display: none;
+    }
+
+    .xScrollItem {
+        color: white;
+        min-width: 100px;
+        height: 64px;
+        text-align: center;
+    }
+
     .galleryFilters {
+        display: none;
+        flex-wrap: wrap;
         margin-top: 6rem;
         margin-bottom: 2rem;
         padding: 0rem 1rem;
-        width: 100%;
         height: 100px;
-        display: block;
+        //overflow-x: auto;
+        width: 100%;
     }
 
     .filterBtn {
         cursor: pointer;
-        padding: .5rem;
+        padding: .5rem 1rem;
         font-family: 'work sans', sans-serif;
         font-weight: 600;
+        //min-width: 64px;
+        width: auto;
         border: 1px solid var(--light-green);
         color: #FFEF9D;
         border-radius: .75rem;
-        margin-right: 4px;
+        margin-right: 8px;
         margin-bottom: .5rem;
         transition: 0.24s;
+        /* min-width: 60px;
+        width: auto;
+        height: 40px; */
+    }
+
+    .filter-active {
+        background-color:rgba($color: #FFEF9D, $alpha: 0.3);
+        border: 1px solid var(--main-yellow);
+        color: var(--main-yellow);
+        font-weight: 600;
     }
 
     #lightboxInspo img {
@@ -2405,7 +2507,7 @@ p {
         //grid-template-rows: repeat(25, minmax(auto, auto));
         grid-gap: .5rem;
         padding: 0rem 1rem;
-        margin: 1rem 1rem;
+        margin: 1rem 0rem;
         width: 100%;
         box-sizing: border-box;
     }
