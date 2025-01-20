@@ -648,11 +648,11 @@ button {
     background-image: url("../images/inpiration_ledeimg.svg");
     background-size: contain;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     img {
         padding: 3rem;
-        margin-top: -14rem;
-        margin-right: -2rem;
+        margin-top: 0rem;
+        margin-right: 0rem;
         width: 240px;
     }
 }
@@ -679,6 +679,9 @@ button {
     border-radius: 1rem;
     overflow: hidden;
     grid-column: span 2;
+    img {
+        cursor: pointer;
+    }
 }
 
 .screenshotDiv {

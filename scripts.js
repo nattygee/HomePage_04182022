@@ -17,7 +17,7 @@ document.body.appendChild(lightboxInspo)
 /* document.body.appendChild(lightboxNext)
 document.body.appendChild(lightboxPrev) */
 
-const imagesInspo = document.querySelectorAll('.screenshotPortrait')
+const imagesInspo = document.querySelectorAll('.screenshotPortrait, .screenshotLandscape')
   
   /* based on the above (assigning div previous to imagesInspo and after imagesInspo to consts) */ 
     const nextImg = imagesInspo.nextSibling
