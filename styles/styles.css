@@ -2013,6 +2013,18 @@ mark {
     height: 64px;
     text-align: center;
   }
+  .moreSuggestion {
+    width: 48px;
+    height: 64px;
+    padding: 1rem;
+    background-image: linear-gradient(90deg, rgba(48, 76, 55, 0), #324f3a);
+    position: absolute;
+    -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
+    right: 0;
+    -webkit-mask: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 37.5%);
+            mask: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 37.5%);
+  }
   .galleryFilters {
     display: none;
     flex-wrap: wrap;
