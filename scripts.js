@@ -14,8 +14,8 @@ lightboxNext.id = 'lightboxNext'
 lightboxPrev.id = 'lightboxPrev'
 
 document.body.appendChild(lightboxInspo)
-document.body.appendChild(lightboxNext)
-document.body.appendChild(lightboxPrev)
+/* document.body.appendChild(lightboxNext)
+document.body.appendChild(lightboxPrev) */
 
 const imagesInspo = document.querySelectorAll('.screenshotPortrait')
   
@@ -207,17 +207,17 @@ function filterImage(e) {
 imagesInspo.forEach(image => {
   image.addEventListener('click', e => {
     lightboxInspo.classList.add('active')
-    lightboxNext.classList.add('active')
-    lightboxPrev.classList.add('active')
+    /* lightboxNext.classList.add('active')
+    lightboxPrev.classList.add('active') */
 
-    const prevImgContainer = document.createElement('img')
-    prevImgContainer.classList.add('lightboxImgNot')
+    /* const prevImgContainer = document.createElement('img')
+    prevImgContainer.classList.add('lightboxImgNot') */
 
     const imgView = document.createElement('img')
     let currentImg = image
 
-    const nextImgContainer = document.createElement('img')
-    nextImgContainer.classList.add('lightboxImgNot')
+    /* const nextImgContainer = document.createElement('img')
+    nextImgContainer.classList.add('lightboxImgNot') */
 
 
     //const nextOne = image.nextElementSibling
@@ -226,13 +226,13 @@ imagesInspo.forEach(image => {
     const targetImgSrc = image.querySelector('div > img')
     imgView.src = targetImgSrc.src    
     
-    const prevImgSrc1 = currentImg.previousElementSibling
+    /* const prevImgSrc1 = currentImg.previousElementSibling
     const prevImg1 = prevImgSrc1.querySelector('div > img')
     prevImgContainer.src = prevImg1.src
 
     const nextImgSrc1 = currentImg.nextElementSibling
     const nextImg1 = nextImgSrc1.querySelector('div > img')
-    nextImgContainer.src = nextImg1.src
+    nextImgContainer.src = nextImg1.src */
 
 
 
@@ -240,9 +240,9 @@ imagesInspo.forEach(image => {
       lightboxInspo.removeChild(lightboxInspo.firstChild)
     }
     
-    lightboxInspo.appendChild(prevImgContainer)
+    /* lightboxInspo.appendChild(prevImgContainer) */
     lightboxInspo.appendChild(imgView)
-    lightboxInspo.appendChild(nextImgContainer)
+    /* lightboxInspo.appendChild(nextImgContainer) */
 
 // should probably spend some time to make these separate functions to apply to the 4 event listeners
     // next button to switch images?
@@ -282,7 +282,7 @@ imagesInspo.forEach(image => {
 
     // right arrow key to switch images?
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') {
+      /* if (e.key === 'ArrowRight') {
         const nextOne = currentImg.nextElementSibling
         const nextImg = nextOne.querySelector('div > img')
 
@@ -300,17 +300,17 @@ imagesInspo.forEach(image => {
 
       imgView.src = nextImg.src
       currentImg = nextOne
-      }
+      } */
 
       if (e.key === 'Escape') {
         lightboxInspo.classList.remove('active')
-        lightboxNext.classList.remove('active')
-        lightboxPrev.classList.remove('active')
+        /* lightboxNext.classList.remove('active')
+        lightboxPrev.classList.remove('active') */
       }
     })
 
      // left arrow key to switch images?
-     document.addEventListener('keydown', (e) => {
+     /* document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
         const prevOne = currentImg.previousElementSibling
         const prevImg = prevOne.querySelector('div > img')
@@ -330,7 +330,7 @@ imagesInspo.forEach(image => {
       imgView.src = prevImg.src
       currentImg = prevOne
       }
-    })
+    }) */
 
   })
 })
@@ -338,8 +338,8 @@ imagesInspo.forEach(image => {
 lightboxInspo.addEventListener('click', e => {
   if(e.target !== e.currentTarget) return
 lightboxInspo.classList.remove('active')
-lightboxNext.classList.remove('active')
-lightboxPrev.classList.remove('active')
+/* lightboxNext.classList.remove('active')
+lightboxPrev.classList.remove('active') */
 })
 
 
