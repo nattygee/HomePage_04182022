@@ -513,7 +513,7 @@ button {
 .screenshotGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-template-rows: repeat(18, minmax(200px, 400px));
+  grid-template-rows: repeat(minmax(200px, 400px));
   grid-gap: 0.5rem;
   padding: 0rem 1rem;
   margin: 1rem 0rem;
@@ -615,6 +615,7 @@ button {
   background-size: contain;
   display: flex;
   justify-content: center;
+  max-height: 400px;
 }
 .inspoHeader img {
   padding: 3rem;
@@ -641,21 +642,60 @@ button {
   border-radius: 1rem;
   overflow: hidden;
   grid-column: span 2;
+  height: 100%;
 }
 .screenshotLandscape img {
   cursor: pointer;
+  height: 100%;
 }
 
+/* .screenshotDivLandscape {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    //width: 500px;
+    img {
+        max-height: 400px;
+    }
+} */
 .screenshotDiv {
   align-items: center;
   height: 100%;
+  max-height: 400px;
   display: flex;
   justify-content: flex-start;
   width: 100%;
   overflow: hidden;
   border-radius: 1rem;
 }
+.screenshotDiv img {
+  flex-shrink: 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .screenshotDiv div {
+  align-items: end;
+}
+
+.screenshotDivShort {
+  align-items: center;
+  height: 100%;
+  max-height: 400px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.screenshotDivShort img {
+  flex-shrink: 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.screenshotDivShort div {
   align-items: end;
 }
 
@@ -682,11 +722,12 @@ button {
 .screenshotDivLandscape {
   align-items: center;
   justify-content: center;
+  height: 100%;
   max-height: 400px;
   display: flex;
 }
 .screenshotDivLandscape img {
-  height: 400px;
+  max-height: 500px;
 }
 
 .screenshotContent {
@@ -1364,6 +1405,8 @@ mark {
 
 .footerSection {
   display: flex;
+  /* position: fixed;
+  bottom: 0; */
   margin-top: 4rem;
   padding: 4rem 2rem;
   background-color: var(--darker-green);
@@ -2360,7 +2403,7 @@ mark {
   .screenshotGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-template-rows: repeat(25, minmax(200px, 400px));
+    grid-template-rows: repeat(minmax(200px, 400px));
     grid-gap: 0.5rem;
     padding: 0rem 1rem;
     margin: 1rem 0rem;
@@ -2402,21 +2445,48 @@ mark {
   .screenshotDiv {
     align-items: center;
     height: 100%;
+    max-height: 560px;
     display: flex;
     justify-content: center;
     width: 100%;
     overflow: hidden;
     border-radius: 1rem;
   }
+  .screenshotDiv img {
+    flex-shrink: 0;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .screenshotDivShort {
+    align-items: center;
+    height: 100%;
+    max-height: 300px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+  .screenshotDivShort img {
+    flex-shrink: 0;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .screenshotDivShort div {
+    align-items: end;
+  }
   .screenshotDivLandscape {
     align-items: center;
-    max-height: 400px;
+    max-height: 320px;
     display: flex;
     justify-content: center;
     width: 100%;
   }
   .screenshotDivLandscape img {
-    height: 400px;
+    height: auto;
+    width: 100%;
   }
   .screenshotContent {
     padding: 1rem 0rem;
