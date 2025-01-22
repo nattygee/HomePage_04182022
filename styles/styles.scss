@@ -256,13 +256,22 @@ font-weight: 600;
 bottom: 1rem;
 right:50%;
 background-color: rgba($color: #324f3a, $alpha: 0.75);
-backdrop-filter: blur(2px);
+backdrop-filter: blur(4px);
 color: var(--main-yellow);
+z-index: 1;
 transform: translateY(-16px);
 transition: 300ms;
+cursor: pointer;
 p {
     margin: 0;
 }
+}
+
+#backToTop:hover {
+    background-color: rgba($color: #FFEF9D, $alpha: 0.75);
+    //border: 2px solid #111410;
+
+    color: #1d2e21;
 }
 
 // 🛑🛑🛑 nav content end ☝️ 🛑🛑🛑

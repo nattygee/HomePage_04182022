@@ -251,14 +251,21 @@ button {
   bottom: 1rem;
   right: 50%;
   background-color: rgba(50, 79, 58, 0.75);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   color: var(--main-yellow);
+  z-index: 1;
   transform: translateY(-16px);
   transition: 300ms;
+  cursor: pointer;
 }
 #backToTop p {
   margin: 0;
+}
+
+#backToTop:hover {
+  background-color: rgba(255, 239, 157, 0.75);
+  color: #1d2e21;
 }
 
 .galleryFilters {
