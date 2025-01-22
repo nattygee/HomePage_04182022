@@ -352,17 +352,20 @@ button {
     //background-image: linear-gradient(rgba($color: #304c37, $alpha: 0), rgba($color: #304c37, $alpha: 0.7));
     padding: 0rem .5rem;
     //height: 100px;
-    color: #ffffff;  
     //width: 100%;
     position: absolute;
     margin-top: -2rem;
     p {
         margin-bottom: .5rem;
+        color: #ffffff;  
         font-family: 'Courier New', Courier, monospace;
         font-size: x-small;
-        background-color: rgba($color: #111, $alpha: 0.1);
+        //background-color: rgba($color: #111, $alpha: 0.05);
         padding: 0rem .5rem;
         border-radius: .5rem;
+    }
+    p.pdark {
+        color: rgba($color: #1d2e21, $alpha: 1.0)
     }
 }
 
@@ -1093,7 +1096,7 @@ button {
 }
 
 /* .scrollerBanner {
-    //padding-block: 1rem;
+    padding-block: 1rem;
 } */
 
 .scroller[data-animated="true"] .scrollerBanner {
