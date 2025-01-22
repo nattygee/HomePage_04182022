@@ -254,8 +254,10 @@ border-radius: 1rem;
 font-family: 'work sans', sans-serif;
 font-weight: 600;
 bottom: 1rem;
-right:50%;
-background-color: rgba($color: #324f3a, $alpha: 0.75);
+left: 50%;
+margin-left: -4rem;
+width: 100px;
+background-color: rgba($color: #111111, $alpha: 0.25);
 backdrop-filter: blur(4px);
 color: var(--main-yellow);
 z-index: 1;
@@ -268,10 +270,10 @@ p {
 }
 
 #backToTop:hover {
-    background-color: rgba($color: #FFEF9D, $alpha: 0.75);
+    background-color: rgba($color: #111111, $alpha: 0.9);
     //border: 2px solid #111410;
 
-    color: #1d2e21;
+    color: #FFEF9D;
 }
 
 // 🛑🛑🛑 nav content end ☝️ 🛑🛑🛑

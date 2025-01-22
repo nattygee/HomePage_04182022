@@ -249,8 +249,10 @@ button {
   font-family: "work sans", sans-serif;
   font-weight: 600;
   bottom: 1rem;
-  right: 50%;
-  background-color: rgba(50, 79, 58, 0.75);
+  left: 50%;
+  margin-left: -4rem;
+  width: 100px;
+  background-color: rgba(17, 17, 17, 0.25);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   color: var(--main-yellow);
@@ -264,8 +266,8 @@ button {
 }
 
 #backToTop:hover {
-  background-color: rgba(255, 239, 157, 0.75);
-  color: #1d2e21;
+  background-color: rgba(17, 17, 17, 0.9);
+  color: #FFEF9D;
 }
 
 .galleryFilters {
