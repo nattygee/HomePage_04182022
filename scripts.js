@@ -5,6 +5,9 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
 const scrollers = document.querySelectorAll(".scroller");
 
+// back to top btn
+const backToTop = document.getElementById('backToTop');
+
 const lightboxInspo = document.createElement('div')
 const lightboxNext = document.createElement('div')
 const lightboxPrev = document.createElement('div')
@@ -25,7 +28,6 @@ const imagesInspo = document.querySelectorAll('.screenshotPortrait, .screenshotL
 
 // gallery filter buttons
 
-
 const galImgs = document.querySelectorAll('.screenshotPortrait, .screenshotLandscape');
 const galBtns = document.querySelectorAll('.filterBtn');
 var galActiveFilters = [];
@@ -37,6 +39,30 @@ const galBtnAll = document.getElementById('galBtnAll');
 for (let i = 0; i < galBtns.length; i++) {
   galBtns[i].addEventListener('click', filterActive);
 }
+
+function showHideBackToTop(e) {
+  if(window.pageYOffset>2400) {
+    backToTop.style.transition = "200ms";
+    backToTop.style.transform = "translateY(-8px)";
+    backToTop.style.opacity = 1;
+  } else {
+    backToTop.style.transition = "200ms";
+    backToTop.style.transform = "translateY(8px)";
+    backToTop.style.opacity = 0;
+  }
+}
+
+function scrollBackToTop(e) {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+backToTop.addEventListener('click', e => {
+  scrollBackToTop()
+});
+
+window.addEventListener('scroll', (scrolling) => {
+  showHideBackToTop();
+});
 
 function filterActive(e) {
 

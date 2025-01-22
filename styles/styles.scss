@@ -242,6 +242,29 @@ button {
         }
 }
 
+#backToTop {
+display: flex;
+opacity: 0;
+padding: 0.5rem 1rem;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+position:fixed;
+border-radius: 1rem;
+font-family: 'work sans', sans-serif;
+font-weight: 600;
+bottom: 1rem;
+right:50%;
+background-color: rgba($color: #324f3a, $alpha: 0.75);
+backdrop-filter: blur(2px);
+color: var(--main-yellow);
+transform: translateY(-16px);
+transition: 300ms;
+p {
+    margin: 0;
+}
+}
+
 // 🛑🛑🛑 nav content end ☝️ 🛑🛑🛑
 
 // 🛑 gallery filters 
@@ -283,11 +306,11 @@ button {
 }
 
 .xScroll {
-    margin-top: 6rem;
+    margin-top: 4rem;
     width: 100%;
     background-color: rgba($color: #000000, $alpha: 0);
     height: 40px;
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
     display: flex;
     overflow-x: auto;
 
@@ -540,7 +563,7 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-template-rows: repeat(minmax(200px, 400px));
     grid-gap: .5rem;
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
     margin: 1rem 0rem;
     width: 100%;
     box-sizing: border-box;
@@ -1076,7 +1099,7 @@ button {
 }
 
 .scroller {
-    max-width: 100vw;
+    max-width: 94vw;
     outline: 1px solid var(--light-green);
     white-space: nowrap;
     min-height: 64px;
@@ -1087,6 +1110,7 @@ button {
 .scroller[data-animated="true"] {
     overflow: hidden;
     mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    box-sizing: border-box;
 }
 
 @keyframes scroll {
@@ -1102,6 +1126,7 @@ button {
 .scroller[data-animated="true"] .scrollerBanner {
     width: max-content;
     animation: scroll 60s linear infinite;
+    box-sizing: border-box;
 }
 
 .bannerText {
