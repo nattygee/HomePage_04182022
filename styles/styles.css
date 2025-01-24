@@ -266,7 +266,7 @@ button {
 }
 
 #backToTop:hover {
-  background-color: rgba(17, 17, 17, 0.9);
+  background-color: rgba(17, 17, 17, 0.75);
   color: #FFEF9D;
 }
 

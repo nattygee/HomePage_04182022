@@ -57,7 +57,7 @@ function scrollBackToTop(e) {
 }
 
 backToTop.addEventListener('click', e => {
-  scrollBackToTop()
+  scrollBackToTop();
 });
 
 window.addEventListener('scroll', (scrolling) => {
