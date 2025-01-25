@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Work+Sans:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="/images/fd_favicon.svg" type="image/x-icon">
+        <!-- React CDN scripts
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        Babel to translate JSX?¿
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+
+
+    <title>FD: About</title>
+</head>
+<body>
+    <div class="wholePage">
+        <div class="headerBar">
+            <a href="index.html"><div class="logo">
+                <!-- <img src="images/FDLogo_2022.svg" alt=""> -->
+                <img src="images/fdlogo2.gif" style="height: 48px;" alt="">
+            </div></a>
+            <!-- Desktop Menu -->
+            <nav class="navItems">
+                <ul class="navItemList">
+                    <!-- <li><a class="navItemList" href="index.html">Home</a></li> -->
+                    <li><a class="navItemList" href="inspiration.html">Inspo</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
+                    <li><a class="navItemCurrent" href="#">About Nat</a></li>
+                    <!-- <li><a class="navItemList" href="design_exercises.html">Design exercises</a></li>
+                    <li><a class="navItemList" href="blog_allPosts.html">Blog</a></li> -->
+                    <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
+                    <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
+                </ul>
+            </nav>
+            <!-- Mobile Menu -->
+            <div class="mobileMenu">
+                <a href="#" id="mobileMenuBtn"><img src="images/mobileMenuIcon.svg" id="mobileMenuIcon" alt=""></a>
+            </div>
+            <div id="mobileMenuContainer" style="display: none;">
+                <ul class="navItemListMobile">
+                    <!-- <li><a class="navItemList" href="index.html">Home</a></li> -->
+                    <li><a class="navItemList" href="inspiration.html">Inspo</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
+                    <li><a class="navItemCurrent" href="#">About Nat</a></li>
+                    <!-- <li><a class="navItemList" href="design_exercises.html">Design exercises</a></li>
+                    <li><a class="navItemList" href="blog_allPosts.html">Blog</a></li> -->
+                    <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
+                    <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- 🛑🛑🛑 CLOSE HEADER BAR ☝️ 🛑🛑🛑 -->
+
+        <div class="aboutSheet">
+        </div>
+
+        <div class="navSheet">
+            <input type="checkbox" name="Hey there" id="checkBtn" switch>
+            <label for="checkBtn" style="font-weight: 600; color:white; padding: 1rem;">Tap me</label>
+        </div>
+
+        <section class="footerSection">
+            <!-- <div class="scroller">
+                <div class="horStack scrollerBanner">
+                    <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
+                    <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
+                </div>
+            </div> -->
+            <div class="weatherStatementFtr">
+                <h5 id="weatherStatementFtr"></h5>
+            </div>
+            <div class="footerImg">
+                <img src="" alt="">
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
+<script src="scripts.js"></script>
