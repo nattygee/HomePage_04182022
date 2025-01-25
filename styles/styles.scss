@@ -598,13 +598,13 @@ p {
 }
 
 .navSheet {
+    display: flex;
     width: 100%;
     height: 300px;
     background-color: rgba($color: #65836d, $alpha: 0.5);
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(8px);
-    display: flex;
     position: fixed;
     bottom: 0;
     border-radius: 1rem 1rem 0rem 0rem;
@@ -622,6 +622,61 @@ p {
         }
     }
 }
+
+.hbtnOff {
+    width: 40px;
+    height: 40px;
+    background-color: #304c37;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.hbtnOn {
+    width: 64px;
+    height: 64px;
+    background-color: #83bb92;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+/* Hide the default checkbox */
+input[switch] {
+    appearance: none;
+    width: 64px;
+    height: 64px;
+    /* background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease; */
+  }
+  
+  /* The toggle knob */
+  /* input[switch]::before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background-color: #304c37;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+  } */
+  
+  ///* When the switch is activated */
+  input[switch]:checked {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+  }
+  
+  input[switch]:checked::before {
+    width: 30px;
+    height: 30px;
+  }
 
 
 .designExerciseGrid {
