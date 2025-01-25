@@ -5,6 +5,20 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
 const scrollers = document.querySelectorAll(".scroller");
 
+// haptic button
+/* document.getElementById('hapticButton').addEventListener('touchstart', () => {
+  // Trigger a short vibration
+    event.preventDefault(); // Prevent default touch behaviors
+  if ('vibrate' in navigator) {
+    navigator.vibrate(50);
+    window.navigator.vibrate(50); // Vibrates for 50ms
+    let hbtn = document.getElementById('hapticButton');
+    hbtn.style.backgroundColor = "red";
+    console.log("🟨 wooOOOO");
+    alert("hey");
+  }
+}, { passive: false }); */
+
 // back to top btn
 const backToTop = document.getElementById('backToTop');
 

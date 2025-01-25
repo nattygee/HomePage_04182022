@@ -269,6 +269,10 @@ p {
 }
 }
 
+#hapticButton:active {
+    background-color: #0056b3;
+  }
+
 #backToTop:hover {
     background-color: rgba($color: #111111, $alpha: 0.75);
     //border: 2px solid #111410;
