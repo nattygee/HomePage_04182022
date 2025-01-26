@@ -9,10 +9,10 @@ const scrollers = document.querySelectorAll(".scroller");
 let hapBtn = document.getElementById('checkBtn');
 
 let navSheet1 = document.querySelector('navSheet');
-document.getElementById("navSheet").addEventListener("touchmove", e => {
+/* document.getElementById("navSheet").addEventListener("touchmove", e => {
   fliphBtn();
   console.log("heyayfsa")
-});
+}); */
 
 function fliphBtn() {
   let hapBtnOn = false;
@@ -43,8 +43,8 @@ hapBtn.checked = false;
 /* hapBtn.addEventListener('touchstart', fliphBtn);
 hapBtn.addEventListener('touchend', fliphBtn); */
 
-hapBtn.addEventListener('mousedown', fliphBtn);
-hapBtn.addEventListener('click', fliphBtn);
+/* hapBtn.addEventListener('mousedown', fliphBtn);
+hapBtn.addEventListener('click', fliphBtn); */
 
 // back to top btn
 const backToTop = document.getElementById('backToTop');
