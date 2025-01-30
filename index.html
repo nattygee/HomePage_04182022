@@ -1,282 +1,1038 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS12X22RCN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-FS12X22RCN');
-    </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Work+Sans:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/images/fd_favicon.svg" type="image/x-icon">
-    <title>FD: Home</title>
+<head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS12X22RCN"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-FS12X22RCN');
+        </script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Work+Sans:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="/images/fd_favicon.svg" type="image/x-icon">
+        <!-- React CDN scripts
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        Babel to translate JSX?¿
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+
+
+    <title>FD: Inspiration</title>
 </head>
 <body>
     <div class="wholePage">
         <div class="headerBar">
-            <a href="#"><div class="logo">
-                <img src="images/FDLogo_2022.svg" alt="">
+            <a href="index.html"><div class="logo">
+                <!-- <img src="images/FDLogo_2022.svg" alt=""> -->
+                <img src="images/fdlogo2.gif" style="height: 48px;" alt="">
             </div></a>
             <!-- Desktop Menu -->
             <nav class="navItems">
                 <ul class="navItemList">
-                    <li><a class="navItemCurrent" href="#">Home</a></li>
-                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
-                    <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
-                    <li><a class="navItemList" href="design_exercises.html">Design exercises</a></li>
-                    <li><a class="navItemList" href="blog_allPosts.html">Blog</a></li>
+                    <!-- <li><a class="navItemList" href="index.html">Home</a></li> -->
+                    <!-- <li><a class="navItemCurrent" href="#">Inspo</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About</a></li> -->
+                    <!-- <li><a class="navItemList" href="design_exercises.html">Design exercises</a></li>
+                    <li><a class="navItemList" href="blog_allPosts.html">Blog</a></li> -->
                     <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
                     <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
                 </ul>
             </nav>
             <!-- Mobile Menu -->
-            <div class="mobileMenu">
+            <div class="mobileMenu" style="display: none;">
                 <a href="#" id="mobileMenuBtn"><img src="images/mobileMenuIcon.svg" id="mobileMenuIcon" alt=""></a>
             </div>
-            <div id="mobileMenuContainer" style="display: none;">
+            <div id="mobileMenuContainer" style="display: none;"> <!-- changed the click functionality in js -->
                 <ul class="navItemListMobile">
-                    <li><a class="navItemCurrent" href="#">Home</a></li>
-                    <li><a class="navItemList" href="about_fd.html">About FD</a></li>
-                    <li><a class="navItemList" href="inspiration.html">UI Inspiration</a></li>
-                    <li><a class="navItemList" href="design_exercises.html">Design exercises</a></li>
-                    <li><a class="navItemList" href="blog_allPosts.html">Blog</a></li>
+                    <!-- <li><a class="navItemList" href="index.html">Home</a></li> -->
+                    <!-- <li><a class="navItemCurrent" href="#">Inspo</a></li>
+                    <li><a class="navItemList" href="about_fd.html">About</a></li> -->
+                    <!-- <li><a class="navItemList" href="design_exercises.html">Design exercises</a></li>
+                    <li><a class="navItemList" href="blog_allPosts.html">Blog</a></li> -->
                     <!-- <li><a class="navItemOther" href="weather.html">Weather</a></li>
                     <li><a class="navItemOther" href="stocks.html">Stock Prices</a></li> -->
                 </ul>
             </div>
         </div>
         <!-- 🛑🛑🛑 CLOSE HEADER BAR ☝️ 🛑🛑🛑 -->
-
-
-        <div class="heroSection">
-            <div class="heroImg">
-                <!-- <div class="backgroundText">
-                    <h1 class="pageLede">
-                        PRO <br> DUCT <br> DES <br> IGN <br> WORK
-                    </h1>
-                </div> -->
+        <div class="xScroll">
+            <div class="moreSuggestion">
             </div>
-            <div class="heroContent">
-                <!--<h4 class="whisper">You're in the right place</h4>-->
-                <p class="blogCallout"><mark>Nat Green</mark></p>
-                <h1 class="blogLede">Product designer designing for mobile apps - Based in Toronto.</h1>
-                <!-- <h2 style="color: var(--main-yellow);">Get mockups, prototypes, flows, visual design, ux audits done in one place, in days.</h2> -->
-                <h2 style="color: var(--main-yellow);">Mockups, prototypes, flows, visual design, ux audits and more.</h2>
-                <!-- <div class="sectionImage">
-                    <img src="images/buildingBlocks.svg" alt="">
-                </div> -->
-            </div>
+            
+            <!-- <button id="hapticButton" style="background-color: white;">Click Me</button> -->
+
+            <button id="galBtnAll" type="button" data-name="filterBtn-all" class="filterBtn filter-all filter-active">
+                All
+            </button>
+            <!-- <button type="button" data-name="mobile" class="filterBtn">
+                Mobile
+            </button>
+            <button type="button" data-name="desktop" class="filterBtn">
+                Desktop
+            </button> -->
+            <button type="button" data-name="IRL" class="filterBtn">
+                IRL
+            </button>
+            <button type="button" data-name="toast" class="filterBtn">
+                Toast
+            </button>
+            <button type="button" data-name="illustration" class="filterBtn">
+                Illustration
+            </button>
+            <!-- <button type="button" data-name="web" class="filterBtn">
+                Web
+            </button>
+            <button type="button" data-name="native" class="filterBtn">
+                Native
+            </button> -->
+            <button type="button" data-name="menu" class="filterBtn">
+                Menu
+            </button>
+            <button type="button" data-name="gif" class="filterBtn">
+                .gif
+            </button>
+            <button type="button" data-name="input" class="filterBtn">
+                Input
+            </button>
+            <button type="button" data-name="table" class="filterBtn">
+                Table
+            </button>
+            <button type="button" data-name="sheet" class="filterBtn">
+                Sheets
+            </button>
+            <div class="spacer"></div>
+            
+        </div>
+        <div class="galleryFilters">
+            <button id="galBtnAll" type="button" data-name="filterBtn-all" class="filterBtn filter-all filter-active">
+                All
+            </button>
+            <button type="button" data-name="mobile" class="filterBtn">
+                Mobile
+            </button>
+            <button type="button" data-name="desktop" class="filterBtn">
+                Desktop
+            </button>
+            <button type="button" data-name="IRL" class="filterBtn">
+                IRL
+            </button>
+            <button type="button" data-name="toast" class="filterBtn">
+                Toast
+            </button>
+            <button type="button" data-name="illustration" class="filterBtn">
+                Illustration
+            </button>
+            <button type="button" data-name="web" class="filterBtn">
+                Web
+            </button>
+            <button type="button" data-name="native" class="filterBtn">
+                Native
+            </button>
+            <button type="button" data-name="menu" class="filterBtn">
+                Menu
+            </button>
+            <button type="button" data-name="gif" class="filterBtn">
+                .gif
+            </button>
+            <button type="button" data-name="input" class="filterBtn">
+                Input
+            </button>
+            <button type="button" data-name="table" class="filterBtn">
+                Table
+            </button>
+
         </div>
 
-            <div class="horizontalFlexCont"> <!-- ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐-->
-                    <div class="hFlexChild1">
-                        <div class="cardPreviewImgSm">
-                            <img src="images/cardHeights_header_image.jpg" alt="">
-                        </div>
-                        <p class="projectTitle">Discussing the challenges with carousels, and ways to overcome them.</p>
-                        <p class="datePosted">June 22 | 2024</p>
-                        <p class="projectDescription">The carousel is the (im)perfect option to utilize when space is limited on a mobile device.</p>
-                        <div class="spacer"></div>
-                        <a href="blog_varyingcardheights.html" class="textCTAbtn">Read more</a>
-                    </div>
-                    <div class="hFlexChild1">
-                        <div class="cardPreviewImgSm">
-                            <img src="images/shieldandspear_header_image.jpg" alt="">
-                        </div>
-                        <p class="projectTitle">The shield and the spear</p>
-                        <p class="datePosted">May 5 | 2024</p>
-                        <p class="projectDescription">Your manager should be your shield and your spear, but you are the body - the controller - that needs to know where to point them.</p>
-                        <div class="spacer"></div>
-                        <a href="blog_shieldandspear.html" class="textCTAbtn">Read more</a>
-                    </div>
-                    <div class="hFlexChild1">
-                        <div class="cardPreviewImg">
-                            <img src="images/homeblogtest.png" alt="">
-                        </div>
-                        <p class="projectTitle">How might we justify custom interactions?</p>
-                        <p class="datePosted">April 24 | 2024</p>
-                        <p class="projectDescription">Platform presets or library-based components and interactions are a great way to build for efficiency, but what about quality, continuity and intuition?</p>
-                        <div class="spacer"></div>
-                        <a href="blog_sheets1.html" class="textCTAbtn">Read more</a>
-                    </div>
-                    <!-- ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐-->
-                    <div class="horizontalFlexChild">
-                        <div class="hFlexChildChild">
-                            <div class="flexChild1">
-
-                                <div class="screenshotDivHome">
-                                        <img src="images/dropbox_emptystate.jpg" alt="">
-                                </div>
-                                <p class="datePosted">June 29 | 2024</p>
-                                <p class="projectDescription" style="padding: 0rem;">Empty state in Dropbox</p>
-                            </div>
-                            <div class="flexChild1">
-
-                                <div class="screenshotDivHome">
-                                    <img src="images/instacart_emptystate.jpg" alt="">
-                                </div>
-                                <p class="datePosted">June 29 | 2024</p>
-                                <p class="projectDescription" style="padding: 0rem;">Empty state in Instacart</p>
-                            </div>
-                            <div class="flexChild1">
-
-                                <div class="screenshotDivHome">
-                                    <img src="images/sketchApp_emptystate.jpg" alt="">
-                                </div>
-                                <p class="datePosted">June 29 | 2024</p>
-                                <p class="projectDescription" style="padding: 0rem;">Empty state in the Sketch app - note the lack of suggested action</p>
-                            </div>
-                        </div>
-                        <a href="inspiration.html" class="textCTAbtn">
-                            View all UI inspiration
-                        </a>
-                    </div>
+        <button id="backToTop">
+            <p>Back to top</p>
+            <img src="" alt="">
+        </button>
+        <div class="topNote">Welcome to Formdreams: <br><br> A visual collection of standout UX, UI, and graphic design – built by the designers, developers, and product teams shaping today's top apps and websites</div>
+<div class="screenshotGrid">
+    <div class="inspoHeader">
+        <!-- <img src="images/updated_daily.svg" alt=""> -->
+        <div class="topNoteDesktop">Welcome to Formdreams: <br><br> A visual collection of standout UX, UI, and graphic design – built by the designers, developers, and product teams shaping today's top apps and websites</div>
+    </div>
+    <!-- FIRST 🏅🥇🏅🥇🏅🥇🏅🥇🏅🥇🏅🥇 -->
+    <!-- <div class="screenshotPortrait" data-name="toast">
+        <div class="screenshotDiv">
+            <img src="images/spline_onboarding_focus.gif" alt="" style="object-fit: cover; height: 100%;">
         </div>
-
-        <div class="scroller">
-            <div class="horStack scrollerBanner">
-                <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
-                <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
-            </div>
+    </div>
+    <div class="screenshotPortrait" data-name="focus onboarding">
+        <div class="screenshotDiv">
+            <img src="images/spline_onboarding_toastbaby.gif" alt="" style="object-fit: cover; height: 100%;">
         </div>
+    </div> -->
 
-        <div class="horizontalFlexCont">
-            <div class="horizontalFlexChild">
-                <p class="projectTitle">Personal design exercises</p>  
-                <p class="projectDescription">Here's a preview of things I've put together for fun. The design work has been done entirely in Figma. The programming work has been done with either vsCode or XCode.</p>
-                <div class="hFlexChildChild">
-                    <div class="flexChild1">
-
-                        <div class="screenshotDivHome">
-                                <img src="images/marketplace.jpeg" alt="">
-                        </div>
-                        <div class="horStack" style="gap: 1rem; margin-bottom: 0.5rem;">
-                            <div class="tagChip">UI</div>
-                            <div class="tagChip">Desktop</div>
-                            <div class="tagChip">Illustration</div>
-                        </div>
-                        <p class="datePosted">March 23 | 2023</p>
-                        <p class="projectDescription" style="padding: 0rem;">Online retail checkout</p>
-                    </div>
-                    <div class="flexChild1">
-
-                        <div class="screenshotDivHome">
-                            <img src="images/messenger.jpeg" alt="">
-                        </div>
-                        <div class="horStack" style="gap: 1rem; margin-bottom: 0.5rem;">
-                            <div class="tagChip">UI</div>
-                            <div class="tagChip">Mobile</div>
-                            <div class="tagChip">Illustration</div>
-                        </div>
-                        <p class="datePosted">March 13 | 2023</p>
-                        <p class="projectDescription" style="padding: 0rem;">Messenger app</p>
-                    </div>
-                </div>
-                <a href="design_exercises.html" class="textCTAbtn">
-                    View all design exercises
-                </a>
-            </div>
+    <div class="screenshotLandscape" data-name="toolbar gif">
+        <div class="screenshotDivLandscape">
+            <img src="images/figma_toolbar.gif" alt="">
         </div>
+        <div class="inspoDescription">
+            <p>Figma | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="detail">
+        <div class="screenshotDiv">
+            <img src="images/chrome_compatibility.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Chrome | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="detail">
+        <div class="screenshotDivLandscape">
+            <img src="images/arc_easteregg.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Arc | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="detail">
+        <div class="screenshotDiv">
+            <img src="images/arc_watermark.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Arc | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="desktop howto">
+        <div class="screenshotDivLandscape">
+            <img src="images/arc_howto.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Arc | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="illustration gif">
+        <div class="screenshotDiv">
+            <img src="images/arc_arrow.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Arc | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="toast gif">
+        <div class="screenshotDiv">
+            <img src="images/arc_hovertoast.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Arc | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="alert gif">
+        <div class="screenshotDiv">
+            <img src="images/arc_alert.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Arc | Jan 2025</p>
+        </div>
+    </div>
+    <!-- <div class="screenshotLandscape" data-name="lander">
+        <div class="screenshotDivLandscape">
+            <img src="images/arc_lander.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Arc | Jan 2025</p>
+        </div>
+    </div> -->
+    <div class="screenshotLandscape" data-name="splash gif">
+        <div class="screenshotDivLandscape">
+            <img src="images/arc_splash.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Arc | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="lander illustration">
+        <div class="screenshotDiv">
+            <img src="images/substack_landertall.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Substack | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="lander illustration">
+        <div class="screenshotDiv">
+            <img src="images/substack_landerdark.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Substack | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="splash gif">
+        <div class="screenshotDiv">
+            <img src="images/medium_splash.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Medium | Jan 2025</p>
+        </div>
+    </div>
+    <!-- <div class="screenshotPortrait" data-name="illustration 404 gif">
+        <div class="screenshotDivShort">
+            <img src="images/googleapp_404.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Google App | Jan 2025</p>
+        </div>
+    </div> -->
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/coinbase_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Coinbase | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="table">
+        <div class="screenshotDiv">
+            <img src="images/coinbase_tablelight.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Coinbase | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="table">
+        <div class="screenshotDiv">
+            <img src="images/coinbase_tabledark.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Coinbase | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDivShort">
+            <img src="images/nrc_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">NRC | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/adidas_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Adidas | Jan 2025</p>
+        </div>
+    </div>
+    
+    <div class="screenshotPortrait" data-name="menu sheet">
+        <div class="screenshotDiv">
+            <img src="images/pinterest_actionsheet.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Pinterest | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/nyt_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark"p>NYT | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/github_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>GitHub | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/spotify_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Spotify | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/spotify_menu2.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Spotify | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/appleTV_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>AppleTV | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/appstore_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>AppStore | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="toast">
+        <div class="screenshotDivShort">
+            <img src="images/google_toast.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Google | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="nat">
+        <div class="screenshotDiv">
+            <img src="images/gd_next.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Nat | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile table">
+        <div class="screenshotDivShort">
+            <img src="images/google_table01.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Google | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile table">
+        <div class="screenshotDiv">
+            <img src="images/google_table02.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Google | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile table gif">
+        <div class="screenshotDiv">
+            <img src="images/google_table.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Google | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile toast">
+        <div class="screenshotDivShort">
+            <img src="images/chatgpt_newtoast.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>ChatGPT | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile toast">
+        <div class="screenshotDivShort">
+            <img src="images/chatgpt_toastfeedback.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>ChatGPT | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDivShort">
+            <img src="images/ig_toastfeedback.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>IG | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/perplexity_prompts.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Perplexity | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile input">
+        <div class="screenshotDivShort">
+            <img src="images/perplexity_input.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Perplexity | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/gemini_greeting.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Gemini | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile input">
+        <div class="screenshotDivShort">
+            <img src="images/gemini_input.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Gemini | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile input">
+        <div class="screenshotDivShort">
+            <img src="images/chatgpt_input.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>ChatGPT | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/metai_prompts.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Meta AI | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile input">
+        <div class="screenshotDivShort">
+            <img src="images/metai_input.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Meta AI | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile menu gif">
+        <div class="screenshotDiv">
+            <img src="images/grok_menu.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Grok | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile menu">
+        <div class="screenshotDiv">
+            <img src="images/grok_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Grok | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile input">
+        <div class="screenshotDiv">
+            <img src="images/grok_input.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Grok | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="desktop toast">
+        <div class="screenshotDivShort">
+            <img src="images/fbMessenger_toast.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Messenger | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="desktop menu gif">
         
-        <div class="projectsSection">
-            <!--<div class="sectionTitleDiv">
-                <h2 class="sectionTitle">PROJECTS</h2>
-            </div>-->
-            <!-- 🟡🟡🟡 PROJECT ONE 👇 🟡🟡🟡 -->
-            <!--<div class="sectionProject">
-                <div class="aboutTheProject">
-                    <div class="drawAttention"></div>
-                    <div class="projectInfo">
-                        <div class="companyLogo">
-                            <img src="images/jackLogo.svg" alt="">
-                        </div>
-                        <div class="projectTitleDiv">
-                            <h4 class="projectTitle">Simple, Impactful Improvements to Boost Sales</h4>
-                        </div>
-                        <div class="projectDescription">Can we redesign the web page and make it look great? Yes… but let’s take it a step further and think outside the box. Find out how a standard site audit turned into a beautiful performant design, with a 13% boost in product sales.</div>
-                        <div class="ctas">
-                            <div class="ctaBtnMain"><a href="https://www.figma.com/file/Y29zufzPymrbYtBaMYdIkg/Nat-Green---Jack-Health-Web-Page-Design?node-id=1%3A3" target="_">View in Figma</a></div>
-                            <div class="ctaBtnSec"><a href="files/NatGreen_JackHealth_CaseStudy.pdf" target="_">Download PDF</a></div>
-                        </div>
-                    </div>
-                    <div class="highlight">
-                        <h4 class="whisper">Highlight 🔥👑</h4>
-                        <div class="highlightDescription">+13% increase in page-visit to product-sale conversion</div>
-                    </div>
-                </div>
-                <div class="projectVisuals">
-                    <div class="" id="jackHealthImg1">
-                        <img src="images/Home_JackMain.png" alt="">
-                    </div>
-                    <div class="projectImgMain">
-                        <img src="images/Home_JackMain.png" alt="">
-                    </div>
-                    <div class="projectImgSec">
-                        <img src="images/Home_JackSec.png" alt="">
-                    </div>
-                    <div class="projectImgThird">
-                        <img src="images/Home_JackThird.png" alt="">
-                    </div>
-                </div>
-            </div>-->
-            <!-- 🟡🟡🟡 PROJECT TWO 👇 🟡🟡🟡 -->
-           <!-- <div class="sectionProject">
-                <div class="aboutTheProject">
-                    <div class="drawAttention"></div>
-                    <div class="projectInfo">
-                        <div class="companyLogo">
-                            <img src="images/tfcLogo.svg" alt="">
-                        </div>
-                        <div class="projectTitleDiv">
-                            <h4 class="projectTitle">A New Widget for Tab for a Cause</h4>
-                        </div>
-                        <div class="projectDescription">What’s on your New Tab page? Can we keep it sleek, but also utilitarian? Find out how we designed a new Shortcuts widget meant to optimize a users new tab experience, all while following the constraints of the existing page elements.</div>
-                        <div class="ctaBtn">Coming Soon 🙇🏽</div>
-                    </div>
-                        <div class="highlight">
-                        <h4 class="whisper">Highlight 🔥👑</h4>
-                        <div class="highlightDescription">+13% increase in page-visit to product-sale conversion</div>
-                    </div> 
-                </div>
-                <div class="projectVisuals">
-                    <div class="projectImgMain">
-                        <img src="images/GladlyImgPrimary.png" alt="">
-                    </div>
-                    <div class="projectImgSec">
-                        <img src="images/GladlyImg2.png" alt="">
-                    </div>
-                    <div class="projectImgThird">
-                        <img src="images/GladlyImg3.png" alt="">
-                    </div>
-                </div>
-                <div class="" id="gladlySlideshow">
-                    <img src="images/gladlySlides1.png" alt="" class="mySlides">
-                    <img src="images/gladlySlides2.png" alt="" class="mySlides">
-                    <img src="images/gladlySlides3.png" alt="" class="mySlides">
-                    <img src="images/gladlySlides4.png" alt="" class="mySlides">
-                    <img src="images/gladlySlides5.png" alt="" class="mySlides">
-                </div>
-            </div>-->
+        <div class="screenshotDivLandscape">
+            <img src="images/dropbox_menu.gif" alt="">
         </div>
+        <div class="inspoDescription">
+            <p>Dropbox | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile web">
+        <div class="screenshotDiv">
+            <img src="images/dropbox_brandlander01.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Dropbox | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile web menu">
+        <div class="screenshotDiv">
+            <img src="images/dropbox_brandlander02.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Dropbox | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile native">
+        <div class="screenshotDiv">
+            <img src="images/nrc_liveactivity02.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>NRC | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile native">
+        <div class="screenshotDiv">
+            <img src="images/nrc_liveactivity01.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>NRC | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="toast desktop menu gif">
+        
+        <div class="screenshotDivLandscape">
+            <img src="images/spline_onboarding_full.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Spline | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="toast desktop">
+        <div class="screenshotDiv">
+            <img src="images/spline_toast01.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Spline | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="toast desktop">
+        <div class="screenshotDiv">
+            <img src="images/spline_toast02.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Spline | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile native gif">
+        <div class="screenshotDiv">
+            <img src="images/jackalgif.gif" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Fubo | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="IRL">
+        <div class="screenshotDivLandscape">
+            <img src="images/treehouse_OOH01.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Treehouse | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/treehouse_loader.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Treehouse | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="IRL">
+        <div class="screenshotDivLandscape">
+            <img src="images/treehouse_OOH02.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Treehouse | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="desktop web illustration">
+        <div class="screenshotDivLandscape">
+            <img src="images/otta_lander_dt.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Otta | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile web illustration">
+        <div class="screenshotDiv">
+            <img src="images/otta_lander_mob.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Otta | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="desktop illustration web">
+        <div class="screenshotDivLandscape">
+            <img src="images/dropbox_setup.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Dropbox | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="desktop">
+        <div class="screenshotDiv">
+            <img src="images/figma_findandreplace.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Figma | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="toast desktop">
+        <div class="screenshotDiv">
+            <img src="images/figma_toast01.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Figma | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="toast desktop">
+        <div class="screenshotDiv">
+            <img src="images/figma_toast02.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Figma | Jan 2025</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile toast">
+        <div class="screenshotDivShort">
+            <img src="images/figma_toast.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Figma | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile toast">
+        <div class="screenshotDiv">
+            <img src="images/spark_toast.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Spark | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile toast sheet">
+        <div class="screenshotDiv">
+            <img src="images/uber_toast.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Uber | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="desktop">
+        <div class="screenshotDivLandscape">
+            <img src="images/notion_onboarding1.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Notion | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile menu">
+        <div class="screenshotDiv">
+            <img src="images/apple_weather_menu.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Apple Weather | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotLandscape" data-name="mobile">
+        <div class="screenshotDivLandscape">
+            <img src="images/apple_weather.PNG" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Apple Weather | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="IRL">
+        <div class="screenshotDiv">
+            <img src="images/ethicaCoffeeLabel01.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Ethica | 2024</p>
+        </div>
+    </div><div class="screenshotPortrait" data-name="IRL">
+        <div class="screenshotDiv">
+            <img src="images/ethicaCoffeeLabel02.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Ethica | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="IRL">
+        <div class="screenshotDiv">
+            <img src="images/ethicaCoffeeLabel03.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Ethica | 2024</p>
+        </div>
+    </div>
+
+    <div class="screenshotPortrait" data-name="illustration desktop">
+        <div class="screenshotDiv">
+            <img src="images/dropbox_emptystate.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Dropbox | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/instacart_emptystate.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Instacart | 2024</p>
+        </div>
+    </div>
+
+
+    <!-- INTRODUCING REACT WOO
+    <div id="inspoFilters"></div>
+        <script src="inspo_filters.js" type="text/babel"></script> -->
+
+    <div class="screenshotPortrait" data-name="desktop">
+        <div class="screenshotDiv">
+            <img src="images/sketchApp_emptystate.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Sketch App | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/chromeapp_urlbar.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Chrome App | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/chromeapp_urlBar_fulllayout.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Chrome App | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/chromeapp_urlbar_ill.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Chrome App | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/instacart_aisles.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Instacart | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/instacart_cartBtn.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Instacart | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/instacart_splashpage.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Instacart | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/instacart_orderconfirmation.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Instacart | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="illustration mobile">
+        <div class="screenshotDiv">
+            <img src="images/appleHome_illDancerDark.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Apple Home | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="illustration mobile">
+        <div class="screenshotDiv">
+            <img src="images/appleHome_illDancerLight.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Apple Home | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="illustration">
+        <div class="screenshotDiv">
+            <img src="images/appleHome_HomehubCard.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Apple Home | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="illustration mobile">
+        <div class="screenshotDiv">
+            <img src="images/appleHome_illustrations.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Apple Home | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/appleHome_lightingCard.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Apple Home | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/transit_locationrequest.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Transit | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="IRL">
+        <div class="screenshotDiv">
+            <img src="images/sephora_package.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Sephora | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="IRL">
+        <div class="screenshotDiv">
+            <img src="images/stayShining.jpg" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Toronto | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/notion_onboarding.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Notion | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile sheet">
+        <div class="screenshotDiv">
+            <img src="images/appleMusic_actionSheet.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Apple Music | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile toast">
+        <div class="screenshotDiv">
+            <img src="images/appleMusic_dismissableNotice.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Apple Music | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/transit_dismissablenotice.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Transit | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/instagram_addreminder.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>IG | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/instagram_fyvibe.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>IG | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/uber_connectmodal.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Uber | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/uber_connectIntro.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Uber | 2024</p>
+        </div>
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/transit_screenshot.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Transit | 2024</p>
+        </div>
+        <!-- <div class="screenshotContent">
+            <div class="screenshotDescription">Cool texture, good vibe.</div>
+        </div> -->
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/chromecast_sc1.PNG" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Google Home | 2024</p>
+        </div>
+        <!-- <div class="screenshotContent">
+            <div class="screenshotDescription">Interaction is satisfying and assuring. </div>
+        </div> -->
+    </div>
+    <div class="screenshotPortrait" data-name="mobile">
+        <div class="screenshotDiv">
+            <img src="images/chromecast_sc2.PNG" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Google Home | 2024</p>
+        </div>
+        <!-- <div class="screenshotContent">
+            <div class="screenshotDescription">Good colour combo. Blue tint in the grey vs. full #000 👍</div>
+        </div> -->
+    </div>
+    <div class="screenshotPortrait" data-name="mobile sheet">
+        <div class="screenshotDiv">
+            <img src="images/apple_successsheet.PNG" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p>Apple Settings | 2024</p>
+        </div>
+    </div>
+    <!-- landscape 🌳 -->
+    <div class="screenshotLandscape" data-name="desktop illustration">
+        <div class="screenshotDivLandscape">
+            <img src="images/notion_sc1.png" alt="">
+        </div>
+        <div class="inspoDescription">
+            <p class="pdark">Notion | 2024</p>
+        </div>  
+    </div>
+</div>
         <section class="footerSection">
+            <div class="scroller">
+                <div class="horStack scrollerBanner">
+                    <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
+                    <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
+                </div>
+            </div>
             <div class="weatherStatementFtr">
-                <h5 id="weatherStatementFtr">It's always sunny.</h5>
+                <h5 id="weatherStatementFtr"></h5>
             </div>
             <div class="footerImg">
                 <img src="" alt="">
             </div>
         </section>
     </div>
-</body>
 
+</body>
 </html>
 <script src="scripts.js"></script>

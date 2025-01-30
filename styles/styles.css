@@ -237,6 +237,26 @@ button {
   padding: 0rem 0rem 0.5rem 0rem;
 }
 
+.topNote {
+  display: none;
+  color: #FFEF9D;
+  padding: 1.5rem 2rem 0.5rem 2rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+.topNoteDesktop {
+  color: #FFEF9D;
+  background-color: rgba(48, 76, 55, 0.75);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem 1.5rem 2rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 80%;
+  font-family: "Work Sans", sans-serif;
+  margin-top: 0rem;
+  margin-right: 0rem;
+}
+
 #backToTop {
   display: flex;
   opacity: 0;
@@ -744,6 +764,7 @@ input[switch]:checked::before {
   background-size: contain;
   display: flex;
   justify-content: center;
+  align-items: center;
   max-height: 400px;
 }
 .inspoHeader img {
@@ -2189,6 +2210,12 @@ mark {
     min-width: 100px;
     height: 64px;
     text-align: center;
+  }
+  .topNote {
+    display: flex;
+    color: #FFEF9D;
+    padding: 1rem 1rem 0.5rem 1rem;
+    font-family: "Work Sans", sans-serif;
   }
   .moreSuggestion {
     width: 48px;

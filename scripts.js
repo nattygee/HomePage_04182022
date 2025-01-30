@@ -506,15 +506,15 @@ function openMobileMenu() {
         //mobileMenu.style.display = 'flex';
         mobileMenu.style.display = 'flex';
         mobileMenuIcon.src = 'images/mobileCloseIcon.svg';
-        mobileMenu.style.transition = "200ms";
-        mobileMenu.style.transform = "translateY(8px)";
+        /* mobileMenu.style.transition = "200ms";
+        mobileMenu.style.transform = "translateY(8px)"; */
 
     } else if (mobileMenu.style.display === 'flex')
     {
         //mobileMenu.style.display = 'none';
         mobileMenu.style.display = 'none';
-        mobileMenu.style.transition = '80ms';
-        mobileMenu.style.transform = 'translateY(-8px)'
+        /* mobileMenu.style.transition = '80ms';
+        mobileMenu.style.transform = 'translateY(-8px)' */
         mobileMenuIcon.src = 'images/mobileMenuIcon.svg';
     }
 }
