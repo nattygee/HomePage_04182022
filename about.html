@@ -18,7 +18,7 @@
 
     <title>FD: About</title>
 </head>
-<body style="background-image: none;">
+<body style="background-image: none;" onmousemove="coordinate(event)">
     <div class="wholePage">
         <div class="headerBar">
             <a href="inspiration.html"><div class="logo">
@@ -61,6 +61,42 @@
             <div id="shuffleTitle" class="loudTitle">
                 NAT
             </div>
+            <ul id="sideNav" class="sideNavList">
+                <a href="#aboutSec"><li>001. About Nat</li></a>
+                <a href="#projectSec"><li>002. Professional work</li></a>
+                <a href="#exerciseSec"><li>003. Design exercises</li></a>
+                <a href="#inspoSec"><li>004. Design inspiration</li></a>
+                <a href="#blogSec"><li>005. Writing</li></a>
+                <a href="#contactSec"><li>006. Contact</li></a>
+            </ul>
+
+            <div class="folioBodySecs">
+                <section id="aboutSec" class="folioSection">
+                    <p class="folioSectionTitle">About Nat</p>
+                </section>
+                <!-- <div class="dashedDivider"></div> -->
+                <section id="projectSec" class="folioSection">
+                    <p class="folioSectionTitle">Professional work</p>
+                </section>
+                <section id="exerciseSec" class="folioSection">
+                    <p class="folioSectionTitle">Design exercises</p>
+                </section>
+                <section id="inspoSec" class="folioSection">
+                    <p class="folioSectionTitle">Design inspiration</p>
+                </section>
+                <section id="blogSec" class="folioSection">
+                    <p class="folioSectionTitle">Writing</p>
+                </section>
+                <section id="contactSec" class="folioSection">
+                    <p class="folioSectionTitle">Contact</p>
+                </section>
+            </div>
+
+            <div class="cursorPos">
+            <div class="cursPosGroup" style="display: flex; flex-direction: row;"><p>00X.&nbsp;</p> <p id="cursPosX" class="cursPosVal">100</p></div>
+            <div class="cursPosGroup" style="display: flex; flex-direction: row;"><p>00Y.&nbsp;</p> <p id="cursPosY" class="cursPosVal">100</p></div>
+            </div>
+
         </div>
 
         <!-- <div class="navSheet" id="navSheet">

@@ -607,12 +607,80 @@ p {
 
 .aboutSheet {
     display: flex;
-    padding: 0rem 2rem;
+    padding: 0rem;
     margin: 6rem 2rem;
     height: 10000px;
     //width: 100%;
     box-sizing: border-box;
+    justify-content: right;
     //border: 1px solid #65836d;
+}
+
+.sideNavList {
+    position: fixed;
+    height: 100%;
+    left: 2rem;
+    transition: transform 180ms ease, opacity 180ms ease;
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden;
+    
+
+    li {
+        color: #65836d;
+        margin: 1rem 0rem;
+        font-size: 1rem;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
+
+.folioBodySecs {
+    width: 80%;
+    margin-top: 1600px;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+}
+
+#aboutSec, #projectSec, #exerciseSec, #inspoSec, #blogSec, #contactSec {
+    scroll-margin-top: 4rem;
+}
+
+.cursorPos {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    p {
+        color: #65836d;
+        margin: 0rem 0rem;
+        font-size: 1rem;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
+
+.folioSection {
+    border: 1px solid #65836d;
+    //background: lightblue;
+    border-radius: 4px;
+    height: 800px;
+    margin: 1rem 0rem;
+    padding: 1rem;
+}
+
+.folioSectionTitle {
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #A3D9FF;
+}
+
+.dashedDivider {
+    width: 100%;
+    position: relative;
+    left: 0;
+    height: 1px;
+    border-bottom: 1px dotted #65836d;
 }
 
 .loudTitle {
