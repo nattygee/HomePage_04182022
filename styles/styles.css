@@ -584,9 +584,25 @@ button {
   display: flex;
   padding: 0rem 2rem;
   margin: 6rem 2rem;
-  height: 400px;
+  height: 10000px;
   box-sizing: border-box;
-  border: 1px solid #65836d;
+}
+
+.loudTitle {
+  width: 100%;
+  color: var(--main-yellow);
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  font-size: 15rem;
+  font-family: "work sans", sans-serif;
+  font-weight: 600;
+  position: fixed;
+  z-index: 1000;
+  right: 2rem;
+  top: -2rem;
+  transition: transform 240ms ease-in;
+  transform: translateY(0px);
 }
 
 .navSheet {

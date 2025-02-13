@@ -5,46 +5,30 @@ var mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
 const scrollers = document.querySelectorAll(".scroller");
 
-// haptic button 2.0
-let hapBtn = document.getElementById('checkBtn');
+// title jumble
+document.addEventListener("scroll", () => {
+  let scrollPos = window.scrollY;
+  let jumbleTitle = document.getElementById('shuffleTitle');
 
-let navSheet1 = document.querySelector('navSheet');
-/* document.getElementById("navSheet").addEventListener("touchmove", e => {
-  fliphBtn();
-  console.log("heyayfsa")
-}); */
-
-function fliphBtn() {
-  let hapBtnOn = false;
-  
-  if(hapBtn.className == "hbtnOff"){
-    hapBtn.classList.remove("hbtnOff");
-    hapBtn.classList.add("hbtnOn");
-    hapBtn.checked = true;
-    hapBtn.checked = false;
-    hapBtnOn = true;  
-    console.log("on");
-  } else if(hapBtn.className == "hbtnOn") {
-    hapBtn.classList.remove("hbtnOn");
-    hapBtn.classList.add("hbtnOff");
-    console.log("off");
+  if (scrollPos < 100) {
+      jumbleTitle.innerHTML = "NAT";
+      jumbleTitle.style.transform = "translateY(0px)";
+  } else if (scrollPos < 300) {
+    jumbleTitle.innerHTML = "GREEN";
+    jumbleTitle.style.transform = "translateY(0px)";
+  } else if (scrollPos < 600) {
+    jumbleTitle.innerHTML = "PRODUCT";
+    jumbleTitle.style.transform = "translateY(0px)";
+  } else if (scrollPos < 900) {
+    jumbleTitle.innerHTML = "DESIGNER";
+    jumbleTitle.style.transform = "translateY(0px)";
+  } else if (scrollPos > 1200) {
+    jumbleTitle.innerHTML = "DESIGNER";
+    jumbleTitle.style.transform = "translateY(-400px)";
   }
-}
-
-/* function activateSwitch() {
-  hapBtn.checked = true;
-}
-function deactivateSwitch() {
-hapBtn.checked = false;
-} */
+});
 
 
-
-/* hapBtn.addEventListener('touchstart', fliphBtn);
-hapBtn.addEventListener('touchend', fliphBtn); */
-
-/* hapBtn.addEventListener('mousedown', fliphBtn);
-hapBtn.addEventListener('click', fliphBtn); */
 
 // back to top btn
 const backToTop = document.getElementById('backToTop');
