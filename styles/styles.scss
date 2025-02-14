@@ -9,7 +9,7 @@ div {
 
 a {
     text-decoration: none;
-    color: var(--main-orange);
+    //color: var(--main-orange);
 }
 
 p {
@@ -40,6 +40,42 @@ body {
     background-color: #304c37;
     display: flex;
     justify-content: center;
+
+    .cube {
+        width: 200px;
+        height: 200px;
+        position: fixed;
+        transform-style: preserve-3d;
+        animation: rotate 20s infinite linear;
+        cursor: pointer;
+        left: 50%;
+        top: 50%;
+    }
+    .cube.fast {
+        animation-duration: 1ms;
+    }
+    .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 2px solid yellow;
+        opacity: 0.7;
+    }
+    .front, .back { background-color: rgba(255, 255, 0, 0.3); }
+    .right, .left { border-style: dashed; }
+    .top, .bottom { background-color: transparent; }
+    .front  { transform: rotateY(0deg) translateZ(100px); }
+    .back   { transform: rotateY(180deg) translateZ(100px); }
+    .right  { transform: rotateY(90deg) translateZ(100px); }
+    .left   { transform: rotateY(-90deg) translateZ(100px); }
+    .top    { transform: rotateX(90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+    @keyframes rotate {
+        0% { transform: rotateX(0) rotateY(0); }
+        100% { transform: rotateX(360deg) rotateY(360deg); }
+    }
+
+    
 }
 
 .hidden {
@@ -625,13 +661,22 @@ p {
     transform: translateY(30px);
     visibility: hidden;
     
-
     li {
-        color: #65836d;
-        margin: 1rem 0rem;
+        margin: 0rem;
+    }
+    a {
+        color: #65836d;   
         font-size: 1rem;
         font-family: 'Courier New', Courier, monospace;
     }
+}
+
+.sideNavItem {
+    padding: 4px 0rem;
+}
+
+.bgActive {
+    background-color: #65836d;
 }
 
 .folioBodySecs {
@@ -662,17 +707,27 @@ p {
 
 .folioSection {
     border: 1px solid #65836d;
-    //background: lightblue;
-    border-radius: 4px;
-    height: 800px;
+    border-radius: 1rem;
+    height: 80vh;
     margin: 1rem 0rem;
     padding: 1rem;
+    background-color: #304c37;
+}
+
+.sticky {
+    position: sticky;
+    top: 6rem;
+}
+
+.sideNavList a.active {
+    color: #beface; /* Change to the color you prefer */
+    //font-weight: bold;
 }
 
 .folioSectionTitle {
     font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
-    color: #A3D9FF;
+    color: #beface;
 }
 
 .dashedDivider {

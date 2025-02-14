@@ -25,12 +25,72 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 }); 
 
+// alternative anchor scroll
+document.querySelectorAll(".sideNavList a").forEach(anchor => {
+  anchor.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default anchor behavior
+
+      const targetId = this.getAttribute("href").substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+          const offset = 80; // Adjust this if needed based on your header height
+          const targetPosition = targetSection.offsetTop - offset;
+
+          window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth"
+          });
+      }
+  });
+});
+
+  const sections = document.querySelectorAll(".folioSection");
+  const navLinks = document.querySelectorAll(".sideNavList a");
+  let activeSecs = [];
+
+  // Create an Intersection Observer
+  const observer = new IntersectionObserver(entries => {
+   console.log(entries);
+   entries.forEach(entry => {
+      let activeSectionID = entry.target.id
+      const targetLink = document.querySelector(`.sideNavList a[href="#${activeSectionID}"]`);
+      if(entry.isIntersecting) {
+        activeSecs.push(activeSectionID);
+          // now we want everything before the newly added item to remove active class
+          // loop through array > for each array item find the side nav element & remove the active class
+          activeSecs.forEach(section => {
+            document.querySelector(`.sideNavList a[href="#${section}"]`).classList.remove("active");
+            document.getElementById(section + 'Nav').classList.remove("bgActive");
+          });
+          targetLink.classList.add("active");
+          document.getElementById(activeSectionID + 'Nav').classList.add("bgActive");  
+      } else {
+        targetLink.classList.remove("active");
+        document.getElementById(activeSectionID + 'Nav').classList.remove("bgActive");
+        activeSecs.pop();
+        let lastID = activeSecs[activeSecs.length-1];
+        document.querySelector(`.sideNavList a[href="#${lastID}"]`).classList.add("active");
+        document.getElementById(lastID + 'Nav').classList.add("bgActive");
+      }
+      console.log(activeSecs);
+   });
+  }, {
+    threshold: 1,
+  });
+
+  sections.forEach(section => {
+    observer.observe(section)
+  });
+
+
 // title jumble
 document.addEventListener("scroll", () => {
   let scrollPos = window.scrollY;
   let jumbleTitle = document.getElementById('shuffleTitle');
   let sideNav = document.getElementById('sideNav');
-
+  let exerciseSection = document.getElementById('aboutSec');
+  let exerciseSectionLink = document.getElementById('aboutSecLink');
 
   if (scrollPos < 100) {
       jumbleTitle.innerHTML = "NAT";
@@ -55,9 +115,11 @@ document.addEventListener("scroll", () => {
     sideNav.style.visibility = "visible";
     sideNav.style.opacity = "1";
     sideNav.style.transform = "translateY(0px)";
-
   }
 });
+
+// sticky sections?
+
 
 
 
