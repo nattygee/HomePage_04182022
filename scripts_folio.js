@@ -59,25 +59,25 @@ function coordinate(event) {
      console.log(entries);
      entries.forEach(entry => {
         let activeSectionID = entry.target.id
-        const targetLink = document.querySelector(`.sideNavList a[href="#${activeSectionID}"]`);
+        //const targetLink = document.querySelector(`.sideNavList a[href="#${activeSectionID}"]`);
         if(entry.isIntersecting) {
           activeSecs.push(activeSectionID);
           secScrollY.push(scrollY);
             // now we want everything before the newly added item to remove active class
             // loop through array > for each array item find the side nav element & remove the active class
             activeSecs.forEach(section => {
-              document.querySelector(`.sideNavList a[href="#${section}"]`).classList.remove("active");
+              //document.querySelector(`.sideNavList a[href="#${section}"]`).classList.remove("active");
               document.getElementById(section + 'Nav').classList.remove("bgActive");
             });
-            targetLink.classList.add("active");
+            //targetLink.classList.add("active");
             document.getElementById(activeSectionID + 'Nav').classList.add("bgActive");  
         } else {
-          targetLink.classList.remove("active");
+          //targetLink.classList.remove("active");
           document.getElementById(activeSectionID + 'Nav').classList.remove("bgActive");
           activeSecs.pop();
           secScrollY.pop();
           let lastID = activeSecs[activeSecs.length-1];
-          document.querySelector(`.sideNavList a[href="#${lastID}"]`).classList.add("active");
+          //document.querySelector(`.sideNavList a[href="#${lastID}"]`).classList.add("active");
           document.getElementById(lastID + 'Nav').classList.add("bgActive");
         }
         console.log(activeSecs);
@@ -89,13 +89,13 @@ function coordinate(event) {
     });
   
     sections.forEach(section => {
-      observer.observe(section)
-    });
+        observer.observe(section)
+      });
   
     function scrollUp(event) {
         let sectionID  = event.target.id;
         let properID = sectionID.slice(0, -3);
-        console.log(sectionID);
+        console.log("🟥🟥🟥" + sectionID);
         console.log(properID);
         let targetWindowHeight;
         activeSecs.forEach(section => {
@@ -110,10 +110,69 @@ function coordinate(event) {
         console.log("👉 " + event);
         console.log("CLICK CLICK");
         window.scrollTo({top: targetWindowHeight, behavior: 'smooth'});
-      }
+    }
 
+    function scrollToAnchor(event) {
+        let sectionID  = event.target.id;
+        let properID = sectionID.slice(0, -3);      
+        let contactSec = document.getElementById(properID);
+        contactSec.scrollIntoView({ behavior: "smooth" });
+        console.log("MoVED");
+    };
+    
+    function navClicks(event) {
+        let properID = event.target.id.slice(0, -3);
+        let flag = false;
+        activeSecs.forEach(section => {
+            if(section == properID) {
+                flag = true;
+            };
+        })
+        if(flag) {
+            scrollUp(event);
+            console.log("SCRUPP 🟦")
+        } else {
+            scrollToAnchor(event);
+            console.log("ANCHOR 🟩")
+        }
+    }
+
+    // onload
+    window.onload = function() {
+    let scrollPos = window.scrollY;
+    let jumbleTitle = document.getElementById('shuffleTitle');
+    let sideNav = document.getElementById('sideNav');
+    let exerciseSection = document.getElementById('aboutSec');
+    let exerciseSectionLink = document.getElementById('aboutSecLink');
+  
+    if (scrollPos < 100) {
+        jumbleTitle.innerHTML = "NAT";
+        jumbleTitle.style.transform = "translateY(0px)";
+        sideNav.style.visibility = "visibile";
+        sideNav.style.opacity = "0";
+        sideNav.style.transform = "translateY(30px)";
+    } else if (scrollPos < 300) {
+      jumbleTitle.innerHTML = "GREEN";
+      jumbleTitle.style.transform = "translateY(0px)";
+    } else if (scrollPos < 600) {
+      jumbleTitle.innerHTML = "PRODUCT";
+      jumbleTitle.style.transform = "translateY(0px)";
+    } else if (scrollPos < 900) {
+      jumbleTitle.innerHTML = "DESIGNER";
+      jumbleTitle.style.transform = "translateY(0px)";
+      sideNav.style.opacity = "0";
+      sideNav.style.transform = "translateY(30px)";
+    } else if (scrollPos > 1200) {
+      jumbleTitle.innerHTML = "DESIGNER";
+      jumbleTitle.style.transform = "translateY(-400px)";
+      sideNav.style.visibility = "visible";
+      sideNav.style.opacity = "1";
+      sideNav.style.transform = "translateY(0px)";
+    }
+    };
 
   // title jumble
+  
   document.addEventListener("scroll", () => {
     let scrollPos = window.scrollY;
     let jumbleTitle = document.getElementById('shuffleTitle');
