@@ -18,79 +18,67 @@ function coordinate(event) {
     });
   }); 
   
-  // alternative anchor scroll
-  
-  /* document.querySelectorAll(".sideNavList a").forEach(anchor => {
-    anchor.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default anchor behavior
-  
-        const targetId = this.getAttribute("href").substring(1);
-        const targetSection = document.getElementById(targetId);
-  
-        if (targetSection) {
-            const offset = 80; // Adjust this if needed based on your header height
-            const targetPosition = targetSection.offsetTop - offset;
-  
-            window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth"
-            });
-        }
-    });
-  }); */
-  
-  // SCROLL on CLICK
-  // not working on the way up. Wondering if it's possible to get the scroll y position when target div first instersects
-  // then use scroll y to scroll to that position on the way up? But that would prolly conflict with with anchors on the way down?
-  // store the scroll y in an array that maps to the intersecting sections array
-  // if section link is clicked, and it's intersecting, get it's corresponding scroll Y in the array and scroll there
-  
   
   // need to reset arrays on page load down the page 🚨🚨🚨
   
-    const sections = document.querySelectorAll(".folioSection");
-    const navLinks = document.querySelectorAll(".sideNavList a");
-    let activeSecs = [];
-    let secScrollY = [];
-    
+  let secScrollY = JSON.parse(localStorage.getItem("secScrollY")) || [];
+  let activeSecs = JSON.parse(localStorage.getItem("activeSecs")) || [];
+  
+  const sections = document.querySelectorAll(".folioSection");
+  const navLinks = document.querySelectorAll(".sideNavList a");
   
     // Create an Intersection Observer
     const observer = new IntersectionObserver(entries => {
-     console.log(entries);
-     entries.forEach(entry => {
-        let activeSectionID = entry.target.id
-        //const targetLink = document.querySelector(`.sideNavList a[href="#${activeSectionID}"]`);
-        if(entry.isIntersecting) {
-          activeSecs.push(activeSectionID);
-          secScrollY.push(scrollY);
-            // now we want everything before the newly added item to remove active class
-            // loop through array > for each array item find the side nav element & remove the active class
-            activeSecs.forEach(section => {
-              //document.querySelector(`.sideNavList a[href="#${section}"]`).classList.remove("active");
-              document.getElementById(section + 'Nav').classList.remove("bgActive");
-            });
-            //targetLink.classList.add("active");
-            document.getElementById(activeSectionID + 'Nav').classList.add("bgActive");  
-        } else {
-          //targetLink.classList.remove("active");
-          document.getElementById(activeSectionID + 'Nav').classList.remove("bgActive");
-          activeSecs.pop();
-          secScrollY.pop();
-          let lastID = activeSecs[activeSecs.length-1];
-          //document.querySelector(`.sideNavList a[href="#${lastID}"]`).classList.add("active");
-          document.getElementById(lastID + 'Nav').classList.add("bgActive");
-        }
-        console.log(activeSecs);
-        console.log(secScrollY);
-        console.log(window.scrollY);
-     });
-    }, {
-      threshold: 1,
-    });
-  
+        let intersectFlag = false;
+    
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                intersectFlag = true;
+            }
+        });
+    
+        entries.forEach(entry => {
+            let activeSectionID = entry.target.id;
+            
+            if (entry.isIntersecting) {
+                if (!activeSecs.includes(activeSectionID)) {
+                    activeSecs.push(activeSectionID);
+                    secScrollY.push(window.scrollY);
+                    localStorage.setItem("secScrollY", JSON.stringify(secScrollY));
+                    localStorage.setItem("activeSecs", JSON.stringify(activeSecs));
+                }
+    
+                // Remove active class from all
+                activeSecs.forEach(section => {
+                    document.getElementById(section + "Nav")?.classList.remove("bgActive");
+                });
+    
+                // Add active class to the current one
+                document.getElementById(activeSectionID + "Nav")?.classList.add("bgActive");
+            } else {
+                let index = activeSecs.indexOf(activeSectionID);
+                if (index !== -1) {
+                    activeSecs.splice(index, 1);
+                    secScrollY.splice(index, 1);
+                    localStorage.setItem("secScrollY", JSON.stringify(secScrollY));
+                    localStorage.setItem("activeSecs", JSON.stringify(activeSecs));
+                }
+    
+                document.getElementById(activeSectionID + "Nav")?.classList.remove("bgActive");
+    
+                if (activeSecs.length > 0) {
+                    let lastID = activeSecs[activeSecs.length - 1];
+                    document.getElementById(lastID + "Nav")?.classList.add("bgActive");
+                }
+            }
+            console.log("👉👉" + secScrollY);
+        });
+    
+    }, { threshold: 1 });
+    
     sections.forEach(section => {
-        observer.observe(section)
-      });
+        observer.observe(section);
+    });
   
     function scrollUp(event) {
         let sectionID  = event.target.id;
