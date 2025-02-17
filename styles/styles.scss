@@ -660,6 +660,7 @@ p {
     opacity: 0;
     transform: translateY(30px);
     visibility: hidden;
+    width: 15vw;
     
     li {
         margin: 0rem;
@@ -672,15 +673,20 @@ p {
 }
 
 .sideNavItem {
-    padding: 4px 0rem;
+    padding: 4px 8px;
+    color: #65836d;
+    cursor: pointer;
+    font-size: 1rem;
+        font-family: 'Courier New', Courier, monospace;
 }
 
 .sideNavItem:hover {
-    background-color: #1d2e21;
+    background-color: rgba($color: #65836d, $alpha: 0.5)
 }
 
 .bgActive {
     background-color: #65836d;
+    color: #beface;
 }
 
 .folioBodySecs {
@@ -701,6 +707,7 @@ p {
     position: fixed;
     left: 2rem;
     bottom: 2rem;
+    padding: 0rem 8px;
     p {
         color: #65836d;
         margin: 0rem 0rem;
@@ -711,7 +718,7 @@ p {
 
 .folioSection {
     border: 1px solid #65836d;
-    border-radius: 1rem;
+    //border-radius: 1rem;
     height: 80vh;
     margin: 1rem 0rem;
     padding: 1rem;
