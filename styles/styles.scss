@@ -695,6 +695,21 @@ p {
     display: flex;
     flex-direction: column;
     right: 0;
+    //height: 100vh;
+    //overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.your-overflow-div {
+    height:100%;  /* Adjust as needed */
+    overflow-y: auto;
+    //border: 1px solid #ccc;  
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+}
+
+.your-overflow-div::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
 }
 
 #aboutSec, #projectSec, #exerciseSec, #inspoSec, #blogSec, #contactSec {
@@ -718,11 +733,14 @@ p {
 
 .folioSection {
     border: 1px solid #65836d;
-    //border-radius: 1rem;
+    border-radius: 1rem;
     height: 80vh;
     margin: 1rem 0rem;
     padding: 1rem;
-    background-color: #304c37;
+    background-color: rgba($color: #304c37, $alpha: 0.5);
+    backdrop-filter: blur(12px);
+    overflow-y: auto;
+    //position: sticky;
 }
 
 .sticky {
@@ -747,6 +765,14 @@ p {
     left: 0;
     height: 1px;
     border-bottom: 1px dotted #65836d;
+}
+
+.bigTitle {
+    color: var(--main-yellow);
+    letter-spacing: -24px;
+    justify-content: right;
+    font-size: 15rem; 
+    line-height: 12rem;
 }
 
 .loudTitle {

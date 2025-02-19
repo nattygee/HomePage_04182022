@@ -41,6 +41,7 @@ function coordinate(event) {
             let activeSectionID = entry.target.id;
             
             if (entry.isIntersecting) {
+                //scrollAboutSec();
                 if (!activeSecs.includes(activeSectionID)) {
                     activeSecs.push(activeSectionID);
                     secScrollY.push(window.scrollY);
@@ -124,6 +125,26 @@ function coordinate(event) {
             console.log("ANCHOR 🟩")
         }
     }
+
+
+   /*  function scrollAboutSec() {
+        const targetDiv = document.querySelector('.your-overflow-div');
+
+        window.addEventListener('wheel', (event) => {
+            const atBottom = targetDiv.scrollTop + targetDiv.clientHeight >= targetDiv.scrollHeight;
+            const atTop = targetDiv.scrollTop;
+            
+            if (!atBottom) {
+                targetDiv.scrollBy({ 
+                    top: event.deltaY, 
+                    //behavior: 'smooth' 
+                });
+                event.preventDefault(); // Prevent the body from scrolling until the target div is fully scrolled
+            }
+        }, { passive: false });
+    }
+     */
+    
 
     // onload
     window.onload = function() {
