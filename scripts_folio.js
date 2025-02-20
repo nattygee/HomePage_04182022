@@ -27,10 +27,59 @@ function coordinate(event) {
   const sections = document.querySelectorAll(".folioSection");
   const navLinks = document.querySelectorAll(".sideNavList a");
   
+  // about section card 1 reveal
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutSec = document.getElementById("aboutSec");
+    const wipeAwaySec = document.getElementById("wipeAwaySec1");
+    const revealItems = document.querySelectorAll("#natwalk, #sibling1, #sibling2");
+
+    // Observer to reveal items when #aboutSec is in view
+    const revealObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            console.log("Revealing elements...");
+            revealItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateY(0px)";
+                }, index * 200);
+            });
+        }
+    }, { threshold: 1 });
+
+    revealObserver.observe(aboutSec);
+
+    // Observer to hide items when #wipeAwaySec1 enters, and re-reveal when it's about to leave
+    const wipeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log("Hiding elements...");
+                revealItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = "0";
+                        item.style.transform = "translateY(-50px)";
+                    }, index * 200);
+                });
+            } else if (entry.boundingClientRect.top > 0) { 
+                // ✅ Re-reveal when #wipeAwaySec1 is about to leave the viewport
+                console.log("Re-revealing elements...");
+                revealItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = "1";
+                        item.style.transform = "translateY(0px)";
+                    }, index * 200);
+                });
+            }
+        });
+    }, { threshold: 0.1 }); // ✅ Low threshold to trigger early when exiting
+
+    wipeObserver.observe(wipeAwaySec);
+});
+
+
     // Create an Intersection Observer
     const observer = new IntersectionObserver(entries => {
         let intersectFlag = false;
-    
+
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 intersectFlag = true;
@@ -194,5 +243,5 @@ function coordinate(event) {
     }
   });
   
-  // sticky sections?
+
   

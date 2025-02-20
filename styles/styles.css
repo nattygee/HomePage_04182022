@@ -687,6 +687,43 @@ button {
   right: 0;
 }
 
+.folioHStack {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  gap: 1rem;
+}
+
+.dashed-divider {
+  border: none; /* Removes all default borders */
+  border-top: 1px dashed #65836d; /* Adds only the dashed top border */
+  background: none; /* Ensures no background is applied */
+  height: 0; /* Prevents extra spacing */
+  margin-bottom: 1rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+#natwalk {
+  transition: transform 800ms ease, opacity 800ms ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+#sibling1 {
+  transition: transform 800ms ease, opacity 800ms ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+#sibling2 {
+  transition: transform 800ms ease, opacity 800ms ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
 #aboutSec, #projectSec, #exerciseSec, #inspoSec, #blogSec, #contactSec {
   scroll-margin-top: 4rem;
 }
@@ -707,10 +744,9 @@ button {
 }
 
 .folioSection {
-  border: 1px solid #65836d;
   height: 80vh;
   margin: 1rem 0rem;
-  padding: 1rem;
+  padding: 0rem;
   background-color: #304c37;
 }
 
