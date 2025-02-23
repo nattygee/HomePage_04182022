@@ -33,6 +33,8 @@ function coordinate(event) {
     const wipeAwaySec = document.getElementById("wipeAwaySec1");
     const revealItems = document.querySelectorAll("#natwalk, #sibling1, #sibling2");
 
+    let hasScrolledPast = false; // ✅ Prevents triggering on first load
+
     // Observer to reveal items when #aboutSec is in view
     const revealObserver = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
@@ -53,14 +55,15 @@ function coordinate(event) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 console.log("Hiding elements...");
+                hasScrolledPast = true; // ✅ Now we allow re-reveals
                 revealItems.forEach((item, index) => {
                     setTimeout(() => {
                         item.style.opacity = "0";
                         item.style.transform = "translateY(-50px)";
                     }, index * 200);
                 });
-            } else if (entry.boundingClientRect.top > 0) { 
-                // ✅ Re-reveal when #wipeAwaySec1 is about to leave the viewport
+            } else if (entry.boundingClientRect.top > 0 && hasScrolledPast) { 
+                // ✅ Only allow re-reveal after user has scrolled past once
                 console.log("Re-revealing elements...");
                 revealItems.forEach((item, index) => {
                     setTimeout(() => {
@@ -70,7 +73,7 @@ function coordinate(event) {
                 });
             }
         });
-    }, { threshold: 0.1 }); // ✅ Low threshold to trigger early when exiting
+    }, { threshold: 0.1 }); // ✅ Low threshold to trigger just before leaving
 
     wipeObserver.observe(wipeAwaySec);
 });
@@ -139,7 +142,7 @@ function coordinate(event) {
             console.log(section);
             if(section == properID) {
                 let targetIndex = activeSecs.indexOf(section);
-                targetWindowHeight = secScrollY[targetIndex];
+                targetWindowHeight = secScrollY[targetIndex] + 16;
                 console.log("section name: " + section + ", target window height: " + targetWindowHeight);
             }
         });

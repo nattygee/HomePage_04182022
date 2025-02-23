@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Work+Sans:ital,wght@0,300;0,600;0,900;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="/images/fd_favicon.svg" type="image/x-icon">
         <!-- React CDN scripts
         <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -63,52 +64,105 @@
             </div>
             <ul id="sideNav" class="sideNavList">
                 <div id="aboutSecNav" class="sideNavItem bgActive" onclick="navClicks(event)">001. About Nat</div>
-                <div id="projectSecNav" class="sideNavItem" onclick="navClicks(event)">002. Professional work    </div>
-                <div id="exerciseSecNav" class="sideNavItem" onclick="navClicks(event)">003. Design exercises    </div>
-                <div id="inspoSecNav" class="sideNavItem" onclick="navClicks(event)">004. Design inspiration    </div>
+                <div id="projectSecNav" class="sideNavItem" onclick="navClicks(event)">002. Projects</div>
+                <div id="exerciseSecNav" class="sideNavItem" onclick="navClicks(event)">003. Exercises</div>
+                <div id="inspoSecNav" class="sideNavItem" onclick="navClicks(event)">004. Inspiration</div>
                 <div id="blogSecNav" class="sideNavItem" onclick="navClicks(event)">005. Writing</div>
                 <div id="contactSecNav" class="sideNavItem" onclick="navClicks(event)">006. Contact</div>
             </ul>
             <div class="folioBodySecs">
                 <section id="aboutSec" class="folioSection sticky">
                     <div class="folioHStack">
-                        <div id="natwalk" class="hFlexChild1" style="align-items: center; justify-content: center;">
-                            <div>
-                                <div class="abtNatLabel" style="background-color: #A3D9FF; color: #1d2e21; font-family: 'Courier New', Courier, monospace; padding: 0rem 1rem 0rem .25rem; left: 2rem; top: 3rem; width: 120px;">
-                                    Nat Green
-                                </div>
-                                <img src="images/natwalk.svg" alt="">
+                        <div id="natwalk" class="hFlexChild1" style="align-items: left; justify-content: center;">
+                            <div class="labelGreen"><p class="datePosted" style="font-weight: 600;">Visual</p></div>
+                            <hr class="dashed-divider">
+                            <div style="padding: 1rem 0rem; height: 100%; min-height: 240px;">
+                                <!-- <div class="labelBlue">Nat Green</div> -->
+                                <!-- <img src="images/natwalk.svg" alt="" style="height: 100%;"> -->
                             </div>
                         </div>
 
-                        <div id="sibling1" class="hFlexChild1" style="padding: 1rem 0rem;">
-                            <p class="datePosted" style="padding: 0rem 1rem;">Profile [2025]</p>
-                            <p class="projectDescription" style="padding: 0rem 1rem; color: #A3D9FF;">Product designer - Mobile Apps</p>
+                        <div id="sibling1" class="hFlexChild1">
+                            <div class="labelGreen"><p class="datePosted" style="font-weight: 600;">Profile</p></div>
                             <hr class="dashed-divider">
-                            <p class="projectDescription" style="padding: 0rem 1rem;">Spent the last 3 years shaping experiences on the Canada Post mobile app including Find a Post Office, Track, Account Management, Customs Form, Create a Shipping Label and MyMail</p>
+                            <p class="projectDescription" style="margin: .5rem 0rem;">Product designer</p>
                             <hr class="dashed-divider">
-                            <p class="projectDescription" style="padding: 0rem 1rem;">Previously worked on consumer apps including Ritual and Tab for a Cause</p>
+                            <p class="projectDescription" style="margin: .5rem 0rem;" >Currently helping shape experiences on the Canada Post mobile app including MyMail, Track, and Shipping</p>
                             <hr class="dashed-divider">
-                            <p class="projectDescription" style="padding: 0rem 1rem;">Background in graphic design</p>
+                            <p class="projectDescription" style="margin: .5rem 0rem;">Tools for design and building include Figma, VSCode, V0 and ChatGPT</p>
                             <hr class="dashed-divider">
-                            <p class="projectDescription" style="padding: 0rem 1rem;">Currently building proficiency in JS and React</p>
+                            <p class="projectDescription" style="margin: .5rem 0rem;">Enjoys caffeine, coding, cars, chocolate and soccer</p>
                             <hr class="dashed-divider">
+                            <!-- <p class="projectDescription" style="margin: .5rem 0rem;">Tools | Figma, VSCode, V0, CursorAI, ChatGPT</p>
+                            <hr class="dashed-divider"> -->
+                            <!-- <button>Reach out on LinkedIn</button>
+                            <button>View full resume</button> -->
                             <div class="spacer"></div>
+                            <div class="buttonHStack">
+                                <a class="textCTAbtn">LinkedIn<img src="images/icon_linkout.svg" alt=""></a>
+                                <a class="textCTAbtn">Resume<img src="images/icon_dl.svg" alt=""></a>
+                            </div>
                         </div>
                         <div id="sibling2" class="hFlexChild1">
-                            <p class="datePosted">Design Philosophy [Public]</p>
-                            <p class="projectDescription">The carousel is the (im)perfect option to utilize when space is limited on a mobile device.</p>
-                            <div class="spacer"></div>
+                            <div class="labelGreen"><p class="datePosted" style="font-weight: 600;">Design Philosophy</p></div>
+                            <!-- <hr class="dashed-divider" style="margin-bottom: 0;"> -->
+                            <hr class="dashed-divider">
+                            <div class="folioHStack" style="gap: 0;">
+                                <div class="designPhil">
+                                    <p class="designPhilNum">1</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Observe</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Measure</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Assess</p>
+                                </div>
+                                <div class="vertical-divider"></div>
+                                <div class="designPhil">
+                                    <p class="designPhilNum">2</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Ideate</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Prototype</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Test</p>
+                                </div>
+                            </div>
+                            <hr class="dashed-divider" style="margin-bottom: 0;">
+                            <div class="folioHStack" style="gap: 0;">
+                                <div class="designPhil">
+                                    <p class="designPhilNum">3</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Storytell</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Recruit</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Get buy-in</p>
+                                </div>
+                                <div class="vertical-divider"></div>
+                                <div class="designPhil">
+                                    <p class="designPhilNum">4</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Build</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">Measure</p>
+                                    <hr class="dashed-divider">
+                                    <p class="projectDescription">(in)Validate</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <div id="wipeAwaySec1" class="" style="height: 800px; z-index: 1010; padding: 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 800px; background-color:#304c3780; border-top: 1px solid #65836d;">Test test</div>
+                <div id="wipeAwaySec1" class="" style="height: 800px; z-index: 1010; padding: 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 800px; background-color:#304c37; border-top: 1px solid #65836d;">Test test</div>
                 <div class="" style="height: 800px; z-index: 1010; padding: 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 800px; background-color:#304c37; border-top: 1px solid #65836d; transform: skewY(1deg);"></div>
                 <!-- <div class="dashedDivider"></div> -->
                 <section id="projectSec" class="folioSection sticky">
+                    alfhal
                     <!-- <p class="folioSectionTitle">Professional work</p> -->
                 </section>
                 <section id="exerciseSec" class="folioSection sticky">
+                    aflhsaflj
+
                     <!-- <p class="folioSectionTitle">Design exercises</p> -->
                 </section>
                 <section id="inspoSec" class="folioSection sticky">

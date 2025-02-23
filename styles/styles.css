@@ -14,7 +14,6 @@ a {
 p {
   margin: 0;
   line-height: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 :root {
@@ -38,61 +37,6 @@ body {
   background-color: #304c37;
   display: flex;
   justify-content: center;
-}
-body .cube {
-  width: 200px;
-  height: 200px;
-  position: fixed;
-  transform-style: preserve-3d;
-  animation: rotate 20s infinite linear;
-  cursor: pointer;
-  left: 50%;
-  top: 50%;
-}
-body .cube.fast {
-  animation-duration: 1ms;
-}
-body .face {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border: 2px solid yellow;
-  opacity: 0.7;
-}
-body .front, body .back {
-  background-color: rgba(255, 255, 0, 0.3);
-}
-body .right, body .left {
-  border-style: dashed;
-}
-body .top, body .bottom {
-  background-color: transparent;
-}
-body .front {
-  transform: rotateY(0deg) translateZ(100px);
-}
-body .back {
-  transform: rotateY(180deg) translateZ(100px);
-}
-body .right {
-  transform: rotateY(90deg) translateZ(100px);
-}
-body .left {
-  transform: rotateY(-90deg) translateZ(100px);
-}
-body .top {
-  transform: rotateX(90deg) translateZ(100px);
-}
-body .bottom {
-  transform: rotateX(-90deg) translateZ(100px);
-}
-@keyframes rotate {
-  0% {
-    transform: rotateX(0) rotateY(0);
-  }
-  100% {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
 }
 
 .hidden {
@@ -239,24 +183,33 @@ button {
 }
 
 .textCTAbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   font-family: "Work Sans", sans-serif;
-  font-weight: 600;
-  color: var(--main-orange);
-  background-color: var(--darker-green);
+  font-weight: 200;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+  color: #beface;
   padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
   transition: 180ms;
-  margin-right: auto;
+  margin-bottom: 1rem;
 }
 
 .textCTAbtn:hover {
   font-family: "Work Sans", sans-serif;
-  font-weight: 600;
-  color: var(--main-orange);
-  background-color: var(--even-darker-green);
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+  color: #beface;
+  background-color: rgba(101, 131, 109, 0.5);
   padding: 0.5rem 0.75rem;
-  border-radius: 0.25rem;
+  border-radius: 0;
   transition: 300ms;
+  cursor: pointer;
 }
 
 .navItemOther {
@@ -637,7 +590,7 @@ button {
 .aboutSheet {
   display: flex;
   padding: 0rem;
-  margin: 6rem 2rem;
+  margin: 6rem 1rem;
   height: 10000px;
   box-sizing: border-box;
   justify-content: right;
@@ -651,7 +604,8 @@ button {
   opacity: 0;
   transform: translateY(30px);
   visibility: hidden;
-  width: 15vw;
+  width: 17vw;
+  border-left: 1px solid #65836d;
 }
 .sideNavList li {
   margin: 0rem;
@@ -689,9 +643,32 @@ button {
 
 .folioHStack {
   display: flex;
+  flex-grow: 1;
   flex-direction: row;
-  height: 100%;
+  height: 95vh;
   gap: 1rem;
+}
+
+.vertical-divider {
+  height: 100%;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom, #65836d, #65836d 2px, transparent 4px, transparent 5px);
+}
+
+.designPhil {
+  background-color: #304c37;
+  border: 1px solid var(--light-green);
+  border-radius: 0.5rem;
+  flex: 1;
+  margin: 1rem;
+}
+
+.buttonHStack {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  gap: 0.5rem;
+  padding: 0rem 1rem;
 }
 
 .dashed-divider {
@@ -699,7 +676,6 @@ button {
   border-top: 1px dashed #65836d; /* Adds only the dashed top border */
   background: none; /* Ensures no background is applied */
   height: 0; /* Prevents extra spacing */
-  margin-bottom: 1rem;
 }
 
 .italic {
@@ -725,7 +701,7 @@ button {
 }
 
 #aboutSec, #projectSec, #exerciseSec, #inspoSec, #blogSec, #contactSec {
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 1rem;
 }
 
 .cursorPos {
@@ -744,15 +720,14 @@ button {
 }
 
 .folioSection {
-  height: 80vh;
-  margin: 1rem 0rem;
+  height: 95vh;
   padding: 0rem;
-  background-color: #304c37;
+  z-index: 1020;
 }
 
 .sticky {
   position: sticky;
-  top: 6rem;
+  top: 1rem;
 }
 
 .sideNavList a.active {
@@ -934,10 +909,10 @@ input[switch]:checked::before {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--light-green);
-  padding: 1rem;
   border-radius: 1rem;
-  flex: 1 1 0;
+  flex: 1;
   box-sizing: border-box;
+  min-width: 0;
 }
 
 .flexChild1 {
@@ -1349,18 +1324,16 @@ input[switch]:checked::before {
   font-family: "work sans", sans-serif;
   font-weight: 300;
   width: auto;
-  padding: 0rem 0rem 1rem 0rem;
+  padding: 0.5rem 1rem;
 }
 
 .datePosted {
-  color: var(--light-green);
+  color: var(--main-yellow);
   font-size: 1rem;
   letter-spacing: 0.1rem;
   line-height: 1.5rem;
   font-family: "work sans", sans-serif;
-  font-weight: 600;
   width: auto;
-  padding: 0rem 0rem 0.25rem 0rem;
   margin: 0rem;
 }
 
@@ -1449,6 +1422,35 @@ mark {
 .ctas a {
   width: 100%;
   box-sizing: border-box;
+}
+
+.labelBlue {
+  background-color: #A3D9FF;
+  color: #1d2e21;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  padding: 0rem 1rem 0rem 0.25rem;
+  left: -5rem;
+  top: 1rem;
+  width: 120px;
+}
+
+.labelGreen {
+  color: #1d2e21;
+  font-family: "Courier New", Courier, monospace;
+  padding: 0rem 1rem 0rem 0rem;
+  left: 2rem;
+  top: 3rem;
+  margin: 1rem 0rem 1rem 1rem;
+}
+
+.designPhilNum {
+  color: var(--main-yellow);
+  font-size: 4rem;
+  line-height: 4rem;
+  padding: 1rem;
+  font-family: "Space Mono", serif;
+  margin-bottom: 0rem;
 }
 
 .ctaBtnMain {
