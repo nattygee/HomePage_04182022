@@ -1,3 +1,17 @@
+// test div resize
+
+
+
+function updateSideNavHeight() {
+    let viewportHeight = window.innerHeight;
+    document.getElementById("testDiv1").style.height = (viewportHeight - 40) + "px";
+    document.getElementById("sideNav").style.height = (viewportHeight - 120) + "px";
+  }
+
+  // Run on load and resize
+window.addEventListener("load", updateSideNavHeight);
+window.addEventListener("resize", updateSideNavHeight);
+
 // cursor position
 
 function coordinate(event) {
@@ -18,7 +32,10 @@ function coordinate(event) {
     });
   }); 
   
-  
+  // get viewport height function
+
+  let viewportHeight = window.innerHeight;
+
   // need to reset arrays on page load down the page 🚨🚨🚨
   
   let secScrollY = JSON.parse(localStorage.getItem("secScrollY")) || [];
@@ -32,6 +49,9 @@ function coordinate(event) {
     const aboutSec = document.getElementById("aboutSec");
     const wipeAwaySec = document.getElementById("wipeAwaySec1");
     const revealItems = document.querySelectorAll("#natwalk, #sibling1, #sibling2");
+
+  
+    
 
     let hasScrolledPast = false; // ✅ Prevents triggering on first load
 
@@ -209,6 +229,7 @@ function coordinate(event) {
       sideNav.style.opacity = "1";
       sideNav.style.transform = "translateY(0px)";
     }
+
     };
 
   // title jumble
