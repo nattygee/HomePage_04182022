@@ -187,38 +187,6 @@ button {
     }
 }
 
-.textCTAbtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 200;
-    font-size: 1rem;
-    letter-spacing: .1rem;
-    line-height: 1.5rem;
-    color: #beface;
-    //background-color: var(--darker-green);
-    padding: .5rem .75rem;
-    border-radius: 0;
-    transition: 180ms;
-    //margin-right: auto;
-    margin-bottom: 1rem;
-}
-.textCTAbtn:hover {
-    font-family: 'Work Sans', sans-serif;
-    //font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: .1rem;
-    line-height: 1.5rem;
-    color: #beface;
-    //background-color: var(--even-darker-green);
-     background-color: rgba($color: #65836d, $alpha: 0.5);
-    padding: .5rem .75rem;
-    border-radius: 0;
-    transition: 300ms;
-    cursor: pointer;
-}
 
 .navItemOther {
     color: var(--main-orange);
@@ -663,6 +631,12 @@ p {
     background-color: rgba($color: #65836d, $alpha: 0.5)
 }
 
+#sideNavNat {
+    transition: transform 800ms ease, opacity 800ms ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
 .bgActive {
     background-color: #65836d;
     color: var(--main-yellow);
@@ -686,6 +660,14 @@ p {
     //height: 100%;
     gap: 1rem;
 }
+.folioVStack {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 1rem;
+    //padding: 1rem;
+    margin: 1rem 0rem;
+}
 
 .vertical-divider {
     height: 100%;
@@ -706,13 +688,86 @@ p {
     flex: 1;
     margin: 1rem;
 }
+.designPhilHor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #304c37;
+    border: 1px solid var(--light-green);
+    border-radius: .5rem;
+    flex: 1;
+    margin: 0rem 1rem;
+}
+
+#abtCircle {
+    animation: rotate 35s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
 .buttonHStack {
     display: flex;
     width: 100%;
     justify-content: right;
+    //gap: .5rem;
+    padding: 0rem;
+    border-right: 2px solid #233627;
+    border-bottom: 2px solid #233627;
+    border-top: 1px solid #65836d;
+    //margin-bottom: 2px;
+}
+
+.textCTAbtn {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
     gap: .5rem;
-    padding: 0rem 1rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    line-height: 1.5rem;
+    color: #beface;
+    //background-color: rgb(35, 54, 39);
+    padding: .5rem .75rem;
+    border-radius: 4px;
+    transition: 180ms;
+    //margin-right: auto;
+    //margin-bottom: 1rem;
+    border-left: 2px solid #233627;
+    border-top: 2px solid #233627;
+//border-top: 2px solid rgb(101, 131, 109);
+    box-shadow: inset 2px 4px 2px rgba(101, 131, 109, 0.5);
+}
+.textCTAbtn:hover {
+    font-family: 'Work Sans', sans-serif;
+    //font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    line-height: 1.5rem;
+    color: #beface;
+    //background-color: var(--even-darker-green);
+    background-color: rgba($color: rgb(35, 54, 39), $alpha: 0.4);
+    box-shadow: inset 2px -1px 2px rgba(101, 131, 109, 0.5);
+    padding: .5rem .75rem;
+    border-radius: 4px;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.bottomEdgeShadow {
+    height: 24px;
+    width: 100%;
+    box-shadow: inset 0px -4px 4px rgba(24, 31, 26, 0.2);
+
 }
 
 .dashed-divider {
@@ -770,7 +825,7 @@ p {
     //flex-flow: column;
     padding: 0rem;
     z-index: 1020;
-    //background-color: #304c37;
+    background-color: #304c37;
 }
 
 .sticky {
@@ -977,12 +1032,14 @@ input[switch] {
 .hFlexChild1 {
     display: flex;
     flex-direction: column;
+    background-image: url(../images/bggrid.png);
     border: 1px solid var(--light-green);
     //padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 8px;
     flex: 1;
     box-sizing: border-box;
     min-width: 0;
+    overflow: hidden;
 }
 
 .flexChild1 {
