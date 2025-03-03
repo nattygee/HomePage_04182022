@@ -2,12 +2,12 @@
 
 
 
-function updateSideNavHeight() {
-    let viewportHeight = window.innerHeight;
-    document.getElementById("testDiv1").style.height = (viewportHeight - 40) + "px";
-    document.getElementById("testDiv2").style.height = (viewportHeight - 40) + "px";
-    document.getElementById("sideNav").style.height = (viewportHeight - 120) + "px";
-  }
+    function updateSideNavHeight() {
+        let viewportHeight = window.innerHeight;
+        document.getElementById("testDiv1").style.height = (viewportHeight - 40) + "px";
+        document.getElementById("testDiv2").style.height = (viewportHeight - 40) + "px";
+        document.getElementById("sideNav").style.height = (viewportHeight - 120) + "px";
+    }
 
   // Run on load and resize
 window.addEventListener("load", updateSideNavHeight);
@@ -15,15 +15,32 @@ window.addEventListener("resize", updateSideNavHeight);
 
 // cursor position
 
-function coordinate(event) {
-    let x = event.clientX;
-    let y = event.clientY;
-    document.getElementById('cursPosX').innerHTML = x;
-    document.getElementById('cursPosY').innerHTML = y;
-  }
+    function coordinate(event) {
+        let x = event.clientX;
+        let y = event.clientY;
+        document.getElementById('cursPosX').innerHTML = x;
+        document.getElementById('cursPosY').innerHTML = y;
+    }
+
+
+// hover to change project image view
+
+    let projImages = document.querySelectorAll('.previewImg');
+    let proj1FullView = document.getElementById('p1ImageFullView');
+    
+    function toggleDisplay(event) {
+        proj1FullView.style.display = event.type === "mouseover" ? "flex" : "none";
+        projImages.style.height = event.type === "mouseover" ? "32px" : "24px";
+    }
+    
+    projImages.forEach(img => {
+        img.addEventListener("mouseover", toggleDisplay);
+        img.addEventListener("mouseout", toggleDisplay);
+    });
+
   
   // smooth anchor scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
   
