@@ -628,7 +628,7 @@ p {
 }
 
 .sideNavItem:hover {
-    background-color: rgba($color: #65836d, $alpha: 0.5)
+    background-color: rgba($color: #233627, $alpha: 0.5)
 }
 
 #sideNavNat {
@@ -639,7 +639,11 @@ p {
 }
 
 .bgActive {
-    background-color: #65836d;
+    background-color: var(--darker-green);
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Work Sans', sans-serif;
     color: var(--main-yellow);
 }
 
