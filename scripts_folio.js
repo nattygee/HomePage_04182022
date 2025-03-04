@@ -96,10 +96,9 @@ window.addEventListener("resize", updateSideNavHeight);
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .line1 {
-            width: 600px;
-            top: -110px;
+            width: 180px;
+            top: -240px;
             right: -200px;
-            
         }
         .line2 {
             width: 150px;
@@ -112,8 +111,61 @@ window.addEventListener("resize", updateSideNavHeight);
         .line.animate {
             transform: scaleX(1);
         }
+        .projectsCardWrapper {
+            position: absolute;
+            right: 500px;
+            top: 60px;
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .projectsCardWrapper.translated {
+            transform: translateX(-240px);
+        }
+        #projectsCard1 {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
     `;
     document.head.appendChild(style);
+
+    // Add cursor interaction
+    const projectsCard = document.getElementById('projectsCard1');
+    const cardRect = projectsCard.getBoundingClientRect();
+    const cardCenterX = cardRect.left + cardRect.width / 2;
+    const cardCenterY = cardRect.top + cardRect.height / 2;
+
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        
+        // Calculate distance between cursor and card center
+        const distanceX = mouseX - cardCenterX;
+        const distanceY = mouseY - cardCenterY;
+        const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+        
+        // If cursor is within 200px of the card
+        if (distance < 200) {
+            // Calculate repulsion direction
+            const repulsionX = (distanceX / distance) * 20;
+            const repulsionY = (distanceY / distance) * 20;
+            
+            // Apply repulsion transform
+            projectsCard.style.transform = `translate(${repulsionX}px, ${repulsionY}px)`;
+        } else {
+            // Reset transform when cursor is far
+            projectsCard.style.transform = 'translate(0px, 0px)';
+        }
+    });
 
     // Observer for the cover div animation
     const coverObserver = new IntersectionObserver((entries) => {
@@ -126,6 +178,12 @@ window.addEventListener("resize", updateSideNavHeight);
                         line.classList.add('animate');
                     }, index * 300);
                 });
+                
+                // Add diagonal translation for projectsCard1
+                const projectsCardWrapper = document.querySelector('.projectsCardWrapper');
+                setTimeout(() => {
+                    projectsCardWrapper.classList.add('translated');
+                }, 300);
             }
         });
     }, { threshold: 0.4 });
