@@ -787,12 +787,15 @@ p {
     background-image: url(../images/arc_lander.png);
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 1102;
     position: absolute;
 }
 
 .previewImg {
     transition: all 40ms linear;
+    border-radius: 4px;
+    border: 1px solid #FFEF9D;
+    overflow: hidden;
+    z-index: 1105;
 }
 
 .dashed-divider {

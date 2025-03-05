@@ -28,14 +28,38 @@ window.addEventListener("resize", updateSideNavHeight);
     let projImages = document.querySelectorAll('.previewImg');
     let proj1FullView = document.getElementById('p1ImageFullView');
     
+    let hideTimeout;
     function toggleDisplay(event) {
-        proj1FullView.style.display = event.type === "mouseover" ? "flex" : "none";
-        projImages.style.height = event.type === "mouseover" ? "32px" : "24px";
+        // Get the preview div (either the target itself or its parent)
+        const previewDiv = event.target.classList.contains('previewImg') ? event.target : event.target.parentElement;
+        
+        if (event.type === "mouseover") {
+            clearTimeout(hideTimeout);
+            proj1FullView.style.display = "flex";
+            previewDiv.style.height = "32px";
+        } else {
+            hideTimeout = setTimeout(() => {
+                proj1FullView.style.display = "none";
+                previewDiv.style.height = "48px";
+            }, 100); // Small delay before hiding
+        }
     }
     
     projImages.forEach(img => {
         img.addEventListener("mouseover", toggleDisplay);
         img.addEventListener("mouseout", toggleDisplay);
+    });
+
+    // Add hover handlers for the full view
+    proj1FullView.addEventListener("mouseover", () => {
+        clearTimeout(hideTimeout);
+    });
+    
+    proj1FullView.addEventListener("mouseout", () => {
+        proj1FullView.style.display = "none";
+        projImages.forEach(img => {
+            img.style.height = "48px";
+        });
     });
 
   
