@@ -30,36 +30,35 @@ window.addEventListener("resize", updateSideNavHeight);
     
     let hideTimeout;
     function toggleDisplay(event) {
-        // Get the preview div (either the target itself or its parent)
         const previewDiv = event.target.classList.contains('previewImg') ? event.target : event.target.parentElement;
         
         if (event.type === "mouseover") {
             clearTimeout(hideTimeout);
+            // Reset all preview images to original size first
+            projImages.forEach(img => {
+                img.style.transform = "translateY(0)";
+                img.style.height = "48px";
+            });
+            // Get the image source from the hovered preview
+            const previewImg = previewDiv.querySelector('img');
+            const imgSrc = previewImg.src;
+            // Set the background image of the full view
+            proj1FullView.style.backgroundImage = `url(${imgSrc})`;
             proj1FullView.style.display = "flex";
-            previewDiv.style.height = "32px";
+            previewDiv.style.transform = "translateY(-8px)";
+            previewDiv.style.height = "56px";
         } else {
             hideTimeout = setTimeout(() => {
                 proj1FullView.style.display = "none";
+                previewDiv.style.transform = "translateY(0)";
                 previewDiv.style.height = "48px";
-            }, 100); // Small delay before hiding
+            }, 100);
         }
     }
     
     projImages.forEach(img => {
         img.addEventListener("mouseover", toggleDisplay);
         img.addEventListener("mouseout", toggleDisplay);
-    });
-
-    // Add hover handlers for the full view
-    proj1FullView.addEventListener("mouseover", () => {
-        clearTimeout(hideTimeout);
-    });
-    
-    proj1FullView.addEventListener("mouseout", () => {
-        proj1FullView.style.display = "none";
-        projImages.forEach(img => {
-            img.style.height = "48px";
-        });
     });
 
   
@@ -158,6 +157,24 @@ window.addEventListener("resize", updateSideNavHeight);
             100% {
                 transform: translateY(0px);
             }
+        }
+        .previewImg {
+            transition: transform 0.2s ease, height 0.2s ease;
+        }
+        .imageFullContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 99999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
         }
     `;
     document.head.appendChild(style);

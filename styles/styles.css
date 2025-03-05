@@ -736,12 +736,13 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
+  overflow: hidden;
 }
 
 .previewImg {
   transition: all 40ms linear;
   border-radius: 4px;
-  border: 1px solid #FFEF9D;
+  border: 1px solid var(--main-yellow);
   overflow: hidden;
   z-index: 1105;
 }
@@ -873,12 +874,12 @@ button {
   color: var(--main-yellow);
   display: flex;
   align-items: right;
-  text-align: right;
+  text-align: left;
   text-transform: uppercase;
-  line-height: 6rem;
+  line-height: 5rem;
   padding: 1rem;
   justify-content: right;
-  font-size: 8rem;
+  font-size: 6rem;
   font-family: "work sans", sans-serif;
   font-weight: 600;
   transition: transform 240ms ease-in;
