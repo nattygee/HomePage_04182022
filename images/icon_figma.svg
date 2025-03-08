@@ -1,9 +1,7 @@
-<svg width="16" height="32" viewBox="0 0 16 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="4" cy="8" r="4" fill="#FCF0A7"/>
-<path d="M8 24.0001C8 26.2093 6.20914 28.0001 4 28.0001C1.79086 28.0001 0 26.2093 0 24.0001C0 21.791 1.79086 20.0001 4 20.0001C5.26319 20.0001 8 20 8 20C8 20 8 23.0542 8 24.0001Z" fill="#FCF0A7"/>
-<circle cx="4" cy="16" r="4" fill="#FCF0A7"/>
-<circle cx="12" cy="8" r="4" fill="#FCF0A7"/>
-<circle cx="12" cy="16" r="4" fill="#FCF0A7"/>
-<rect x="4" y="4" width="8" height="8" fill="#FCF0A7"/>
-<rect x="4" y="12" width="4" height="8" fill="#FCF0A7"/>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.8" d="M20 28.0001C20 30.2093 18.2091 32.0001 16 32.0001C13.7909 32.0001 12 30.2093 12 28.0001C12 25.791 13.7909 24.0001 16 24.0001C17.2632 24.0001 20 24 20 24C20 24 20 27.0542 20 28.0001Z" fill="#FCF0A7"/>
+<circle cx="24" cy="20" r="4" fill="#FCF0A7"/>
+<path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd" d="M16 8H20V12V16H16C13.7909 16 12 14.2091 12 12C12 9.79086 13.7909 8 16 8Z" fill="#FCF0A7"/>
+<path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M24 16C26.2091 16 28 14.2091 28 12C28 9.79086 26.2091 8 24 8H20V12V16H24Z" fill="#FCF0A7"/>
+<path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M16 16H20V20V24H16C13.7909 24 12 22.2091 12 20C12 17.7909 13.7909 16 16 16Z" fill="#FCF0A7"/>
 </svg>

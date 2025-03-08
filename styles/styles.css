@@ -870,8 +870,8 @@ button {
   width: 100%;
   color: var(--main-yellow);
   display: flex;
-  align-items: right;
-  text-align: right;
+  align-items: left;
+  text-align: left;
   text-transform: uppercase;
   line-height: 5rem;
   padding: 1rem;
@@ -881,6 +881,31 @@ button {
   font-weight: 600;
   transition: transform 240ms ease-in;
   transform: translateY(0px);
+}
+
+.iconHStack {
+  display: flex;
+  border-radius: 0.25rem;
+  border: 1px solid var(--light-green);
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.iconHStackItem {
+  background-color: none;
+}
+
+.iconWrapper {
+  display: flex;
+  background-color: none;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0rem;
+}
+
+.iconWrapper:hover {
+  background-color: var(--main-yellow);
 }
 
 .navSheet {

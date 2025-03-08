@@ -566,5 +566,20 @@ sections.forEach(section => {
     }
   });
   
+// Handle icon hover states
+const iconWrappers = document.querySelectorAll('.iconWrapper');
 
+iconWrappers.forEach(wrapper => {
+    const img = wrapper.querySelector('.iconHStackItem');
+    const originalSrc = img.src;
+    const redSrc = originalSrc.replace('.svg', '_red.svg');
+    
+    wrapper.addEventListener('mouseover', () => {
+        img.src = redSrc;
+    });
+    
+    wrapper.addEventListener('mouseout', () => {
+        img.src = originalSrc;
+    });
+});
   
