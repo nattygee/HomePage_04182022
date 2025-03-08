@@ -312,46 +312,69 @@ window.addEventListener("resize", updateSideNavHeight);
 
 // Function to jumble text
 function jumbleText(element, originalText, duration = 1000) {
-    // Use characters that are similar in width to maintain layout
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let startTime = null;
     let animationFrame;
+    const startScrambleDuration = 300; // Time for letters to start scrambling in sequence
+    const allScrambleDuration = 400; // All letters scramble together
+    const settleDuration = 600; // Time for characters to settle in sequence
+    const startCharDelay = startScrambleDuration / originalText.length; // Delay between each character starting to scramble
+    const settleCharDelay = settleDuration / originalText.length; // Delay between each character settling
     
-    // Easing function for smooth transitions with reduced intensity
     function easeInOut(t) {
-        // Calculate base easing
         const eased = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-        // Reduce intensity by 50% by using square root of the squared value
         return Math.sqrt(eased * eased * 0.5);
     }
     
     function animate(currentTime) {
         if (!startTime) startTime = currentTime;
         const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
+        const totalDuration = startScrambleDuration + allScrambleDuration + settleDuration;
+        const progress = Math.min(elapsed / totalDuration, 1);
         
         if (progress < 1) {
-            // Generate random text with exact same length as original
             let jumbledText = '';
+            const isInStartPhase = elapsed < startScrambleDuration;
+            const isInAllScramblePhase = elapsed >= startScrambleDuration && elapsed < (startScrambleDuration + allScrambleDuration);
+            const isInSettlePhase = elapsed >= (startScrambleDuration + allScrambleDuration);
+            const settlePhaseElapsed = Math.max(0, elapsed - (startScrambleDuration + allScrambleDuration));
+
             for (let i = 0; i < originalText.length; i++) {
-                // Preserve spaces and dots
                 if (originalText[i] === ' ' || originalText[i] === '.') {
                     jumbledText += originalText[i];
-                } else {
-                    // Use easing to control how often we change characters
-                    const shouldChange = Math.random() < easeInOut(progress);
-                    if (shouldChange) {
+                    continue;
+                }
+
+                if (isInStartPhase) {
+                    // During start phase, characters begin scrambling in sequence
+                    const charStartProgress = Math.max(0, Math.min(1, (elapsed - (i * startCharDelay)) / startCharDelay));
+                    if (charStartProgress > 0) {
+                        // Character has started scrambling
                         jumbledText += characters[Math.floor(Math.random() * characters.length)];
                     } else {
+                        // Character hasn't started scrambling yet
                         jumbledText += originalText[i];
+                    }
+                } else if (isInAllScramblePhase) {
+                    // During all-scramble phase, all characters scramble
+                    jumbledText += characters[Math.floor(Math.random() * characters.length)];
+                } else {
+                    // During settle phase, characters settle in sequence
+                    const charSettleProgress = Math.max(0, Math.min(1, (settlePhaseElapsed - (i * settleCharDelay)) / settleCharDelay));
+                    
+                    if (charSettleProgress >= 1) {
+                        // Character has settled
+                        jumbledText += originalText[i];
+                    } else {
+                        // Character is still scrambling
+                        jumbledText += characters[Math.floor(Math.random() * characters.length)];
                     }
                 }
             }
-            element.textContent = jumbledText;
             
+            element.textContent = jumbledText;
             animationFrame = requestAnimationFrame(animate);
         } else {
-            // Restore original text
             element.textContent = originalText;
         }
     }
