@@ -39,6 +39,23 @@ const galImgs = document.querySelectorAll('.screenshotPortrait, .screenshotLands
 const galBtns = document.querySelectorAll('.filterBtn');
 var galActiveFilters = [];
 
+// Add search functionality
+const searchBar = document.getElementById('searchBar');
+searchBar.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    
+    galImgs.forEach(img => {
+        const title = img.querySelector('.inspoDescription p').textContent.toLowerCase();
+        const dataName = img.dataset.name.toLowerCase();
+        
+        if (title.includes(searchTerm) || dataName.includes(searchTerm)) {
+            img.style.display = '';
+        } else {
+            img.style.display = 'none';
+        }
+    });
+});
+
 //console.log(galImgs, galBtns);
 
 const galBtnAll = document.getElementById('galBtnAll');
