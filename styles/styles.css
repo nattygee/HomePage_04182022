@@ -574,7 +574,6 @@ button {
   opacity: 0;
   transform: translateY(30px);
   visibility: hidden;
-  width: 17vw;
   z-index: 1125;
 }
 .sideNavList li {
@@ -617,7 +616,6 @@ button {
 }
 
 .folioBodySecs {
-  width: 80%;
   margin-top: 1600px;
   display: flex;
   flex-direction: column;
@@ -807,7 +805,6 @@ button {
 }
 
 .folioSection {
-  height: 95vh;
   padding: 0rem;
   z-index: 1020;
   background-color: #304c37;

@@ -3,10 +3,27 @@
 
 
     function updateSideNavHeight() {
+        console.log("viewport width: " + window.innerWidth);
         let viewportHeight = window.innerHeight;
-        document.getElementById("testDiv1").style.height = (viewportHeight - 40) + "px";
-        document.getElementById("testDiv2").style.height = (viewportHeight - 40) + "px";
+        let viewportWidth = window.innerWidth;
+        
+        // set heights
+        document.getElementById("testDiv1").style.height = (viewportHeight - 32) + "px";
+        document.getElementById("testDiv5").style.height = (viewportHeight - 32) + "px";
         document.getElementById("sideNav").style.height = (viewportHeight - 120) + "px";
+        
+        // set widths        
+        document.getElementById("mainContentDiv").style.width = (viewportWidth - 220) + "px";
+        console.log("viewport width: " + viewportWidth);
+        let mainContentWidth = document.getElementById("mainContentDiv").style.width;
+        let mainNavWidthPX = mainContentWidth.replace("px", "");
+        console.log("wowow" + mainNavWidthPX);
+
+        let sideNavWidth = viewportWidth - mainContentWidth.replace("px", "") - 48;
+        console.log("side nav width: " + sideNavWidth);
+        // set side nav width
+        document.getElementById("sideNav").style.width = (sideNavWidth) + "px";
+        console.log("main content div width: " + mainContentWidth.replace("px", ""));
     }
 
   // Run on load and resize

@@ -606,7 +606,6 @@ p {
     opacity: 0;
     transform: translateY(30px);
     visibility: hidden;
-    width: 17vw;
     z-index: 1125;
     //border-right: 1px solid #65836d;
     
@@ -651,7 +650,6 @@ p {
 }
 
 .folioBodySecs {
-    width: 80%;
     margin-top: 1600px;
     display: flex;
     flex-direction: column;
@@ -858,7 +856,7 @@ p {
 
 .folioSection {
     //border: 4px solid #65836d;
-    height: 95vh;
+    //height: 95vh;
     //height: calc(100vh-32);
     //display: flex;
     //flex-flow: column;
