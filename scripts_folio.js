@@ -31,7 +31,7 @@ window.addEventListener("resize", updateSideNavHeight);
     let hideTimeout;
     function toggleDisplay(event) {
         const previewDiv = event.target.classList.contains('previewImg') ? event.target : event.target.parentElement;
-        
+        proj1FullView.style.display = "flex";
         if (event.type === "mouseover") {
             clearTimeout(hideTimeout);
             // Reset all preview images to original size first
@@ -157,24 +157,6 @@ window.addEventListener("resize", updateSideNavHeight);
             100% {
                 transform: translateY(0px);
             }
-        }
-        .previewImg {
-            transition: transform 0.2s ease, height 0.2s ease;
-        }
-        .imageFullContainer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 99999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
         }
     `;
     document.head.appendChild(style);
