@@ -106,129 +106,70 @@ window.addEventListener("resize", updateSideNavHeight);
   document.addEventListener("DOMContentLoaded", function () {
     const aboutSec = document.getElementById("aboutSec");
     const wipeAwaySec = document.getElementById("projectSec");
-    const coverDiv = document.getElementById("coverDivProjects");
     const revealItems = document.querySelectorAll("#natwalk, #sibling1, #sibling2");
     const projectItems = document.querySelectorAll("#project1, #project2, #project3");
     const sideNavNat = document.getElementById("sideNavNat");
 
     let hasScrolledPast = false;
     let hasScrolledPastProjects = false;
-    let hasAnimatedLines = false;
 
-    // Add styles for the lines
-    const style = document.createElement('style');
-    style.textContent = `
-        .animatedLines {
-            position: absolute;
-            right: 700px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            pointer-events: none;
-        }
-        .line {
-            position: absolute;
-            right: 0;
-            height: 1px;
-            background-color: #FFEF9D;
-            transform-origin: right;
-            transform: scaleX(0);
-            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .line1 {
-            width: 180px;
-            top: -240px;
-            right: -200px;
-        }
-        .line2 {
-            width: 150px;
-            top: 0;
-        }
-        .line3 {
-            width: 180px;
-            top: 100px;
-        }
-        .line.animate {
-            transform: scaleX(1);
-        }
-        .projectsCardWrapper {
-            position: absolute;
-            right: 500px;
-            top: 60px;
-            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .projectsCardWrapper.translated {
-            transform: translateX(-240px);
-        }
-        #projectsCard1 {
-            position: relative;
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Add cursor interaction
-    const projectsCard = document.getElementById('projectsCard1');
-    const cardRect = projectsCard.getBoundingClientRect();
-    const cardCenterX = cardRect.left + cardRect.width / 2;
-    const cardCenterY = cardRect.top + cardRect.height / 2;
-
-    document.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        
-        // Calculate distance between cursor and card center
-        const distanceX = mouseX - cardCenterX;
-        const distanceY = mouseY - cardCenterY;
-        const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-        
-        // If cursor is within 200px of the card
-        if (distance < 200) {
-            // Calculate repulsion direction
-            const repulsionX = (distanceX / distance) * 20;
-            const repulsionY = (distanceY / distance) * 20;
+    // Vertical line animation
+    const coverDiv = document.getElementById("coverDivProjects");
+    const verticalLine = document.getElementById("verticalLine");
+    let lastScrollTop = 0;
+    
+    const lineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const rect = coverDiv.getBoundingClientRect();
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollingDown = currentScrollTop > lastScrollTop;
+            const viewportHeight = window.innerHeight;
             
-            // Apply repulsion transform
-            projectsCard.style.transform = `translate(${repulsionX}px, ${repulsionY}px)`;
-        } else {
-            // Reset transform when cursor is far
-            projectsCard.style.transform = 'translate(0px, 0px)';
-        }
+            // Different trigger points based on scroll direction
+            if (scrollingDown) {
+                if (rect.top <= viewportHeight/2) {
+                    verticalLine.style.height = "100%";
+                }
+            } else {
+                if (rect.top <= 0) {
+                    verticalLine.style.height = "100%";
+                } else {
+                    verticalLine.style.height = "0";
+                }
+            }
+            
+            lastScrollTop = currentScrollTop;
+        });
+    }, { 
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+        rootMargin: "-50% 0px 0px 0px"
     });
 
-    // Observer for the cover div animation
-    const coverObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !hasAnimatedLines) {
-                hasAnimatedLines = true;
-                const lines = document.querySelectorAll('.line');
-                lines.forEach((line, index) => {
-                    setTimeout(() => {
-                        line.classList.add('animate');
-                    }, index * 300);
-                });
-                
-                // Add diagonal translation for projectsCard1
-                const projectsCardWrapper = document.querySelector('.projectsCardWrapper');
-                setTimeout(() => {
-                    projectsCardWrapper.classList.add('translated');
-                }, 300);
+    if (coverDiv && verticalLine) {
+        lineObserver.observe(coverDiv);
+        // Also watch for scroll events to ensure we don't miss the trigger
+        document.addEventListener('scroll', () => {
+            const rect = coverDiv.getBoundingClientRect();
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollingDown = currentScrollTop > lastScrollTop;
+            const viewportHeight = window.innerHeight;
+            
+            // Different trigger points based on scroll direction
+            if (scrollingDown) {
+                if (rect.top <= viewportHeight/2) {
+                    verticalLine.style.height = "100%";
+                }
+            } else {
+                if (rect.top <= 0) {
+                    verticalLine.style.height = "100%";
+                } else {
+                    verticalLine.style.height = "0";
+                }
             }
+            
+            lastScrollTop = currentScrollTop;
         });
-    }, { threshold: 0.4 });
-
-    coverObserver.observe(coverDiv);
+    }
 
     // Observer to reveal items when #aboutSec is in view
     const revealObserver = new IntersectionObserver((entries) => {
