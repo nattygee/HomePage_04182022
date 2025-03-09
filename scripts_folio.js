@@ -116,7 +116,43 @@ window.addEventListener("resize", updateSideNavHeight);
     // Vertical line animation
     const coverDiv = document.getElementById("coverDivProjects");
     const verticalLine = document.getElementById("verticalLine");
+    const coverTitle = document.getElementById("coverTitleProjects");
     let lastScrollTop = 0;
+    let titleInterval;
+    const titles = [
+        "Projects",
+        "Mobile apps",
+        "Websites",
+        "Web apps",
+        "Prototypes",
+        "Visual design",
+        "Strategic planning",
+        "Systems design",
+        "Presentations",
+        "Stakeholder management",
+        "Design systems",
+        "User research"
+    ];
+    const titleColors = ['#6FCFFF', '#E05434', '#D63030', '#FCF0A7', '#ffffff'];
+    let currentTitleIndex = 0;
+    let currentColorIndex = 0;
+
+    function cycleTitles() {
+        const currentTitle = titles[currentTitleIndex];
+        currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+        const nextTitle = titles[currentTitleIndex];
+        
+        // Cycle to next color
+        currentColorIndex = (currentColorIndex + 1) % titleColors.length;
+        
+        coverTitle.style.textAlign = "right";
+        coverTitle.textContent = currentTitle;
+        coverTitle.style.color = titleColors[currentColorIndex];
+        
+        setTimeout(() => {
+            titleJumbleText(coverTitle, currentTitle, nextTitle, titleColors[currentColorIndex]);
+        }, 3000);
+    }
     
     const lineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -130,11 +166,30 @@ window.addEventListener("resize", updateSideNavHeight);
                 if (rect.top <= viewportHeight/2) {
                     verticalLine.style.height = "100%";
                 }
+                if (rect.top <= 0) {
+                    // Start cycling titles
+                    if (!titleInterval) {
+                        titleInterval = setInterval(cycleTitles, 3000);
+                    }
+                }
             } else {
                 if (rect.top <= 0) {
                     verticalLine.style.height = "100%";
+                    // Start cycling titles
+                    if (!titleInterval) {
+                        titleInterval = setInterval(cycleTitles, 3000);
+                    }
                 } else {
                     verticalLine.style.height = "0";
+                    // Stop cycling titles
+                    if (titleInterval) {
+                        clearInterval(titleInterval);
+                        titleInterval = null;
+                        const currentText = coverTitle.textContent;
+                        coverTitle.style.textAlign = "right";
+                        currentColorIndex = (currentColorIndex + 1) % titleColors.length;
+                        titleJumbleText(coverTitle, currentText, titles[0], titleColors[currentColorIndex]);
+                    }
                 }
             }
             
@@ -159,11 +214,30 @@ window.addEventListener("resize", updateSideNavHeight);
                 if (rect.top <= viewportHeight/2) {
                     verticalLine.style.height = "100%";
                 }
+                if (rect.top <= 0) {
+                    // Start cycling titles
+                    if (!titleInterval) {
+                        titleInterval = setInterval(cycleTitles, 3000);
+                    }
+                }
             } else {
                 if (rect.top <= 0) {
                     verticalLine.style.height = "100%";
+                    // Start cycling titles
+                    if (!titleInterval) {
+                        titleInterval = setInterval(cycleTitles, 3000);
+                    }
                 } else {
                     verticalLine.style.height = "0";
+                    // Stop cycling titles
+                    if (titleInterval) {
+                        clearInterval(titleInterval);
+                        titleInterval = null;
+                        const currentText = coverTitle.textContent;
+                        coverTitle.style.textAlign = "right";
+                        currentColorIndex = (currentColorIndex + 1) % titleColors.length;
+                        titleJumbleText(coverTitle, currentText, titles[0], titleColors[currentColorIndex]);
+                    }
                 }
             }
             
@@ -250,7 +324,72 @@ window.addEventListener("resize", updateSideNavHeight);
     });
 });
 
-// Function to jumble text
+// Function for title cycling animation
+function titleJumbleText(element, originalText, nextText, nextColor) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let startTime = null;
+    let animationFrame;
+    
+    // Animation timing constants
+    const startJumbleDuration = 400;
+    const revealDuration = 800;
+    const charRevealDelay = revealDuration / nextText.length;
+    
+    function animate(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+        const totalDuration = startJumbleDuration + revealDuration;
+        
+        if (elapsed < totalDuration) {
+            let resultText = '';
+            const maxLength = Math.max(originalText.length, nextText.length);
+            
+            if (elapsed < startJumbleDuration) {
+                // Phase 1: Start jumbling from right
+                const jumbleProgress = elapsed / startJumbleDuration;
+                const charsToJumble = Math.floor(originalText.length * jumbleProgress);
+                
+                for (let i = 0; i < originalText.length; i++) {
+                    if (i >= originalText.length - charsToJumble) {
+                        resultText += characters[Math.floor(Math.random() * characters.length)];
+                    } else {
+                        resultText += originalText[i];
+                    }
+                }
+            } else {
+                // Phase 2: Reveal new text from right
+                const revealProgress = (elapsed - startJumbleDuration) / revealDuration;
+                const charsToReveal = Math.floor(nextText.length * revealProgress);
+                
+                // Add jumbled padding to maintain right alignment
+                const paddingNeeded = maxLength - nextText.length;
+                for (let i = 0; i < paddingNeeded; i++) {
+                    resultText += characters[Math.floor(Math.random() * characters.length)];
+                }
+                
+                // Build the text from right to left
+                for (let i = 0; i < nextText.length; i++) {
+                    if (i >= nextText.length - charsToReveal) {
+                        resultText += nextText[i];
+                    } else {
+                        resultText += characters[Math.floor(Math.random() * characters.length)];
+                    }
+                }
+            }
+            
+            element.textContent = resultText;
+            element.style.color = nextColor;
+            animationFrame = requestAnimationFrame(animate);
+        } else {
+            element.textContent = nextText;
+            element.style.color = nextColor;
+        }
+    }
+    
+    animationFrame = requestAnimationFrame(animate);
+}
+
+// Original jumble text function for nav items
 function jumbleText(element, originalText, duration = 1000) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let startTime = null;
@@ -258,8 +397,8 @@ function jumbleText(element, originalText, duration = 1000) {
     const startScrambleDuration = 300; // Time for letters to start scrambling in sequence
     const allScrambleDuration = 400; // All letters scramble together
     const settleDuration = 600; // Time for characters to settle in sequence
-    const startCharDelay = startScrambleDuration / originalText.length; // Delay between each character starting to scramble
-    const settleCharDelay = settleDuration / originalText.length; // Delay between each character settling
+    const startCharDelay = startScrambleDuration / originalText.length;
+    const settleCharDelay = settleDuration / originalText.length;
     
     function easeInOut(t) {
         const eased = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
@@ -286,27 +425,19 @@ function jumbleText(element, originalText, duration = 1000) {
                 }
 
                 if (isInStartPhase) {
-                    // During start phase, characters begin scrambling in sequence
                     const charStartProgress = Math.max(0, Math.min(1, (elapsed - (i * startCharDelay)) / startCharDelay));
                     if (charStartProgress > 0) {
-                        // Character has started scrambling
                         jumbledText += characters[Math.floor(Math.random() * characters.length)];
                     } else {
-                        // Character hasn't started scrambling yet
                         jumbledText += originalText[i];
                     }
                 } else if (isInAllScramblePhase) {
-                    // During all-scramble phase, all characters scramble
                     jumbledText += characters[Math.floor(Math.random() * characters.length)];
                 } else {
-                    // During settle phase, characters settle in sequence
                     const charSettleProgress = Math.max(0, Math.min(1, (settlePhaseElapsed - (i * settleCharDelay)) / settleCharDelay));
-                    
                     if (charSettleProgress >= 1) {
-                        // Character has settled
                         jumbledText += originalText[i];
                     } else {
-                        // Character is still scrambling
                         jumbledText += characters[Math.floor(Math.random() * characters.length)];
                     }
                 }
