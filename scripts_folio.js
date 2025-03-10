@@ -13,13 +13,13 @@
         document.getElementById("sideNav").style.height = (viewportHeight - 120) + "px";
         
         // set widths        
-        document.getElementById("mainContentDiv").style.width = (viewportWidth - 220) + "px";
+        document.getElementById("mainContentDiv").style.width = (viewportWidth - 240) + "px";
         console.log("viewport width: " + viewportWidth);
         let mainContentWidth = document.getElementById("mainContentDiv").style.width;
         let mainNavWidthPX = mainContentWidth.replace("px", "");
         console.log("wowow" + mainNavWidthPX);
 
-        let sideNavWidth = viewportWidth - mainContentWidth.replace("px", "") - 48;
+        let sideNavWidth = viewportWidth - mainContentWidth.replace("px", "") - 64;
         console.log("side nav width: " + sideNavWidth);
         // set side nav width
         document.getElementById("sideNav").style.width = (sideNavWidth) + "px";
