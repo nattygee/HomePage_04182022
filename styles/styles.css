@@ -873,7 +873,7 @@ button {
   text-transform: uppercase;
   line-height: 5rem;
   padding: 1rem;
-  justify-content: right;
+  justify-content: left;
   font-size: 6rem;
   font-family: "work sans", sans-serif;
   font-weight: 600;
@@ -1590,12 +1590,12 @@ mark {
 }
 
 .labelGreen {
+  background-color: var(--light-green);
   color: #1d2e21;
   font-family: "Courier New", Courier, monospace;
-  padding: 0rem 1rem 0rem 0rem;
+  padding: 0rem 1rem 0rem 1rem;
   left: 2rem;
   top: 3rem;
-  margin: 1rem 0rem 1rem 1rem;
 }
 
 .designPhilNum {
@@ -2774,7 +2774,7 @@ mark {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    height: 100%;
+    height: auto;
   }
   .horizontalFlexChild {
     display: flex;

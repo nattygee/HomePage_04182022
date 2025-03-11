@@ -123,34 +123,20 @@ window.addEventListener("resize", updateSideNavHeight);
         "Projects",
         "Mobile apps",
         "Websites",
-        "Web apps",
-        "Prototypes",
-        "Visual design",
-        "Strategic planning",
-        "Systems design",
-        "Presentations",
-        "Stakeholder management",
-        "Design systems",
-        "User research"
+        "Web apps"
     ];
-    const titleColors = ['#6FCFFF', '#E05434', '#D63030', '#FCF0A7', '#ffffff'];
     let currentTitleIndex = 0;
-    let currentColorIndex = 0;
 
     function cycleTitles() {
         const currentTitle = titles[currentTitleIndex];
         currentTitleIndex = (currentTitleIndex + 1) % titles.length;
         const nextTitle = titles[currentTitleIndex];
         
-        // Cycle to next color
-        currentColorIndex = (currentColorIndex + 1) % titleColors.length;
-        
         coverTitle.style.textAlign = "right";
         coverTitle.textContent = currentTitle;
-        coverTitle.style.color = titleColors[currentColorIndex];
         
         setTimeout(() => {
-            titleJumbleText(coverTitle, currentTitle, nextTitle, titleColors[currentColorIndex]);
+            titleJumbleText(coverTitle, currentTitle, nextTitle);
         }, 3000);
     }
     
@@ -187,8 +173,7 @@ window.addEventListener("resize", updateSideNavHeight);
                         titleInterval = null;
                         const currentText = coverTitle.textContent;
                         coverTitle.style.textAlign = "right";
-                        currentColorIndex = (currentColorIndex + 1) % titleColors.length;
-                        titleJumbleText(coverTitle, currentText, titles[0], titleColors[currentColorIndex]);
+                        titleJumbleText(coverTitle, currentText, titles[0]);
                     }
                 }
             }
@@ -235,8 +220,7 @@ window.addEventListener("resize", updateSideNavHeight);
                         titleInterval = null;
                         const currentText = coverTitle.textContent;
                         coverTitle.style.textAlign = "right";
-                        currentColorIndex = (currentColorIndex + 1) % titleColors.length;
-                        titleJumbleText(coverTitle, currentText, titles[0], titleColors[currentColorIndex]);
+                        titleJumbleText(coverTitle, currentText, titles[0]);
                     }
                 }
             }
@@ -325,7 +309,7 @@ window.addEventListener("resize", updateSideNavHeight);
 });
 
 // Function for title cycling animation
-function titleJumbleText(element, originalText, nextText, nextColor) {
+function titleJumbleText(element, originalText, nextText) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let startTime = null;
     let animationFrame;
@@ -378,11 +362,9 @@ function titleJumbleText(element, originalText, nextText, nextColor) {
             }
             
             element.textContent = resultText;
-            element.style.color = nextColor;
             animationFrame = requestAnimationFrame(animate);
         } else {
             element.textContent = nextText;
-            element.style.color = nextColor;
         }
     }
     
