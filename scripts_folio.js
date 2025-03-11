@@ -132,7 +132,7 @@ window.addEventListener("resize", updateSideNavHeight);
         currentTitleIndex = (currentTitleIndex + 1) % titles.length;
         const nextTitle = titles[currentTitleIndex];
         
-        coverTitle.style.textAlign = "right";
+        coverTitle.style.textAlign = "center";
         coverTitle.textContent = currentTitle;
         
         setTimeout(() => {
@@ -172,7 +172,7 @@ window.addEventListener("resize", updateSideNavHeight);
                         clearInterval(titleInterval);
                         titleInterval = null;
                         const currentText = coverTitle.textContent;
-                        coverTitle.style.textAlign = "right";
+                        coverTitle.style.textAlign = "center";
                         titleJumbleText(coverTitle, currentText, titles[0]);
                     }
                 }
@@ -219,7 +219,7 @@ window.addEventListener("resize", updateSideNavHeight);
                         clearInterval(titleInterval);
                         titleInterval = null;
                         const currentText = coverTitle.textContent;
-                        coverTitle.style.textAlign = "right";
+                        coverTitle.style.textAlign = "center";
                         titleJumbleText(coverTitle, currentText, titles[0]);
                     }
                 }

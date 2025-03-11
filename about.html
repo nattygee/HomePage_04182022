@@ -61,9 +61,32 @@
 <!-- <div class="testDiv1"></div> -->
 
         <div class="aboutSheet">
-            <div id="shuffleTitle" class="loudTitle">
-                NAT
-            </div>
+                <div id="shuffleTitle" class="loudTitle">
+                    NAT
+                </div>
+                <div class="starterPlant">
+                    <img src="images/starterplant.svg" style="position:fixed; height: 240px;" alt="">
+                </div>
+                <div class="scrollLander">
+                    <button class="scrollLanderBtn">scroll down</button>
+                </div>
+                <!-- <div class="landerLines">
+                    <svg width="300" height="150" viewBox="60 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 140 L100 50 L270 50" stroke-width="1" stroke-linecap="round" class="draw-line"/>
+                      </svg>
+                </div> -->
+
+                <div class="landerLines">
+                    <svg width="300" height="150" viewBox="60 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Original Green Line -->
+                        <path d="M10 140 L100 50 L270 50" stroke-width="1" stroke-linecap="round" class="draw-line"/>
+                        
+                        <!-- Overlayed Orange Line (Initially Hidden) -->
+                        <path d="M10 140 L100 50 L270 50" stroke-width="1" stroke-linecap="round" class="reverse-line"/>
+                    </svg>
+                </div>
+                  
+
             <ul id="sideNav" class="sideNavList">
                 <div id="aboutSecNav" class="sideNavItem bgActive" onclick="navClicks(event)">001. About Nat</div>
                 <div id="projectSecNav" class="sideNavItem" onclick="navClicks(event)">002. Projects</div>
@@ -96,7 +119,7 @@
                         <div id="sibling1" class="hFlexChild1">
                             <div class="labelGreen"><p class="datePosted" style="font-weight: 300;">Profile</p></div>
                             <hr class="dashed-divider">
-                            <div class="loudTitle2" style="font-size: 5rem; line-height: 4rem; text-align: left;">Nat <br> Green</div>
+                            <div class="loudTitle2" style="font-size: 8rem; line-height: 6rem; text-align: left;">Nat <br> Green</div>
                             <!-- <p class="projectDescription" style="margin: .5rem 0rem;">Nat Green</p> -->
                             <hr class="dashed-divider">
                             <p class="projectDescription" style="margin: .5rem 0rem;">Toronto, ON</p>
@@ -130,7 +153,9 @@
                             <hr class="dashed-divider">
                             <!-- <div class="loudTitle2">I like to build</div> -->
                             <!-- <div class="loudTitle2" style="font-size: 3rem; line-height: 3rem; text-align: left;">I like to learn how things are made so that I can design and build them in my own way.</div> -->
-                            <div class="loudTitle2" style="font-size: 5rem; line-height: 4rem; text-align: left;">If <br> design, <br> then <br> build</div>
+                            <!-- for work sans  <div class="loudTitle2" style="font-size: 5rem; line-height: 4rem; text-align: left;">If <br> design, <br> then <br> build</div> -->
+                            <!-- <div class="loudTitle2" style="font-size: 5rem; line-height: 4.5rem; text-align: left;">If <br> design, <br> then <br> build</div> -->
+                            <div class="loudTitle2" style="font-size: 8rem; line-height: 6rem; text-align: left;">If <br> design, <br> then <br> build</div>
                             
                             <hr class="dashed-divider" style="margin-bottom: 0;">
                             <p class="projectDescription" style="margin: .5rem 0rem;">Storytelling is central to how I approach design, and building prototypes helps bring those narratives to life in a way that is real and engaging—plus, it's just fun to see an idea grow in to something that's actually usable.</p>
@@ -164,7 +189,7 @@
                 <div id="coverDivProjects" class="" style="background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0) 0%, rgba(48, 76, 55, 1) 60%), url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1120; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 1200px; background-color:#304C37; border-top: 1px solid #65836d; transform: skewY(1deg); width: 100vw; position: absolute; left: 0;">
                     <div id="verticalLine" style="position: absolute; top: 0; left: 209px; width: 1px; height: 0; background-color: #65836d; transition: height 1400ms cubic-bezier(0.4, 0, 0.2, 1); transform: skewY(-1deg);"></div>
                     <div class="coverContent" style="transform: skewY(-1deg); height: 100%; display: flex; justify-content: center; align-items: center;">
-                        <h1 id="coverTitleProjects" style="color: #FFEF9D; font-size: 14rem; font-weight: 600; text-align: right; justify-content: right; line-height: 12rem; width: 100%;">Projects</h1>
+                        <h1 class="coverTitles" id="coverTitleProjects" style="color: #FFEF9D; font-size: 14rem; font-weight: 600; font-style: italic; justify-content: center; text-align: center; line-height: 12rem; width: 100%;">Projects</h1>
                     </div>
                 </div>
                 <div class="spacer400px" style="height: 10vh;"></div>
@@ -261,25 +286,25 @@
                         </div>
                     </div>
                 </section>
-                <div style="background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0) 0%, rgba(48, 76, 55, 1) 60%), url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1140; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 1200px; background-color:#304C37; border-top: 1px solid #65836d; transform: skewY(1deg); width: 100vw; position: relative; left: 0;">
+                <div style="background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0.5) 0%, rgba(48, 76, 55, 1) 100%), url(../images/practice_formatting.jpeg); background-position: center; height: 110vh; z-index: 1140; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:#304C37; border-top: 1px solid #65836d; transform: skewY(1deg); width: 100vw; position:relative; margin-left: -210px;">
                     <div class="coverContent1" style="transform: skewY(-1deg); height: 100%; display: flex; justify-content: center; align-items: center;">
-                        <h1 style="color: #FFEF9D; font-size: 14rem; font-weight: 600; text-align: right; justify-content: right; line-height: 12rem; width: 100%;">Exercises</h1>
+                        <h1 class="coverTitles" style="color: #FFEF9D; font-size: 14rem; font-weight: 600; text-align: center; font-style: italic; justify-content: center; line-height: 12rem; width: 100%;">Exercises</h1>
                     </div>
                 </div>
                 <!-- 🚀 spacer
                      🚀 spacer
                      🚀 spacer -->
-                     <div id="" class="" style="height: 400px; padding: 2rem; margin-top: 800px;"></div>
-                <section id="exerciseSec" class="folioSection sticky">
+                     <!-- <div id="" class="" style="height: 400px; padding: 2rem; margin-top: 800px;"></div> -->
+                <section id="exerciseSec" class="folioSection sticky" style="height: 100vh; z-index: 1150;">
                     aflhsaflj
 
                     <!-- <p class="folioSectionTitle">Design exercises</p> -->
                 </section>
-                <section id="inspoSec" class="folioSection sticky">
-                    <!-- <p class="folioSectionTitle">Design inspiration</p> -->
+                <section id="inspoSec" class="folioSection sticky" style="height: 100vh; z-index: 1200;">
+                    <!-- <p class="folioSectionTitle">Design inspiration</p> --> this is the inspiration section
                 </section>
-                <section id="blogSec" class="folioSection sticky">
-                    <!-- <p class="folioSectionTitle">Writing</p> -->
+                <section id="blogSec" class="folioSection sticky" style="height: 100vh; z-index: 1250;">
+                    <!-- <p class="folioSectionTitle">Writing</p> --> this is the writing section
                 </section>
                 <div class="" style="height: 800px; z-index: 1010; padding: 1rem; font-size: 4rem; color: #FFEF9D; margin-bottom: 800px;">Test 2 Test 2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero suscipit recusandae obcaecati saepe soluta nesciunt dolores? Nisi rerum aperiam amet magni consequuntur ratione illo. Saepe ex doloribus at nesciunt nam.</div>
                 <section id="contactSec" class="folioSection sticky">
