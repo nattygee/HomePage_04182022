@@ -240,7 +240,7 @@ window.addEventListener("resize", updateSideNavHeight);
                 }, index * 200);
             });
         }
-    }, { threshold: 1 });
+    }, { threshold: 0.4 });
 
     revealObserver.observe(aboutSec);
 
@@ -576,7 +576,8 @@ sections.forEach(section => {
       sideNav.style.transform = "translateY(30px)";
     } else if (scrollPos > 1200) {
       jumbleTitle.innerHTML = "DESIGNER";
-      jumbleTitle.style.transform = "translateY(-400px)";
+      jumbleTitle.style.transform = "translateY(-40px)";
+      jumbleTitle.style.opacity = "0";
       sideNav.style.visibility = "visible";
       sideNav.style.opacity = "1";
       sideNav.style.transform = "translateY(0px)";
@@ -590,29 +591,56 @@ sections.forEach(section => {
     let scrollPos = window.scrollY;
     let jumbleTitle = document.getElementById('shuffleTitle');
     let sideNav = document.getElementById('sideNav');
+    let starterPlant = document.getElementById('starterPlant');
+    let scrollLander = document.getElementById('scrollLander');
     let exerciseSection = document.getElementById('aboutSec');
     let exerciseSectionLink = document.getElementById('aboutSecLink');
   
     if (scrollPos < 100) {
         jumbleTitle.innerHTML = "NAT";
         jumbleTitle.style.transform = "translateY(0px)";
+        jumbleTitle.style.opacity = "1";
+        starterPlant.style.transform = "translateY(0px)";
+        starterPlant.style.opacity = "1";
+        scrollLander.style.transform = "translateY(0px)";
+        scrollLander.style.opacity = "1";
         sideNav.style.visibility = "visibile";
         sideNav.style.opacity = "0";
         sideNav.style.transform = "translateY(30px)";
     } else if (scrollPos < 300) {
       jumbleTitle.innerHTML = "GREEN";
       jumbleTitle.style.transform = "translateY(0px)";
+      jumbleTitle.style.opacity = "1";
+      starterPlant.style.transform = "translateY(0px)";
+      starterPlant.style.opacity = "1";
+      scrollLander.style.transform = "translateY(0px)";
+      scrollLander.style.opacity = "1";
     } else if (scrollPos < 600) {
       jumbleTitle.innerHTML = "PRODUCT";
       jumbleTitle.style.transform = "translateY(0px)";
+      jumbleTitle.style.opacity = "1";
+      starterPlant.style.transform = "translateY(0px)";
+      starterPlant.style.opacity = "1";
+      scrollLander.style.transform = "translateY(0px)";
+      scrollLander.style.opacity = "1";
     } else if (scrollPos < 900) {
       jumbleTitle.innerHTML = "DESIGNER";
       jumbleTitle.style.transform = "translateY(0px)";
+      jumbleTitle.style.opacity = "1";
+      starterPlant.style.transform = "translateY(0px)";
+      starterPlant.style.opacity = "1";
+      scrollLander.style.transform = "translateY(0px)";
+      scrollLander.style.opacity = "1";
       sideNav.style.opacity = "0";
       sideNav.style.transform = "translateY(30px)";
     } else if (scrollPos > 1200) {
       jumbleTitle.innerHTML = "DESIGNER";
-      jumbleTitle.style.transform = "translateY(-400px)";
+      jumbleTitle.style.transform = "translateY(-40px)";
+      jumbleTitle.style.opacity = "0";
+      starterPlant.style.transform = "translateY(-24px)";
+      starterPlant.style.opacity = "0";
+      scrollLander.style.transform = "translateY(-24px)";
+      scrollLander.style.opacity = "0";
       sideNav.style.visibility = "visible";
       sideNav.style.opacity = "1";
       sideNav.style.transform = "translateY(0px)";
