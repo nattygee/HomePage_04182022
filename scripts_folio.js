@@ -26,11 +26,11 @@
         console.log("main content div width: " + mainContentWidth.replace("px", ""));
     }
 
-  // Run on load and resize
-window.addEventListener("load", updateSideNavHeight);
-window.addEventListener("resize", updateSideNavHeight);
+    // Run on load and resize
+    window.addEventListener("load", updateSideNavHeight);
+    window.addEventListener("resize", updateSideNavHeight);
 
-// cursor position
+    // cursor position
 
     function coordinate(event) {
         let x = event.clientX;
@@ -40,7 +40,7 @@ window.addEventListener("resize", updateSideNavHeight);
     }
 
 
-// hover to change project image view
+    // hover to change project image view
 
     let projImages = document.querySelectorAll('.previewImg');
     let proj1FullView = document.getElementById('p1ImageFullView');
@@ -79,361 +79,373 @@ window.addEventListener("resize", updateSideNavHeight);
     });
 
   
-  // smooth anchor scroll
+    // smooth anchor scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-  
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-  }); 
-  
-  // get viewport height function
-
-  let viewportHeight = window.innerHeight;
-
-  // need to reset arrays on page load down the page 🚨🚨🚨
-  
-  let secScrollY = JSON.parse(localStorage.getItem("secScrollY")) || [];
-  let activeSecs = JSON.parse(localStorage.getItem("activeSecs")) || [];
-  
-  const sections = document.querySelectorAll(".folioSection");
-  const navLinks = document.querySelectorAll(".sideNavList a");
-  
-  // about section card 1 reveal
-  document.addEventListener("DOMContentLoaded", function () {
-    const aboutSec = document.getElementById("aboutSec");
-    const wipeAwaySec = document.getElementById("projectSec");
-    const revealItems = document.querySelectorAll("#natwalk, #sibling1, #sibling2");
-    const projectItems = document.querySelectorAll("#project1, #project2, #project3");
-    const sideNavNat = document.getElementById("sideNavNat");
-
-    let hasScrolledPast = false;
-    let hasScrolledPastProjects = false;
-
-    // Vertical line animation
-    const coverDiv = document.getElementById("coverDivProjects");
-    const verticalLine = document.getElementById("verticalLine");
-    const coverTitle = document.getElementById("coverTitleProjects");
-    let lastScrollTop = 0;
-    let titleInterval;
-    const titles = [
-        "Projects",
-        "Mobile apps",
-        "Websites",
-        "Web apps"
-    ];
-    let currentTitleIndex = 0;
-
-    function cycleTitles() {
-        const currentTitle = titles[currentTitleIndex];
-        currentTitleIndex = (currentTitleIndex + 1) % titles.length;
-        const nextTitle = titles[currentTitleIndex];
+        anchor.addEventListener('click', function (e) {
+                e.preventDefault();
         
-        coverTitle.style.textAlign = "center";
-        coverTitle.textContent = currentTitle;
-        
-        setTimeout(() => {
-            titleJumbleText(coverTitle, currentTitle, nextTitle);
-        }, 3000);
-    }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+    }); 
+  
+    // get viewport height function
+
+    let viewportHeight = window.innerHeight;
+
+     // need to reset arrays on page load down the page 🚨🚨🚨
+  
+    let secScrollY = JSON.parse(localStorage.getItem("secScrollY")) || [];
+    let activeSecs = JSON.parse(localStorage.getItem("activeSecs")) || [];
     
-    const lineObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const rect = coverDiv.getBoundingClientRect();
-            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const scrollingDown = currentScrollTop > lastScrollTop;
-            const viewportHeight = window.innerHeight;
+    const sections = document.querySelectorAll(".folioSection");
+    const navLinks = document.querySelectorAll(".sideNavList a");
+  
+    // about section card 1 reveal
+    document.addEventListener("DOMContentLoaded", function () {
+        const aboutSec = document.getElementById("aboutSec");
+        const wipeAwaySec = document.getElementById("projectSec");
+        const revealItems = document.querySelectorAll("#natwalk, #sibling1, #sibling2");
+        const projectItems = document.querySelectorAll("#project1, #project2, #project3");
+        const sideNavNat = document.getElementById("sideNavNat");
+
+        let hasScrolledPast = false;
+        let hasScrolledPastProjects = false;
+
+        // Vertical line animation
+        const coverDiv = document.getElementById("coverDivProjects");
+        const verticalLine = document.getElementById("verticalLine");
+        const coverTitle = document.getElementById("coverTitleProjects");
+        let lastScrollTop = 0;
+        let titleInterval;
+        const titles = [
+            "Projects",
+            "Mobile apps",
+            "Websites",
+            "Web apps"
+        ];
+        let currentTitleIndex = 0;
+
+        function cycleTitles() {
+            const currentTitle = titles[currentTitleIndex];
+            currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+            const nextTitle = titles[currentTitleIndex];
             
-            // Different trigger points based on scroll direction
-            if (scrollingDown) {
-                if (rect.top <= viewportHeight/2) {
-                    verticalLine.style.height = "100%";
-                }
-                if (rect.top <= 0) {
-                    // Start cycling titles
-                    if (!titleInterval) {
-                        titleInterval = setInterval(cycleTitles, 3000);
+            coverTitle.style.textAlign = "center";
+            coverTitle.textContent = currentTitle;
+            
+            setTimeout(() => {
+                titleJumbleText(coverTitle, currentTitle, nextTitle);
+            }, 3000);
+        }
+    
+        const lineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const rect = coverDiv.getBoundingClientRect();
+                const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollingDown = currentScrollTop > lastScrollTop;
+                const viewportHeight = window.innerHeight;
+                
+                // Different trigger points based on scroll direction
+                if (scrollingDown) {
+                    if (rect.top <= viewportHeight/2) {
+                        verticalLine.style.height = "100%";
                     }
-                }
-            } else {
-                if (rect.top <= 0) {
-                    verticalLine.style.height = "100%";
-                    // Start cycling titles
-                    if (!titleInterval) {
-                        titleInterval = setInterval(cycleTitles, 3000);
+                    if (rect.top <= 0) {
+                        // Start cycling titles
+                        if (!titleInterval) {
+                            titleInterval = setInterval(cycleTitles, 3000);
+                        }
                     }
                 } else {
-                    verticalLine.style.height = "0";
-                    // Stop cycling titles
-                    if (titleInterval) {
-                        clearInterval(titleInterval);
-                        titleInterval = null;
-                        const currentText = coverTitle.textContent;
-                        coverTitle.style.textAlign = "center";
-                        titleJumbleText(coverTitle, currentText, titles[0]);
+                    if (rect.top <= 0) {
+                        verticalLine.style.height = "100%";
+                        // Start cycling titles
+                        if (!titleInterval) {
+                            titleInterval = setInterval(cycleTitles, 3000);
+                        }
+                    } else {
+                        verticalLine.style.height = "0";
+                        // Stop cycling titles
+                        if (titleInterval) {
+                            clearInterval(titleInterval);
+                            titleInterval = null;
+                            const currentText = coverTitle.textContent;
+                            coverTitle.style.textAlign = "center";
+                            titleJumbleText(coverTitle, currentText, titles[0]);
+                        }
                     }
                 }
-            }
-            
-            lastScrollTop = currentScrollTop;
+                
+                lastScrollTop = currentScrollTop;
+            });
+            }, { 
+                threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+                rootMargin: "-50% 0px 0px 0px"
         });
-    }, { 
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-        rootMargin: "-50% 0px 0px 0px"
-    });
 
-    if (coverDiv && verticalLine) {
-        lineObserver.observe(coverDiv);
-        // Also watch for scroll events to ensure we don't miss the trigger
-        document.addEventListener('scroll', () => {
-            const rect = coverDiv.getBoundingClientRect();
-            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const scrollingDown = currentScrollTop > lastScrollTop;
-            const viewportHeight = window.innerHeight;
-            
-            // Different trigger points based on scroll direction
-            if (scrollingDown) {
-                if (rect.top <= viewportHeight/2) {
-                    verticalLine.style.height = "100%";
-                }
-                if (rect.top <= 0) {
-                    // Start cycling titles
-                    if (!titleInterval) {
-                        titleInterval = setInterval(cycleTitles, 3000);
+        if (coverDiv && verticalLine) {
+            lineObserver.observe(coverDiv);
+            // Also watch for scroll events to ensure we don't miss the trigger
+            document.addEventListener('scroll', () => {
+                const rect = coverDiv.getBoundingClientRect();
+                const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollingDown = currentScrollTop > lastScrollTop;
+                const viewportHeight = window.innerHeight;
+                const sideNavItems = document.querySelectorAll(".sideNavItem");
+                
+                // Different trigger points based on scroll direction
+                if (scrollingDown) {
+                    if (rect.top <= viewportHeight/2) {
+                        verticalLine.style.height = "100%";
+                        /* sideNavItems.forEach(item => {
+                            item.style.color = "#1d2e21";
+                        }); */
                     }
-                }
-            } else {
-                if (rect.top <= 0) {
-                    verticalLine.style.height = "100%";
-                    // Start cycling titles
-                    if (!titleInterval) {
-                        titleInterval = setInterval(cycleTitles, 3000);
+                    if (rect.top <= 0) {
+                        // Start cycling titles
+                        if (!titleInterval) {
+                            titleInterval = setInterval(cycleTitles, 3000);
+                        }
                     }
+                    // background color change
+                    /* if (rect.top <= 0) {
+                        const body = document.body;
+                        body.style.backgroundColor = "#FFEF9D";
+                    } */
                 } else {
-                    verticalLine.style.height = "0";
-                    // Stop cycling titles
-                    if (titleInterval) {
-                        clearInterval(titleInterval);
-                        titleInterval = null;
-                        const currentText = coverTitle.textContent;
-                        coverTitle.style.textAlign = "center";
-                        titleJumbleText(coverTitle, currentText, titles[0]);
+                    if (rect.top <= 0) {
+                        verticalLine.style.height = "100%";
+                        // Start cycling titles
+                        if (!titleInterval) {
+                            titleInterval = setInterval(cycleTitles, 3000);
+                        }
+                    } else {
+                        verticalLine.style.height = "0";
+                        // Stop cycling titles
+                        if (titleInterval) {
+                            clearInterval(titleInterval);
+                            titleInterval = null;
+                            const currentText = coverTitle.textContent;
+                            coverTitle.style.textAlign = "center";
+                            titleJumbleText(coverTitle, currentText, titles[0]);
+                        }
                     }
+                    /* if (rect.top < 0) {
+                        body.style.backgroundColor = "#304c37";
+                    } */
                 }
-            }
-            
-            lastScrollTop = currentScrollTop;
-        });
-    }
-
-    // Observer to reveal items when #aboutSec is in view
-    const revealObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            console.log("Revealing elements...");
-            revealItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.style.opacity = "1";
-                    item.style.transform = "translateY(0px)";
-                }, index * 200);
+                
+                lastScrollTop = currentScrollTop;
             });
         }
-    }, { threshold: 0.4 });
 
-    revealObserver.observe(aboutSec);
-
-    // Observer to hide items when #wipeAwaySec1 enters, and re-reveal when it's about to leave
-    const wipeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                console.log("Hiding elements...");
-                hasScrolledPast = true;
-                revealItems.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.style.opacity = "0";
-                        item.style.transform = "translateY(-50px)";
-                    }, index * 200);
-                    sideNavNat.style.opacity = "1";
-                    sideNavNat.style.transform = "translateY(0px)";
-                });
-            } else if (entry.boundingClientRect.top > 0 && hasScrolledPast) {
-                console.log("Re-revealing elements...");
+        // Observer to reveal items when #aboutSec is in view
+        const revealObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                console.log("Revealing elements...");
                 revealItems.forEach((item, index) => {
                     setTimeout(() => {
                         item.style.opacity = "1";
                         item.style.transform = "translateY(0px)";
                     }, index * 200);
-                    sideNavNat.style.opacity = "0";
-                    sideNavNat.style.transform = "translateY(30px)";
                 });
             }
+        }, { threshold: 0.4 });
+
+        revealObserver.observe(aboutSec);
+
+        // Observer to hide items when #wipeAwaySec1 enters, and re-reveal when it's about to leave
+        const wipeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log("Hiding elements...");
+                    hasScrolledPast = true;
+                    revealItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = "0";
+                            item.style.transform = "translateY(-50px)";
+                        }, index * 200);
+                        sideNavNat.style.opacity = "1";
+                        sideNavNat.style.transform = "translateY(0px)";
+                    });
+                } else if (entry.boundingClientRect.top > 0 && hasScrolledPast) {
+                    console.log("Re-revealing elements...");
+                    revealItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = "1";
+                            item.style.transform = "translateY(0px)";
+                        }, index * 200);
+                        sideNavNat.style.opacity = "0";
+                        sideNavNat.style.transform = "translateY(30px)";
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        wipeObserver.observe(wipeAwaySec);
+
+        // New observer for project section reveal
+        const projectObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log("Revealing project elements...");
+                    hasScrolledPastProjects = true;
+                    projectItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = "1";
+                            item.style.transform = "translateY(0px)";
+                        }, index * 200);
+                    });
+                } else if (entry.boundingClientRect.top > 0 && hasScrolledPastProjects) {
+                    console.log("Hiding project elements...");
+                    projectItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = "0";
+                            item.style.transform = "translateY(50px)";
+                        }, index * 200);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        projectObserver.observe(wipeAwaySec);
+
+        // Set initial state for project items
+        projectItems.forEach(item => {
+            item.style.opacity = "0";
+            item.style.transform = "translateY(-50px)";
+            item.style.transition = "opacity 0.8s ease, transform 0.8s ease";
         });
-    }, { threshold: 0.1 });
-
-    wipeObserver.observe(wipeAwaySec);
-
-    // New observer for project section reveal
-    const projectObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                console.log("Revealing project elements...");
-                hasScrolledPastProjects = true;
-                projectItems.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.style.opacity = "1";
-                        item.style.transform = "translateY(0px)";
-                    }, index * 200);
-                });
-            } else if (entry.boundingClientRect.top > 0 && hasScrolledPastProjects) {
-                console.log("Hiding project elements...");
-                projectItems.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.style.opacity = "0";
-                        item.style.transform = "translateY(50px)";
-                    }, index * 200);
-                });
-            }
-        });
-    }, { threshold: 0.5 });
-
-    projectObserver.observe(wipeAwaySec);
-
-    // Set initial state for project items
-    projectItems.forEach(item => {
-        item.style.opacity = "0";
-        item.style.transform = "translateY(-50px)";
-        item.style.transition = "opacity 0.8s ease, transform 0.8s ease";
     });
-});
 
-// Function for title cycling animation
-function titleJumbleText(element, originalText, nextText) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let startTime = null;
-    let animationFrame;
-    
-    // Animation timing constants
-    const startJumbleDuration = 400;
-    const revealDuration = 800;
-    const charRevealDelay = revealDuration / nextText.length;
-    
-    function animate(currentTime) {
-        if (!startTime) startTime = currentTime;
-        const elapsed = currentTime - startTime;
-        const totalDuration = startJumbleDuration + revealDuration;
+    // Function for title cycling animation
+    function titleJumbleText(element, originalText, nextText) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let startTime = null;
+        let animationFrame;
         
-        if (elapsed < totalDuration) {
-            let resultText = '';
-            const maxLength = Math.max(originalText.length, nextText.length);
-            
-            if (elapsed < startJumbleDuration) {
-                // Phase 1: Start jumbling from right
-                const jumbleProgress = elapsed / startJumbleDuration;
-                const charsToJumble = Math.floor(originalText.length * jumbleProgress);
-                
-                for (let i = 0; i < originalText.length; i++) {
-                    if (i >= originalText.length - charsToJumble) {
-                        resultText += characters[Math.floor(Math.random() * characters.length)];
-                    } else {
-                        resultText += originalText[i];
-                    }
-                }
-            } else {
-                // Phase 2: Reveal new text from right
-                const revealProgress = (elapsed - startJumbleDuration) / revealDuration;
-                const charsToReveal = Math.floor(nextText.length * revealProgress);
-                
-                // Add jumbled padding to maintain right alignment
-                const paddingNeeded = maxLength - nextText.length;
-                for (let i = 0; i < paddingNeeded; i++) {
-                    resultText += characters[Math.floor(Math.random() * characters.length)];
-                }
-                
-                // Build the text from right to left
-                for (let i = 0; i < nextText.length; i++) {
-                    if (i >= nextText.length - charsToReveal) {
-                        resultText += nextText[i];
-                    } else {
-                        resultText += characters[Math.floor(Math.random() * characters.length)];
-                    }
-                }
-            }
-            
-            element.textContent = resultText;
-            animationFrame = requestAnimationFrame(animate);
-        } else {
-            element.textContent = nextText;
-        }
-    }
-    
-    animationFrame = requestAnimationFrame(animate);
-}
-
-// Original jumble text function for nav items
-function jumbleText(element, originalText, duration = 1000) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let startTime = null;
-    let animationFrame;
-    const startScrambleDuration = 300; // Time for letters to start scrambling in sequence
-    const allScrambleDuration = 400; // All letters scramble together
-    const settleDuration = 600; // Time for characters to settle in sequence
-    const startCharDelay = startScrambleDuration / originalText.length;
-    const settleCharDelay = settleDuration / originalText.length;
-    
-    function easeInOut(t) {
-        const eased = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-        return Math.sqrt(eased * eased * 0.5);
-    }
-    
-    function animate(currentTime) {
-        if (!startTime) startTime = currentTime;
-        const elapsed = currentTime - startTime;
-        const totalDuration = startScrambleDuration + allScrambleDuration + settleDuration;
-        const progress = Math.min(elapsed / totalDuration, 1);
+        // Animation timing constants
+        const startJumbleDuration = 400;
+        const revealDuration = 800;
+        const charRevealDelay = revealDuration / nextText.length;
         
-        if (progress < 1) {
-            let jumbledText = '';
-            const isInStartPhase = elapsed < startScrambleDuration;
-            const isInAllScramblePhase = elapsed >= startScrambleDuration && elapsed < (startScrambleDuration + allScrambleDuration);
-            const isInSettlePhase = elapsed >= (startScrambleDuration + allScrambleDuration);
-            const settlePhaseElapsed = Math.max(0, elapsed - (startScrambleDuration + allScrambleDuration));
-
-            for (let i = 0; i < originalText.length; i++) {
-                if (originalText[i] === ' ' || originalText[i] === '.') {
-                    jumbledText += originalText[i];
-                    continue;
-                }
-
-                if (isInStartPhase) {
-                    const charStartProgress = Math.max(0, Math.min(1, (elapsed - (i * startCharDelay)) / startCharDelay));
-                    if (charStartProgress > 0) {
-                        jumbledText += characters[Math.floor(Math.random() * characters.length)];
-                    } else {
-                        jumbledText += originalText[i];
+        function animate(currentTime) {
+            if (!startTime) startTime = currentTime;
+            const elapsed = currentTime - startTime;
+            const totalDuration = startJumbleDuration + revealDuration;
+            
+            if (elapsed < totalDuration) {
+                let resultText = '';
+                const maxLength = Math.max(originalText.length, nextText.length);
+                
+                if (elapsed < startJumbleDuration) {
+                    // Phase 1: Start jumbling from right
+                    const jumbleProgress = elapsed / startJumbleDuration;
+                    const charsToJumble = Math.floor(originalText.length * jumbleProgress);
+                    
+                    for (let i = 0; i < originalText.length; i++) {
+                        if (i >= originalText.length - charsToJumble) {
+                            resultText += characters[Math.floor(Math.random() * characters.length)];
+                        } else {
+                            resultText += originalText[i];
+                        }
                     }
-                } else if (isInAllScramblePhase) {
-                    jumbledText += characters[Math.floor(Math.random() * characters.length)];
                 } else {
-                    const charSettleProgress = Math.max(0, Math.min(1, (settlePhaseElapsed - (i * settleCharDelay)) / settleCharDelay));
-                    if (charSettleProgress >= 1) {
-                        jumbledText += originalText[i];
-                    } else {
-                        jumbledText += characters[Math.floor(Math.random() * characters.length)];
+                    // Phase 2: Reveal new text from right
+                    const revealProgress = (elapsed - startJumbleDuration) / revealDuration;
+                    const charsToReveal = Math.floor(nextText.length * revealProgress);
+                    
+                    // Add jumbled padding to maintain right alignment
+                    const paddingNeeded = maxLength - nextText.length;
+                    for (let i = 0; i < paddingNeeded; i++) {
+                        resultText += characters[Math.floor(Math.random() * characters.length)];
+                    }
+                    
+                    // Build the text from right to left
+                    for (let i = 0; i < nextText.length; i++) {
+                        if (i >= nextText.length - charsToReveal) {
+                            resultText += nextText[i];
+                        } else {
+                            resultText += characters[Math.floor(Math.random() * characters.length)];
+                        }
                     }
                 }
+                
+                element.textContent = resultText;
+                animationFrame = requestAnimationFrame(animate);
+            } else {
+                element.textContent = nextText;
             }
-            
-            element.textContent = jumbledText;
-            animationFrame = requestAnimationFrame(animate);
-        } else {
-            element.textContent = originalText;
         }
+        
+        animationFrame = requestAnimationFrame(animate);
     }
-    
-    animationFrame = requestAnimationFrame(animate);
-}
+
+    // Original jumble text function for nav items
+    function jumbleText(element, originalText, duration = 1000) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let startTime = null;
+        let animationFrame;
+        const startScrambleDuration = 300; // Time for letters to start scrambling in sequence
+        const allScrambleDuration = 400; // All letters scramble together
+        const settleDuration = 600; // Time for characters to settle in sequence
+        const startCharDelay = startScrambleDuration / originalText.length;
+        const settleCharDelay = settleDuration / originalText.length;
+        
+        function easeInOut(t) {
+            const eased = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+            return Math.sqrt(eased * eased * 0.5);
+        }
+        
+        function animate(currentTime) {
+            if (!startTime) startTime = currentTime;
+            const elapsed = currentTime - startTime;
+            const totalDuration = startScrambleDuration + allScrambleDuration + settleDuration;
+            const progress = Math.min(elapsed / totalDuration, 1);
+            
+            if (progress < 1) {
+                let jumbledText = '';
+                const isInStartPhase = elapsed < startScrambleDuration;
+                const isInAllScramblePhase = elapsed >= startScrambleDuration && elapsed < (startScrambleDuration + allScrambleDuration);
+                const isInSettlePhase = elapsed >= (startScrambleDuration + allScrambleDuration);
+                const settlePhaseElapsed = Math.max(0, elapsed - (startScrambleDuration + allScrambleDuration));
+
+                for (let i = 0; i < originalText.length; i++) {
+                    if (originalText[i] === ' ' || originalText[i] === '.') {
+                        jumbledText += originalText[i];
+                        continue;
+                    }
+
+                    if (isInStartPhase) {
+                        const charStartProgress = Math.max(0, Math.min(1, (elapsed - (i * startCharDelay)) / startCharDelay));
+                        if (charStartProgress > 0) {
+                            jumbledText += characters[Math.floor(Math.random() * characters.length)];
+                        } else {
+                            jumbledText += originalText[i];
+                        }
+                    } else if (isInAllScramblePhase) {
+                        jumbledText += characters[Math.floor(Math.random() * characters.length)];
+                    } else {
+                        const charSettleProgress = Math.max(0, Math.min(1, (settlePhaseElapsed - (i * settleCharDelay)) / settleCharDelay));
+                        if (charSettleProgress >= 1) {
+                            jumbledText += originalText[i];
+                        } else {
+                            jumbledText += characters[Math.floor(Math.random() * characters.length)];
+                        }
+                    }
+                }
+                
+                element.textContent = jumbledText;
+                animationFrame = requestAnimationFrame(animate);
+            } else {
+                element.textContent = originalText;
+            }
+        }
+        
+        animationFrame = requestAnimationFrame(animate);
+    }
 
 // Create an Intersection Observer
 const observer = new IntersectionObserver(entries => {
@@ -662,5 +674,29 @@ iconWrappers.forEach(wrapper => {
     wrapper.addEventListener('mouseout', () => {
         img.src = originalSrc;
     });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const coverDivProjects = document.getElementById("coverDivProjects");
+    const coverDivExercises = document.getElementById("coverDivExercises");
+    const sideNavItems = document.querySelectorAll(".sideNavItem"); // Adjust selector based on your actual structure
+
+    function isElement75Visible(el) {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        return rect.top <= windowHeight * 0.25 && rect.bottom >= windowHeight * .1;
+    }
+
+    function updateSideNavItems() {
+        const inRange = isElement75Visible(coverDivProjects) && !isElement75Visible(coverDivExercises);
+        
+        sideNavItems.forEach(item => {
+            item.style.color = inRange ? "#1d2e21" : ""; // Reset color if out of range
+        });
+    }
+
+    window.addEventListener("scroll", updateSideNavItems);
+    window.addEventListener("resize", updateSideNavItems);
+    updateSideNavItems(); // Run once on load
 });
   

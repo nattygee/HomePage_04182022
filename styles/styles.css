@@ -19,9 +19,9 @@ p {
 :root {
   --main-orange: #F8714A;
   --darker-orange: #E05434;
-  --darkest-orange: #C34225;
+  --darkest-orange: #c34225;
   --main-yellow: #FFEF9D;
-  --darker-green: #233627;
+  --darker-green: rgb(35, 54, 39);
   --darker-green-trans: rgba(35, 54, 39, .9);
   --even-darker-green: #1d2e21;
   --light-green: #65836d;
@@ -607,7 +607,8 @@ button {
 }
 
 .bgActive {
-  background-color: var(--darker-green);
+  border-right: 4px solid rgba(0, 0, 0, 0.5);
+  mix-blend-mode: multiply; /* Darkens underlying content */
   font-weight: 600;
   font-size: 1rem;
   text-transform: uppercase;
@@ -734,7 +735,6 @@ button {
 .previewImg {
   transition: all 40ms linear;
   border-radius: 4px;
-  border: 1px solid var(--main-yellow);
   overflow: hidden;
   z-index: 1105;
 }
@@ -975,6 +975,33 @@ button {
   font-weight: 700;
   transition: transform 240ms ease-in;
   transform: translateY(0px);
+}
+
+.colorBGYellow {
+  background-color: var(--ctaBlue-hover);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -16px;
+  left: -210px;
+}
+
+.colorBGOrange {
+  background-color: var(--darker-orange);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -16px;
+  left: -210px;
+}
+
+.colorBGGreen {
+  background-color: #304c37;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -16px;
+  left: -210px;
 }
 
 ::-moz-selection {
