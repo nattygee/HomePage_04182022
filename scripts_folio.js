@@ -679,21 +679,61 @@ iconWrappers.forEach(wrapper => {
 document.addEventListener("DOMContentLoaded", function () {
     const coverDivProjects = document.getElementById("coverDivProjects");
     const coverDivExercises = document.getElementById("coverDivExercises");
+    const exercisesBody = document.getElementById("testDiv5");
+    const exerciseBody = document.getElementById("exerciseSec");
+
     const sideNavItems = document.querySelectorAll(".sideNavItem"); // Adjust selector based on your actual structure
 
-    function isElement75Visible(el) {
+
+    // logic for when to set side nav to dark vs light
+
+    function isProjectsInView(el) {
         const rect = el.getBoundingClientRect();
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
         return rect.top <= windowHeight * 0.25 && rect.bottom >= windowHeight * .1;
     }
 
+    function isExercisesVisible(el) {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        return rect.top <= windowHeight * 0.25 && rect.bottom >= windowHeight * .1;
+    }
+    
+    function isExercisesBodyVisible(el) {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        return rect.top <= windowHeight;
+    }
+
+    function isExerciseBodyVisible(el) {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        return rect.top <= windowHeight;
+    }
+
     function updateSideNavItems() {
-        const inRange = isElement75Visible(coverDivProjects) && !isElement75Visible(coverDivExercises);
-        
+        const projectsInView = isProjectsInView(coverDivProjects);
+        const exercisesVisible = isExercisesVisible(coverDivExercises);
+        const exercisesBodyVisible = isExercisesBodyVisible(exercisesBody);
+        const exerciseBodyVisible = isExerciseBodyVisible(exerciseBody);
+        console.log(exercisesVisible, projectsInView, exercisesBodyVisible, exerciseBodyVisible);
+
         sideNavItems.forEach(item => {
-            item.style.color = inRange ? "#1d2e21" : ""; // Reset color if out of range
+            // alternate clean ternary operator version:
+            item.style.color = (projectsInView && !exercisesVisible && !exerciseBodyVisible || exercisesBodyVisible && !exercisesVisible && !exerciseBodyVisible) ? "#1d2e21" : "";
+            
+            // original if else version:
+            
+            /* if ((projectsInView && !exercisesVisible && !exerciseBodyVisible) || (exercisesBodyVisible && !exercisesVisible && !exerciseBodyVisible)) {
+                item.style.color = "#1d2e21"; // Set to dark color
+            } else {
+                item.style.color = ""; // Reset to original yellow color
+            } */
         });
     }
+    
+
+    
 
     window.addEventListener("scroll", updateSideNavItems);
     window.addEventListener("resize", updateSideNavItems);
