@@ -739,4 +739,56 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", updateSideNavItems);
     updateSideNavItems(); // Run once on load
 });
+
+    // cursor velocity line
+    let lastX = 0, lastY = 0, lastTime = Date.now();
+
+        let maxWidthHits = 0;    
+        const counter = document.getElementById('cursVelMax');
+        const counterData = document.getElementById('cursVelMaxData');
+        const line = document.querySelector('.line');
+        const maxWidth = 180;
+        const defaultColor = '#65836d';
+        const maxColor = '#FFEF9D';
+        let isAtMaxWidth = false; // Tracks whether the line is visually at max width
+
+        document.addEventListener('mousemove', (e) => {
+            const now = Date.now();
+            const deltaX = e.clientX - lastX;
+            const deltaY = e.clientY - lastY;
+            const deltaTime = now - lastTime;
+
+            const speed = (Math.sqrt(deltaX ** 2 + deltaY ** 2) / deltaTime).toFixed(2); // Pixels per ms
+            document.getElementById('cursVel').innerHTML = speed;
+
+            lastX = e.clientX;
+            lastY = e.clientY;
+            lastTime = now;
+
+            // Adjust line width based on speed
+            const width = Math.min(maxWidth, 0 + speed * 100);
+            line.style.width = `${width}px`;
+        });
+
+        // Detect when transition to max width is completed
+        line.addEventListener('transitionend', () => {
+            const computedWidth = parseFloat(getComputedStyle(line).width);
+
+            if (computedWidth >= maxWidth && !isAtMaxWidth) {
+                line.style.background = maxColor;
+                counterData.style.color = maxColor;
+                counter.style.color = maxColor;
+                isAtMaxWidth = true;
+                
+                // Increment counter when max width is hit
+                maxWidthHits++;
+                counter.innerHTML = `${maxWidthHits}`;
+
+            } else if (computedWidth < maxWidth && isAtMaxWidth) {
+                line.style.background = defaultColor;
+                isAtMaxWidth = false;
+                counterData.style.color = defaultColor;
+                counter.style.color = defaultColor;
+            }
+        });
   

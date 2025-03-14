@@ -848,6 +848,7 @@ p {
     position: fixed;
     left: 1rem;
     bottom: 1rem;
+    z-index: 1300;
     //padding: 0rem 8px;
     p {
         color: #65836d;
@@ -1034,6 +1035,21 @@ p {
     stroke: var(--light-green);
     animation: draw 2s ease-in-out forwards;
 }
+
+.line {
+    //position: absolute;
+    //top: 200px;
+    //left: 50%;
+    margin-top: 0.5rem;
+    width: 1px;
+    height: 1px;
+    background: var(--light-green);
+    transition: width 0.25s ease-in-out, background 0.1s linear;
+}
+
+/* #cursVelMaxData {
+    transition: color 0.25s ease-in-out;
+} */
 
 @keyframes draw {
     to {
