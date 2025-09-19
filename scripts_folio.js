@@ -10,10 +10,11 @@
         // set heights
         document.getElementById("testDiv1").style.height = (viewportHeight - 32) + "px";
         document.getElementById("testDiv5").style.height = (viewportHeight - 32) + "px";
+        document.getElementById("inspoSec").style.height = (viewportHeight - 32) + "px";
         document.getElementById("sideNav").style.height = (viewportHeight - 120) + "px";
         
         // set widths        
-        document.getElementById("mainContentDiv").style.width = (viewportWidth - 240) + "px";
+        document.getElementById("mainContentDiv").style.width = (viewportWidth - 280) + "px";
         console.log("viewport width: " + viewportWidth);
         let mainContentWidth = document.getElementById("mainContentDiv").style.width;
         let mainNavWidthPX = mainContentWidth.replace("px", "");
