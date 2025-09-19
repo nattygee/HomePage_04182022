@@ -1462,6 +1462,50 @@ input[switch] {
     overflow: hidden;
 }
 
+.vertStackProjects {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    flex: 1;
+    gap: .5rem;
+}
+
+.vertProjIndividual1 {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--light-green);
+    box-sizing: border-box;
+    overflow: hidden;
+    flex: 1;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.vertProjIndividual2 {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--light-green);
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: .5rem;
+    padding: 1rem;
+    flex: .25;
+    transition: flex 0.3s ease;
+}
+
+.vertProjIndividual2:hover {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--light-green);
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: .5rem;
+    padding: 1rem;
+    flex: 2;
+    transition: flex 0.3s ease;
+}
+
 .flexChild1 {
     display: flex;
     flex-direction: column;
