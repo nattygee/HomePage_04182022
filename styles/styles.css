@@ -1394,6 +1394,15 @@ input[switch]:checked::before {
   flex: 1;
   border-radius: 0.5rem;
   padding: 1rem;
+  transition: flex 0.3s ease;
+}
+
+#mainProject1 {
+  flex: 1;
+}
+
+#mainProject1:hover {
+  flex: 2;
 }
 
 .vertProjIndividual2 {

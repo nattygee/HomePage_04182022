@@ -1,6 +1,71 @@
 // test div resize
 
 
+        function initProjectFlexAnimations() {
+        const aboutSec = document.getElementById("aboutSec");
+        const mainProject1 = document.getElementById("mainProject1");
+        const mainProject2 = document.getElementById("mainProject2");
+        const mainProject3 = document.getElementById("mainProject3");
+        
+        
+        console.log("init project flex animations 🟥🟥🟥");
+
+        let aboutSecY = window.scrollY;
+        let aboutSecHeight = aboutSec.getBoundingClientRect().height;
+        let aboutProjTriggerHeight = aboutSecY + aboutSecHeight;
+        
+        // Intersection Observer to detect when aboutSec comes into view
+        const aboutSecObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                aboutSecInView = entry.isIntersecting;
+                console.log("aboutSecInView: " + aboutSecInView);
+                
+                if (!aboutSecInView) {
+                    // Reset to initial state when aboutSec is not in view
+                    console.log("testing again 🟢🟢🟢🟢");
+                } else if (aboutSecY > 1760 && aboutSecY < 2060) {
+                    console.log("aboutSecY: " + aboutSecY);
+                    console.log("aboutSecHeight: " + aboutSecHeight);
+                    console.log("🟥 " + window.scrollY);
+                    mainProject1.style.flex = 0.25;
+                    mainProject2.style.flex = 1;
+                    mainProject3.style.flex = 0.25;
+                } else if(aboutSecY > 2061) {
+                    mainProject1.style.flex = 0.25;
+                    mainProject2.style.flex = 0.25;
+                    mainProject3.style.flex = 1;
+                } else {
+                    mainProject1.style.flex = 1;
+                    mainProject2.style.flex = 0.25;
+                    mainProject3.style.flex = 0.25;
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -10% 0px' // Trigger when aboutSec is 10% from bottom of viewport
+        });
+        
+        // Start observing aboutSec
+        aboutSecObserver.observe(aboutSec);
+        
+        /* // Listen for scroll events
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+        
+        // Initialize with original values
+        updateFlexValues('initial'); */
+        handleScroll();
+    }
 
     function updateSideNavHeight() {
         console.log("viewport width: " + window.innerWidth);
@@ -28,7 +93,10 @@
     }
 
     // Run on load and resize
-    window.addEventListener("load", updateSideNavHeight);
+    window.addEventListener("load", () => {
+        updateSideNavHeight();
+        console.log("loaded🟥🟥🟥");
+    }); 
     window.addEventListener("resize", updateSideNavHeight);
 
     // cursor position
@@ -190,6 +258,7 @@
             lineObserver.observe(coverDiv);
             // Also watch for scroll events to ensure we don't miss the trigger
             document.addEventListener('scroll', () => {
+                initProjectFlexAnimations();
                 const rect = coverDiv.getBoundingClientRect();
                 const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const scrollingDown = currentScrollTop > lastScrollTop;
@@ -792,4 +861,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 counter.style.color = defaultColor;
             }
         });
+
+    
   
