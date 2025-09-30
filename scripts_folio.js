@@ -196,10 +196,11 @@
         let lastScrollTop = 0;
         let titleInterval;
         const titles = [
-            "Projects",
+            "Exercises",
             "Mobile apps",
             "Websites",
-            "Web apps"
+            "Web apps",
+            "Blog posts"
         ];
         let currentTitleIndex = 0;
 
@@ -794,7 +795,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // logic for when to set side nav to dark vs light
 
-    function isProjectsInView(el) {
+    /* function isProjectsInView(el) {
         const rect = el.getBoundingClientRect();
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
         return rect.top <= windowHeight * 0.25 && rect.bottom >= windowHeight * .1;
@@ -835,9 +836,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 item.style.color = "#1d2e21"; // Set to dark color
             } else {
                 item.style.color = ""; // Reset to original yellow color
-            } */
+            } 
         });
-    }
+    } */
     
 
     

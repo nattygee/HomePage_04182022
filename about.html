@@ -89,8 +89,8 @@
 
             <ul id="sideNav" class="sideNavList">
                 <div id="aboutSecNav" class="sideNavItem bgActive" onclick="navClicks(event)">001. About Nat</div>
-                <div id="projectSecNav" class="sideNavItem" onclick="navClicks(event)">002. Projects</div>
-                <div id="exerciseSecNav" class="sideNavItem" onclick="navClicks(event)">003. Exercises</div>
+                <div id="projectSecNav" class="sideNavItem" onclick="navClicks(event)">002. Exercises</div>
+                <div id="exerciseSecNav" class="sideNavItem" onclick="navClicks(event)">003. Inspiration</div>
                 <div id="inspoSecNav" class="sideNavItem" onclick="navClicks(event)">004. Inspiration</div>
                 <div id="blogSecNav" class="sideNavItem" onclick="navClicks(event)">005. Writing</div>
                 <div id="contactSecNav" class="sideNavItem" onclick="navClicks(event)">006. Contact</div>
@@ -193,13 +193,16 @@
                      🚀 spacer -->
                 <div id="" class="" style="height: 400px; padding: 2rem; margin-top: 800px;"></div>
                 <!-- 🟨 🟨 🟨 🟨 🟨 >> diagonal swipe away -->
-                <div id="coverDivProjects" class="" style="background-image: linear-gradient(to bottom, rgba(130, 191, 234, 0) 0%, rgb(130, 191, 234) 60%), url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1120; padding: 8rem 2rem; font-size: 4rem; color: #fff; margin-top: 1600px; background-color: #82bfea; transform: skewY(1deg); width: 100vw; position: absolute; left: 0;">
-                    <div id="verticalLine" style="position: absolute; top: 0; left: 249px; width: 1px; height: 0; background-color: #a4d9ff; transition: height 1400ms cubic-bezier(0.4, 0, 0.2, 1); transform: skewY(-1deg);"></div>
-                    <div class="coverContent" style="transform: skewY(-1deg); height: 100%; display: flex; justify-content: center; align-items: center;">
-                        <h1 class="coverTitles" id="coverTitleProjects" style="color: #1d2e21; font-size: 14rem; font-weight: 600; font-style: italic; justify-content: center; text-align: center; line-height: 12rem; width: 100%;">Projects</h1>
+                <!-- <div id="coverDivProjects" class="" style="background-image: linear-gradient(to bottom, rgb(101, 131, 109) 0%, rgb(48, 76, 55) 15%), url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1120; padding: 8rem 2rem; font-size: 4rem; color: #fff; margin-top: 1200px; background-color: rgb(48, 76, 55); transform: skewY(1deg); width: 100vw; position: absolute; left: 0;"> -->
+                <div id="coverDivProjects" class="" style="background-image: url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1120; padding: 0rem 2rem 8rem 2rem; font-size: 4rem; color: #fff; margin-top: 1800px; background-color: rgb(48, 76, 55); transform: skewY(1deg); width: 100vw; position: absolute; left: 0;">
+                    <!-- // DIAGONAL LINE FOR EXERCISES (USED TO BE PROJECTS) SECTION -->
+                    <div style="margin-bottom: -8px; height: 32px; z-index: 995; padding: 1rem 2rem; font-size: 4rem; color: #FFEF9D; border-top: 1px solid #65836d; width: 100vw; position:relative; margin-left: -32px;"></div>
+                    <div id="verticalLine" style="position: absolute; top: 0; left: 249px; width: 1px; height: 0; background-color: #65836d; transition: height 1400ms cubic-bezier(0.4, 0, 0.2, 1); transform: skewY(-1deg);"></div>
+                    <div class="coverContent" style="transform: skewY(-1deg); height: 60%; display: flex; justify-content: center; align-items: center;">
+                        <h1 class="coverTitles" id="coverTitleProjects" style="color: #ffef9d; font-size: 14rem; font-weight: 600; font-style: italic; justify-content: center; text-align: center; line-height: 12rem; width: 100%;">Exercises</h1>
                     </div>
                 </div>
-                <div class="spacer400px" style="height: 10vh;"></div>
+                <div class="spacer400px" style="height: 100vh;"></div>
 
                 <!-- PROJECTS START HERE 🏚️ 🏚️ 🏚️ -->
                 <section id="projectSec" style="z-index: 1130;" class="folioSection sticky">
@@ -207,9 +210,8 @@
                         
                         <div id="p1ImageFullView" class="imageFullContainer" style="z-index: 1135;">
                         </div>
-
                         <!-- yellow background for projects -->
-                        <div class="colorBGYellow" style="z-index: 1130;"></div>
+                        <div class="colorBGGreen" style="z-index: 1130;"></div>
 
                         <!-- project1 -->
                         <div class="hFlexChild1" style="z-index: 1135; border: 1px solid #a4d9ff; background-color: #d9efff;">
@@ -374,9 +376,11 @@
                         
                     </div>
                 </section>
-                <div id="coverDivExercises" style="background-image: linear-gradient(to bottom, rgba(195, 66, 37, 0.5) 0%, rgba(224, 84, 52, 1) 100%), url(../images/exerciseBGPattern.svg); background-position: center; height: 110vh; z-index: 1140; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:rgb(224, 84, 52); transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;">
-                    <div class="coverContent1" style="transform: skewY(-1deg); height: 100%; display: flex; justify-content: center; align-items: center;">
-                        <h1 class="coverTitles" style="color: #fff; font-size: 14rem; font-weight: 600; text-align: center; font-style: italic; justify-content: center; line-height: 12rem; width: 100%;">Exercises</h1>
+                <!-- <div id="coverDivExercises" style="background-image: linear-gradient(to bottom, rgba(195, 66, 37, 0.5) 0%, rgba(224, 84, 52, 1) 100%), url(../images/exerciseBGPattern.svg); background-position: center; height: 110vh; z-index: 1140; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:rgb(224, 84, 52); transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;"> -->
+                <div id="coverDivExercises" style="background-image: url(../images/exerciseBGPattern.svg); background-position: center; height: 110vh; z-index: 1140; padding: 0rem 2rem 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:#304C37; transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;">
+                    <div style="margin-bottom: -8px; height: 64px; z-index: 995; padding: 1rem 2rem; font-size: 4rem; color: #FFEF9D; border-top: 1px solid #65836d; width: 100vw; position:relative; margin-left: -32px;"></div>
+                    <div class="coverContent" style="transform: skewY(-1deg); height: 100%; display: flex; justify-content: center; align-items: center;">
+                        <h1 class="coverTitles" style="color: #FFEF9D; font-size: 14rem; font-weight: 600; text-align: center; font-style: italic; justify-content: center; line-height: 12rem; width: 100%;">Inspiration</h1>
                     </div>
                 </div>
                 <!-- 🚀 spacer
@@ -485,67 +489,22 @@
                         </div>
 
                          <p style="z-index: 1148;">aflhsaflj</p>
-                         <div class="colorBGOrange" style="z-index: 1145;"></div>
+                         <div class="colorBGGreen" style="z-index: 1145;"></div>
 
                     <!-- <p class="folioSectionTitle">Design exercises</p> -->
                 </section>
 
                 <!-- INSPORATIONS BETCH -->
-                <div style="background-image: linear-gradient(to bottom, rgba(35, 54, 39, 0.5) 0%, rgba(48, 76, 55, 1) 100%), url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1150; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:rgb(48, 76, 55); transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;">
+               <!--  <div style="background-image: linear-gradient(to bottom, rgba(35, 54, 39, 0.5) 0%, rgba(48, 76, 55, 1) 100%), url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1150; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:rgb(48, 76, 55); transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;">
                     <div class="coverContent1" style="transform: skewY(-1deg); height: 100%; display: flex; justify-content: center; align-items: center;">
                         <h1 class="coverTitles" style="color: #ffef9d; font-size: 14rem; font-weight: 600; text-align: center; font-style: italic; justify-content: center; line-height: 12rem; width: 100%;">Inspo</h1>
                     </div>
-                </div>
+                </div> -->
 
                 <section id="inspoSec" class="folioSection sticky" style="z-index: 1155; background-color: #ffef9d;">
                     <!-- <p class="folioSectionTitle">Design inspiration</p> --> this is the inspiration section
                      <!-- 🟧 🟧 🟧 🟧 🟧 -->
-                     <div class="exerciseGridPreview" style="z-index: 1160; position: absolute;">
-                        <!-- FIRST 🏅🥇🏅🥇🏅🥇🏅🥇🏅🥇🏅🥇 -->
-                        <!-- <div class="screenshotPortrait" data-name="toast">
-                            <div class="screenshotDiv">
-                                <img src="images/spline_onboarding_focus.gif" alt="" style="object-fit: cover; height: 100%;">
-                            </div>
-                        </div>
-                        <div class="screenshotPortrait" data-name="focus onboarding">
-                            <div class="screenshotDiv">
-                                <img src="images/spline_onboarding_toastbaby.gif" alt="" style="object-fit: cover; height: 100%;">
-                            </div>
-                        </div> -->
-                    
-                        <div class="exercisePreviewLandscape">
-                            <div class="screenshotDivLandscape">
-                                <img src="images/ruggable_menu_illustration1.png" alt="">
-                            </div>
-                            <div class="inspoDescription">
-                                <p>Ruggable | Jan 2025</p>
-                            </div>
-                        </div>
-                        <div class="exercisePreviewPortrait" data-name="illustration">
-                            <div class="screenshotDiv">
-                                <img src="images/ruggable_menu_illustration.png" alt="">
-                            </div>
-                            <div class="inspoDescription">
-                                <p>Ruggable | Feb 2025</p>
-                            </div>
-                        </div>
-                        <div class="exercisePreviewPortrait" data-name="illustration">
-                            <div class="screenshotDiv">
-                                <img src="images/ruggable_menu_illustration.png" alt="">
-                            </div>
-                            <div class="inspoDescription">
-                                <p>Ruggable | Feb 2025</p>
-                            </div>
-                        </div>
-                        <div class="exercisePreviewPortrait" data-name="illustration">
-                            <div class="screenshotDiv">
-                                <img src="images/ruggable_menu_illustration.png" alt="">
-                            </div>
-                            <div class="inspoDescription">
-                                <p>Ruggable | Feb 2025</p>
-                            </div>
-                        </div>
-                    </div>
+                     
                          <!-- green background for inspiration -->
                          <div class="colorBGGreen" style="z-index: 1155;"></div>
                 </section>
