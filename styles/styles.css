@@ -1181,7 +1181,7 @@ button {
 }
 
 .colorBGOrange {
-  background-color: var(--darker-orange);
+  background-color: #304C37;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -1195,7 +1195,7 @@ button {
   height: 100vh;
   position: absolute;
   top: -16px;
-  left: -250px;
+  left: -268px;
 }
 
 ::-moz-selection {
