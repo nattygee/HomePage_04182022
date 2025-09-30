@@ -982,7 +982,7 @@ p {
 // regular size up to 1720px
 .loudTitleSkinny {
     font-size: 8rem;
-    line-height: 6rem;
+    line-height: 3rem;
     width: 100%;
     color: var(--main-yellow);
     display: flex;
@@ -1483,13 +1483,13 @@ input[switch] {
     transition: flex 0.3s ease;
 }
 
-#mainProject1 {
+/* #mainProject1 {
     flex: 1;
-}
+} */
 
-#mainProject1:hover {
+/* #mainProject1:hover {
     flex: 2;
-}
+} */
 
 .vertProjIndividual2 {
     display: flex;
@@ -1503,7 +1503,7 @@ input[switch] {
     transition: flex 0.3s ease;
 }
 
-.vertProjIndividual2:hover {
+/* .vertProjIndividual2:hover {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--light-green);
@@ -1513,7 +1513,76 @@ input[switch] {
     padding: 1rem;
     flex: 2;
     transition: flex 0.3s ease;
+} */
+
+.flexHeight2 {
+    flex: 2;
+    border: 1px solid var(--light-green);
+    transition: flex 0.3s ease;
 }
+
+.flexHeightEighth {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0rem 1rem 1rem 1rem;
+    border-radius: .5rem;
+    flex: .15;
+    border: 1px solid var(--light-green);
+    transition: flex 0.3s ease;
+}
+.flexHeightQuarter {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 1rem;
+    border-radius: .5rem;
+    flex: .25;
+    border: 1px solid var(--light-green);
+    transition: flex 0.3s ease;
+}
+
+.flexHeight1 {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 1rem;
+    border-radius: .5rem;
+    flex: 2;
+    border: 1px solid var(--light-green);
+    transition: flex 0.3s ease;
+}
+
+/* #mainProjectContainer:hover #mainProject1 {
+    flex: 1.25;
+}
+
+#mainProjectContainer:hover #mainProject2 {
+    flex: 0.25;
+}
+
+#mainProjectContainer:hover #mainProject3 {
+    flex: 0.25;
+} */
+
+/* Or target individual projects */
+#mainProject1:hover {
+    flex: 4;
+}
+#mainProject2:hover {
+    flex: 4;
+}
+#mainProject3:hover {
+    flex: 4;
+}
+/* 
+#mainProject1:hover ~ #mainProject2,
+#mainProject1:hover ~ #mainProject3 {
+    flex: 0.25;
+} */
 
 .flexChild1 {
     display: flex;

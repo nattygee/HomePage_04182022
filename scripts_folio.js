@@ -13,6 +13,8 @@
         let aboutSecY = window.scrollY;
         let aboutSecHeight = aboutSec.getBoundingClientRect().height;
         let aboutProjTriggerHeight = aboutSecY + aboutSecHeight;
+
+        let projectID = event.target.id;
         
         // Intersection Observer to detect when aboutSec comes into view
         const aboutSecObserver = new IntersectionObserver((entries) => {
@@ -23,21 +25,26 @@
                 if (!aboutSecInView) {
                     // Reset to initial state when aboutSec is not in view
                     console.log("testing again 🟢🟢🟢🟢");
+
+                    // if mouseover, hover etc, any of the three items, overwrite previous set of rules and make selected flex 1.25, and others 0.25
                 } else if (aboutSecY > 1760 && aboutSecY < 2060) {
                     console.log("aboutSecY: " + aboutSecY);
                     console.log("aboutSecHeight: " + aboutSecHeight);
                     console.log("🟥 " + window.scrollY);
-                    mainProject1.style.flex = 0.25;
-                    mainProject2.style.flex = 1;
-                    mainProject3.style.flex = 0.25;
+                    //mainProject1.className = "";
+                    mainProject1.className = "flexHeightQuarter";
+                    mainProject2.className = "flexHeight1";
+                    mainProject3.className = "flexHeightQuarter";
                 } else if(aboutSecY > 2061) {
-                    mainProject1.style.flex = 0.25;
-                    mainProject2.style.flex = 0.25;
-                    mainProject3.style.flex = 1;
+                    //mainProject1.className("");
+                    mainProject1.className = "flexHeightQuarter";
+                    mainProject2.className = "flexHeightQuarter";
+                    mainProject3.className = "flexHeight1";
                 } else {
-                    mainProject1.style.flex = 1;
-                    mainProject2.style.flex = 0.25;
-                    mainProject3.style.flex = 0.25;
+                    //mainProject1.className("");
+                    mainProject1.className = "flexHeight1";
+                    mainProject2.className = "flexHeightQuarter";
+                    mainProject3.className = "flexHeightQuarter";
                 }
             });
         }, { 
@@ -388,6 +395,36 @@
             item.style.transform = "translateY(-50px)";
             item.style.transition = "opacity 0.8s ease, transform 0.8s ease";
         });
+
+        // are main projects being hovered?
+        if (mainProject1) {
+            mainProject1.addEventListener('mouseenter', () => {
+                console.log("Hovering over mainProject1");
+                
+            });
+            mainProject1.addEventListener('mouseleave', () => {
+                console.log("Stopped hovering over mainProject1");
+            });
+        }
+        
+        if (mainProject2) {
+            mainProject2.addEventListener('mouseenter', () => {
+                console.log("Hovering over mainProject2");
+            });
+            mainProject2.addEventListener('mouseleave', () => {
+                console.log("Stopped hovering over mainProject2");
+                // on mouse leave, reset the flex values to the scroll based rules
+            });
+        }
+        
+        if (mainProject3) {
+            mainProject3.addEventListener('mouseenter', () => {
+                console.log("Hovering over mainProject3");  
+            });
+            mainProject3.addEventListener('mouseleave', () => {
+                console.log("Stopped hovering over mainProject3");
+            });
+        }
     });
 
     // Function for title cycling animation
