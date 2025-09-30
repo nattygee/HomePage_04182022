@@ -745,8 +745,8 @@ button {
   font-size: 1rem;
   letter-spacing: 0.1rem;
   line-height: 1.5rem;
-  color: var(--main-yellow);
-  background-color: rgba(35, 54, 39, 0.4);
+  color: #ffffff;
+  background-color: #D63030;
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   transition: 300ms;
@@ -912,6 +912,22 @@ button {
 .loudTitleSkinny {
   font-size: 8rem;
   line-height: 3rem;
+  width: 100%;
+  color: var(--main-yellow);
+  display: flex;
+  align-items: left;
+  text-transform: uppercase;
+  padding: 1rem;
+  justify-content: left;
+  font-family: "sofia sans extra condensed", sans-serif;
+  font-weight: 700;
+  transition: transform 240ms ease-in;
+  transform: translateY(0px);
+}
+
+.loudTitleSkinnyXL {
+  font-size: 8rem;
+  line-height: 6rem;
   width: 100%;
   color: var(--main-yellow);
   display: flex;
