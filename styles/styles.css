@@ -1181,7 +1181,7 @@ button {
 }
 
 .colorBGOrange {
-  background-color: #304C37;
+  background-color: var(--darker-orange);
   width: 100vw;
   height: 100vh;
   position: absolute;
