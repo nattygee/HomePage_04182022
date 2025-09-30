@@ -561,7 +561,7 @@ button {
   display: flex;
   padding: 0rem;
   margin: 6rem 1rem;
-  height: 10000px;
+  height: auto;
   box-sizing: border-box;
   justify-content: right;
 }
@@ -1181,7 +1181,7 @@ button {
 }
 
 .colorBGOrange {
-  background-color: var(--darker-orange);
+  background-color: #304C37;
   width: 100vw;
   height: 100vh;
   position: absolute;
