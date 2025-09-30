@@ -82,7 +82,7 @@
         // set heights
         document.getElementById("testDiv1").style.height = (viewportHeight - 32) + "px";
         document.getElementById("testDiv5").style.height = (viewportHeight - 32) + "px";
-        document.getElementById("inspoSec").style.height = (viewportHeight - 32) + "px";
+        /* document.getElementById("inspoSec").style.height = (viewportHeight - 32) + "px"; */
         document.getElementById("sideNav").style.height = (viewportHeight - 120) + "px";
         
         // set widths        
