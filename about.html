@@ -68,7 +68,7 @@
                     <img src="images/starterplant.svg" style="position:fixed; height: 240px;" alt="">
                 </div>
                 <div id="scrollLander" class="scrollLander">
-                    <button class="scrollLanderBtn">scroll down</button>
+                    <a href="#aboutSec"><button class="scrollLanderBtn">scroll down</button></a>
                 </div>
                 <!-- <div class="landerLines">
                     <svg width="300" height="150" viewBox="60 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,23 +91,20 @@
                 <div id="aboutSecNav" class="sideNavItem bgActive" onclick="navClicks(event)">001. About Nat</div>
                 <div id="projectSecNav" class="sideNavItem" onclick="navClicks(event)">002. Exercises</div>
                 <div id="exerciseSecNav" class="sideNavItem" onclick="navClicks(event)">003. Inspiration</div>
-                <!-- <div id="inspoSecNav" class="sideNavItem" onclick="navClicks(event)">004. Inspiration</div>
-                <div id="blogSecNav" class="sideNavItem" onclick="navClicks(event)">005. Writing</div>
-                <div id="contactSecNav" class="sideNavItem" onclick="navClicks(event)">006. Contact</div> -->
 
                             <div id="sideNavNat" style="display: flex; padding: 1rem 0rem; justify-content: center; position: relative; align-items: center; margin: 1rem 0rem;">
                                 <!-- <div class="labelBlue">Nat Green</div> -->
-                                <img src="images/natwalk_3.gif" style="position:absolute; height: 100%;" alt="">
+                                <img src="images/natwalk_3.gif" style="position:absolute; height: 100%; z-index: 1160;" alt="">
                             </div>
             </ul>
             <div id="mainContentDiv" class="folioBodySecs">
-                <div style="margin-bottom: -8px; height: 32px; z-index: 995; padding: 1rem 2rem; font-size: 4rem; color: #FFEF9D; background-color:#304C37; border-top: 1px solid #65836d; transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;"></div>
-                <section id="aboutSec" class="folioSection sticky">
+                <div class="lightGreenBorderTop"></div>
+                <section id="aboutSec" class="folioSection">
                     <div id="testDiv1" class="folioHStack">
                         <div id="natwalk" class="hFlexChild1" style="align-items: left;">
                             <div class="labelGreen"><p class="datePosted" style="font-weight: 300;">Visual</p></div>
                             <hr class="dashed-divider">
-                            <div style="display: flex; padding: 1rem 0rem; justify-content: center; position: relative; align-items: center; height: 100%;">
+                            <div class="natwalkImg">
                                 <!-- <div class="labelBlue">Nat Green</div> -->
                                 <!-- <img id="abtCircle" src="images/abt_circle.svg" alt="" style="width: 90%;"> -->
                                 <img src="images/natwalk_3.gif" style="position:absolute; height: 100%;" alt="">
@@ -123,12 +120,12 @@
                             <div class="loudTitleSkinnyXL">Nat <br> Green</div>
                             <!-- <p class="projectDescription" style="margin: .5rem 0rem;">Nat Green</p> -->
                             <hr class="dashed-divider">
-                            <p class="projectDescription" style="margin: .5rem 0rem;">Toronto, ON</p>
+                            <p class="projectDescriptionAbout">Toronto, ON</p>
                             <hr class="dashed-divider">
-                            <p class="projectDescription" style="margin: .5rem 0rem;">Product designer</p>
+                            <p class="projectDescriptionAbout">Product designer</p>
                             <hr class="dashed-divider">
                             <!-- <p class="projectDescription" style="margin: .5rem 0rem;" ><span class="blueBoldAbout" style="padding: 0;">Currently at Canada Post</span> helping to shape experiences on the mobile app including MyMail, Track, and Shipping</p> -->
-                            <p class="projectDescription" style="margin: .5rem 0rem;" >Currently at Canada Post helping to shape experiences on the mobile app including MyMail, Track, and Shipping</p>
+                            <p class="projectDescriptionAbout" >Currently at Canada Post helping to shape experiences on the mobile app including MyMail, Track, and Shipping</p>
                             <hr class="dashed-divider">
                             <!-- <p class="projectDescription" style="margin: .5rem 0rem;">Tools for design and building include <span class="blueBoldAbout" style="padding: 0;">Figma, Cursor, V0 and ChatGPT</span></p> -->
                            <!--  <p class="projectDescription" style="margin: .5rem 0rem -1rem 0rem;">Tools for design and building include Figma, Cursor, V0 and ChatGPT</p> -->
@@ -150,10 +147,10 @@
                                     <img src="images/icon_chatgpt.svg" class="iconHStackItem" alt="ChatGPT icon">
                                 </div>
                             </div>
-                            <p class="projectDescription" style="margin: -1rem 0rem 0.5rem 0rem;">Tools for design and building include Figma, Cursor, V0 and ChatGPT</p>
+                            <p class="projectDescriptionAbout" style="margin-top: -1rem;">Tools for design and building include Figma, Cursor, V0 and ChatGPT</p>
                             <hr class="dashed-divider">
                             <!-- <p class="projectDescription" style="margin: .5rem 0rem;">Contact me at <span class="blueBoldAbout" style="padding: 0;">timomarigreen@gmail.com</span></p> -->
-                            <p class="projectDescription" style="margin: .5rem 0rem;">Contact me at timomarigreen@gmail.com</p>
+                            <p class="projectDescriptionAbout">Contact me at timomarigreen@gmail.com</p>
                             <div class="spacer"></div>
                             <hr class="dashed-divider">
 
@@ -167,7 +164,6 @@
                                 <a class="textCTAbtn">Resume<img src="images/icon_dl.svg" alt=""></a>
                             </div>
                         </div>
-
                         <div id="sibling2" class="vertStackProjects">
                             <div id="mainProject1" class="vertProjIndividual1">
                                 <div class="loudTitleSkinny" style="font-size: 4rem;">Project 1</div>
@@ -191,21 +187,21 @@
                 <!-- 🚀 spacer
                      🚀 spacer
                      🚀 spacer -->
-                <div id="" class="" style="height: 400px; padding: 2rem; margin-top: 800px;"></div>
+                <div id="" class="exercisesSpacer" style="height: 400px; padding: 2rem; margin-top: 1700px;"></div>
                 <!-- 🟨 🟨 🟨 🟨 🟨 >> diagonal swipe away -->
-                <!-- <div id="coverDivProjects" class="" style="background-image: linear-gradient(to bottom, rgb(101, 131, 109) 0%, rgb(48, 76, 55) 15%), url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1120; padding: 8rem 2rem; font-size: 4rem; color: #fff; margin-top: 1200px; background-color: rgb(48, 76, 55); transform: skewY(1deg); width: 100vw; position: absolute; left: 0;"> -->
-                <div id="coverDivProjects" class="" style="background-image: url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1120; padding: 0rem 2rem 8rem 2rem; font-size: 4rem; color: #fff; margin-top: 1800px; background-color: rgb(48, 76, 55); transform: skewY(1deg); width: 100vw; position: absolute; left: 0;">
+                <div id="coverDivProjects" class="exerciseCover">
                     <!-- // DIAGONAL LINE FOR EXERCISES (USED TO BE PROJECTS) SECTION -->
-                    <div style="margin-bottom: -8px; height: 32px; z-index: 995; padding: 1rem 2rem; font-size: 4rem; color: #FFEF9D; border-top: 1px solid #65836d; width: 100vw; position:relative; margin-left: -32px;"></div>
-                    <div id="verticalLine" style="position: absolute; top: 0; left: 249px; width: 1px; height: 0; background-color: #65836d; transition: height 1400ms cubic-bezier(0.4, 0, 0.2, 1); transform: skewY(-1deg);"></div>
-                    <div class="coverContent" style="transform: skewY(-1deg); height: 60%; display: flex; justify-content: center; align-items: center;">
-                        <h1 class="coverTitles" id="coverTitleProjects" style="color: #ffef9d; font-size: 14rem; font-weight: 600; font-style: italic; justify-content: center; text-align: center; line-height: 12rem; width: 100%;">Exercises</h1>
+                    <div class="lightGreenBorderEx"></div>
+                    <div id="verticalLine" class="verticalLine"></div>
+                    <div id="coverExercises" class="coverContent" style="transform: skewY(-1deg); height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h1 class="coverTitles" id="coverTitleProjects">Exercises</h1>
+                        <p class="coverTitles" style="color: #FFEF9D; font-size: 1.5rem; font-weight: 100; text-align: center; justify-content: center; line-height: 2rem; width: 100%;">( Exercises I like to do to keep the product related skills sharp — Includes: mockups, interactions, and blog posts )</p>
                     </div>
                 </div>
-                <div class="spacer400px" style="height: 50vh;"></div>
+                <div class="spacer400px"></div>
 
                 <!-- PROJECTS START HERE 🏚️ 🏚️ 🏚️ -->
-                <section id="projectSec" style="z-index: 1130;" class="folioSection sticky">
+                <section id="projectSec" style="z-index: 1130;" class="folioSection">
                     <div id="testDiv5" class="folioHStack">
                         
                         <div id="p1ImageFullView" class="imageFullContainer" style="z-index: 1135;">
@@ -377,11 +373,64 @@
                     </div>
                 </section>
                 <!-- <div id="coverDivExercises" style="background-image: linear-gradient(to bottom, rgba(195, 66, 37, 0.5) 0%, rgba(224, 84, 52, 1) 100%), url(../images/exerciseBGPattern.svg); background-position: center; height: 110vh; z-index: 1140; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:rgb(224, 84, 52); transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;"> -->
-                <div id="coverDivExercises" style="background-image: url(../images/exerciseBGPattern.svg); background-position: center; height: 80vh; z-index: 1140; padding: 0rem 2rem 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:#304C37; transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;">
-                    <div style="margin-bottom: -8px; height: 64px; z-index: 995; padding: 1rem 2rem; font-size: 4rem; color: #FFEF9D; border-top: 1px solid #65836d; width: 100vw; position:relative; margin-left: -32px;"></div>
-                    <div class="coverContent" style="transform: skewY(-1deg); height: 100%; display: flex; justify-content: center; align-items: center;">
-                        <h1 class="coverTitles" style="color: #FFEF9D; font-size: 14rem; font-weight: 600; text-align: center; font-style: italic; justify-content: center; line-height: 12rem; width: 100%;">Inspiration</h1>
+                <div id="coverDivExercises" class="inspoCover">
+                    <div class="lightGreenBorder"></div>
+                    <div class="coverContent" style="transform: skewY(-1deg); display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 12rem 0rem;">
+                        <h1 class="coverTitles">Inspiration</h1>
+                        <p class="coverTitles" style="color: #FFEF9D; font-size: 1.5rem; font-weight: 100; text-align: center; justify-content: center; line-height: 2rem; width: 100%;">( Quality works from other talented designers and engineers that want to document )</p>
                     </div>
+
+                        <section id="exerciseSec" class="inspoSectionFD" style="z-index: 1150; transform: skewY(-1deg);">
+                            <!-- 🟧 🟧 🟧 🟧 🟧 -->
+                            <!-- orange background for exercises -->
+                            
+                            <div class="inspoGridFD">
+                                <div class="screenshotPortrait" data-name="illustration">
+                                    <div class="screenshotDiv" style="width: 100%;">
+                                        <img src="images/ruggable_menu_illustration.png" alt="">
+                                    </div>
+                                    <div class="inspoDescription">
+                                        <p>Ruggable | Feb 2025</p>
+                                    </div>
+                                </div>
+                                <div class="screenshotPortrait" data-name="illustration">
+                                    <div class="screenshotDiv">
+                                        <img src="images/ruggable_menu_illustration.png" alt="">
+                                    </div>
+                                    <div class="inspoDescription">
+                                        <p>Ruggable | Feb 2025</p>
+                                    </div>
+                                </div>
+                                <div class="screenshotPortrait" data-name="illustration">
+                                    <div class="screenshotDiv">
+                                        <img src="images/ruggable_menu_illustration.png" alt="">
+                                    </div>
+                                    <div class="inspoDescription">
+                                        <p>Ruggable | Feb 2025</p>
+                                    </div>
+                                </div>
+                                <div class="screenshotPortrait" data-name="input form">
+                                    <div class="screenshotDiv">
+                                        <img src="images/arc_input_form.png" alt="">
+                                    </div>
+                                    <div class="inspoDescription">
+                                        <p>Arc | Feb 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="colorBGGreen" style="z-index: 1145;"></div> -->
+
+                    <!-- <p class="folioSectionTitle">Design exercises</p> -->
+                        </section>
+                        <section class="footerSection" style="transform: skewY(-1deg); width: 100vw; margin-left: -32px;">
+                            <div class="weatherStatementFtr">
+                                <h5 id="weatherStatementFtr"></h5>
+                            </div>
+                            <div class="footerImg">
+                                <img src="" alt="">
+                            </div>
+                        </section>
                 </div>
                 <!-- 🚀 spacer
                      🚀 spacer
@@ -389,77 +438,7 @@
                      <!-- <div id="" class="" style="height: 400px; padding: 2rem; margin-top: 800px;"></div> -->
 
                      
-                <section id="exerciseSec" class="folioSection sticky" style="height: 95vh; z-index: 1150;">
-                         <!-- 🟧 🟧 🟧 🟧 🟧 -->
-                         <!-- orange background for exercises -->
-                         
-                         <div class="screenshotGrid" style="z-index: 1155; position: absolute;">
-                            <!-- FIRST 🏅🥇🏅🥇🏅🥇🏅🥇🏅🥇🏅🥇 -->
-                            <!-- <div class="screenshotPortrait" data-name="toast">
-                                <div class="screenshotDiv">
-                                    <img src="images/spline_onboarding_focus.gif" alt="" style="object-fit: cover; height: 100%;">
-                                </div>
-                            </div>
-                            <div class="screenshotPortrait" data-name="focus onboarding">
-                                <div class="screenshotDiv">
-                                    <img src="images/spline_onboarding_toastbaby.gif" alt="" style="object-fit: cover; height: 100%;">
-                                </div>
-                            </div> -->
-                        
-                            <div class="screenshotLandscape" data-name="illustration">
-                                <div class="screenshotDivLandscape">
-                                    <img src="images/ruggable_menu_illustration1.png" alt="">
-                                </div>
-                                <div class="inspoDescription">
-                                    <p>Ruggable | Jan 2025</p>
-                                </div>
-                            </div>
-                            <div class="screenshotPortrait" data-name="illustration">
-                                <div class="screenshotDiv">
-                                    <img src="images/ruggable_menu_illustration.png" alt="">
-                                </div>
-                                <div class="inspoDescription">
-                                    <p>Ruggable | Feb 2025</p>
-                                </div>
-                            </div>
-                            <div class="screenshotPortrait" data-name="illustration">
-                                <div class="screenshotDiv">
-                                    <img src="images/ruggable_menu_illustration.png" alt="">
-                                </div>
-                                <div class="inspoDescription">
-                                    <p>Ruggable | Feb 2025</p>
-                                </div>
-                            </div>
-                            <div class="screenshotPortrait" data-name="illustration">
-                                <div class="screenshotDiv">
-                                    <img src="images/ruggable_menu_illustration.png" alt="">
-                                </div>
-                                <div class="inspoDescription">
-                                    <p>Ruggable | Feb 2025</p>
-                                </div>
-                            </div>
-                            <div class="screenshotLandscape" data-name="menu illustration">
-                                <div class="screenshotDivLandscape">
-                                    <img src="images/ruggable_menu_illustration-1.png" alt="">
-                                </div>
-                                <div class="inspoDescription">
-                                    <p>Ruggable | Jan 2025</p>
-                                </div>
-                            </div>
-                            <div class="screenshotPortrait" data-name="input form">
-                                <div class="screenshotDiv">
-                                    <img src="images/arc_input_form.png" alt="">
-                                </div>
-                                <div class="inspoDescription">
-                                    <p>Arc | Feb 2025</p>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- <div class="colorBGGreen" style="z-index: 1145;"></div> -->
-
-                    <!-- <p class="folioSectionTitle">Design exercises</p> -->
-                </section>
+                
 
                 <!-- INSPORATIONS BETCH -->
                <!--  <div style="background-image: linear-gradient(to bottom, rgba(35, 54, 39, 0.5) 0%, rgba(48, 76, 55, 1) 100%), url(../images/bggrid.png); background-position: center; height: 110vh; z-index: 1150; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:rgb(48, 76, 55); transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;">
@@ -481,14 +460,7 @@
         </div>
 
 
-        <section class="footerSection">
-            <div class="weatherStatementFtr">
-                <h5 id="weatherStatementFtr"></h5>
-            </div>
-            <div class="footerImg">
-                <img src="" alt="">
-            </div>
-        </section>
+        
     </div>
 
 </body>

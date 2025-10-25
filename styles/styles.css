@@ -586,6 +586,20 @@ button {
   font-family: "Courier New", Courier, monospace;
 }
 
+.inspoCover {
+  background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0.6) 0%, #304C37 100%), url(../images/bathroom_pattern.svg);
+  background-position: center;
+  z-index: 1140;
+  padding: 0rem 2rem 0rem 2rem;
+  font-size: 4rem;
+  color: #FFEF9D;
+  background-color: #304C37;
+  transform: skewY(1deg);
+  width: 100vw;
+  position: relative;
+  margin-left: -250px;
+}
+
 .sideNavItem {
   padding: 8px 16px;
   color: var(--main-yellow);
@@ -615,6 +629,83 @@ button {
   text-transform: uppercase;
   font-family: "Work Sans", sans-serif;
   color: var(--main-yellow);
+}
+
+.lightGreenBorder {
+  margin-bottom: -8px;
+  margin-left: -32px;
+  height: 64px;
+  z-index: 995;
+  font-size: 4rem;
+  color: #FFEF9D;
+  border-top: 1px solid #65836d;
+  width: 100vw;
+  position: relative;
+}
+
+.lightGreenBorderEx {
+  margin-bottom: -8px;
+  height: 32px;
+  z-index: 995;
+  padding: 1rem 2rem;
+  font-size: 4rem;
+  color: #FFEF9D;
+  background-color: none;
+  border-top: 1px solid #65836d;
+  width: 100vw;
+  position: relative;
+  margin-left: 0px;
+}
+
+.lightGreenBorderTop {
+  margin-bottom: -8px;
+  height: 32px;
+  z-index: 995;
+  padding: 1rem 2rem;
+  font-size: 4rem;
+  color: #FFEF9D;
+  background-color: #304C37;
+  border-top: 1px solid #65836d;
+  transform: skewY(1deg);
+  width: 100vw;
+  position: relative;
+  margin-left: -250px;
+}
+
+.exerciseCover {
+  background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0) 0%, #304C37 100%), url(../images/bggrid.png);
+  background-position: center;
+  height: 800px;
+  z-index: 1120;
+  padding: 0rem 2rem 2rem 2rem;
+  font-size: 4rem;
+  color: #fff;
+  margin-top: 2086px;
+  background-color: rgb(48, 76, 55);
+  transform: skewY(1deg);
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exercisesSpacer {
+  height: 400px;
+  padding: 2rem;
+  margin-top: 800px;
+}
+
+.verticalLine {
+  position: absolute;
+  top: 0;
+  left: 249px;
+  width: 1px;
+  height: 0;
+  background-color: #65836d;
+  transition: height 1400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: skewY(-1deg);
 }
 
 .folioBodySecs {
@@ -667,6 +758,17 @@ button {
   flex-grow: 1;
   flex-direction: row;
   gap: 0.5rem;
+  height: 96px;
+  width: 100%;
+  left: 0;
+  z-index: 1111;
+  top: 0;
+}
+
+.spacer400px {
+  display: none;
+  height: 560px;
+  max-height: 600px;
 }
 
 .folioVStack {
@@ -844,10 +946,22 @@ button {
   font-family: "Courier New", Courier, monospace;
 }
 
-.folioSection {
+.inspoSectionFD {
+  display: flex;
+  position: relative;
   padding: 0rem;
   z-index: 1020;
   background-color: #304c37;
+  top: 1rem;
+  height: 400px;
+}
+
+.folioSection {
+  position: sticky;
+  padding: 0rem;
+  z-index: 1020;
+  background-color: #304c37;
+  top: 1rem;
 }
 
 .sticky {
@@ -863,16 +977,6 @@ button {
   font-size: 1rem;
   font-family: "Courier New", Courier, monospace;
   color: #beface;
-}
-
-.testDiv1 {
-  height: 96px;
-  width: 400px;
-  border: 4px solid #FFEF9D;
-  position: fixed;
-  left: 0;
-  z-index: 1111;
-  top: 0;
 }
 
 #testDiv5 {
@@ -1074,7 +1178,7 @@ button {
   width: 100%;
   height: 100%;
   margin-top: -64px;
-  z-index: 1020;
+  z-index: 985;
   transition: transform 300ms ease-in;
   transform: translateY(0px);
 }
@@ -1102,7 +1206,7 @@ button {
   align-items: center;
   width: 100%;
   height: 100%;
-  z-index: 1000;
+  z-index: 985;
   left: 50px;
   top: 70px;
 }
@@ -1209,10 +1313,27 @@ button {
 }
 
 .coverTitles {
+  display: flex;
+  font-size: 14rem;
   font-family: "sofia sans extra condensed", sans-serif;
-  font-weight: 900;
   transition: transform 240ms ease-in;
   transform: translateY(0px);
+  color: #ffef9d;
+  font-weight: 900;
+  font-style: italic;
+  justify-content: center;
+  text-align: center;
+  line-height: 12rem;
+  width: 100%;
+}
+
+.natwalkImg {
+  display: flex;
+  padding: 1rem 0rem;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  height: 100%;
 }
 
 .iconHStack {
@@ -1384,6 +1505,7 @@ input[switch]:checked::before {
   display: flex;
   flex-direction: column;
   background-image: url(../images/bggrid.png);
+  background-color: #304c37;
   border: 1px solid var(--light-green);
   border-radius: 8px;
   flex: 1;
@@ -1592,6 +1714,10 @@ input[switch]:checked::before {
   width: 100%;
   overflow: hidden;
   border-radius: 1rem;
+  z-index: 1155;
+  position: absolute;
+  padding: 0rem;
+  background-color: blue;
 }
 .screenshotDiv img {
   flex-shrink: 0;
@@ -1601,6 +1727,34 @@ input[switch]:checked::before {
 }
 .screenshotDiv div {
   align-items: end;
+}
+
+.inspoGridFD {
+  height: auto;
+  /* box-sizing: border-box; */
+  /* justify-content: right; */
+  /* align-items: center; */
+  height: auto;
+  display: flex;
+  flex: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  z-index: 1155;
+  position: absolute;
+  padding: 0rem 0rem 0rem 216px;
+}
+.inspoGridFD img {
+  flex-shrink: 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+.inspoGridFD div {
+  height: 300px;
+  overflow: hidden;
 }
 
 .screenshotDivShort {
@@ -1923,6 +2077,17 @@ input[switch]:checked::before {
   font-weight: 300;
   width: auto;
   padding: 0.5rem 1rem;
+}
+
+.projectDescriptionAbout {
+  color: var(--main-yellow);
+  font-size: 1rem;
+  font-family: "work sans", sans-serif;
+  font-weight: 300;
+  width: auto;
+  max-width: 500px;
+  padding: 1rem 0rem 1rem 0rem;
+  margin: 0rem 1rem;
 }
 
 .blueBoldAbout {
@@ -2981,17 +3146,358 @@ mark {
   p {
     margin: 0;
   }
+  .aboutSheet {
+    display: flex;
+    padding: 0rem;
+    margin: 2rem 0rem;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: right;
+  }
+  .scrollLander {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    text-align: right;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    margin-top: -72px;
+    left: 100px;
+    z-index: 985;
+    transition: transform 300ms ease-in;
+    transform: translateY(0px);
+  }
+  .scrollLander button {
+    color: var(--light-green);
+    width: 254px;
+    border-radius: 1rem;
+    text-align: right;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: "work sans", sans-serif;
+    font-weight: 600;
+    transition: transform 240ms ease-in;
+    transform: translateY(0px);
+  }
+  .scrollLander button:hover {
+    color: var(--ctaBlue);
+    transition: all 180ms ease-in;
+  }
+  .loudTitle {
+    width: 100%;
+    height: 100vh;
+    color: var(--main-yellow);
+    margin-top: -220px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    font-family: "sofia sans extra condensed", sans-serif;
+    font-weight: 800;
+    position: fixed;
+    z-index: 980;
+    /* right: 2rem;
+    top: -2rem; */
+    transition: all 240ms ease-in;
+    transform: translateY(0px);
+  }
+  .starterPlant {
+    position: fixed;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -60px;
+    z-index: 985;
+    transition: transform 480ms ease-in-out;
+    transform: translateY(0px);
+  }
+  .starterPlant img {
+    margin-left: -180px;
+  }
+  .landerLines {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    z-index: 985;
+    left: 160px;
+    top: 0;
+  }
+  .coverTitles {
+    font-size: 6rem;
+    font-family: "sofia sans extra condensed", sans-serif;
+    transition: transform 240ms ease-in;
+    transform: translateY(0px);
+    color: #ffef9d;
+    font-weight: 900;
+    font-style: italic;
+    justify-content: center;
+    text-align: center;
+    line-height: 8rem;
+    width: 100%;
+  }
+  body {
+    background-image: url("/images/shapes_bg.svg");
+    width: 100%;
+    background-size: cover;
+    background-repeat: repeat;
+    background-color: #304c37;
+    display: flex;
+    justify-content: center;
+  }
   .wholePage {
+    width: 100%;
     flex-basis: 100%;
     display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: auto;
+  }
+  .lightGreenBorder {
+    margin-bottom: -8px;
+    height: 64px;
+    z-index: 995;
+    font-size: 4rem;
+    color: #FFEF9D;
+    border-top: 1px solid #65836d;
+    width: 100vw;
+    position: relative;
+    margin-left: -48px;
+  }
+  .lightGreenBorderTop {
+    margin-bottom: -24px;
+    height: 32px;
+    z-index: 995;
+    padding: 1rem 2rem;
+    font-size: 4rem;
+    color: #FFEF9D;
+    background-color: #304C37;
+    border-top: 1px solid #65836d;
+    transform: skewY(1deg);
+    width: 100vw;
+    position: relative;
+    margin-left: -16px;
   }
   .headerBar {
+    width: 100vw;
     display: flex;
     padding: 1rem 1rem 1rem 1rem;
+    z-index: 9999;
+  }
+  .inspoCover {
+    background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0.6) 0%, #304C37 100%), url(../images/bathroom_pattern.svg);
+    background-position: center;
+    z-index: 1140;
+    padding: 0rem 2rem 8rem 2rem;
+    font-size: 4rem;
+    color: #FFEF9D;
+    margin-top: 4rem;
+    background-color: #304C37;
+    transform: skewY(1deg);
+    width: 100%;
+    position: relative;
+    margin-left: 0px;
+  }
+  .folioSection {
+    position: relative;
+    height: auto;
+    padding: 0rem;
+    z-index: 1020;
+    background-color: #304c37;
+  }
+  .folioHStack {
+    display: flex;
+    flex-grow: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: auto;
+    width: 100%;
+    left: 0;
+    z-index: 1111;
+    top: 0;
+  }
+  .folioBodySecs {
+    margin-top: 120vh;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    height: auto;
+    max-width: 100vw;
+    padding: 0rem 1rem;
+    background-image: linear-gradient(to bottom, #304C37 0%, #304C37 100%);
+    background-position: 0 8px;
+    background-size: 100% calc(100% - 8px);
+    background-repeat: no-repeat;
+    z-index: 1020;
+  }
+  .sideNavList {
+    position: fixed;
+    width: 400px;
+    height: 87vh;
+    left: 1rem;
+    transition: transform 180ms ease, opacity 180ms ease;
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden;
+    display: none;
+    z-index: 1500;
+  }
+  .sideNavList li {
+    margin: 0rem;
+  }
+  .sideNavList a {
+    color: #65836d;
+    font-size: 1rem;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .hFlexChild1 {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/bggrid.png);
+    border: 1px solid var(--light-green);
+    border-radius: 8px;
+    flex: none;
+    height: auto;
+    box-sizing: border-box;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .natwalkImg {
+    display: flex;
+    padding: 1rem 0rem;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    height: 80vh;
+  }
+  .exerciseCover {
+    background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0) 0%, #304C37 100%), url(../images/bggrid.png);
+    background-position: center;
+    height: 480px;
+    z-index: 1120;
+    padding: 0rem 2rem 2rem 2rem;
+    font-size: 4rem;
+    color: #fff;
+    margin-top: 4rem;
+    background-color: rgb(48, 76, 55);
+    transform: skewY(1deg);
+    width: auto;
+    position: relative;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .exercisesSpacer {
+    height: 400px;
+    padding: 2rem;
+    margin-top: 800px;
+    display: none;
+  }
+  .verticalLine {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 1px;
+    height: 0;
+    background-color: #65836d;
+    transition: height 1400ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: skewY(-1deg);
+  }
+  .lightGreenBorderEx {
+    margin-bottom: -8px;
+    height: 32px;
+    z-index: 995;
+    padding: 1rem 2rem;
+    font-size: 4rem;
+    color: #FFEF9D;
+    background-color: none;
+    border-top: 1px solid #65836d;
+    width: 100vw;
+    position: relative;
+    margin-left: 0px;
+  }
+  .cursorPos {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 1300;
+  }
+  .cursorPos p {
+    color: #65836d;
+    margin: 0rem 0rem;
+    font-size: 1rem;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .screenshotDiv {
+    align-items: center;
+    height: 100%;
+    max-height: 400px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    z-index: 1155;
+    position: relative;
+    padding: 0rem;
+    background-color: blue;
+    flex-direction: column;
+  }
+  .screenshotDiv img {
+    flex-shrink: 0;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .screenshotDiv div {
+    align-items: end;
+  }
+  .inspoGridFD {
+    align-items: center;
+    height: 100%;
+    max-height: 400px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    z-index: 1155;
+    position: relative;
+    padding: 0rem;
+    background-color: blue;
+    flex-direction: column;
+  }
+  .inspoGridFD img {
+    flex-shrink: 0;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .inspoGridFD div {
+    align-items: end;
+  }
+  .inspoSectionFD {
+    position: sticky;
+    height: 95vh;
+    padding: 0rem;
+    background-color: #304c37;
+    top: 1rem;
+    margin-top: -4rem;
+    z-index: 1150;
   }
   .mobileMenu {
     margin-left: auto;
-    display: flex;
+    display: none;
     z-index: 1001;
   }
   .mobileNavContainer {
@@ -3028,6 +3534,11 @@ mark {
     color: #FFEF9D;
     padding: 1rem 1rem 0.5rem 1rem;
     font-family: "Work Sans", sans-serif;
+  }
+  .spacer400px {
+    height: 40vh;
+    max-height: 200px;
+    display: none;
   }
   .moreSuggestion {
     width: 48px;
@@ -3524,6 +4035,16 @@ mark {
     width: auto;
     max-width: 500px;
     padding: 0rem 0rem 1rem 0rem;
+  }
+  .projectDescriptionAbout {
+    color: var(--main-yellow);
+    font-size: 1rem;
+    font-family: "work sans", sans-serif;
+    font-weight: 300;
+    width: auto;
+    max-width: 500px;
+    padding: 1rem 0rem 1rem 0rem;
+    margin: 0rem 1rem;
   }
   .ctaBtnMain {
     cursor: pointer;

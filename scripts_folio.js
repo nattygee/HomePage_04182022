@@ -21,7 +21,7 @@
             entries.forEach(entry => {
                 aboutSecInView = entry.isIntersecting;
                 console.log("aboutSecInView: " + aboutSecInView);
-                
+
                 if (!aboutSecInView) {
                     // Reset to initial state when aboutSec is not in view
                     console.log("testing again 🟢🟢🟢🟢");
@@ -75,6 +75,10 @@
     }
 
     function updateSideNavHeight() {
+        if (window.innerWidth <= 600) {
+            return;
+        }
+
         console.log("viewport width: " + window.innerWidth);
         let viewportHeight = window.innerHeight;
         let viewportWidth = window.innerWidth;
@@ -182,6 +186,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         const aboutSec = document.getElementById("aboutSec");
         const wipeAwaySec = document.getElementById("projectSec");
+        const coverEcercises = document.getElementById("coverExercises");
         const revealItems = document.querySelectorAll("#natwalk, #sibling1, #sibling2");
         const projectItems = document.querySelectorAll("#project1, #project2, #project3");
         const sideNavNat = document.getElementById("sideNavNat");
@@ -232,7 +237,8 @@
                     if (rect.top <= 0) {
                         // Start cycling titles
                         if (!titleInterval) {
-                            titleInterval = setInterval(cycleTitles, 3000);
+                            /* titleInterval = setInterval(cycleTitles, 3000); */
+                            console.log("null");
                         }
                     }
                 } else {
@@ -240,17 +246,18 @@
                         verticalLine.style.height = "100%";
                         // Start cycling titles
                         if (!titleInterval) {
-                            titleInterval = setInterval(cycleTitles, 3000);
+                            /* titleInterval = setInterval(cycleTitles, 3000); */
+                            console.log("null");
                         }
                     } else {
                         verticalLine.style.height = "0";
                         // Stop cycling titles
                         if (titleInterval) {
-                            clearInterval(titleInterval);
+                            /* clearInterval(titleInterval); */
                             titleInterval = null;
                             const currentText = coverTitle.textContent;
                             coverTitle.style.textAlign = "center";
-                            titleJumbleText(coverTitle, currentText, titles[0]);
+                            /* titleJumbleText(coverTitle, currentText, titles[0]); */
                         }
                     }
                 }
@@ -332,7 +339,7 @@
             }
         }, { threshold: 0.4 });
 
-        revealObserver.observe(aboutSec);
+        revealObserver.observe(natwalk);
 
         // Observer to hide items when #wipeAwaySec1 enters, and re-reveal when it's about to leave
         const wipeObserver = new IntersectionObserver((entries) => {
@@ -388,7 +395,7 @@
             });
         }, { threshold: 0.5 });
 
-        projectObserver.observe(wipeAwaySec);
+        projectObserver.observe(coverEcercises); // used to be wipeAwaySec
 
         // Set initial state for project items
         projectItems.forEach(item => {
