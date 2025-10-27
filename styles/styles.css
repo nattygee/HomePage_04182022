@@ -3061,7 +3061,7 @@ mark {
   display: flex;
 }
 
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 1440px) {
   .heroImg {
     min-width: 200px;
     flex: 40%;
@@ -3178,6 +3178,20 @@ mark {
   }
   #aboutDivider1 {
     display: none;
+  }
+  .coverTitles {
+    display: flex;
+    font-size: 14rem;
+    font-family: "sofia sans extra condensed", sans-serif;
+    transition: transform 240ms ease-in;
+    transform: translateY(0px);
+    color: #f59dff;
+    font-weight: 900;
+    font-style: italic;
+    justify-content: center;
+    text-align: center;
+    line-height: 12rem;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 600px) {
