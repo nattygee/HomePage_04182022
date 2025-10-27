@@ -31,12 +31,22 @@ p {
 }
 
 body {
-  background-image: url("/images/shapes_bg.svg");
+  /* background-image: url("/images/shapes_bg.svg");
   background-size: cover;
-  background-repeat: repeat;
-  background-color: #304c37;
+  background-repeat: repeat; */
   display: flex;
   justify-content: center;
+  background-color: #304C37;
+}
+
+.test-gradient {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, red 80%, blue 100%);
+  z-index: 1155;
 }
 
 .hidden {
@@ -560,7 +570,7 @@ button {
 .aboutSheet {
   display: flex;
   padding: 0rem;
-  margin: 6rem 1rem;
+  margin: 6rem 1rem 0rem 1rem;
   height: auto;
   box-sizing: border-box;
   justify-content: right;
@@ -587,10 +597,10 @@ button {
 }
 
 .inspoCover {
-  background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0.6) 0%, #304C37 100%), url(../images/bathroom_pattern.svg);
+  background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0.6) 0%, #304C37 10%), url(../images/bathroom_pattern.svg);
   background-position: center;
   z-index: 1140;
-  padding: 0rem 2rem 0rem 2rem;
+  padding: 0rem 2rem 6rem 2rem;
   font-size: 4rem;
   color: #FFEF9D;
   background-color: #304C37;
@@ -725,6 +735,31 @@ button {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+}
+
+.newGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-gap: 0.5rem;
+  padding: 0rem 0rem 0rem 216px;
+  width: 100%;
+  height: 100%;
+}
+
+.newGridItem {
+  border: 1px solid var(--light-green);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  min-width: 240px;
+  min-height: 480px;
+}
+
+/* .newGridItem:last-child {   
+    grid-column: auto / -1; // starts at last column
+} */
+.item-1 {
+  grid-column: span 2;
 }
 
 .exercisePreviewPortrait {
@@ -953,11 +988,12 @@ button {
   z-index: 1020;
   background-color: #304c37;
   top: 1rem;
-  height: 400px;
+  height: auto;
 }
 
 .folioSection {
   position: sticky;
+  height: 750px;
   padding: 0rem;
   z-index: 1020;
   background-color: #304c37;
@@ -2536,12 +2572,14 @@ mark {
   display: flex;
   /* position: fixed;
   bottom: 0; */
-  margin-top: 4rem;
   padding: 4rem 1rem;
   background-color: var(--darker-green);
   align-items: center;
-  width: 100%;
+  width: 100vw;
   box-sizing: border-box;
+  margin-left: -260px;
+  z-index: 1155;
+  margin-top: -2rem;
 }
 
 .weatherStatementFtr h5 {
@@ -3149,11 +3187,11 @@ mark {
   .aboutSheet {
     display: flex;
     padding: 0rem;
-    margin: 2rem 0rem;
+    margin: 2rem 0rem 0rem 0rem;
     height: auto;
     width: 100%;
     box-sizing: border-box;
-    justify-content: right;
+    justify-content: center;
   }
   .scrollLander {
     position: fixed;
@@ -3204,6 +3242,36 @@ mark {
     transition: all 240ms ease-in;
     transform: translateY(0px);
   }
+  .newGrid {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 0.5rem;
+    padding: 0rem 1rem 4rem 1rem;
+    width: 100vw;
+    height: auto;
+    margin-left: -48px;
+    margin-right: -48px;
+  }
+  .newGridItem {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    min-width: 240px;
+    min-height: 480px;
+  }
+  .footerSection {
+    display: flex;
+    /* position: fixed;
+    bottom: 0; */
+    padding: 4rem 1rem;
+    background-color: var(--darker-green);
+    align-items: center;
+    width: 100vw;
+    box-sizing: border-box;
+    margin-left: -16px;
+    z-index: 1155;
+  }
   .starterPlant {
     position: fixed;
     height: 100%;
@@ -3244,11 +3312,10 @@ mark {
     width: 100%;
   }
   body {
-    background-image: url("/images/shapes_bg.svg");
+    background-image: url("/images/shapes_bg.svg"), linear-gradient(to bottom, #304c37 80%, #233627 100%);
+    background-size: cover, 100% 100%;
+    background-repeat: repeat, no-repeat;
     width: 100%;
-    background-size: cover;
-    background-repeat: repeat;
-    background-color: #304c37;
     display: flex;
     justify-content: center;
   }
@@ -3292,10 +3359,10 @@ mark {
     z-index: 9999;
   }
   .inspoCover {
-    background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0.6) 0%, #304C37 100%), url(../images/bathroom_pattern.svg);
+    background-image: linear-gradient(to bottom, rgba(48, 76, 55, 0.6) 0%, #304C37 5%), url(../images/bathroom_pattern.svg);
     background-position: center;
     z-index: 1140;
-    padding: 0rem 2rem 8rem 2rem;
+    padding: 0rem 2rem 2rem 2rem;
     font-size: 4rem;
     color: #FFEF9D;
     margin-top: 4rem;
@@ -3488,7 +3555,7 @@ mark {
   }
   .inspoSectionFD {
     position: sticky;
-    height: 95vh;
+    height: auto;
     padding: 0rem;
     background-color: #304c37;
     top: 1rem;
