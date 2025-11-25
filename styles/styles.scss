@@ -497,6 +497,35 @@ p {
     overflow: hidden;
     min-height: 320px;
 }
+
+.coverContent {
+    transform: skewY(-1deg); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: right; 
+    align-items: right; 
+    margin: 12rem 0rem;
+    padding-left: 248px; 
+    width: 100%;
+    border-right: 8px solid var(--ctaBlue);
+    padding-right: 2rem;
+    //height: 100%;
+}
+
+.coverDescription {
+display: flex;
+font-family: 'sofia sans extra condensed', sans-serif;
+transition: transform 240ms ease-in;
+transform: translateY(0px);
+color: #FFEF9D; 
+font-size: 1.5rem; 
+font-weight: 100; 
+text-align: right; 
+justify-content: right; 
+line-height: 2rem; 
+width: 100%;
+}
+
 .heroContentBlog {
     width: 50%;
     max-width: 720px;
@@ -667,7 +696,7 @@ p {
 
 .bgActive {
     //background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
-    border-right: 4px solid rgba(0, 0, 0, 0.5);
+    border-right: 4px solid var(--ctaBlue);
     mix-blend-mode: multiply; /* Darkens underlying content */
     font-weight: 600;
     font-size: 1rem;
@@ -710,7 +739,7 @@ p {
     padding: 1rem 2rem; 
     font-size: 4rem; 
     color: #FFEF9D; 
-    background-color:#304C37; 
+    //background-color:#304C37; 
     border-top: 1px solid #65836d; 
     transform: skewY(1deg); 
     width: 100vw; 
@@ -1116,7 +1145,7 @@ p {
 
 // regular size up to 1720px
 .loudTitleSkinny {
-    font-size: 8rem;
+    font-size: 4rem;
     line-height: 3rem;
     width: 100%;
     color: var(--main-yellow);
@@ -1428,8 +1457,8 @@ p {
     color: #ffef9d; 
     font-weight: 900; 
     font-style: italic; 
-    justify-content: center; 
-    text-align: center; 
+    justify-content: right; 
+    text-align: right; 
     line-height: 12rem; 
     width: 100%;
 }
@@ -3325,17 +3354,49 @@ mark {
 
     .coverTitles {
         display: flex;
-        font-size: 14rem;
+        font-size: 10vw;
         font-family: 'sofia sans extra condensed', sans-serif;
         transition: transform 240ms ease-in;
         transform: translateY(0px);
-        color: #f59dff; 
+        color: #F8714A; 
         font-weight: 900; 
         font-style: italic; 
-        justify-content: center; 
-        text-align: center; 
-        line-height: 12rem; 
+        justify-content: right; 
+        text-align: right; 
+        line-height: 8vw; 
         width: 100%;
+    }
+
+    .loudTitleSkinny {
+        font-size: 3rem;
+        line-height: 2rem;
+        width: 100%;
+        color: var(--main-yellow);
+        display: flex;
+        align-items: left;
+        text-transform: uppercase;
+        padding: 1rem;
+        justify-content: left;
+        font-family: 'sofia sans extra condensed', sans-serif;
+        font-weight: 700;
+        transition: transform 240ms ease-in;
+        transform: translateY(0px);
+    }
+
+    .loudTitleSkinnyXL {
+        font-size: 4rem;
+        line-height: 3rem;
+        width: 100%;
+        color: var(--main-yellow);
+        display: flex;
+        align-items: left;
+        text-transform: uppercase;
+        padding: 1rem;
+        justify-content: left;
+        font-family: 'sofia sans extra condensed', sans-serif;
+        font-weight: 700;
+        transition: transform 240ms ease-in;
+        transform: translateY(0px);
     }
 }
 
@@ -3349,6 +3410,18 @@ p {
     margin: 0;
 }
 
+    .coverContent {
+        justify-content: right; 
+        align-items: right; 
+        margin: 6rem 0rem;
+        border-right: 8px solid var(--ctaBlue);
+        padding-left: 0px; 
+        padding-right: 1rem;
+    }
+
+    .loudTitleSkinny {
+        padding: 1rem 0rem;
+    }
 
     .aboutSheet {
         display: flex;
@@ -3419,11 +3492,11 @@ p {
         grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
         grid-template-rows: repeat(5, 1fr);
         grid-gap: 0.5rem;
-        padding: 0rem 1rem 4rem 1rem;
+        padding: 0rem 0rem 4rem 0rem;
         width: 100vw;
         height: auto;
-        margin-left: -48px;
-        margin-right: -48px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     
     .newGridItem {
@@ -3475,16 +3548,16 @@ p {
     }
 
     .coverTitles {
-        font-size: 6rem;
+        font-size: 20vw;
         font-family: 'sofia sans extra condensed', sans-serif;
         transition: transform 240ms ease-in;
         transform: translateY(0px);
         
-        color: #ffef9d; 
+        color: #F8714A; 
         font-weight: 900; 
         font-style: italic; 
-        justify-content: center; 
-        text-align: center;
+        justify-content: right; 
+        text-align: right;
         line-height: 8rem; 
         width: 100%;
     }
@@ -3519,7 +3592,7 @@ p {
         border-top: 1px solid #65836d; 
         width: 100vw; 
         position:relative; 
-        margin-left: -48px;
+        margin-left: -16px;
     }
 
     .lightGreenBorderTop {
@@ -3550,15 +3623,15 @@ p {
         background-image: linear-gradient(to bottom, #304C3799 0%, #304C37 5%), url(../images/bathroom_pattern.svg); 
         background-position: center; 
         z-index: 1140; 
-        padding: 0rem 2rem 2rem 2rem; 
+        padding: 0rem 1rem 2rem 1rem; 
         font-size: 4rem; 
         color: #FFEF9D; 
         margin-top: 4rem; 
         background-color:#304C37; 
         transform: skewY(1deg); 
-        width: 100%; 
+        width: 100vw; 
         position:relative; 
-        margin-left: 0px;
+        margin-left: -16px;
     }
 
     .folioSection {
@@ -3649,8 +3722,8 @@ p {
         background-position: center; 
         height: 480px; 
         z-index: 1120; 
-        padding: 0rem 2rem 2rem 2rem; 
-        font-size: 4rem; 
+        padding: 0rem 0rem 2rem 0rem; 
+        font-size: 14rem; 
         color: #fff; 
         margin-top: 4rem; 
         background-color: rgb(48, 76, 55); 
@@ -3765,8 +3838,8 @@ p {
         height: auto;
         padding: 0rem;
         background-color: #304c37;
-        top: 1rem;
-        margin-top: -4rem;  
+        top: 0rem;
+        margin-top: 8rem;  
         z-index: 1150;
     }
 
@@ -4707,9 +4780,25 @@ p {
   @media only screen and (min-width: 1720px) {
     
     //large
+
+    .coverTitles {
+        display: flex;
+        font-size: 14rem;
+        font-family: 'sofia sans extra condensed', sans-serif;
+        transition: transform 240ms ease-in;
+        transform: translateY(0px);
+        color: #F8714A; 
+        font-weight: 900; 
+        font-style: italic; 
+        justify-content: right; 
+        text-align: right; 
+        line-height: 12rem; 
+        width: 100%;
+    }
+
     .loudTitleSkinny {
-        font-size: 12rem;
-        line-height: 9rem;
+        font-size: 4rem;
+        line-height: 3rem;
         width: 100%;
         color: var(--main-yellow);
         display: flex;
