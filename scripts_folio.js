@@ -6,6 +6,51 @@
         const mainProject1 = document.getElementById("mainProject1");
         const mainProject2 = document.getElementById("mainProject2");
         const mainProject3 = document.getElementById("mainProject3");
+
+        const accountImgNat = document.getElementById("accountImgNat");
+        const accountImgAnon = document.getElementById("accountImgAnon");
+        const sendingImg1 = document.getElementById("sendingImg1");
+        const sendingImg2 = document.getElementById("sendingImg2");
+        const carouselImg = document.querySelectorAll(".carousel-image");
+
+        carouselImg.forEach(img => {
+            img.addEventListener("mouseover", () => {
+                img.style.transform = "translateY(-64px) scale(1.1)";
+            });
+            img.addEventListener("mouseleave", () => {
+                img.style.transform = "translateY(0px) scale(1.0)";
+            });
+        });
+
+        sendingImg1.addEventListener("mouseleave", () => {
+            sendingImg1.style.transform = "translate(-60%, 0%) translate(-15px, -15px) rotate(-10deg) scale(1.0)";
+        });
+        sendingImg1.addEventListener("mouseover", () => {
+            sendingImg1.style.transform = "translate(-60%, 0%) translate(-15px, -15px) rotate(-15deg) scale(1.1)";
+        });
+        
+        sendingImg2.addEventListener("mouseover", () => {
+            sendingImg2.style.transform = "translate(-60%, 0%) translate(100px, -15px) rotate(15deg) scale(1.1)";
+        });
+        sendingImg2.addEventListener("mouseleave", () => {
+            sendingImg2.style.transform = "translate(-60%, 0%) translate(100px, -15px) rotate(10deg) scale(1.0)";
+        });
+        
+        
+        
+        accountImgNat.addEventListener("mouseleave", () => {
+            accountImgNat.style.transform = "translate(-60%, 0%) translate(-15px, -15px) rotate(-10deg) scale(1.0)";
+        });
+        accountImgNat.addEventListener("mouseover", () => {
+            accountImgNat.style.transform = "translate(-60%, 0%) translate(-15px, -15px) rotate(-15deg) scale(1.1)";
+        });
+
+        accountImgAnon.addEventListener("mouseover", () => {
+            accountImgAnon.style.transform = "translate(-60%, 0%) translate(100px, -15px) rotate(15deg) scale(1.1)";
+        });
+        accountImgAnon.addEventListener("mouseleave", () => {
+            accountImgAnon.style.transform = "translate(-60%, 0%) translate(100px, -15px) rotate(10deg) scale(1.0)";
+        });
         
         
         console.log("init project flex animations 🟥🟥🟥");
@@ -908,4 +953,115 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     
+// Add this function to scripts_folio.js
+
+function fillEmptyGridCells() {
+    const grid = document.querySelector('.newGrid');
+    if (!grid) return;
+    
+    // Get all existing grid items (excluding filler items)
+    const existingItems = Array.from(grid.querySelectorAll('.newGridItem:not(.filler-item)'));
+    
+    // Remove existing filler items
+    const fillerItems = grid.querySelectorAll('.newGridItem.filler-item');
+    fillerItems.forEach(item => item.remove());
+    
+    // Get computed grid styles
+    const gridStyles = window.getComputedStyle(grid);
+    const gridTemplateColumns = gridStyles.gridTemplateColumns;
+    
+    // Calculate number of columns
+    // For auto-fill grids, we need to measure the actual layout
+    const gridRect = grid.getBoundingClientRect();
+    const firstItem = existingItems[0];
+    if (!firstItem || existingItems.length === 0) return;
+    
+    const itemRect = firstItem.getBoundingClientRect();
+    const gap = parseFloat(gridStyles.gap) || 0;
+    const itemWidth = itemRect.width;
+    const availableWidth = gridRect.width - parseFloat(gridStyles.paddingLeft) - parseFloat(gridStyles.paddingRight);
+    
+    // Calculate columns: (available width + gap) / (item width + gap)
+    const columns = Math.floor((availableWidth + gap) / (itemWidth + gap));
+    
+    if (columns <= 0) return;
+    
+    // Calculate how many items are in the last row
+    const totalItems = existingItems.length;
+    const itemsInLastRow = totalItems % columns;
+    
+    // If last row is not full, add filler items
+    if (itemsInLastRow > 0) {
+        const fillerCount = columns - itemsInLastRow;
+        
+        // Array of image sources to use for fillers (you can customize this)
+        const fillerImages = [
+            'images/grad1.png',
+            'images/grad2.png',
+            'images/grad3.png',
+            'images/Ecommerce Checkout.png',
+            'images/Next Artwork.png',
+            'images/redthing.png'
+        ];
+        
+        for (let i = 0; i < fillerCount; i++) {
+            const fillerItem = document.createElement('div');
+            fillerItem.className = 'newGridItem filler-item';
+            fillerItem.style.display = 'flex'; // Will be hidden if not needed
+            
+            const img = document.createElement('img');
+            // Cycle through filler images
+            const imgSrc = fillerImages[i % fillerImages.length];
+            img.src = imgSrc;
+            img.alt = '';
+            
+            fillerItem.appendChild(img);
+            grid.appendChild(fillerItem);
+        }
+    }
+}
+
+// Debounce function to optimize resize performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Use ResizeObserver for better performance (watches grid size changes)
+function initGridFiller() {
+    const grid = document.querySelector('.newGrid');
+    if (!grid) return;
+    
+    // Initial fill
+    fillEmptyGridCells();
+    
+    // Use ResizeObserver to watch for grid size changes
+    const resizeObserver = new ResizeObserver(debounce(() => {
+        fillEmptyGridCells();
+    }, 150));
+    
+    resizeObserver.observe(grid);
+    
+    // Also listen to window resize as fallback
+    window.addEventListener('resize', debounce(() => {
+        fillEmptyGridCells();
+    }, 150));
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    initGridFiller();
+});
+
+// Also run after images load to account for layout shifts
+window.addEventListener('load', () => {
+    setTimeout(fillEmptyGridCells, 100);
+});
   
