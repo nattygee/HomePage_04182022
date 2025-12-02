@@ -130,7 +130,7 @@
         
         // set heights
         document.getElementById("testDiv1").style.height = (viewportHeight - 32) + "px";
-        document.getElementById("testDiv5").style.height = (viewportHeight - 32) + "px";
+        //document.getElementById("testDiv5").style.height = (viewportHeight - 32) + "px";
         /* document.getElementById("inspoSec").style.height = (viewportHeight - 32) + "px"; */
         document.getElementById("sideNav").style.height = (viewportHeight - 120) + "px";
         
@@ -277,7 +277,7 @@
                 // Different trigger points based on scroll direction
                 if (scrollingDown) {
                     if (rect.top <= viewportHeight/2) {
-                        verticalLine.style.height = "100%";
+                        verticalLine.style.width = "100%";
                     }
                     if (rect.top <= 0) {
                         // Start cycling titles
@@ -288,7 +288,7 @@
                     }
                 } else {
                     if (rect.top <= 0) {
-                        verticalLine.style.height = "100%";
+                        verticalLine.style.width = "100%";
                         // Start cycling titles
                         if (!titleInterval) {
                             /* titleInterval = setInterval(cycleTitles, 3000); */
@@ -953,7 +953,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     
-// Add this function to scripts_folio.js
+/* // Add this function to scripts_folio.js
 
 function fillEmptyGridCells() {
     const grid = document.querySelector('.newGrid');
@@ -1064,4 +1064,4 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     setTimeout(fillEmptyGridCells, 100);
 });
-  
+   */
