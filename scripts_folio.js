@@ -224,7 +224,7 @@
     let secScrollY = JSON.parse(localStorage.getItem("secScrollY")) || [];
     let activeSecs = JSON.parse(localStorage.getItem("activeSecs")) || [];
     
-    const sections = document.querySelectorAll(".folioSection");
+    const sections = document.querySelectorAll(".folioSection, .folioSectionAbout, .inspoSectionFD");
     const navLinks = document.querySelectorAll(".sideNavList a");
   
     // about section card 1 reveal
@@ -670,7 +670,7 @@ const observer = new IntersectionObserver(entries => {
         console.log("👉👉" + secScrollY);
     });
 
-}, { threshold: 1 });
+}, { threshold: 0.3 });
 
 sections.forEach(section => {
     observer.observe(section);
