@@ -230,6 +230,26 @@ button {
   z-index: 10;
 }
 
+.backgroundBlurToTop {
+  width: 100%;
+  height: 48px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin-bottom: 0px;
+  background: linear-gradient(to top, var(--darker-green) 0%, rgba(var(--darker-green-rgb), 0.5) 50%, rgba(var(--darker-green-rgb), 0.4) 60%, rgba(var(--darker-green-rgb), 0.2) 70%, transparent 100%);
+  -webkit-mask: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.5) 66%, transparent 100%);
+          mask: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.5) 66%, transparent 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
+  z-index: 10;
+  /* transition: backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease, opacity 0.3s ease;
+  opacity: 0;  // Start hidden to match parent */
+}
+
 .carousel-wrapper {
   display: flex;
   flex-direction: row;
@@ -452,16 +472,21 @@ button {
 
 .inspoDescription {
   padding: 0rem 0.5rem;
+  width: 100%;
   position: absolute;
   margin-top: -2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 .inspoDescription p {
   margin-bottom: 0.5rem;
   color: #ffffff;
-  font-family: "Courier New", Courier, monospace;
-  font-size: x-small;
+  font-family: "work sans", sans-serif;
+  font-size: small;
   padding: 0rem 0.5rem;
   border-radius: 0.5rem;
+  z-index: 11;
+  position: relative;
 }
 .inspoDescription p.pdark {
   color: #1d2e21;
@@ -858,24 +883,36 @@ button {
 
 .newGridItem {
   display: flex;
+  position: relative;
   border: 1px solid var(--light-green);
   border-radius: 0.5rem;
   overflow: hidden;
   min-width: 240px;
   min-height: 420px;
   max-height: 440px;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 .newGridItem img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
+.newGridItem:hover .inspoDescription {
+  opacity: 1;
+}
 
-/* .newGridItem:last-child {   
-    grid-column: auto / -1; // starts at last column
-} */
+.gridItemImg {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridItem1 {
+  width: 100%;
+}
+
 .item-1 {
   grid-column: span 2;
 }
@@ -1180,6 +1217,22 @@ button {
 .loudTitleSkinny {
   font-size: 4rem;
   line-height: 3rem;
+  width: 100%;
+  color: var(--main-yellow);
+  display: flex;
+  align-items: left;
+  text-transform: uppercase;
+  padding: 1rem;
+  justify-content: left;
+  font-family: "sofia sans extra condensed", sans-serif;
+  font-weight: 700;
+  transition: transform 240ms ease-in;
+  transform: translateY(0px);
+}
+
+.loudTitleSkinnySmall {
+  font-size: 2rem;
+  line-height: 1.5rem;
   width: 100%;
   color: var(--main-yellow);
   display: flex;
@@ -1784,14 +1837,17 @@ input[switch]:checked::before {
 /* Or target individual projects */
 #mainProject1:hover {
   flex: 4;
+  background-color: var(--darker-green-trans);
 }
 
 #mainProject2:hover {
   flex: 4;
+  background-color: var(--darker-green-trans);
 }
 
 #mainProject3:hover {
   flex: 4;
+  background-color: var(--darker-green-trans);
 }
 
 /* 
@@ -2243,6 +2299,9 @@ input[switch]:checked::before {
   padding: 0.5rem 1rem;
 }
 
+/* .mobileSidePad1 {
+    padding: 0rem 1rem;
+} */
 .projectDescriptionAbout {
   color: var(--main-yellow);
   font-size: 1rem;
@@ -3437,10 +3496,21 @@ mark {
     margin-left: 0px;
     margin-right: 0px;
   }
+  .newGridInspo {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0rem 1rem 0px;
+    width: 100%;
+    height: 100%;
+  }
+  .inspoDescription {
+    opacity: 1;
+  }
   .newGridItem {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    align-items: flex-end;
+    justify-content: flex-start;
     border-radius: 0.5rem;
     overflow: hidden;
     min-height: 480px;
@@ -3449,6 +3519,17 @@ mark {
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .gridItemImg {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .item-1 {
+    grid-column: span 2;
+    min-height: 240px;
   }
   .footerSection {
     display: flex;
@@ -3555,7 +3636,7 @@ mark {
     padding: 0rem 1rem 2rem 1rem;
     font-size: 4rem;
     color: #FFEF9D;
-    margin-top: 4rem;
+    margin-top: 0;
     background-color: #304C37;
     transform: skewY(1deg);
     width: 100vw;
@@ -4292,6 +4373,9 @@ mark {
     width: auto;
     max-width: 500px;
     padding: 0rem 0rem 1rem 0rem;
+  }
+  .mobileSidePad1 {
+    padding: 0rem 1rem;
   }
   .projectDescriptionAbout {
     color: var(--main-yellow);
