@@ -224,7 +224,7 @@
     let secScrollY = JSON.parse(localStorage.getItem("secScrollY")) || [];
     let activeSecs = JSON.parse(localStorage.getItem("activeSecs")) || [];
     
-    const sections = document.querySelectorAll(".folioSection, .folioSectionAbout, .inspoSectionFD");
+    const sections = document.querySelectorAll(".navFlagExercises, .navFlagAbout, .navFlagInspo"); // was .folioSectionAbout
     const navLinks = document.querySelectorAll(".sideNavList a");
   
     // about section card 1 reveal
@@ -543,16 +543,42 @@
         animationFrame = requestAnimationFrame(animate);
     }
 
-    // Original jumble text function for nav items
+    const navItemTexts = {
+        'aboutSecNav': '001. About Nat',
+        'projectSecNav': '002. Exercises',
+        'exerciseSecNav': '003. Inspiration'
+    };
+    
+    // Around line 547-635, replace the jumbleText function with:
     function jumbleText(element, originalText, duration = 1000) {
+        // Get the hardcoded text for this element based on its ID
+        const elementId = element.id;
+        const hardcodedText = navItemTexts[elementId] || originalText;
+        
+        // Store the hardcoded text as the source of truth
+        const storedOriginalText = hardcodedText;
+        
+        // Create a unique ID for this animation
+        const animationId = Date.now() + Math.random();
+        
+        // Cancel any existing animation on this element
+        if (element._jumbleAnimationFrame) {
+            cancelAnimationFrame(element._jumbleAnimationFrame);
+            // Immediately restore the hardcoded text
+            element.textContent = hardcodedText;
+        }
+        
+        // Store the animation ID on the element
+        element._jumbleAnimationId = animationId;
+        
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         let startTime = null;
         let animationFrame;
-        const startScrambleDuration = 300; // Time for letters to start scrambling in sequence
-        const allScrambleDuration = 400; // All letters scramble together
-        const settleDuration = 600; // Time for characters to settle in sequence
-        const startCharDelay = startScrambleDuration / originalText.length;
-        const settleCharDelay = settleDuration / originalText.length;
+        const startScrambleDuration = 300;
+        const allScrambleDuration = 400;
+        const settleDuration = 600;
+        const startCharDelay = startScrambleDuration / storedOriginalText.length;
+        const settleCharDelay = settleDuration / storedOriginalText.length;
         
         function easeInOut(t) {
             const eased = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
@@ -560,6 +586,11 @@
         }
         
         function animate(currentTime) {
+            // Check if this animation is still the active one
+            if (element._jumbleAnimationId !== animationId) {
+                return; // Stop if a new animation started
+            }
+            
             if (!startTime) startTime = currentTime;
             const elapsed = currentTime - startTime;
             const totalDuration = startScrambleDuration + allScrambleDuration + settleDuration;
@@ -571,51 +602,65 @@
                 const isInAllScramblePhase = elapsed >= startScrambleDuration && elapsed < (startScrambleDuration + allScrambleDuration);
                 const isInSettlePhase = elapsed >= (startScrambleDuration + allScrambleDuration);
                 const settlePhaseElapsed = Math.max(0, elapsed - (startScrambleDuration + allScrambleDuration));
-
-                for (let i = 0; i < originalText.length; i++) {
-                    if (originalText[i] === ' ' || originalText[i] === '.') {
-                        jumbledText += originalText[i];
+    
+                for (let i = 0; i < storedOriginalText.length; i++) {
+                    if (storedOriginalText[i] === ' ' || storedOriginalText[i] === '.') {
+                        jumbledText += storedOriginalText[i];
                         continue;
                     }
-
+    
                     if (isInStartPhase) {
                         const charStartProgress = Math.max(0, Math.min(1, (elapsed - (i * startCharDelay)) / startCharDelay));
                         if (charStartProgress > 0) {
                             jumbledText += characters[Math.floor(Math.random() * characters.length)];
                         } else {
-                            jumbledText += originalText[i];
+                            jumbledText += storedOriginalText[i];
                         }
                     } else if (isInAllScramblePhase) {
                         jumbledText += characters[Math.floor(Math.random() * characters.length)];
                     } else {
                         const charSettleProgress = Math.max(0, Math.min(1, (settlePhaseElapsed - (i * settleCharDelay)) / settleCharDelay));
                         if (charSettleProgress >= 1) {
-                            jumbledText += originalText[i];
+                            jumbledText += storedOriginalText[i];
                         } else {
                             jumbledText += characters[Math.floor(Math.random() * characters.length)];
                         }
                     }
                 }
                 
-                element.textContent = jumbledText;
-                animationFrame = requestAnimationFrame(animate);
+                // Double check this animation is still active before updating
+                if (element._jumbleAnimationId === animationId) {
+                    element.textContent = jumbledText;
+                    animationFrame = requestAnimationFrame(animate);
+                    element._jumbleAnimationFrame = animationFrame;
+                }
             } else {
-                element.textContent = originalText;
+                // Animation complete - ALWAYS use hardcoded text, regardless of animation state
+                // This ensures the text is always correct even if multiple animations conflicted
+                const currentHardcodedText = navItemTexts[elementId] || hardcodedText;
+                element.textContent = currentHardcodedText;
+                
+                // Clean up only if this was the active animation
+                if (element._jumbleAnimationId === animationId) {
+                    element._jumbleAnimationId = null;
+                    element._jumbleAnimationFrame = null;
+                }
             }
         }
         
         animationFrame = requestAnimationFrame(animate);
+        element._jumbleAnimationFrame = animationFrame;
     }
 
 // Create an Intersection Observer
 const observer = new IntersectionObserver(entries => {
-    let intersectFlag = false;
+    /* let intersectFlag = false;
 
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             intersectFlag = true;
         }
-    });
+    }); */
 
     entries.forEach(entry => {
         let activeSectionID = entry.target.id;
@@ -627,14 +672,19 @@ const observer = new IntersectionObserver(entries => {
                 localStorage.setItem("secScrollY", JSON.stringify(secScrollY));
                 localStorage.setItem("activeSecs", JSON.stringify(activeSecs));
             }
-
-            // Remove active class from all
-            activeSecs.forEach(section => {
+            // 🟦 NEW
+            const allNavItems = document.querySelectorAll(".sideNavItem");
+            allNavItems.forEach(navItem => {
+                navItem.classList.remove("bgActive");
+            });
+            
+            // 🟦 OLD: Remove active class from all
+            /* activeSecs.forEach(section => {
                 const navElement = document.getElementById(section + "Nav");
                 if (navElement) {
                     navElement.classList.remove("bgActive");
                 }
-            });
+            }); */
 
             // Add active class to the current one and jumble text
             const currentNavElement = document.getElementById(activeSectionID + "Nav");
@@ -652,7 +702,7 @@ const observer = new IntersectionObserver(entries => {
                 localStorage.setItem("activeSecs", JSON.stringify(activeSecs));
             }
 
-            const navElement = document.getElementById(activeSectionID + "Nav");
+            /* const navElement = document.getElementById(activeSectionID + "Nav");
             if (navElement) {
                 navElement.classList.remove("bgActive");
             }
@@ -665,12 +715,12 @@ const observer = new IntersectionObserver(entries => {
                     const originalText = lastNavElement.textContent;
                     jumbleText(lastNavElement, originalText);
                 }
-            }
+            } */
         }
         console.log("👉👉" + secScrollY);
     });
 
-}, { threshold: 0.3 });
+}, { threshold: 0.8 });
 
 sections.forEach(section => {
     observer.observe(section);

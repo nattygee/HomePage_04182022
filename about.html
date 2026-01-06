@@ -98,8 +98,10 @@
                             </div>
             </ul>
             <div id="mainContentDiv" class="folioBodySecs">
-                <div class="lightGreenBorderTop"></div>
-                <section id="aboutSec" class="folioSectionAbout">
+                <div class="lightGreenBorderTop">
+                    <div id="aboutSec" class="navFlagAbout" style="position: absolute; top: 0; left: 0; width: 24px; height: 80vh; z-index: 1160;"></div>
+                </div>
+                <section  class="folioSectionAbout"> <!-- ID used to be id="aboutSec" -->
                     <div id="testDiv1" class="folioHStack">
                         <div id="natwalk" class="hFlexChild1" style="align-items: left;">
                             <div class="labelGreen"><p class="datePosted" style="font-weight: 300;">Visual</p></div>
@@ -265,7 +267,8 @@
                 <!-- <div class="spacer400px"></div> -->
 
                 <!-- PROJECTS START HERE 🏚️ 🏚️ 🏚️ -->
-                <section id="projectSec" style="z-index: 1130;" class="folioSection">
+                <section style="z-index: 1130;" class="folioSection">
+                    <div id="projectSec" class="navFlagExercises" style="position: absolute; top: 0; left: 0; width: 24px; height: 80vh; z-index: 1260;"></div>
                     <div class="lightGreenBorderEx" style="margin-top: -2rem; background-color: #304C37;"></div>
                     <div id="verticalLine" class="verticalLine"></div>
                     <div id="testDiv5" class="folioHStack">
@@ -523,7 +526,7 @@
                         
                     </div>
                     
-                    <section class="footerSection">
+                    <div class="footerSection">
                         <div style="height: 700px; position: absolute; bottom: 0; width: 100%; background-image: linear-gradient(to top, rgb(27, 47, 32) 50%, rgba(48, 76, 55, 0) 100%); width: 100vw; margin-left: -1rem; z-index: 1;"></div>
                         <div class="scroller" data-animated="true" style="max-width: 4000px; z-index: 1195;">
                             <div class="horStack scrollerBanner">
@@ -537,7 +540,7 @@
                         <div class="footerImg">
                             <img src="" alt="">
                         </div>
-                    </section>
+                    </div>
                 </section>
                 <!-- <div id="coverDivExercises" style="background-image: linear-gradient(to bottom, rgba(195, 66, 37, 0.5) 0%, rgba(224, 84, 52, 1) 100%), url(../images/exerciseBGPattern.svg); background-position: center; height: 110vh; z-index: 1140; padding: 8rem 2rem; font-size: 4rem; color: #FFEF9D; margin-top: 40vh; background-color:rgb(224, 84, 52); transform: skewY(1deg); width: 100vw; position:relative; margin-left: -250px;"> -->
                 <div id="coverDivExercises" class="inspoCover">
@@ -550,7 +553,8 @@
                         <p class="coverDescription">( Just some stuff that I'm a fan of )</p>
                     </div>
 
-                        <section id="exerciseSec" class="inspoSectionFD" style="z-index: 1150; transform: skewY(-1deg);">
+                        <section class="inspoSectionFD" style="z-index: 1150; transform: skewY(-1deg);">
+                            <div id="exerciseSec" class="navFlagInspo" style="position: absolute; top: 0; left: 0; width: 24px; height: 80vh; z-index: 1260;"></div>
                             <!-- 🟧 🟧 🟧 🟧 🟧 -->
                             <!-- <div class="screenshotGrid">
                                 <div class="screenshotPortrait" data-name="illustration"></div>
@@ -643,7 +647,7 @@
                         </section>
                 </div>
                 <!-- <div class="test-gradient" style="width: 100%; height: 300px;">Hello</div> -->
-                <section class="footerSection">
+                <div class="footerSection">
                     <div class="scroller" data-animated="true" style="max-width: 4000px;">
                         <div class="horStack scrollerBanner">
                             <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
@@ -656,7 +660,7 @@
                     <div class="footerImg">
                         <img src="" alt="">
                     </div>
-                </section>
+                </div>
                 <!-- 🚀 spacer
                      🚀 spacer
                      🚀 spacer -->
