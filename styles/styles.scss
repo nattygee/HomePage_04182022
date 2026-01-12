@@ -24,12 +24,12 @@ p {
     --darker-orange: #E05434;
     --darkest-orange: #c34225;
     --main-yellow: #FFEF9D;
-    --darker-green: rgb(35, 54, 39);
+    --darker-green: #233627;
     --darker-green-trans: rgba(35, 54, 39, .9);
-    --even-darker-green: #1d2e21;
+    --even-darker-green: rgb(29, 46, 33);
     --light-green: #65836d;
     --black: #111410;
-    --ctaBlue: #A3D9FF;
+    --ctaBlue: rgb(163, 217, 255);
     --ctaBlue-hover: #82bfea;
 }
 
@@ -2925,6 +2925,48 @@ mark {
     margin-top: -2rem;
 }
 
+.footerSectionBottom {
+    display: flex;
+    /* position: fixed;
+    bottom: 0; */
+    padding: 4rem 1rem 4rem 1rem;
+    background-color: var(--darker-green);
+    align-items: center;
+    width: 100vw;
+    box-sizing: border-box;
+    margin-left: -260px;
+    z-index: 1155;
+    margin-top: -2rem;
+}
+
+.copyTextBtn {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: row; 
+    gap: .5rem; 
+    border-radius: 4px; 
+    border: 1px solid var(--ctaBlue); 
+    color: var(--ctaBlue);
+    height: auto; 
+    width: auto; 
+    background-color: rgba(29, 46, 33, 0.9); 
+    padding: .5rem 1rem; 
+    cursor: pointer;
+    transition: 180ms;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(14, 25, 16, 0.5);
+        transition: 180ms;
+    }
+    p {
+        color: var(--ctaBlue);
+        font-size: 1rem;
+        font-family: 'work sans', sans-serif;
+        font-weight: 400;
+    }
+}
+
 .weatherStatementFtr {
     h5 {
         font-weight: 100;
@@ -3746,6 +3788,79 @@ p {
         box-sizing: border-box;
         margin-left: -16px;
         z-index: 1155;
+    }
+
+    .footerSectionBottom {
+        display: flex;
+        /* position: fixed;
+        bottom: 0; */
+        padding: 4rem 1rem;
+        padding-bottom: 6rem;
+        background-color: var(--darker-green);
+        align-items: center;
+        width: 100vw;
+        box-sizing: border-box;
+        margin-left: -16px;
+        z-index: 1155;
+        margin-top: -2rem;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: visible; // Hide images that peek outside
+        padding-top: 2rem;
+        // Progressive blur on left edge
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 48px;
+            height: 100%;
+            background: linear-gradient(to right, 
+                var(--darker-green) 0%,
+                rgba(var(--darker-green-rgb), 0.5) 50%,
+                rgba(var(--darker-green-rgb), 0.4) 60%,
+                rgba(var(--darker-green-rgb), 0.2) 70%,
+                transparent 100%
+            );
+            mask: linear-gradient(to right, 
+            black 0%,
+            rgba(0, 0, 0, 0.7) 33%,
+            rgba(0, 0, 0, 0.3) 66%,
+            transparent 100%
+        );
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            pointer-events: none;
+            z-index: 10;
+        }
+    
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 48px;
+            height: 100%;
+            background: linear-gradient(to left, 
+                var(--darker-green) 0%,
+                rgba(var(--darker-green-rgb), 0.5) 50%,
+                transparent 100%
+            );
+            mask: linear-gradient(to left, 
+            black 0%,
+            rgba(0, 0, 0, 0.7) 33%,
+            rgba(0, 0, 0, 0.3) 66%,
+            transparent 100%
+            );
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            pointer-events: none;
+            z-index: 10;
+        }
     }
 
     .starterPlant {

@@ -22,10 +22,10 @@
 </head>
 <body style="background-image: none; overflow-x: hidden;" onmousemove="coordinate(event)">
     <div class="wholePage">
-        <div class="headerBar">
+        <div class="headerBar" style="z-index: 9000;">
             <a href="inspiration.html"><div class="logo">
                 <!-- <img src="images/FDLogo_2022.svg" alt=""> -->
-                <img src="images/fdlogo2.gif" style="height: 48px; z-index: 9999;" alt="">
+                <img src="images/fdlogo2.gif" style="height: 48px;" alt="">
             </div></a>
             <!-- Desktop Menu -->
             <nav class="navItems">
@@ -58,7 +58,7 @@
             </div>
         </div>
         <!-- 🛑🛑🛑 CLOSE HEADER BAR ☝️ 🛑🛑🛑 -->
-<!-- <div class="testDiv1"></div> -->
+
 
         <div class="aboutSheet">
                 <div id="shuffleTitle" class="loudTitle">
@@ -180,7 +180,7 @@
                                     </div>
                                 </div>
                                 
-                                <p class="projectDescription mobileSidePad1">Currently at Canada Post helping to shape experiences on the mobile app including MyMail, Track, and Shipping</p>
+                                <p class="projectDescription mobileSidePad1">Optimizing the single place in the app where all user account info and settings are managed. <a href="#" style="color: var(--main-orange); text-decoration: none; cursor: default;">Coming soon</a></p>
                                 <div class="projImgDiv" style="width: 100%; height: 500px; position: relative;">
                                     <img src="images/Account page w AL.svg" id="accountImgNat" alt="" style="width: 240px; position:absolute; left: calc(50% - 15px); top: 10%; transform: translate(-60%, 0%) translate(-15px, -15px) rotate(-10deg); transition: transform 0.1s ease-in-out;">
                                     <img src="images/Account — Anon.svg" id="accountImgAnon" alt="" style="width: 240px; position:absolute; left: calc(50% + 15px); top: 15%; transform: translate(-60%, 0%) translate(100px, -15px) rotate(10deg); transition: transform 0.1s ease-in-out;">
@@ -200,10 +200,10 @@
                                     </div>
                                 </div>
 
-                                <p class="projectDescription mobileSidePad1">A new way to send a package with Canada Post. This is a new feature that allows users to send a package with Canada Post. <a href="#" style="color: var(--main-orange); text-decoration: none;">Coming soon</a></p>
+                                <p class="projectDescription mobileSidePad1">A new way to send a package with Canada Post: This is a feature that allows users to create a shipping label from within the app. <a href="#" style="color: var(--main-orange); text-decoration: none;">Contact for details</a></p>
                                 <div class="projImgDiv" style="width: 100%; height: 500px; position: relative;">
-                                    <a href="#"><img src="images/Account page w AL.svg" id="sendingImg1" alt="" style="width: 240px; position:absolute; left: calc(50% - 15px); top: 10%; transform: translate(-60%, 0%) translate(-15px, -15px) rotate(-10deg); transition: transform 0.1s ease-in-out;"></a>
-                                    <img src="images/Account — Anon.svg" id="sendingImg2" alt="" style="width: 240px; position:absolute; left: calc(50% + 15px); top: 15%; transform: translate(-60%, 0%) translate(100px, -15px) rotate(10deg); transition: transform 0.1s ease-in-out;">
+                                    <a href="#"><img src="images/sending details.png" id="sendingImg1" alt="" style="width: 240px; position:absolute; left: calc(50% - 15px); top: 10%; transform: translate(-60%, 0%) translate(-15px, -15px) rotate(-10deg); transition: transform 0.1s ease-in-out;"></a>
+                                    <img src="images/sending payment.png" id="sendingImg2" alt="" style="width: 240px; position:absolute; left: calc(50% + 15px); top: 15%; transform: translate(-60%, 0%) translate(100px, -15px) rotate(10deg); transition: transform 0.1s ease-in-out;">
                                 </div>
                             </div>
                             <div id="mainProject3" class="vertProjIndividual2">
@@ -218,7 +218,7 @@
                                     </div>
                                 </div>
                                 <!-- <div class="loudTitleSkinny">🏆 Small wins — Canada Post</div> -->
-                                <p class="projectDescription mobileSidePad1">A collection of small wins from the last 3 years at Canada Post. All together we have been bringing the visual aesthetic up to par with modern native standards.</p>
+                                <p class="projectDescription mobileSidePad1">A collection of small wins from the last 4 years at Canada Post — All together boosting the visual aesthetic, usability and interactions of the app. <a href="#" style="color: var(--main-orange); text-decoration: none; cursor: default;">Coming soon</a></p>
                             <!-- Add this carousel container -->
                                 <div class="carousel-container" style="width: 100%; height: 500px; position: relative; overflow: visible;">
                                     <div class="carousel-wrapper">
@@ -647,7 +647,7 @@
                         </section>
                 </div>
                 <!-- <div class="test-gradient" style="width: 100%; height: 300px;">Hello</div> -->
-                <div class="footerSection">
+                <div class="footerSectionBottom" style="flex-direction: column;">
                     <div class="scroller" data-animated="true" style="max-width: 4000px;">
                         <div class="horStack scrollerBanner">
                             <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
@@ -659,6 +659,15 @@
                     </div>
                     <div class="footerImg">
                         <img src="" alt="">
+                    </div>
+                    <!-- <p class="projectDescriptionAbout" style="">Thanks for stopping by.</p> -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;">
+                        <p class="projectDescriptionAbout" style="text-align: center;">Thanks for stopping by. <br>Care to chat? Please reach out at 
+                            <div id="copyTextBtn" class="copyTextBtn">
+                                <p class="projectDescriptionAbout" style="color: var(--ctaBlue); padding: 0rem 0rem; margin: 0rem;">timomarigreen@gmail.com</p>
+                                <img src="images/icon_copy_blue.svg" alt="">
+                            </div>
+                        </p>
                     </div>
                 </div>
                 <!-- 🚀 spacer

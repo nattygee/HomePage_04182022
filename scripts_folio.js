@@ -950,6 +950,52 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSideNavItems(); // Run once on load
 });
 
+// Email copy with jumble animation
+document.addEventListener("DOMContentLoaded", function () {
+    const copyTextBtn = document.getElementById('copyTextBtn');
+    if (!copyTextBtn) return; // Exit if element doesn't exist (for pages that don't have it)
+    
+    const emailText = copyTextBtn.querySelector('p');
+    if (!emailText) return;
+    
+    const originalEmail = 'timomarigreen@gmail.com';
+    const copiedText = '✅ copied to clipboard';
+    
+    copyTextBtn.addEventListener('click', function() {
+        // Copy email to clipboard
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            // Modern Clipboard API (requires HTTPS)
+            navigator.clipboard.writeText(originalEmail).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        } else {
+            // Fallback for non-secure contexts (file://, HTTP)
+            const textArea = document.createElement('textarea');
+            textArea.value = originalEmail;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+            document.body.removeChild(textArea);
+        }
+        
+        // Jumble to "copiedtoclipboard"
+        titleJumbleText(emailText, originalEmail, copiedText);
+        
+        // After 5 seconds, jumble back to email
+        setTimeout(function() {
+            titleJumbleText(emailText, copiedText, originalEmail);
+        }, 5000);
+    });
+});
+
     // cursor velocity line
     let lastX = 0, lastY = 0, lastTime = Date.now();
 
