@@ -146,12 +146,15 @@ button {
 }
 
 .wholePage {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: inline-block;
     align-items: center;
     //justify-content: center;
     flex-direction: column;
+    background-color: #65836d;
+    max-width: 1440px;
+    position: relative;
 }
 
 //nav
@@ -750,6 +753,7 @@ width: 100%;
 }
 
 .aboutSheet {
+    position: relative;
     display: flex;
     padding: 0rem;
     margin: 6rem 1rem 0rem 1rem;
