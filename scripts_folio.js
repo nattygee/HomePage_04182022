@@ -478,6 +478,27 @@
                 console.log("Stopped hovering over mainProject3");
             });
         }
+
+
+            // Resume button with device detection
+
+                const resumeBtn = document.getElementById('resumeBtn');
+                if (!resumeBtn) return;
+                
+                resumeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Detect if mobile (using same breakpoint as your existing code)
+                    const isMobile = window.innerWidth <= 600;
+                    
+                    // Open appropriate resume PDF in new tab
+                    const resumeUrl = isMobile 
+                        ? 'files/Resume2026_Mobile_NatGreen.pdf'
+                        : 'files/Resume2026_NatGreen.pdf';
+                    
+                    window.open(resumeUrl, '_blank');
+                });
+
     });
 
     // Function for title cycling animation

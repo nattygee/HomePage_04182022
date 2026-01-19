@@ -150,8 +150,6 @@ button {
   display: inline-block;
   align-items: center;
   flex-direction: column;
-  background-color: #65836d;
-  max-width: 1440px;
   position: relative;
 }
 
