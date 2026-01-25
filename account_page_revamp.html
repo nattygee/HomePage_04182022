@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="/images/fd_favicon.svg" type="image/x-icon">
+        <!-- React CDN scripts
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        Babel to translate JSX?¿
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+
+
+    <title>Account Page Revamp</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS12X22RCN"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FS12X22RCN');
+    </script>
+    <!-- End Google Tag Manager -->
+
+</head>
+<body style="background-image: none; overflow-x: hidden; display: flex; justify-content: center; align-items: center; " onmousemove="coordinate(event)">
+    <div class="wholePage">
+        <div class="headerBar" style="z-index: 9000;">
+            <a href="index.html"><div class="logo">
+                <!-- <img src="images/FDLogo_2022.svg" alt=""> -->
+                <img src="images/fdlogo2.gif" style="height: 48px;" alt="">
+            </div></a>
+            <!-- Desktop Menu -->
+            <nav class="navItems">
+            </nav>
+            <!-- Mobile Menu -->
+            <div class="mobileMenu">
+                <a href="#" id="mobileMenuBtn"><img src="images/mobileMenuIcon.svg" id="mobileMenuIcon" alt=""></a>
+            </div>
+        </div>
+        <!-- 🛑🛑🛑 CLOSE HEADER BAR ☝️ 🛑🛑🛑 -->
+
+        <a href="index.html" id="backToHome" style="gap: 0.5rem;">
+            <img src="images/backhome_icon3.svg" alt="">
+            <p class="imgDesktop">Home page</p>
+        </a>
+        
+
+        <div class="that" style="width: auto; height: auto; display: flex; justify-content: center; align-items: center;">
+            <div class="this" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
+                <div class="accountPageRevamp" style="max-width: 1400px;">
+                    <div class="projMasterContent">
+                        <div class="projHeroImg imgDesktop">
+                            <img src="images/accountpagerevamp_headerimg.png">
+                        </div>
+                        <div class="projHeroImg imgMobile"> <!-- style="padding: 1rem; margin-top: 2rem;" -->
+                            <img src="images/mobile_img_test3.png">
+                        </div>
+                        <div class="projHeroWords">
+                            <div class="projMasterContentTitle">
+                                <h1 class="projectTitleXL">Account <br> Page <br> Revamp</h1>
+                            </div>
+                            <div class="pyellowregular">
+                                <p>The Canada Post account page is a positive example of taking a relatively simple task and, through observation, negotiation and a test-first approach, tacking on some additional updates to validate some hunches and, at the very least, gather some learnings. <br><br>  In this case it worked out.</p>
+                            </div>
+                            <div class="projStatBlockGroup">
+                                <div class="projStatBlockItem">
+                                    <div class="loudTitleSkinnySmall" style="width: fit-content; padding: 0;">+9% over 6 months</div>
+                                    <p class="pyellowregular">ratio of signed in accounts using the app</p>
+                                </div>
+                                <div class="projStatBlockItem">
+                                    <div class="loudTitleSkinnySmall" style="width: fit-content; padding: 0;">+100% over 3 months</div>
+                                    <p class="pyellowregular">people using Automatic Tracking within the app</p>
+                                </div>
+                                <div class="projStatBlockItem">
+                                    <div class="loudTitleSkinnySmall" style="width: fit-content; padding: 0;">+2% over 3 months</div>
+                                    <p class="pyellowregular">people using MyMail</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 🚨🚨🚨🚨🚨🚨🚨🚨  -->
+
+                    <div class="projMasterContent">
+                        <div class="projLargeImgAlt imgMobile" style="position: relative;">
+                            <div class="projImgDescription">
+                                <p style="color: yellow; max-width: 240px;">Two pages of the old app that made up the profile and app preferences.</p>
+                            </div>
+                            <img src="images/old_designs_img_mobile2.png" style="width: 100vw; height: auto;">
+                        </div>
+                        <div class="projHeroWords">
+                            <div class="projMasterContentTitle">
+                                <div class="projTitleSkinnyXL">the app is growing, but legacy issues are persisting</div>
+                            </div>
+                            <div class="pyellowregular">
+                                <p>At the time the team was in the early stages of ramping up mobile app resourcing so we needed to tighten up the areas we knew people would be visiting the most. 
+                                <br><br>
+                                One such area was the “Account settings” and “Preferences” sections... confusing, right? With duplicate sections, disparate styling, and some revealing interviews it was obvious that there was an opportunity for consolidation and improvement.</p>
+                            </div>
+                        </div>
+                        <div class="projLargeImgAlt imgDesktop" style="position: relative;">
+                            <img src="images/oldaccountpage.png" style="max-width: 800px;">
+                            <div class="projImgDescription">
+                                <p style="color: yellow;">Two pages of the old app that made up the profile and app preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 🚨🚨🚨🚨🚨🚨🚨🚨  -->
+
+                    <div class="projMasterContent">
+                        <div  style="position: relative; flex: 1 1 0;">
+                            <img class="imgDesktop" src="images/gauntlet_img.png" alt="" style="width: 100%; height: auto;">
+                            <img class="imgMobile" src="images/design_guantlet_mobile2.png" alt="" style="width: 100vw; height: auto;">
+                            <div class="projImgDescription">
+                                <p style="color: yellow;">Meeting our basic needs with some iterations of a new integrated settings page design.</p>
+                            </div>
+                        </div>                        
+                        <div style="display: flex; flex-direction: column; gap: 2rem; flex: 1 1 0;">
+                            <div class="contentStack" style="display: flex; flex-direction: column; gap: .5rem;">
+                                <div class="projMasterContentTitle">
+                                    <div class="projTitleSkinnyXL">running the gauntlet of exploration and negotiation</div>
+                                </div>
+                                <div class="pyellowregular">
+                                    <p>With that we worked through the information architecture now that we were merging multiple pages, followed by the visual design to modernize the aesthetic and ended up with a couple different variations to test with users.</p>
+                                </div>
+                            </div>
+
+                            <div class="contentStack" style="display: flex; flex-direction: column; gap: .5rem;">
+                                <div class="projMasterContentTitle">
+                                    <div class="projTitleSkinnyXL">We landed on our design, but how might we take it a step further?</div>
+                                </div>
+                                <div class="pyellowregular">
+                                    <p>Arguably the funnest part of each project is attempting to sell something that extends somewhat outside of the initial requirements. We knew that this now single page was to be one of our most highly trafficked pages, so why not take advantage?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 🚨🚨🚨🚨🚨🚨🚨🚨  -->
+
+                    <div class="projMasterContent" style="display: flex; flex-direction: column;">
+                        <div  style="position: relative; flex: 1 1 0;">
+                            <img class="imgDesktop" src="images/anon_confusion.png" alt="" style="max-width: 900px; height: auto;">
+                        <img class="imgMobile" src="images/account_sameness_img_mobile.png" alt="" style="max-width: 110vw; height: auto;">
+                            <div class="projImgDescription">
+                                <p style="color: yellow;">No obvious affordance that communicated whether you were signed in or not.</p>
+                            </div>
+                        </div>  
+                        <div style="display: flex; flex-direction: column; gap: 2rem;">
+                            <div class="projMasterContentTitle">
+                                <div class="projTitleSkinnyXL" >Let people know that they are logged out</div>
+                            </div>
+                            <div class="pyellowHStack">
+                                <p class="pyellowregular" style="flex: 1;">It sounds silly, but it’s not immediately obvious whether you are signed in or not when opening the app. We also know that our users have low awareness of many of the best features that we have to offer. The combo of those things creates significant headwinds within our core initiative that was to boost registrations at the time.<br><br> With that in mind, the thought came to <br><br> <span style="font-style: italic; font-weight: 600; color: var(--main-orange);">A) provide a sign in prompt, and</span> <br><br> <span style="font-style: italic; font-weight: 600; color: var(--main-orange);"> B) tease our available features that required an account. </span></p>
+
+                                <!-- <div class="diagonalSeparator" style="height: 180px;">
+                                    <img src="images/diagonal_separator.svg" alt="" style="height:100%; width: auto;">
+                                </div> -->
+
+                                <p class="pyellowregular" style="flex: 1;">Not only could people discover new useful features that aided in retention, but it would also serve to quickly inform users of their account and feature status. 
+                                <br><br>
+                                Were they logged in? Was their Automatic Tracking or MyMail feature setup? Now they would know.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 🚨🚨🚨🚨🚨🚨🚨🚨  -->
+
+                    <div class="projMasterContent">
+                        <img class="imgCenterMobile imgMobile" src="images/detail_img_mobile.png" alt="" style="max-width: 110vw; height: auto;">
+                        <img class="imgCenterMobile imgDesktop" src="images/final_details.png" alt="">
+                        <div style="display: flex; flex-direction: column; gap: 2rem;">
+                            <div class="projMasterContentTitle">
+                                <div class="projTitleSkinnyXL">we realized meaningful gains in both account creation and core feature usage</div>
+                            </div>
+                            <div class="pyellowregular">
+                                <p>MyMail and Automatic Tracking usage went up, alongside a meaningful jump in the ratio of logged in users to guest users. Something that we might not have achieved if we had not first asked,</p>
+                                <br><br>
+                                <span style="font-style: italic; font-weight: 600; color: var(--main-orange);">"How might we take it a step further?"</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 🚨🚨🚨🚨🚨🚨🚨🚨  -->
+
+                    <div class="statBubbleGroup">
+                        <div class="statBubble">
+                            <h1 class="loudTitleSkinnyXL" style="justify-content: center; text-align: center; color: var(--main-orange);">+9%</h1>
+                            <div class="loudTitleSkinnySmall" style="width: fit-content; padding: 0; line-height: 2rem;">over 3 months</div>
+                            <p style="font-size: 1rem; font-weight: 300; color: var(--main-yellow); font-family: 'work sans',  sans-serif; justify-content: center; text-align: center;">ratio of signed in accounts using the app</p>
+                        </div>
+                        <div class="statBubble">
+                            <h1 class="loudTitleSkinnyXL" style="justify-content: center; text-align: center; color: var(--main-orange);">+100%</h1>
+                            <div class="loudTitleSkinnySmall" style="width: fit-content; padding: 0; line-height: 2rem;">over 6 months</div>
+                            <p style="font-size: 1rem; font-weight: 300; color: var(--main-yellow); font-family: 'work sans',  sans-serif; justify-content: center; text-align: center;">people using Automatic Tracking within the app</p>
+                        </div>
+                        <div class="statBubble">
+                            <h1 class="loudTitleSkinnyXL" style="justify-content: center; text-align: center; color: var(--main-orange);">+2%</h1>
+                            <div class="loudTitleSkinnySmall" style="width: fit-content; padding: 0; line-height: 2rem;">over 3 months</div>
+                            <p style="font-size: 1rem; font-weight: 300; color: var(--main-yellow); font-family: 'work sans',  sans-serif; justify-content: center; text-align: center;">people using <br> MyMail</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- <div class="test-gradient" style="width: 100%; height: 300px;">Hello</div> -->
+                <div class="footerSectionBottom" style="flex-direction: column; margin-left:0; margin-top: 0;">
+                    <div class="scroller" data-animated="true" style="max-width: 4000px;">
+                        <div class="horStack scrollerBanner">
+                            <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
+                            <p class="bannerText" style="text-transform:uppercase;">Sometimes wedostuff forfun Sometimes wedostuff forfun Sometimes wedostuff forfun</p> 
+                        </div>
+                    </div>
+                    <div class="weatherStatementFtr">
+                        <h5 id="weatherStatementFtr"></h5>
+                    </div>
+                    <div class="footerImg">
+                        <img src="" alt="">
+                    </div>
+                    <!-- <p class="projectDescriptionAbout" style="">Thanks for stopping by.</p> -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;">
+                        <p class="projectDescriptionAbout" style="text-align: center;">Thanks for stopping by. <br>Care to chat? Please reach out at 
+                            <div id="copyTextBtn" class="copyTextBtn">
+                                <p class="projectDescriptionAbout" style="color: var(--ctaBlue); padding: 0rem 0rem; margin: 0rem;">timomarigreen@gmail.com</p>
+                                <img src="images/icon_copy_blue.svg" alt="">
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        
+    </div>
+
+    </body>
+</html>
+<script src="scripts_folio.js"></script>

@@ -119,6 +119,29 @@
         handleScroll();
     }
 
+    // Show/hide Back to Home — only when past halfway
+    const backToHome = document.getElementById('backToHome');
+    if (backToHome) {
+    function showHideBackToHome() {
+        const pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        const halfway = pageHeight / 2;
+        if (window.pageYOffset > halfway) {
+        backToHome.style.transition = '200ms';
+        backToHome.style.transform = 'translateY(-16px)';
+        backToHome.style.opacity = '1';
+        } else {
+        backToHome.style.transition = '200ms';
+        backToHome.style.transform = 'translateY(16px)';
+        backToHome.style.opacity = '0';
+        }
+    }
+
+    backToHome.style.opacity = '0';
+    backToHome.style.transform = 'translateY(16px)';
+    window.addEventListener('scroll', showHideBackToHome);
+    showHideBackToHome();
+    }
+
     function updateSideNavHeight() {
         if (window.innerWidth <= 600) {
             return;

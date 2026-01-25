@@ -65,7 +65,9 @@ for (let i = 0; i < galBtns.length; i++) {
 }
 
 function showHideBackToTop(e) {
-  if(window.pageYOffset>2400) {
+  const pageHeight = Math.max(document.body.scrollHeight);
+  const halfway = pageHeight / 2;
+  if(window.pageYOffset > halfway) {
     backToTop.style.transition = "200ms";
     backToTop.style.transform = "translateY(-8px)";
     backToTop.style.opacity = 1;
