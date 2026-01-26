@@ -64,10 +64,33 @@ for (let i = 0; i < galBtns.length; i++) {
   galBtns[i].addEventListener('click', filterActive);
 }
 
+// Show/hide Back to Home — only when past halfway
+const backToHome = document.getElementById('backToHome');
+if (backToHome) {
+    function showHideBackToHome() {
+        const pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        const halfway = pageHeight / 2;
+        if (window.pageYOffset > halfway) {
+        backToHome.style.transition = '200ms';
+        backToHome.style.transform = 'translateY(-16px)';
+        backToHome.style.opacity = '1';
+        } else {
+        backToHome.style.transition = '200ms';
+        backToHome.style.transform = 'translateY(16px)';
+        backToHome.style.opacity = '0';
+        }
+    }
+
+    backToHome.style.opacity = '0';
+    backToHome.style.transform = 'translateY(16px)';
+    window.addEventListener('scroll', showHideBackToHome);
+    showHideBackToHome();
+}
+
 function showHideBackToTop(e) {
   const pageHeight = Math.max(document.body.scrollHeight);
   const halfway = pageHeight / 2;
-  if(window.pageYOffset > halfway) {
+  if(window.pageYOffset > 1000) {
     backToTop.style.transition = "200ms";
     backToTop.style.transform = "translateY(-8px)";
     backToTop.style.opacity = 1;

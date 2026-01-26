@@ -37,6 +37,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: #304C37;
+  overflow-x: hidden;
 }
 
 .test-gradient {
@@ -379,7 +380,7 @@ button {
   border-radius: 4px;
   font-family: "work sans", sans-serif;
   font-weight: 400;
-  bottom: 1rem;
+  bottom: 0.5rem;
   left: 32px;
   width: auto;
   background-color: rgba(17, 17, 17, 0.25);
@@ -450,7 +451,7 @@ button {
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
   height: 40px;
-  padding: 0rem 2rem;
+  padding: 0rem 1rem;
   display: flex;
   overflow-x: auto;
 }
@@ -880,17 +881,6 @@ button {
   display: none;
 }
 
-.screenshotGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-template-rows: repeat(minmax(200px, 400px));
-  grid-gap: 0.5rem;
-  padding: 0rem 2rem;
-  margin: 1rem 0rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
 .aboutSheet {
   position: relative;
   display: flex;
@@ -1083,6 +1073,18 @@ button {
   height: 100%;
 }
 
+.screenshotGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-gap: 0.5rem;
+  padding: 0rem 1rem;
+  margin: 1rem 0rem;
+  width: 100%;
+  box-sizing: border-box;
+  grid-auto-flow: dense;
+}
+
 .newGridItem {
   display: flex;
   position: relative;
@@ -1121,6 +1123,70 @@ button {
 
 .height-1 {
   grid-row: span 2;
+}
+
+.screenshotPortrait {
+  position: relative;
+  border: 1px solid var(--light-green);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  grid-column: span 1;
+  min-width: 240px;
+  min-height: 380px;
+  max-height: 400px;
+}
+.screenshotPortrait img {
+  width: 100%;
+  cursor: pointer;
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+.screenshotLandscape {
+  border: 1px solid var(--light-green);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  grid-column: span 2;
+  min-width: 240px;
+  min-height: 380px;
+}
+.screenshotLandscape img {
+  cursor: pointer;
+  width: 100%;
+}
+
+.screenshotDiv {
+  align-items: center;
+  height: 100%;
+  max-height: 400px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1155;
+  position: absolute;
+  padding: 0rem;
+}
+.screenshotDiv img {
+  flex-shrink: 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.screenshotDiv div {
+  align-items: end;
+}
+
+.screenshotDivLandscape {
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-height: 400px;
+  display: flex;
+}
+.screenshotDivLandscape img {
+  max-height: 500px;
 }
 
 .exercisePreviewPortrait {
@@ -2096,7 +2162,7 @@ input[switch]:checked::before {
 
 .inspoHeader {
   grid-column: span 2;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: 1px solid var(--light-green);
   background-image: url("../images/inpiration_ledeimg.svg");
   background-size: contain;
@@ -2110,65 +2176,6 @@ input[switch]:checked::before {
   margin-top: 0rem;
   margin-right: 0rem;
   width: 240px;
-}
-
-.screenshotPortrait {
-  border-radius: 1rem;
-  overflow: hidden;
-  grid-column: span 1;
-  min-width: 180px;
-}
-.screenshotPortrait img {
-  width: 100%;
-  cursor: pointer;
-  /* display: block;
-  margin-left: auto;
-  margin-right: auto; */
-}
-
-.screenshotLandscape {
-  border-radius: 1rem;
-  overflow: hidden;
-  grid-column: span 2;
-  height: 100%;
-}
-.screenshotLandscape img {
-  cursor: pointer;
-  height: 100%;
-}
-
-/* .screenshotDivLandscape {
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    display: flex;
-    //width: 500px;
-    img {
-        max-height: 400px;
-    }
-} */
-.screenshotDiv {
-  align-items: center;
-  height: 100%;
-  max-height: 400px;
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 1rem;
-  z-index: 1155;
-  position: absolute;
-  padding: 0rem;
-  background-color: blue;
-}
-.screenshotDiv img {
-  flex-shrink: 0;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.screenshotDiv div {
-  align-items: end;
 }
 
 .inspoGridFD {
@@ -2237,17 +2244,6 @@ input[switch]:checked::before {
   /* display: block;
   margin-left: auto;
   margin-right: auto; */
-}
-
-.screenshotDivLandscape {
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  max-height: 400px;
-  display: flex;
-}
-.screenshotDivLandscape img {
-  max-height: 500px;
 }
 
 .screenshotContent {
@@ -3005,6 +3001,18 @@ mark {
   margin-top: -2rem;
 }
 
+.footerSectionBottomHome {
+  display: flex;
+  /* position: fixed;
+  bottom: 0; */
+  padding: 4rem 1rem 6rem 1rem;
+  background-color: var(--darker-green);
+  align-items: center;
+  width: 100vw;
+  box-sizing: border-box;
+  z-index: 1155;
+}
+
 .copyTextBtn {
   display: flex;
   align-items: center;
@@ -3443,6 +3451,7 @@ mark {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10000;
 }
 
 #lightboxInspo img {
@@ -3824,7 +3833,7 @@ mark {
     display: flex;
     flex-direction: row;
     opacity: 1;
-    padding: 12px 1rem;
+    padding: 0.5rem 1rem;
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -3832,7 +3841,7 @@ mark {
     border-radius: 4px;
     font-family: "work sans", sans-serif;
     font-weight: 400;
-    bottom: 0.5rem;
+    bottom: 0rem;
     left: 16px;
     width: auto;
     background-color: rgba(17, 17, 17, 0.25);
@@ -4301,7 +4310,6 @@ mark {
     z-index: 1155;
     position: relative;
     padding: 0rem;
-    background-color: blue;
     flex-direction: column;
   }
   .screenshotDiv img {
@@ -4758,10 +4766,12 @@ mark {
     width: 240px;
   }
   .screenshotPortrait {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
     grid-column: span 2;
     min-width: 120px;
+    min-height: 100px;
+    max-height: 440px;
   }
   .screenshotPortrait img {
     width: 100%;
@@ -4770,9 +4780,10 @@ mark {
     margin-right: auto; */
   }
   .screenshotLandscape {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
     grid-column: span 2;
+    min-height: 200px;
   }
   .screenshotDiv {
     align-items: center;
