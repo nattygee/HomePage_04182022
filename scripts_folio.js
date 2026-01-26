@@ -122,26 +122,55 @@
     // Show/hide Back to Home — only when past halfway
     const backToHome = document.getElementById('backToHome');
     if (backToHome) {
-    function showHideBackToHome() {
-        const pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-        const halfway = pageHeight / 2;
-        if (window.pageYOffset > halfway) {
-        backToHome.style.transition = '200ms';
-        backToHome.style.transform = 'translateY(-16px)';
-        backToHome.style.opacity = '1';
-        } else {
-        backToHome.style.transition = '200ms';
-        backToHome.style.transform = 'translateY(16px)';
-        backToHome.style.opacity = '0';
+        function showHideBackToHome() {
+            const pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+            const halfway = pageHeight / 2;
+            if (window.pageYOffset > halfway) {
+            backToHome.style.transition = '200ms';
+            backToHome.style.transform = 'translateY(-16px)';
+            backToHome.style.opacity = '1';
+            } else {
+            backToHome.style.transition = '200ms';
+            backToHome.style.transform = 'translateY(16px)';
+            backToHome.style.opacity = '0';
+            }
         }
+
+        backToHome.style.opacity = '0';
+        backToHome.style.transform = 'translateY(16px)';
+        window.addEventListener('scroll', showHideBackToHome);
+        showHideBackToHome();
     }
 
-    backToHome.style.opacity = '0';
-    backToHome.style.transform = 'translateY(16px)';
-    window.addEventListener('scroll', showHideBackToHome);
-    showHideBackToHome();
-    }
 
+     // Show/hide Back to Top — only in final third of page
+     const backToTop = document.getElementById('backToTop');
+     if (backToTop) {
+         function showHideBackToTop() {
+             const pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+             const twoThirds = pageHeight * (2 / 3);
+             if (window.pageYOffset > twoThirds) {
+                 backToTop.style.transition = '200ms';
+                 backToTop.style.transform = 'translateY(-16px)';
+                 backToTop.style.opacity = '1';
+             } else {
+                 backToTop.style.transition = '200ms';
+                 backToTop.style.transform = 'translateY(16px)';
+                 backToTop.style.opacity = '0';
+             }
+         }
+ 
+         backToTop.style.opacity = '0';
+         backToTop.style.transform = 'translateY(16px)';
+         window.addEventListener('scroll', showHideBackToTop);
+         showHideBackToTop();
+ 
+         backToTop.addEventListener('click', (e) => {
+             e.preventDefault();
+             window.scrollTo({ top: 0, behavior: 'smooth' });
+         });
+     }
+     
     function updateSideNavHeight() {
         if (window.innerWidth <= 600) {
             return;

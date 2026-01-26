@@ -376,25 +376,28 @@ button {
 
 #backToTop {
 display: flex;
-opacity: 0;
+opacity: 1;
+gap: 0.5rem;
 padding: 0.5rem 1rem;
 justify-content: center;
 align-items: center;
 flex-direction: row;
-position:fixed;
-border-radius: 1rem;
+position: fixed;
+border-radius: 4px;
 font-family: 'work sans', sans-serif;
-font-weight: 600;
+font-weight: 400;
+font-size: 1rem;
 bottom: 1rem;
 left: 50%;
 margin-left: -4rem;
-width: 100px;
+width: auto;
 background-color: rgba($color: #111111, $alpha: 0.25);
 backdrop-filter: blur(4px);
 color: var(--main-yellow);
 z-index: 1;
-transform: translateY(-16px);
+transform: translateY(-16px) rotate(0deg);
 transition: 300ms;
+z-index: 9999;
 cursor: pointer;
 p {
     margin: 0;
@@ -403,15 +406,16 @@ p {
 
 #backToHome {
 display: flex;
+gap: 0.5rem;
 opacity: 0;
 padding: 0.5rem 1rem;
 justify-content: center;
 align-items: center;
 flex-direction: row;
 position:fixed;
-border-radius: 1rem;
+border-radius: 4px;
 font-family: 'work sans', sans-serif;
-font-weight: 600;
+font-weight: 400;
 bottom: 1rem;
 left: 32px;
 //margin-left: -96px;
@@ -3135,7 +3139,7 @@ mark {
     display: flex;
     /* position: fixed;
     bottom: 0; */
-    padding: 4rem 1rem 4rem 1rem;
+    padding: 4rem 1rem 6rem 1rem;
     background-color: var(--darker-green);
     align-items: center;
     width: 100vw;
@@ -4012,10 +4016,10 @@ p {
         align-items: center;
         flex-direction: row;
         position:fixed;
-        border-radius: 1rem;
+        border-radius: 4px;
         font-family: 'work sans', sans-serif;
-        font-weight: 600;
-        bottom: 1rem;
+        font-weight: 400;
+        bottom: 0.5rem;
         left: 16px;
         //margin-left: -96px;
         width: auto;
@@ -4029,7 +4033,37 @@ p {
         p {
             margin: 0;
         }
+    }
+    
+    #backToTop {
+        display: flex;
+        opacity: 1;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: fixed;
+        border-radius: 4px;
+        font-family: 'work sans', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        bottom: 0.5rem;
+        left: 50%;
+        margin-left: -4rem;
+        width: auto;
+        background-color: rgba($color: #111111, $alpha: 0.25);
+        backdrop-filter: blur(4px);
+        color: var(--main-yellow);
+        z-index: 1;
+        transform: translateY(-16px) rotate(0deg);
+        transition: 300ms;
+        z-index: 9999;
+        cursor: pointer;
+        p {
+            margin: 0;
         }
+    }
 
 
     .coverContent {
