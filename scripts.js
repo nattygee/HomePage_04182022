@@ -279,6 +279,44 @@ function filterImage(e) {
   });
 }
 
+function buildMediaView(mediaEl) {
+  if (!mediaEl) return null;
+
+  if (mediaEl.tagName.toLowerCase() === 'video') {
+    const video = document.createElement('video');
+    // copy over any class/style if present
+    if (mediaEl.getAttribute('class')) video.setAttribute('class', mediaEl.getAttribute('class'));
+    if (mediaEl.getAttribute('style')) video.setAttribute('style', mediaEl.getAttribute('style'));
+
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = 'metadata';
+
+    const sources = mediaEl.querySelectorAll('source');
+    sources.forEach(source => {
+      const s = document.createElement('source');
+      s.src = source.src;
+      s.type = source.type || '';
+      video.appendChild(s);
+    });
+
+    return video;
+  }
+
+  // default to img
+  const img = document.createElement('img');
+  img.src = mediaEl.src;
+  if (mediaEl.getAttribute('class')) img.setAttribute('class', mediaEl.getAttribute('class'));
+  if (mediaEl.getAttribute('style')) img.setAttribute('style', mediaEl.getAttribute('style'));
+  return img;
+}
+
+function getMediaEl(card) {
+  return card.querySelector('div > video, div > img');
+}
+
 imagesInspo.forEach(image => {
   image.addEventListener('click', e => {
     lightboxInspo.classList.add('active')
@@ -288,35 +326,17 @@ imagesInspo.forEach(image => {
     /* const prevImgContainer = document.createElement('img')
     prevImgContainer.classList.add('lightboxImgNot') */
 
-    const imgView = document.createElement('img')
-    let currentImg = image
+    let currentImg = image;
 
-    /* const nextImgContainer = document.createElement('img')
-    nextImgContainer.classList.add('lightboxImgNot') */
+const targetMedia = getMediaEl(image);
+const mediaView = buildMediaView(targetMedia);
 
-
-    //const nextOne = image.nextElementSibling
-    //const prevOne = image.previousElementSibling
-
-    const targetImgSrc = image.querySelector('div > img')
-    imgView.src = targetImgSrc.src    
-    
-    /* const prevImgSrc1 = currentImg.previousElementSibling
-    const prevImg1 = prevImgSrc1.querySelector('div > img')
-    prevImgContainer.src = prevImg1.src
-
-    const nextImgSrc1 = currentImg.nextElementSibling
-    const nextImg1 = nextImgSrc1.querySelector('div > img')
-    nextImgContainer.src = nextImg1.src */
-
-
-
-    while (lightboxInspo.firstChild) {
-      lightboxInspo.removeChild(lightboxInspo.firstChild)
-    }
-    
-    /* lightboxInspo.appendChild(prevImgContainer) */
-    lightboxInspo.appendChild(imgView)
+while (lightboxInspo.firstChild) {
+  lightboxInspo.removeChild(lightboxInspo.firstChild);
+}
+if (mediaView) {
+  lightboxInspo.appendChild(mediaView);
+}
     /* lightboxInspo.appendChild(nextImgContainer) */
 
 // should probably spend some time to make these separate functions to apply to the 4 event listeners

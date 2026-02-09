@@ -12,6 +12,17 @@
         const sendingImg1 = document.getElementById("sendingImg1");
         const sendingImg2 = document.getElementById("sendingImg2");
         const carouselImg = document.querySelectorAll(".carousel-image");
+        const blogPostButtons = document.querySelectorAll('.blogPostButton');
+
+        blogPostButtons.forEach((button) => {
+            const bpIconImg = button.querySelector('img');
+            button.addEventListener('mouseenter', () => { 
+                bpIconImg.src = 'images/blogpost_icon_h2.svg';
+            });
+            button.addEventListener('mouseleave', () => { 
+                bpIconImg.src = 'images/icon_linkout2.svg';
+            });
+        });
 
         carouselImg.forEach(img => {
             img.addEventListener("mouseover", () => {
@@ -118,6 +129,8 @@
         updateFlexValues('initial'); */
         handleScroll();
     }
+
+
 
     // Show/hide Back to Home — only when past halfway
     const backToHome = document.getElementById('backToHome');

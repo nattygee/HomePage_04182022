@@ -23,7 +23,7 @@
         <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
         Babel to translate JSX?¿
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
-    <title>Inspo</title>
+    <title>Inspiration</title>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS12X22RCN"></script>
@@ -46,8 +46,8 @@
     <div class="wholePage">
         <div class="headerBar">
             <a href="index.html"><div class="logo">
-                <!-- <img src="images/FDLogo_2022.svg" alt=""> -->
                 <img src="images/fdlogo2.gif" style="height: 48px;" alt="">
+                <!-- <video style="height: 48px;" autoplay loop muted playsinline preload="metadata"><source src="images/fdlogo2.webm" type="video/webm"><source src="images/fdlogo2.mp4" type="video/mp4"></video> -->
             </div></a>
             <!-- Desktop Menu -->
             <nav class="navItems">
@@ -115,6 +115,12 @@
             <button id="galBtnSheets" type="button" data-name="sheet" class="filterBtn">
                 Sheets
             </button>
+            <button id="galBtnCards" type="button" data-name="cards" class="filterBtn">
+                Cards
+            </button>
+            <button id="galBtnHero" type="button" data-name="hero" class="filterBtn">
+                Hero
+            </button>
             <div class="spacer"></div>
             <div class="searchContainer" style="display: inline-flex; align-items: center; margin-left: 1rem; display: none;">
                 <input type="text" id="searchBar" placeholder="Search projects..." style="padding: 0.5rem 1rem; border: 1px solid var(--light-green); background: rgba(48, 76, 55, 0.5); color: #FFEF9D; border-radius: 0.75rem; font-family: 'work sans', sans-serif; font-size: 1rem; width: 300px; height: auto;">
@@ -125,45 +131,154 @@
             <p>Back to top</p>
             <img src="images/backtotop_icon.svg" alt="">
         </button>
-        <div class="topNote">Welcome to Formdreams: <br><br> A visual collection of standout UX, UI, and graphic design – built by the designers, developers, and product teams shaping today's top apps and websites</div>
+        <div class="topNote" style="flex-direction: column;"><EM>INSPIRATION:</EM> <br><br> <p class="projectDescription" style="margin-top: -1.5rem;">  A visual collection of standout UX, UI, and graphic design – built by the designers, developers, and product teams shaping today's top apps and websites</p></div>
 <div class="screenshotGrid">
-    <div class="inspoHeader">
+    <div class="inspoHeader" style="position: relative; overflow: hidden;">
         <!-- <img src="images/updated_daily.svg" alt=""> -->
-        <div class="topNoteDesktop">Welcome to Formdreams: <br><br> A visual collection of standout UX, UI, and graphic design – built by the designers, developers, and product teams shaping today's top apps and websites</div>
+        <div class="topNoteDesktop"><EM>INSPIRATION:</EM> <br><br> A visual collection of standout UX, UI, and graphic design – built by the designers, developers, and product teams shaping today's top apps and websites</div>
+        <div class="backgroundBlurToTop" style="height: 80%;"></div>
     </div>
 
     <!-- <div class="newGridItem">
         <div class="gridItemImg">
-            <img src="images/notion_input_filters.gif" loading="lazy" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/notion_input_filters.webm" type="video/webm"><source src="images/notion_input_filters.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Notion input filters | 2025</p>
         </div>
         <div class="backgroundBlurToTop"></div>
     </div>
     <div class="newGridItem">
         <div class="gridItemImg">
-            <img src="images/notion_input_filters.gif" loading="lazy" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/notion_input_filters.webm" type="video/webm"><source src="images/notion_input_filters.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Notion input filters | 2025</p>
         </div>
         <div class="backgroundBlurToTop"></div>
     </div>
     <div class="newGridItem item-1" data-name="illustration">
         <div class="gridItemImg gridItem1">
-            <img src="images/arc_splash.gif" loading="lazy"style="height: 100%;" alt="">
+            <video style="height: 100%;" autoplay loop muted playsinline preload="metadata"><source src="images/arc_splash.webm" type="video/webm"><source src="images/arc_splash.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Arc splash | 2025</p>
         </div>
         <div class="backgroundBlurToTop"></div>
     </div> -->
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/tahoe_menu_bg_dark.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p>Tahoe Menu w Image | Jan. 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/tahoe_menu_dark.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p>Tahoe Menu | Jan. 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotPortrait" data-name="toast">
+        <div class="screenshotDiv">
+            <img src="images/cursor_tooltip.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p>Cursor Tooltip | Jan. 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotPortrait" data-name="toast">
+        <div class="screenshotDiv">
+            <img src="images/googlesheets_toast.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p class="pdark">Google Sheets Toast | Jan. 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu">
+        <div class="screenshotDiv">
+            <img src="images/notion_releasemenu.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p>Notion Release Menu | Jan. 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotPortrait" data-name="hero">
+        <div class="screenshotDiv">
+            <img src="images/nationex_heromobile.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p class="pdark">Nationex Hero Mobile | Jan. 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotPortrait" data-name="cards">
+        <div class="screenshotDiv">
+            <img src="images/nationex_card.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p class="pdark">Nationex Card | Jan. 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotLandscape" data-name="hero">
+        <div class="screenshotDivLandscape">
+            <img src="images/nationex_herodesktop.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p class="pdark">Nationex Hero Desktop | Jan. 2026</p>
+        </div>
+        <!-- <div class="backgroundBlurToTop"></div> -->
+    </div>
+    <div class="screenshotPortrait" data-name="input">
+        <div class="screenshotDiv">
+            <img src="images/nationex_input.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p>Nationex Input | Jan. 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotPortrait" data-name="menu hero">
+        <div class="screenshotDiv">
+            <img src="images/nationex_navmobile.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p class="pdark">Nationex Nav Mobile | Jan. 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotPortrait" data-name="cards">
+        <div class="screenshotDiv">
+            <img src="images/the1_1.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p class="pdark">The1 Amsterdam | 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
+    <div class="screenshotPortrait" data-name="cards hero">
+        <div class="screenshotDiv">
+            <img src="images/the1_2.png" alt="">
+        </div>
+        <div class="inspoDescriptionInspo">
+            <p class="pdark">The1 Amsterdam | 2026</p>
+        </div>
+        <div class="backgroundBlurToTop"></div>
+    </div>
     <div class="screenshotLandscape" data-name="illustration">
         <div class="screenshotDivLandscape">
             <img src="images/ruggable_menu_illustration1.png" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Ruggable | Jan 2025</p>
         </div>
     </div>
@@ -171,7 +286,7 @@
         <div class="screenshotDiv">
             <img src="images/ruggable_menu_illustration.png" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Ruggable | Feb 2025</p>
         </div>
     </div>
@@ -179,7 +294,7 @@
         <div class="screenshotDivLandscape">
             <img src="images/ruggable_menu_illustration-1.png" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Ruggable | Jan 2025</p>
         </div>
     </div>
@@ -187,7 +302,7 @@
         <div class="screenshotDiv">
             <img src="images/arc_input_form.png" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Arc | Feb 2025</p>
         </div>
     </div>
@@ -195,7 +310,7 @@
         <div class="screenshotDivShort">
             <img src="images/notion_aiinput.png" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Notion | Feb 2025</p>
         </div>
     </div>
@@ -203,740 +318,742 @@
         <div class="screenshotDiv">
             <img src="images/notion_ailist.png" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Notion | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="toast">
         <div class="screenshotDivShort">
-            <img src="images/chatgpt_toast.png" alt="">
+            <img src="images/chatgpt_toast.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>ChatGPT | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="illustration gif">
         <div class="screenshotDivShort">
-            <img src="images/whatsapp_emptystate.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/whatsapp_emptystate.webm" type="video/webm"><source src="images/whatsapp_emptystate.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Whatsapp | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="input filters gif">
         <div class="screenshotDivShort">
-            <img src="images/notion_input_filters.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/notion_input_filters.webm" type="video/webm"><source src="images/notion_input_filters.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Notion | Feb 2025</p>
         </div>
     </div>
     <!-- 🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 -->
     <div class="screenshotPortrait" data-name="filters">
         <div class="screenshotDivShort">
-            <img src="images/craft_filterslight.png" alt="">
+            <img src="images/craft_filterslight.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Craft | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="filters">
         <div class="screenshotDivShort">
-            <img src="images/craft_filtersdark.png" alt="">
+            <img src="images/craft_filtersdark.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Craft | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="input">
         <div class="screenshotDiv">
-            <img src="images/craft_input1.png" alt="">
+            <img src="images/craft_input1.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Craft | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="lander">
         <div class="screenshotDiv">
-            <img src="images/bernhardts_lander.png" alt="">
+            <img src="images/bernhardts_lander.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Bernhardts | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="illustration">
         <div class="screenshotDiv">
-            <img src="images/netflix_illustration1.png" alt="">
+            <img src="images/netflix_illustration1.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Netflix | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="illustration">
         <div class="screenshotDiv">
-            <img src="images/netflix_illustration2.png" alt="">
+            <img src="images/netflix_illustration2.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Netflix | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="filters input">
         <div class="screenshotDivShort">
-            <img src="images/notion_filterinput_light.png" alt="">
+            <img src="images/notion_filterinput_light.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Notion | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="filters input">
         <div class="screenshotDivShort">
-            <img src="images/notion_filterinput_dark.png" alt="">
+            <img src="images/notion_filterinput_dark.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Notion | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="filters menu">
         <div class="screenshotDivShort">
-            <img src="images/notion_menu_filters.png" alt="">
+            <img src="images/notion_menu_filters.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Notion | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="splash loading">
         <div class="screenshotDiv">
-            <img src="images/starbs_loader.png" alt="">
+            <img src="images/starbs_loader.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Starbucks | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="menu cards">
         <div class="screenshotDiv">
-            <img src="images/substack_menu_cards.png" alt="">
+            <img src="images/substack_menu_cards.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Substack | Feb 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="input">
         <div class="screenshotDiv">
-            <img src="images/substack_input.png" alt="">
+            <img src="images/substack_input.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Substack | Feb 2025</p>
         </div>
     </div>
     <!-- <div class="screenshotPortrait" data-name="detail">
         <div class="screenshotDiv">
-            <img src="images/chrome_compatibility.png" alt="">
+            <img src="images/chrome_compatibility.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Chrome | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="detail">
         <div class="screenshotDiv">
-            <img src="images/chrome_compatibility.png" alt="">
+            <img src="images/chrome_compatibility.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Chrome | Jan 2025</p>
         </div>
     </div>
  -->
     <div class="screenshotLandscape" data-name="toolbar gif">
         <div class="screenshotDivLandscape">
-            <img src="images/figma_toolbar.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/figma_toolbar.webm" type="video/webm"><source src="images/figma_toolbar.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Figma | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="detail">
         <div class="screenshotDiv">
-            <img src="images/chrome_compatibility.png" alt="">
+            <img src="images/chrome_compatibility.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Chrome | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotLandscape" data-name="detail">
         <div class="screenshotDivLandscape">
-            <img src="images/arc_easteregg.png" alt="">
+            <img src="images/arc_easteregg.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Arc | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="detail">
         <div class="screenshotDiv">
-            <img src="images/arc_watermark.png" alt="">
+            <img src="images/arc_watermark.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Arc | Jan 2025</p>
         </div>
+        <div class="backgroundBlurToTop"></div>
     </div>
     <div class="screenshotLandscape" data-name="desktop howto">
         <div class="screenshotDivLandscape">
-            <img src="images/arc_howto.png" alt="">
+            <img src="images/arc_howto.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Arc | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="illustration gif">
         <div class="screenshotDiv">
-            <img src="images/arc_arrow.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/arc_arrow.webm" type="video/webm"><source src="images/arc_arrow.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
-            <p>Arc | Jan 2025</p>
+        <div class="inspoDescriptionInspo">
+            <p class="pdark">Arc | Jan 2025</p>
         </div>
+        <div class="backgroundBlurToTop"></div>
     </div>
     <div class="screenshotPortrait" data-name="toast gif">
         <div class="screenshotDiv">
-            <img src="images/arc_hovertoast.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/arc_hovertoast.webm" type="video/webm"><source src="images/arc_hovertoast.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Arc | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="alert gif">
         <div class="screenshotDiv">
-            <img src="images/arc_alert.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/arc_alert.webm" type="video/webm"><source src="images/arc_alert.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Arc | Jan 2025</p>
         </div>
     </div>
     <!-- <div class="screenshotLandscape" data-name="lander">
         <div class="screenshotDivLandscape">
-            <img src="images/arc_lander.png" alt="">
+            <img src="images/arc_lander.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Arc | Jan 2025</p>
         </div>
     </div> -->
-    <div class="screenshotPortrait" data-name="splash gif">
+    <div class="screenshotPortrait imgDesktop" data-name="splash gif">
         <div class="screenshotDiv">
-            <img src="images/arc_splash.gif" alt="" style="height: 100%;">
+            <video style="height: 100%;" autoplay loop muted playsinline preload="metadata"><source src="images/arc_splash.webm" type="video/webm"><source src="images/arc_splash.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Arc | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="lander illustration">
         <div class="screenshotDiv">
-            <img src="images/substack_landertall.png" alt="">
+            <img src="images/substack_landertall.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Substack | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="lander illustration">
         <div class="screenshotDiv">
-            <img src="images/substack_landerdark.png" alt="">
+            <img src="images/substack_landerdark.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Substack | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="splash gif">
         <div class="screenshotDivShort">
-            <img src="images/medium_splash.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/medium_splash.webm" type="video/webm"><source src="images/medium_splash.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Medium | Jan 2025</p>
         </div>
     </div>
     <!-- <div class="screenshotPortrait" data-name="illustration 404 gif">
         <div class="screenshotDivShort">
-            <img src="images/googleapp_404.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/googleapp_404.webm" type="video/webm"><source src="images/googleapp_404.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Google App | Jan 2025</p>
         </div>
     </div> -->
     <div class="screenshotPortrait" data-name="menu">
         <div class="screenshotDiv">
-            <img src="images/coinbase_menu.png" alt="">
+            <img src="images/coinbase_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Coinbase | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="table">
         <div class="screenshotDiv">
-            <img src="images/coinbase_tablelight.png" alt="">
+            <img src="images/coinbase_tablelight.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Coinbase | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="table">
         <div class="screenshotDiv">
-            <img src="images/coinbase_tabledark.png" alt="">
+            <img src="images/coinbase_tabledark.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Coinbase | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="menu">
         <div class="screenshotDivShort">
-            <img src="images/nrc_menu.png" alt="">
+            <img src="images/nrc_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">NRC | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="menu">
         <div class="screenshotDiv">
-            <img src="images/adidas_menu.png" alt="">
+            <img src="images/adidas_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Adidas | Jan 2025</p>
         </div>
     </div>
     
     <div class="screenshotPortrait" data-name="menu sheet">
         <div class="screenshotDiv">
-            <img src="images/pinterest_actionsheet.png" alt="">
+            <img src="images/pinterest_actionsheet.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Pinterest | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="menu">
         <div class="screenshotDiv">
-            <img src="images/nyt_menu.png" alt="">
+            <img src="images/nyt_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark"p>NYT | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="menu">
         <div class="screenshotDiv">
-            <img src="images/github_menu.png" alt="">
+            <img src="images/github_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>GitHub | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="menu">
         <div class="screenshotDiv">
-            <img src="images/spotify_menu.png" alt="">
+            <img src="images/spotify_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Spotify | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="menu">
         <div class="screenshotDiv">
-            <img src="images/spotify_menu2.png" alt="">
+            <img src="images/spotify_menu2.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Spotify | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="menu">
         <div class="screenshotDiv">
-            <img src="images/appleTV_menu.png" alt="">
+            <img src="images/appleTV_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>AppleTV | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="menu">
         <div class="screenshotDiv">
-            <img src="images/appstore_menu.png" alt="">
+            <img src="images/appstore_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>AppStore | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="toast">
         <div class="screenshotDivShort">
-            <img src="images/google_toast.png" alt="">
+            <img src="images/google_toast.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Google | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="nat">
         <div class="screenshotDiv">
-            <img src="images/gd_next.png" alt="">
+            <img src="images/gd_next.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Nat | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile table">
         <div class="screenshotDivShort">
-            <img src="images/google_table01.png" alt="">
+            <img src="images/google_table01.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Google | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile table">
         <div class="screenshotDiv">
-            <img src="images/google_table02.png" alt="">
+            <img src="images/google_table02.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Google | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile table gif">
         <div class="screenshotDiv">
-            <img src="images/google_table.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/google_table.webm" type="video/webm"><source src="images/google_table.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Google | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile toast">
         <div class="screenshotDivShort">
-            <img src="images/chatgpt_newtoast.png" alt="">
+            <img src="images/chatgpt_newtoast.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>ChatGPT | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile toast">
         <div class="screenshotDivShort">
-            <img src="images/chatgpt_toastfeedback.png" alt="">
+            <img src="images/chatgpt_toastfeedback.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>ChatGPT | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDivShort">
-            <img src="images/ig_toastfeedback.png" alt="">
+            <img src="images/ig_toastfeedback.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>IG | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/perplexity_prompts.png" alt="">
+            <img src="images/perplexity_prompts.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Perplexity | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile input">
         <div class="screenshotDivShort">
-            <img src="images/perplexity_input.png" alt="">
+            <img src="images/perplexity_input.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Perplexity | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/gemini_greeting.png" alt="">
+            <img src="images/gemini_greeting.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Gemini | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile input">
         <div class="screenshotDivShort">
-            <img src="images/gemini_input.png" alt="">
+            <img src="images/gemini_input.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Gemini | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile input">
         <div class="screenshotDivShort">
-            <img src="images/chatgpt_input.png" alt="">
+            <img src="images/chatgpt_input.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>ChatGPT | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/metai_prompts.png" alt="">
+            <img src="images/metai_prompts.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Meta AI | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile input">
         <div class="screenshotDivShort">
-            <img src="images/metai_input.png" alt="">
+            <img src="images/metai_input.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Meta AI | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile menu gif">
         <div class="screenshotDiv">
-            <img src="images/grok_menu.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/grok_menu.webm" type="video/webm"><source src="images/grok_menu.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Grok | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile menu">
         <div class="screenshotDiv">
-            <img src="images/grok_menu.png" alt="">
+            <img src="images/grok_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Grok | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile input">
         <div class="screenshotDiv">
-            <img src="images/grok_input.png" alt="">
+            <img src="images/grok_input.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Grok | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="desktop toast">
         <div class="screenshotDivShort">
-            <img src="images/fbMessenger_toast.png" alt="">
+            <img src="images/fbMessenger_toast.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Messenger | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotLandscape" data-name="desktop menu gif">
         
         <div class="screenshotDivLandscape">
-            <img src="images/dropbox_menu.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/dropbox_menu.webm" type="video/webm"><source src="images/dropbox_menu.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Dropbox | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile web">
         <div class="screenshotDiv">
-            <img src="images/dropbox_brandlander01.png" alt="">
+            <img src="images/dropbox_brandlander01.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Dropbox | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile web menu">
         <div class="screenshotDiv">
-            <img src="images/dropbox_brandlander02.png" alt="">
+            <img src="images/dropbox_brandlander02.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Dropbox | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile native">
         <div class="screenshotDiv">
-            <img src="images/nrc_liveactivity02.png" alt="">
+            <img src="images/nrc_liveactivity02.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>NRC | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile native">
         <div class="screenshotDiv">
-            <img src="images/nrc_liveactivity01.jpg" alt="">
+            <img src="images/nrc_liveactivity01.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>NRC | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotLandscape" data-name="toast desktop menu gif">
         
         <div class="screenshotDivLandscape">
-            <img src="images/spline_onboarding_full.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/spline_onboarding_full.webm" type="video/webm"><source src="images/spline_onboarding_full.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Spline | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="toast desktop">
         <div class="screenshotDiv">
-            <img src="images/spline_toast01.png" alt="">
+            <img src="images/spline_toast01.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Spline | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="toast desktop">
         <div class="screenshotDiv">
-            <img src="images/spline_toast02.png" alt="">
+            <img src="images/spline_toast02.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Spline | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile native gif">
         <div class="screenshotDiv">
-            <img src="images/jackalgif.gif" alt="">
+            <video autoplay loop muted playsinline preload="metadata"><source src="images/jackalgif.webm" type="video/webm"><source src="images/jackalgif.mp4" type="video/mp4"></video>
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Fubo | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotLandscape" data-name="IRL">
         <div class="screenshotDivLandscape">
-            <img src="images/treehouse_OOH01.png" alt="">
+            <img src="images/treehouse_OOH01.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Treehouse | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/treehouse_loader.png" alt="">
+            <img src="images/treehouse_loader.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Treehouse | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotLandscape" data-name="IRL">
         <div class="screenshotDivLandscape">
-            <img src="images/treehouse_OOH02.png" alt="">
+            <img src="images/treehouse_OOH02.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Treehouse | Jan 2025</p>
         </div>
     </div>
-    <div class="screenshotLandscape" data-name="desktop web illustration">
+    <div class="screenshotLandscape" data-name="desktop web illustration hero">
         <div class="screenshotDivLandscape">
-            <img src="images/otta_lander_dt.png" alt="">
+            <img src="images/otta_lander_dt.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Otta | Jan 2025</p>
         </div>
     </div>
-    <div class="screenshotPortrait" data-name="mobile web illustration">
+    <div class="screenshotPortrait" data-name="mobile web illustration hero">
         <div class="screenshotDiv">
-            <img src="images/otta_lander_mob.png" alt="">
+            <img src="images/otta_lander_mob.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Otta | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotLandscape" data-name="desktop illustration web">
         <div class="screenshotDivLandscape">
-            <img src="images/dropbox_setup.png" alt="">
+            <img src="images/dropbox_setup.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Dropbox | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="desktop">
         <div class="screenshotDiv">
-            <img src="images/figma_findandreplace.png" alt="">
+            <img src="images/figma_findandreplace.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Figma | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="toast desktop">
         <div class="screenshotDiv">
-            <img src="images/figma_toast01.png" alt="">
+            <img src="images/figma_toast01.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Figma | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="toast desktop">
         <div class="screenshotDiv">
-            <img src="images/figma_toast02.png" alt="">
+            <img src="images/figma_toast02.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Figma | Jan 2025</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile toast">
         <div class="screenshotDivShort">
-            <img src="images/figma_toast.png" alt="">
+            <img src="images/figma_toast.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Figma | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile toast">
         <div class="screenshotDiv">
-            <img src="images/spark_toast.png" alt="">
+            <img src="images/spark_toast.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Spark | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile toast sheet">
         <div class="screenshotDiv">
-            <img src="images/uber_toast.png" alt="">
+            <img src="images/uber_toast.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Uber | 2024</p>
         </div>
     </div>
     <div class="screenshotLandscape" data-name="desktop">
         <div class="screenshotDivLandscape">
-            <img src="images/notion_onboarding1.png" alt="">
+            <img src="images/notion_onboarding1.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Notion | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile menu">
         <div class="screenshotDiv">
-            <img src="images/apple_weather_menu.png" alt="">
+            <img src="images/apple_weather_menu.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Apple Weather | 2024</p>
         </div>
     </div>
     <div class="screenshotLandscape" data-name="mobile">
         <div class="screenshotDivLandscape">
-            <img src="images/apple_weather.PNG" alt="">
+            <img src="images/apple_weather.PNG" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Apple Weather | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="IRL">
         <div class="screenshotDiv">
-            <img src="images/ethicaCoffeeLabel01.png" alt="">
+            <img src="images/ethicaCoffeeLabel01.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Ethica | 2024</p>
         </div>
     </div><div class="screenshotPortrait" data-name="IRL">
         <div class="screenshotDiv">
-            <img src="images/ethicaCoffeeLabel02.png" alt="">
+            <img src="images/ethicaCoffeeLabel02.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Ethica | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="IRL">
         <div class="screenshotDiv">
-            <img src="images/ethicaCoffeeLabel03.png" alt="">
+            <img src="images/ethicaCoffeeLabel03.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Ethica | 2024</p>
         </div>
     </div>
 
     <div class="screenshotPortrait" data-name="illustration desktop">
         <div class="screenshotDiv">
-            <img src="images/dropbox_emptystate.jpg" alt="">
+            <img src="images/dropbox_emptystate.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Dropbox | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/instacart_emptystate.jpg" alt="">
+            <img src="images/instacart_emptystate.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Instacart | 2024</p>
         </div>
     </div>
@@ -948,201 +1065,201 @@
 
     <div class="screenshotPortrait" data-name="desktop">
         <div class="screenshotDiv">
-            <img src="images/sketchApp_emptystate.jpg" alt="">
+            <img src="images/sketchApp_emptystate.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Sketch App | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/chromeapp_urlbar.jpg" alt="">
+            <img src="images/chromeapp_urlbar.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Chrome App | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/chromeapp_urlBar_fulllayout.jpg" alt="">
+            <img src="images/chromeapp_urlBar_fulllayout.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Chrome App | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/chromeapp_urlbar_ill.jpg" alt="">
+            <img src="images/chromeapp_urlbar_ill.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Chrome App | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/instacart_aisles.jpg" alt="">
+            <img src="images/instacart_aisles.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Instacart | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/instacart_cartBtn.jpg" alt="">
+            <img src="images/instacart_cartBtn.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Instacart | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/instacart_splashpage.jpg" alt="">
+            <img src="images/instacart_splashpage.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Instacart | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/instacart_orderconfirmation.png" alt="">
+            <img src="images/instacart_orderconfirmation.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Instacart | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="illustration mobile">
         <div class="screenshotDiv">
-            <img src="images/appleHome_illDancerDark.png" alt="">
+            <img src="images/appleHome_illDancerDark.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Apple Home | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="illustration mobile">
         <div class="screenshotDiv">
-            <img src="images/appleHome_illDancerLight.png" alt="">
+            <img src="images/appleHome_illDancerLight.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Apple Home | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="illustration">
         <div class="screenshotDiv">
-            <img src="images/appleHome_HomehubCard.png" alt="">
+            <img src="images/appleHome_HomehubCard.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Apple Home | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="illustration mobile">
         <div class="screenshotDiv">
-            <img src="images/appleHome_illustrations.png" alt="">
+            <img src="images/appleHome_illustrations.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Apple Home | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/appleHome_lightingCard.png" alt="">
+            <img src="images/appleHome_lightingCard.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Apple Home | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/transit_locationrequest.png" alt="">
+            <img src="images/transit_locationrequest.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Transit | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="IRL">
         <div class="screenshotDiv">
-            <img src="images/sephora_package.jpg" alt="">
+            <img src="images/sephora_package.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Sephora | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="IRL">
         <div class="screenshotDiv">
-            <img src="images/stayShining.jpg" alt="">
+            <img src="images/stayShining.jpg" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Toronto | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/notion_onboarding.png" alt="">
+            <img src="images/notion_onboarding.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Notion | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile sheet">
         <div class="screenshotDiv">
-            <img src="images/appleMusic_actionSheet.png" alt="">
+            <img src="images/appleMusic_actionSheet.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Apple Music | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile toast">
         <div class="screenshotDiv">
-            <img src="images/appleMusic_dismissableNotice.png" alt="">
+            <img src="images/appleMusic_dismissableNotice.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Apple Music | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/transit_dismissablenotice.png" alt="">
+            <img src="images/transit_dismissablenotice.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Transit | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/instagram_addreminder.png" alt="">
+            <img src="images/instagram_addreminder.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>IG | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/instagram_fyvibe.png" alt="">
+            <img src="images/instagram_fyvibe.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>IG | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/uber_connectmodal.png" alt="">
+            <img src="images/uber_connectmodal.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Uber | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/uber_connectIntro.png" alt="">
+            <img src="images/uber_connectIntro.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Uber | 2024</p>
         </div>
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/transit_screenshot.png" alt="">
+            <img src="images/transit_screenshot.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Transit | 2024</p>
         </div>
         <!-- <div class="screenshotContent">
@@ -1151,9 +1268,9 @@
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/chromecast_sc1.PNG" alt="">
+            <img src="images/chromecast_sc1.PNG" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Google Home | 2024</p>
         </div>
         <!-- <div class="screenshotContent">
@@ -1162,9 +1279,9 @@
     </div>
     <div class="screenshotPortrait" data-name="mobile">
         <div class="screenshotDiv">
-            <img src="images/chromecast_sc2.PNG" alt="">
+            <img src="images/chromecast_sc2.PNG" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Google Home | 2024</p>
         </div>
         <!-- <div class="screenshotContent">
@@ -1173,18 +1290,18 @@
     </div>
     <div class="screenshotPortrait" data-name="mobile sheet">
         <div class="screenshotDiv">
-            <img src="images/apple_successsheet.PNG" alt="">
+            <img src="images/apple_successsheet.PNG" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p>Apple Settings | 2024</p>
         </div>
     </div>
     <!-- landscape 🌳 -->
     <div class="screenshotLandscape" data-name="desktop illustration">
         <div class="screenshotDivLandscape">
-            <img src="images/notion_sc1.png" alt="">
+            <img src="images/notion_sc1.png" loading="lazy" alt="">
         </div>
-        <div class="inspoDescription">
+        <div class="inspoDescriptionInspo">
             <p class="pdark">Notion | 2024</p>
         </div>  
     </div>

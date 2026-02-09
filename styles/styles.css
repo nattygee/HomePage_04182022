@@ -17,7 +17,7 @@ p {
 }
 
 :root {
-  --main-orange: #F8714A;
+  --main-orange: rgb(248, 113, 74);
   --darker-orange: #E05434;
   --darkest-orange: #c34225;
   --main-yellow: #FFEF9D;
@@ -239,7 +239,7 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 1155;
   margin-bottom: 0px;
   background: linear-gradient(to top, var(--darker-green) 0%, rgba(var(--darker-green-rgb), 0.5) 50%, rgba(var(--darker-green-rgb), 0.4) 60%, rgba(var(--darker-green-rgb), 0.2) 70%, transparent 100%);
   -webkit-mask: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.5) 66%, transparent 100%);
@@ -326,7 +326,6 @@ button {
 
 .topNoteDesktop {
   color: #FFEF9D;
-  background-color: rgba(48, 76, 55, 0.75);
   border-radius: 0.5rem;
   padding: 1rem 2rem 1.5rem 2rem;
   height: -moz-fit-content;
@@ -335,6 +334,7 @@ button {
   font-family: "Work Sans", sans-serif;
   margin-top: 0rem;
   margin-right: 0rem;
+  z-index: 9999;
 }
 
 #backToTop {
@@ -527,6 +527,55 @@ button {
   position: relative;
 }
 .inspoDescription p.pdark {
+  color: #1d2e21;
+}
+
+.blogPostButtonText {
+  color: #ffffff;
+  font-family: "work sans", sans-serif;
+  font-size: small;
+}
+
+.blogPostButton {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1190;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-direction: row;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+.blogPostButton:hover {
+  background-color: var(--main-orange);
+  transition: background-color 0.2s ease;
+  font-weight: 600;
+}
+
+.inspoDescriptionInspo {
+  padding: 0rem 0.5rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+}
+.inspoDescriptionInspo p {
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-family: "work sans", sans-serif;
+  font-size: small;
+  padding: 0rem 0.5rem;
+  border-radius: 0.5rem;
+  z-index: 1156;
+  position: relative;
+}
+.inspoDescriptionInspo p.pdark {
   color: #1d2e21;
 }
 
@@ -739,7 +788,8 @@ button {
   flex-direction: row;
   gap: 4rem;
   height: auto;
-  margin: 4rem 2rem;
+  margin: 0rem 1rem 0rem 1rem;
+  padding: 4rem 2rem 0rem 2rem;
   align-items: center;
   justify-content: center;
 }
@@ -831,6 +881,22 @@ button {
 
 .imgMobile {
   display: none;
+}
+
+.newGridItem.imgMobile {
+  display: none;
+}
+
+.newGridItem.imgDesktop {
+  display: flex;
+}
+
+.blogContainerHero.imgMobile {
+  display: none;
+}
+
+.blogContainerHero.imgDesktop {
+  display: flex;
 }
 
 .projImgDescription {
@@ -1102,15 +1168,24 @@ button {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.newGridItem video {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .newGridItem:hover .inspoDescription {
   opacity: 1;
 }
 
 .gridItemImg {
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .gridItem1 {
@@ -1142,8 +1217,12 @@ button {
   margin-left: auto;
   margin-right: auto; */
 }
+.screenshotPortrait:hover .inspoDescriptionInspo {
+  opacity: 1;
+}
 
 .screenshotLandscape {
+  position: relative;
   border: 1px solid var(--light-green);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -1154,6 +1233,9 @@ button {
 .screenshotLandscape img {
   cursor: pointer;
   width: 100%;
+}
+.screenshotLandscape:hover .inspoDescriptionInspo {
+  opacity: 1;
 }
 
 .screenshotDiv {
@@ -1174,6 +1256,14 @@ button {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.screenshotDiv video {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
 .screenshotDiv div {
   align-items: end;
 }
@@ -1187,6 +1277,14 @@ button {
 }
 .screenshotDivLandscape img {
   max-height: 500px;
+}
+.screenshotDivLandscape video {
+  max-height: 500px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 
 .exercisePreviewPortrait {
@@ -2164,8 +2262,8 @@ input[switch]:checked::before {
   grid-column: span 2;
   border-radius: 0.5rem;
   border: 1px solid var(--light-green);
-  background-image: url("../images/inpiration_ledeimg.svg");
-  background-size: contain;
+  background-image: url("../images/all_inspo_full.png");
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2175,7 +2273,6 @@ input[switch]:checked::before {
   padding: 3rem;
   margin-top: 0rem;
   margin-right: 0rem;
-  width: 240px;
 }
 
 .inspoGridFD {
@@ -2214,13 +2311,21 @@ input[switch]:checked::before {
   justify-content: flex-start;
   width: 100%;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 .screenshotDivShort img {
   flex-shrink: 0;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.screenshotDivShort video {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 .screenshotDivShort div {
   align-items: end;
@@ -2244,6 +2349,13 @@ input[switch]:checked::before {
   /* display: block;
   margin-left: auto;
   margin-right: auto; */
+}
+.screenshotDivHome video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 
 .screenshotContent {
@@ -3460,6 +3572,13 @@ mark {
   padding: 1rem;
 }
 
+#lightboxInspo video {
+  max-width: 600px;
+  max-height: 90%;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
 #lightboxInspo img.lightboxImgNot {
   opacity: 0.95;
   max-height: 30%;
@@ -3716,13 +3835,12 @@ mark {
     flex-direction: column;
     gap: 2rem;
     height: auto;
-    margin: 2rem 1rem;
+    margin: 1rem 1rem 2rem 1rem;
     align-items: center;
     justify-content: center;
   }
   .projHeroImg {
     display: flex;
-    width: 100vw;
     align-items: left;
     justify-content: left;
     min-width: 240px;
@@ -3741,6 +3859,8 @@ mark {
     gap: 2rem;
     min-width: 240px;
     flex: 1;
+    width: 100vw;
+    padding: 0rem 1rem;
   }
   .projTitleSkinnyXL {
     font-size: 4rem;
@@ -3804,6 +3924,19 @@ mark {
   }
   .imgMobile {
     display: block;
+  }
+  .newGridItem.imgMobile {
+    display: flex;
+  }
+  .newGridItem.imgDesktop {
+    display: none;
+  }
+  .blogContainerHero.imgMobile {
+    display: flex;
+    width: 100vw;
+  }
+  .blogContainerHero.imgDesktop {
+    display: none;
   }
   .projImgDescription {
     padding: 0rem 0.5rem;
@@ -3992,11 +4125,13 @@ mark {
        object-fit: cover;
   }
   .gridItemImg {
+    width: 100%;
     height: 100%;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
   .item-1 {
     grid-column: span 2;
@@ -4306,7 +4441,7 @@ mark {
     justify-content: flex-start;
     width: 100%;
     overflow: hidden;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     z-index: 1155;
     position: relative;
     padding: 0rem;
@@ -4318,8 +4453,36 @@ mark {
     -o-object-fit: cover;
        object-fit: cover;
   }
+  .screenshotDiv video {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+  }
   .screenshotDiv div {
     align-items: end;
+  }
+  .inspoDescriptionInspo {
+    padding: 0rem 0.5rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    opacity: 1;
+  }
+  .inspoDescriptionInspo p {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    font-family: "work sans", sans-serif;
+    font-size: small;
+    padding: 0rem 0.5rem;
+    border-radius: 0.5rem;
+    z-index: 1156;
+    position: relative;
+  }
+  .inspoDescriptionInspo p.pdark {
+    color: #1d2e21;
   }
   .inspoGridFD {
     align-items: center;
@@ -4341,6 +4504,14 @@ mark {
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .inspoGridFD video {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
   }
   .inspoGridFD div {
     align-items: end;
@@ -4446,6 +4617,17 @@ mark {
     max-height: 70%;
     border-radius: 2rem;
     padding: 1rem;
+  }
+  #lightboxInspo video {
+    max-width: 80vw;
+    max-height: 70%;
+    border-radius: 2rem;
+    padding: 1rem;
+  }
+  #lightboxInspo video.arcSplashLightbox {
+    width: 80vw;
+    height: auto;
+    max-height: none;
   }
   .heroImgBlog {
     display: none;
@@ -4754,7 +4936,7 @@ mark {
     grid-column: span 2;
     border-radius: 1rem;
     border: 1px solid var(--light-green);
-    background-image: url("../images/inpiration_ledeimg.svg");
+    background-image: url("../images/all_inspo_full.png");
     background-size: contain;
     display: none;
     justify-content: right;
@@ -4793,13 +4975,21 @@ mark {
     justify-content: center;
     width: 100%;
     overflow: hidden;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
   }
   .screenshotDiv img {
     flex-shrink: 0;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .screenshotDiv video {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
   }
   .screenshotDivShort {
     align-items: center;
@@ -4809,13 +4999,21 @@ mark {
     justify-content: flex-start;
     width: 100%;
     overflow: hidden;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
   }
   .screenshotDivShort img {
     flex-shrink: 0;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .screenshotDivShort video {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
   }
   .screenshotDivShort div {
     align-items: end;
@@ -4830,6 +5028,11 @@ mark {
   .screenshotDivLandscape img {
     height: auto;
     width: 100%;
+  }
+  .screenshotDivLandscape video {
+    height: auto;
+    width: 100%;
+    display: block;
   }
   .screenshotContent {
     padding: 1rem 0rem;
