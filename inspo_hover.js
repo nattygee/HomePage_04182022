@@ -10,8 +10,14 @@
 
         wrapper.addEventListener('mousemove', function (e) {
             const rect = wrapper.getBoundingClientRect();
-            wrapper.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-            wrapper.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            wrapper.style.setProperty('--mouse-x', x + 'px');
+            wrapper.style.setProperty('--mouse-y', y + 'px');
+            // Map cursor X across the card to a gradient angle (80° → 260°)
+            // so the rainbow rotates as the cursor sweeps left-to-right
+            const angle = 80 + (x / rect.width) * 180;
+            wrapper.style.setProperty('--iridescent-angle', angle + 'deg');
         });
     }
 
