@@ -48,10 +48,13 @@ searchBar.addEventListener('input', function() {
         const title = img.querySelector('.inspoDescription p').textContent.toLowerCase();
         const dataName = img.dataset.name.toLowerCase();
         
+        const wrapper = img.parentElement.classList.contains('card-glow-wrapper') ? img.parentElement : null;
         if (title.includes(searchTerm) || dataName.includes(searchTerm)) {
             img.style.display = '';
+            if (wrapper) wrapper.style.display = '';
         } else {
             img.style.display = 'none';
+            if (wrapper) wrapper.style.display = 'none';
         }
     });
 });
