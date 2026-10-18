@@ -490,6 +490,11 @@ p {
     display: none;
 }
 
+/* Hide the glow wrapper when its inner card is filtered out */
+.card-glow-wrapper:has(.hide) {
+    display: none;
+}
+
 .xScroll {
     margin-top: 4rem;
     width: 100%;
@@ -942,6 +947,11 @@ width: 100%;
     display: flex;
 }
 
+/* Hide/show the glow wrapper when it contains a desktop/mobile-only card */
+.card-glow-wrapper:has(.newGridItem.imgMobile) {
+    display: none;
+}
+
 .blogContainerHero.imgMobile {
     display: none;
 }
@@ -1236,6 +1246,9 @@ width: 100%;
         //height: 100%;
         object-fit: cover;
     }
+    &.item-1 img {
+        height: 100%;
+    }
     video {
         width: 100%;
         height: 100%;
@@ -1345,14 +1358,17 @@ width: 100%;
 }
 
 .screenshotDivLandscape {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    max-height: 400px;
-    display: flex;
-    //width: 500px;
     img {
-        max-height: 500px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     video {
         max-height: 500px;
@@ -4128,6 +4144,12 @@ p {
     .newGridItem.imgDesktop {
         display: none;
     }
+    .card-glow-wrapper:has(.newGridItem.imgMobile) {
+        display: flex;
+    }
+    .card-glow-wrapper:has(.newGridItem.imgDesktop) {
+        display: none;
+    }
 
     .blogContainerHero.imgMobile {
         display: flex;
@@ -5319,7 +5341,12 @@ p {
         min-height: 200px;
     }
 
-    
+    /* Force wrappers full-width on mobile — overrides the JS inline grid-column */
+    .screenshotGrid .card-glow-wrapper {
+        grid-column: span 2 !important;
+        min-width: 0;
+    }
+
     .screenshotDiv {
         align-items: center;
         height: 100%;
@@ -5370,6 +5397,8 @@ p {
     }
     
     .screenshotDivLandscape {
+        position: relative;
+        inset: auto;
         align-items: center;
         max-height: 320px;
         display: flex;
@@ -5908,3 +5937,157 @@ p {
 
     
   }
+/* ── Film grain keyframe — shifts the noise tile rapidly to simulate movement ── */
+@keyframes grain-shift {
+  0%   { background-position:   0%   0%; }
+  10%  { background-position: -12%  -8%; }
+  20%  { background-position:  22%  -4%; }
+  30%  { background-position:  -8%  18%; }
+  40%  { background-position:  16% -20%; }
+  50%  { background-position: -20%   8%; }
+  60%  { background-position:   4%  22%; }
+  70%  { background-position: -16% -16%; }
+  80%  { background-position:  20%  12%; }
+  90%  { background-position:  -4% -22%; }
+  100% { background-position:   0%   0%; }
+}
+
+/* ── Iridescent shimmer keyframe ── */
+@keyframes iridescent-shimmer {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* ── Card cursor-glow border + glare effect ── */
+.card-glow-wrapper {
+  position: relative;
+  border-radius: 0.5rem;
+  /* 1px padding acts as the visible border; background is the border color */
+  padding: 1px;
+  background: var(--light-green);
+  display: flex;
+  flex-direction: column;
+  min-width: 240px;
+}
+
+/* Border glow: radial gradient on wrapper tracks cursor */
+.card-glow-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(160, 240, 180, 0.85),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.card-glow-wrapper:hover::before {
+  opacity: 1;
+}
+
+/* Grain layer — uses wrapper ::after, inset 1px to sit inside the border */
+.card-glow-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: calc(0.5rem - 1px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+  animation: grain-shift 0.35s steps(1) infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1202;
+}
+
+.card-glow-wrapper:hover::after {
+  opacity: 0.1; /* grain temporarily disabled */
+}
+
+/* Cards inside the wrapper: drop their own border, fill wrapper height */
+.card-glow-wrapper .screenshotPortrait,
+.card-glow-wrapper .screenshotLandscape,
+.card-glow-wrapper .newGridItem {
+  border: none;
+  grid-column: auto;
+  flex: 1;
+}
+
+/* Glare: lives inside the card (respects overflow: hidden) */
+.card-glow-wrapper .screenshotPortrait::after,
+.card-glow-wrapper .screenshotLandscape::after,
+.card-glow-wrapper .newGridItem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 30%),
+    rgba(255, 255, 255, 0.10),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease, background 0s;
+  pointer-events: none;
+  z-index: 1200;
+}
+
+.card-glow-wrapper:hover .screenshotPortrait::after,
+.card-glow-wrapper:hover .screenshotLandscape::after,
+.card-glow-wrapper:hover .newGridItem::after {
+  opacity: 1;
+}
+
+/* ── Iridescent thin-film layer (::before on inner cards) ── */
+/* Full-spectrum rainbow gradient; angle driven by cursor X via --iridescent-angle.
+   A radial mask centred on the cursor ties it to the existing glow focal point.
+   mix-blend-mode: overlay lets it interact with the image underneath. */
+.card-glow-wrapper .screenshotPortrait::before,
+.card-glow-wrapper .screenshotLandscape::before,
+.card-glow-wrapper .newGridItem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    var(--iridescent-angle, 120deg),
+    hsla(0,   100%, 72%, 0.6)   0%,
+    hsla(30,  100%, 72%, 0.6)   10%,
+    hsla(65,  100%, 72%, 0.6)   22%,
+    hsla(110, 100%, 72%, 0.6)   34%,
+    hsla(160, 100%, 72%, 0.6)   46%,
+    hsla(200, 100%, 72%, 0.6)   56%,
+    hsla(245, 100%, 72%, 0.6)   68%,
+    hsla(285, 100%, 72%, 0.6)   80%,
+    hsla(325, 100%, 72%, 0.6)   90%,
+    hsla(360, 100%, 72%, 0.6)   100%
+  );
+  mix-blend-mode: overlay;
+  /* Mask concentrates the effect at the cursor, fading out toward card edges */
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 70% at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    black 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 70% at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    black 0%,
+    transparent 100%
+  );
+  /* Shimmer runs continuously so it's already in motion on hover */
+  animation: iridescent-shimmer 5s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1199;
+}
+
+.card-glow-wrapper:hover .screenshotPortrait::before,
+.card-glow-wrapper:hover .screenshotLandscape::before,
+.card-glow-wrapper:hover .newGridItem::before {
+  opacity: 1;
+}
